@@ -49,6 +49,14 @@ declare namespace ui {
 
         label: string;
         value: string | number;
+        state: null | "success" | "warn" | "danger";
+    }
+
+    /** Remote Images */
+    class Image extends Element {
+        constructor(source: string);
+
+        source: string;
     }
 
     /** Panel Section */
