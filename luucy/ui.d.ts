@@ -66,7 +66,16 @@ declare namespace ui {
 
     /** Global areas */
     const areas: {
-        /** Left Project Pannel */
-        panel: Area
+        /** Left Project Panel */
+        panel: Area,
+
+        /** Building Costs Panel */
+        buildingAndCosts: Area,
+
+        /** Data and Usage Panel */
+        dataAndUsage: Area,
+
+        /** Compare Variants Panel */
+        compareVariants: Area
     }
 }
