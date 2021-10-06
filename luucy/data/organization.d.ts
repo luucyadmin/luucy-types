@@ -14,4 +14,4 @@ declare class Organization {
 }
 
 /** Will be executed when a project is selected */
-declare const onorganizationschange: PluginEvent<Project | null>
+declare const onorganizationschange: PluginEvent<Organization[]>
