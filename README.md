@@ -1,3 +1,5 @@
+[![npm version](http://badge.acryps.com/npm/luucy-types)](http://badge.acryps.com/go/npm/luucy-types)
+
 # luucy types
 Type mappings for luucy plugins. 
 
