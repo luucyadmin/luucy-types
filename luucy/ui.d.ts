@@ -52,6 +52,15 @@ declare namespace ui {
         state: null | "success" | "warn" | "danger";
     }
 
+    /** Empty Container */
+    class Button extends Element {
+        constructor(label: string);
+
+        label: string;
+
+        onclick: PluginEvent<void>;
+    }
+
     /** Remote Images */
     class Image extends Element {
         constructor(source: string);
