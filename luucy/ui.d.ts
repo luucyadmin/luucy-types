@@ -64,6 +64,11 @@ declare namespace ui {
         constructor(name: string);
     }
 
+    /** Empty Container */
+    class Container extends Element {
+        constructor();
+    }
+
     /** Global areas */
     const areas: {
         /** Left Project Panel */
