@@ -78,6 +78,16 @@ declare namespace ui {
         constructor();
     }
 
+    /** Panel */
+    class Panel implements Area {
+        constructor(name: string);
+
+        open();
+        close();
+
+        add(section: Section);
+    }
+
     /** Global areas */
     const areas: {
         /** Left Project Panel */
