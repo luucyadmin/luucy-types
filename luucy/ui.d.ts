@@ -54,7 +54,7 @@ declare namespace ui {
 
     /** Empty Container */
     class Button extends Element {
-        constructor(label: string);
+        constructor(label: string, handler?: () => void);
 
         label: string;
 
