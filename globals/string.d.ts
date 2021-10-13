@@ -104,16 +104,17 @@ interface String {
     /** Removes the leading and trailing white space and line terminator characters from a string. */
     trim(): string;
 
+    /**
+     * Returns true if searchString appears as a substring of the result of converting this
+     * object to a String, at one or more positions that are
+     * greater than or equal to position; otherwise, returns false.
+     * @param searchString search string
+     * @param position If position is undefined, 0 is assumed, so as to search all of the String.
+     */
+    includes(searchString: string, position?: number): boolean;
+
     /** Returns the length of a String object. */
     readonly length: number;
-
-    // IE extensions
-    /**
-     * Gets a substring beginning at the specified location and having the specified length.
-     * @param from The starting position of the desired substring. The index of the first character in the string is zero.
-     * @param length The number of characters to include in the returned substring.
-     */
-    substr(from: number, length?: number): string;
 
     /** Returns the primitive value of the specified object. */
     valueOf(): string;
