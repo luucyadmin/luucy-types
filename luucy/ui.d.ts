@@ -1,12 +1,25 @@
 /** User interface */
 declare namespace ui {
     class Element {
-        children: Element[];
-        parent?: Element | Area;
+        /** Contains all child elements. 
+         * 
+         * Modify the children by using `add()`, `insertAfter()`, `insertBefore()` and `remove()`
+        */
+        readonly children: Element[];
 
+        /** References the elements parent element or area */
+        readonly parent?: Element | Area;
+
+        /** Appends an element as a child */
         add(element: Element);
+
+        /** Appends an element as a child after the reference element */
         insertAfter(child: Element, after: Element);
+
+        /** Appends an element as a child before the reference element */
         insertBefore(child: Element, before: Element);
+
+        /** Removes an element as a child */
         remove(child: Element);
     }
 
