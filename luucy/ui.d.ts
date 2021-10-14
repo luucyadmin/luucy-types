@@ -102,7 +102,7 @@ declare namespace ui {
 
     /** Number input field */
     class RadioField<T> extends Element {
-        constructor(label: string, values: T[], value: T, transoform: (item: T) => string);
+        constructor(label: string, values: T[], value?: T, transoform?: (item: T) => string);
 
         label: string;
 
