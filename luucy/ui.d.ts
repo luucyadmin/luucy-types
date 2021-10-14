@@ -64,7 +64,7 @@ declare namespace ui {
 
     /** Remote Images */
     class Image extends Element {
-        constructor(source: string);
+        constructor(source?: string);
 
         source: string;
     }
