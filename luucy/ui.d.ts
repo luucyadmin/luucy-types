@@ -15,18 +15,6 @@ declare namespace ui {
         add(section: Section);
     }
 
-    /** Simple input field */
-    class Field extends Element {
-        constructor(type: "text" | "number", label: string, value?);
-
-        label: string;
-        placeholder: string;
-
-        value: any;
-
-        onvaluechange: PluginEvent<any>;
-    }
-
     /** Vertical bar chart */
     class BarChart extends Element {
         constructor(name: string, unit?: string);
@@ -86,6 +74,41 @@ declare namespace ui {
         close();
 
         add(section: Section);
+    }
+
+    /** Text input field */
+    class TextField extends Element {
+        constructor(label: string, value?: string);
+
+        label: string;
+        placeholder: string;
+
+        value: string;
+
+        onvaluechange: PluginEvent<any>;
+    }
+
+    /** Number input field */
+    class NumberField extends Element {
+        constructor(label: string, value?: number);
+
+        label: string;
+        placeholder: string;
+
+        value: number;
+
+        onvaluechange: PluginEvent<any>;
+    }
+
+    /** Number input field */
+    class RadioField<T> extends Element {
+        constructor(label: string, values: T[], value: T, transoform: (item: T) => string);
+
+        label: string;
+
+        value: T;
+
+        onvaluechange: PluginEvent<any>;
     }
 
     /** Global areas */
