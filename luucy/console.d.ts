@@ -1,4 +1,9 @@
-/** Console Output */
+/** 
+ * Console Output 
+ * 
+ * Comparable to the standard javascript console. 
+ * Output will appear in the terminal that runs `luucy serve`.
+ */
 declare const console: {
     /** Writes debugging log to the console */
     log(...arguments);

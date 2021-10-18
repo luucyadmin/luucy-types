@@ -1,4 +1,8 @@
-/** General Error */
+/** 
+ * General Error 
+ * 
+ * Compareable to the standard javascript error
+ */
 declare class Error {
     message: string;
     stack: string;

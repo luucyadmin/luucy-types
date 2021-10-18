@@ -1,4 +1,8 @@
-/** Uplaod handler */
+/** 
+ * Uplaod handler 
+ * 
+ * Luucy plugins can register themselves to handle uploads.
+ */
 declare class Upload {
     /** Creates an upload listener. The plugin will be listed in the upload panel */
     /** @param pattern specifies which files will be sent to the plugin. Use '*' as a wildcard (e.g. '*.txt', 'exported_model_*.txt') */
