@@ -278,7 +278,8 @@ declare namespace ui {
 
         value: string;
 
-        onValueChange: PluginEvent<text>;
+        onValueChange: PluginEvent<string>;
+        onImmediateValueChange: PluginEvent<string>;
     }
 
     /** Number input field */
@@ -291,6 +292,7 @@ declare namespace ui {
         value: number;
 
         onValueChange: PluginEvent<number>;
+        onImmediateValueChange: PluginEvent<number>;
     }
 
     /** Number input field */
