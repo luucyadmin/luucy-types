@@ -4,8 +4,8 @@
  * Compareable to the standard javascript error
  */
 declare class Error {
-    message: string;
-    stack: string;
+    readonly message: string;
+    readonly stack: string;
 
     /** Create request */
     constructor(message: string);

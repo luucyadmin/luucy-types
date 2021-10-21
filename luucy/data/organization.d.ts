@@ -1,17 +1,40 @@
-/** Luucy Organization */
+/** 
+ * Luucy Organization 
+ */
 declare class Organization {
-    /** Organization name */
-    name: string;
+    /** 
+     * Organization name 
+     */
+    readonly name: string;
 
-    /** Contact information of the organizations administrator */
-    contact: {
-        /** Administrator name */
-        name: string;
+    /** 
+     * Contact information of the organizations administrator 
+     * 
+     * Please do not abuse this information.
+     */
+    readonly contact: {
+        /** 
+         * Administrator name 
+         */
+        readonly name: string;
 
-        /** Administrator email */
-        email: string;
+        /** 
+         * Administrator email 
+         */
+        readonly email: string;
     }
 }
 
-/** Will be executed when a project is selected */
-declare const onorganizationschange: PluginEvent<Organization[]>
+/** 
+ * Is called with all organizations associated to the currently logged in user.
+ * 
+ * @example Show organizations
+ * onOrganizationsChange.subscribe(organizations => {
+ *     console.log("The current user is part of the following organizations:");
+ * 
+ *     for (let organization of organizations) {
+ *         console.log(organization.name);
+ *     }
+ * });
+ */
+declare const onOrganizationsChange: PluginEvent<Organization[]>

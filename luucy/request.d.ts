@@ -1,7 +1,10 @@
 /** 
  * HTTP / HTTPS Requests 
  * 
- * @example Create new request: `new Request("https://example.com/path").then(res => res.json()).then(data => console.log(data))`
+ * @example Create get request request
+ * new Request("https://example.com/path").get().then(res => res.json()).then(data => {
+ *     console.log(data);
+ * });
  */
 declare class Request {
     /** 
@@ -38,9 +41,13 @@ declare class Request {
 declare class Response {
     /** 
      * Read response data as JSON 
+     * Will convert the servers response from JSON to an object.
      * 
-     * Will convert the servers response to json
-     * @example `"{"example":1234}"` (of type string) to `{ example: 1234 }` (of type object)
+     * @example Parsing the response as JSON
+     * // Let's assume that the `https://example.com/path`-API returns a json object: `"{"example":1234}"`
+     * new Request("https://example.com/path").get().then(res => res.json()).then(data => {
+     *     console.log(data.example); // should print 1234
+     * });
      */
     json(): Promise<any>;
 
