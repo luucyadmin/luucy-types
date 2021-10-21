@@ -84,7 +84,7 @@ declare namespace ui {
         /**
          * Adds a new segment to the chart
          */
-        addSegment(name: string, value: string);
+        addSegment(name: string, value: number);
     }
 
     /** 
