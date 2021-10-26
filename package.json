@@ -1,6 +1,6 @@
 {
     "name": "luucy-types",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "types": "index.d.ts",
     "scripts": {
         "preversion": "tsc && git pull",
