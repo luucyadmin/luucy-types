@@ -25,7 +25,7 @@ declare class Project {
      *     }
      * });
      */
-    readonly onVariantSelect: PluginEvent<Variant | null>;
+    readonly onVariantSelect: Event<Variant | null>;
 }
 
 /** 
@@ -44,4 +44,4 @@ declare class Project {
  *     }
  * });
  */
-declare const onProjectSelect: PluginEvent<Project | null>
+declare const onProjectSelect: Event<Project | null>

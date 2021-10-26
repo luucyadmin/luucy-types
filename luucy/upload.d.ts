@@ -30,7 +30,7 @@ declare class Upload {
      * 
      * Will be called whenever a matching file is uploaded
      */
-    onUpload: PluginEvent<File>;
+    onUpload: Event<File>;
 }
 
 /** 

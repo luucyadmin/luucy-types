@@ -29,7 +29,7 @@ declare class Variant {
      *     console.log("Volume of ", variant.name, " changed to ", volume, "m³")
      * });
      */
-    readonly onVolumeChange: PluginEvent<number | null>;
+    readonly onVolumeChange: Event<number | null>;
 
     /** 
      * Will be called when the variants floor area changes 
@@ -40,5 +40,5 @@ declare class Variant {
      *     console.log("Area of ", variant.name, " changed to ", area, "m²")
      * });
      */
-    readonly onFloorAreaChange: PluginEvent<number | null>;
+    readonly onFloorAreaChange: Event<number | null>;
 }

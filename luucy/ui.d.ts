@@ -267,7 +267,7 @@ declare namespace ui {
          * Will be fired when the user clicks on the button.
          * The `handler` parameter of the `Button` constructor can be used to automatically subscribe to onClick.
          */
-        onClick: PluginEvent<void>;
+        onClick: Event<void>;
     }
 
     /** 
@@ -424,7 +424,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: PluginEvent<string>;
+        onValueChange: Event<string>;
 
         /**
          * The event is triggered whenever the user is changing the input.
@@ -452,7 +452,7 @@ declare namespace ui {
          * 
          * section.add(input);
          */
-        onImmediateValueChange: PluginEvent<string>;
+        onImmediateValueChange: Event<string>;
     }
 
     /** 
@@ -497,7 +497,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: PluginEvent<number>;
+        onValueChange: Event<number>;
 
         /**
          * The event is triggered whenever the user is changing the input.
@@ -518,7 +518,7 @@ declare namespace ui {
          *     heatingCostLabel.value = basePrice * value;
          * });
          */
-        onImmediateValueChange: PluginEvent<number>;
+        onImmediateValueChange: Event<number>;
     }
 
     /** 
@@ -573,7 +573,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user selects another radio.
          */
-        onValueChange: PluginEvent<T>;
+        onValueChange: Event<T>;
     }
 
     /** 

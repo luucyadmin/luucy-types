@@ -38,4 +38,4 @@ declare class Organization {
  *     }
  * });
  */
-declare const onOrganizationsChange: PluginEvent<Organization[]>
+declare const onOrganizationsChange: Event<Organization[]>
