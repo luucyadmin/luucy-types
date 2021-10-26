@@ -6,8 +6,7 @@
  * 
  * All upload handlers that match the pattern will be called.
  * 
- * @example 
- * //  Listen to all *.mymodel uploads
+ * @example // Listen to all *.mymodel uploads
  * const uploader = new Upload("*.mymodel");
  * uploader.onUpload.subscribe(file => {
  *     console.log("Uploaded ", file.name, ". Size: ", file.size, "bytes");
@@ -53,8 +52,7 @@ declare interface File {
     /** 
      * Reads the file as a string 
      * 
-     * @example 
-     * //  Reading the files content
+     * @example // Reading the files content
      * file.toString().then(content => {
      *     console.log("Contents of ", file.name, ": ", content);
      * });

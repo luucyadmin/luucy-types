@@ -23,8 +23,7 @@ declare class Variant {
     /** 
      * Will be called when the variants volume changes 
      * 
-     * @example 
-     * //  Listen to changes in the volume
+     * @example // Listen to changes in the volume
      * variant.onVolumeChange.subscribe(volume => {
      *     console.log("Volume of ", variant.name, " changed to ", volume, "m³")
      * });
@@ -34,8 +33,7 @@ declare class Variant {
     /** 
      * Will be called when the variants floor area changes 
      * 
-     * @example 
-     * //  Listen to changes in the area
+     * @example // Listen to changes in the area
      * variant.onFloorAreaChange.subscribe(area => {
      *     console.log("Area of ", variant.name, " changed to ", area, "m²")
      * });
