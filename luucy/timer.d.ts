@@ -14,7 +14,8 @@ declare const Timer: {
      * @param delay interval delay in miliseconds
      * @param executeImmediately setting this to false will prevent the interval from beeing executed immediately after beeing created
      * 
-     * @example Execute a piece of code every minute
+     * @example 
+     * //  Execute a piece of code every minute
      * console.log("creating interval...");
      * 
      * Timer.interval(index => {
@@ -33,7 +34,8 @@ declare const Timer: {
      * @param handler handler which should be called
      * @param delay delay in milisecond
      * 
-     * @example Execute a piece of code after 10 seconds
+     * @example 
+     * //  Execute a piece of code after 10 seconds
      * console.log("creating timeout...");
      * 
      * Timer.timeout(() => {
@@ -51,7 +53,8 @@ declare const Timer: {
  * 
  * Is created by using `Timer.interval(handler, delay)` or `Timer.timeout(handler, delay)`
  * 
- * @example Creating, canceling and manually firing interval
+ * @example 
+ * //  Creating, canceling and manually firing interval
  * const timer = Timer.interval(index => console.log("executed ", index, " times!"), 5000);
  * 
  * const fireButton = new ui.Button("Fire interval!", () => timer.fire());

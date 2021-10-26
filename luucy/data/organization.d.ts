@@ -28,7 +28,8 @@ declare class Organization {
 /** 
  * Is called with all organizations associated to the currently logged in user.
  * 
- * @example Show organizations
+ * @example 
+ * //  Show organizations
  * onOrganizationsChange.subscribe(organizations => {
  *     console.log("The current user is part of the following organizations:");
  * 

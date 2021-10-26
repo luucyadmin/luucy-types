@@ -15,7 +15,8 @@ declare class Project {
      * 
      * The event will be automatically called if a variant is already selected on page load / plugin install.
      * 
-     * @example Listen for variant select
+     * @example 
+     * //  Listen for variant select
      * project.onVariantSelect.subscribe(variant => {
      *     if (variant) {
      *         console.log("Selected variant: ", variant);
@@ -33,7 +34,8 @@ declare class Project {
  * 
  * The event will be automatically called if a project is already selected on page load / plugin install.
  * 
- * @example Listen for project select
+ * @example 
+ * //  Listen for project select
  * project.onProjectSelect.subscribe(project => {
  *     if (project) {
  *         console.log("Selected project: ", project);

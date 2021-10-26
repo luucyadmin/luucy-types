@@ -5,7 +5,8 @@ type EventHandler<T> = (argument: T) => any | void;
  * 
  * Luucy pushes various events to plugins to inform them about changes in the applications state.
  * 
- * @example Get notified when the user changes the project
+ * @example 
+ * // Get notified when the user changes the project
  * onProjectSelect.subscribe(project => {
  *     console.log("project selected: ", project);
  * });
@@ -32,7 +33,8 @@ declare class Event<T> {
      * 
      * Will call `handler` whenever any of the events fires
      * 
-     * @example Notifiy when a input value or immediate value changes
+     * @example 
+     * //  Notifiy when a input value or immediate value changes
      * const input = new ui.TextField("Example Field");
      * Event.subscribe(input.onValueChange, input.onImmediateValueChange, value => {
      *     console.log("Change", value);

@@ -1,7 +1,8 @@
 /** 
  * User interface components
  * 
- * @example creating a simple label and adding it to the left panel
+ * @example 
+ * //  creating a simple label and adding it to the left panel
  * const label = new ui.Label("Hello World!");
  * ui.areas.panel.add(label);
  */
@@ -22,7 +23,8 @@ declare namespace ui {
         /** 
          * Appends an element as a child 
          * 
-         * @example Creating a section and adding a label to it
+         * @example 
+         * //  Creating a section and adding a label to it
          * const section = new ui.Section("Example Section");
          * ui.areas.panel.add(section);
          * 
@@ -93,7 +95,8 @@ declare namespace ui {
          * A little `Provided by {your plugins name}` will be added after each element. 
          * Wrap your elements in `Container` to group them together and only get one provider label.
          * 
-         * @example Adding an empty section to the global panel area (`ui.areas.panel`)
+         * @example 
+         * //  Adding an empty section to the global panel area (`ui.areas.panel`)
          * const section = new ui.Section("Example Section");
          * ui.areas.panel.add(section);
          */
@@ -103,7 +106,8 @@ declare namespace ui {
     /** 
      * Vertical bar chart 
      * 
-     * @example Create a price chart
+     * @example 
+     * //  Create a price chart
      * const chart = new ui.BarChart("Total Cost", "$");
      * chart.addSegment("Plot", 100);
      * chart.addSegment("Building", 150);
@@ -126,12 +130,14 @@ declare namespace ui {
      * Displays a text. 
      * Use `LabeledValue` if you want to display a value on the right of a label.
      * 
-     * @example Creating a "Hello World" label
+     * @example 
+     * //  Creating a "Hello World" label
      * const label = new ui.Label("Hello World!");
      * 
      * section.add(label);
      * 
-     * @example Creating a timer
+     * @example 
+     * //  Creating a timer
      * const label = new ui.Label("");
      * section.add(label);
      * 
@@ -156,7 +162,8 @@ declare namespace ui {
      * Displays a label on the left with its value on the right.
      * A state can be added, which will add an icon.
      * 
-     * @example Adding a labeled value which updates whenever a project is selected
+     * @example 
+     * //  Adding a labeled value which updates whenever a project is selected
      * const labeledValue = new ui.LabeledValue("Project Name");
      * section.add(labeledValue);
      * 
@@ -207,7 +214,8 @@ declare namespace ui {
      * 
      * Buttons have a label and will fire the `Click` event when it is clicked
      * 
-     * @example Creating a button
+     * @example 
+     * //  Creating a button
      * // using handler constructor
      * const button = new ui.Button("Click me!", () => {
      *     console.log("Button Clicked!");
@@ -221,7 +229,8 @@ declare namespace ui {
      * 
      * section.add(button);
      * 
-     * @example Toggeling button
+     * @example 
+     * //  Toggeling button
      * let state = false;
      * 
      * const button = new ui.Button("Turn on", () => {
@@ -266,7 +275,8 @@ declare namespace ui {
      * 
      * Loads images from a remote server
      * 
-     * @example Loading a remote image
+     * @example 
+     * //  Loading a remote image
      * const image = new ui.Image("https://example.com/image");
      * 
      * section.add(image);
@@ -287,7 +297,8 @@ declare namespace ui {
      * 
      * As used in panels, compareable to "Data & usage", "Compare variants", ...
      * 
-     * @example Creating a section with a label, adding it to the left panel
+     * @example 
+     * //  Creating a section with a label, adding it to the left panel
      * const section = new ui.Section("Test Section");
      * ui.areas.panel.add(section);
      * 
@@ -308,7 +319,8 @@ declare namespace ui {
      * 
      * Can be used to combine multiple elements together to omit multiple "Provided by" labels.
      * 
-     * @example Creating a label & button inside of the left panel
+     * @example 
+     * //  Creating a label & button inside of the left panel
      * const container = new ui.Container();
      * ui.areas.panel.add(container);
      * 
@@ -328,7 +340,8 @@ declare namespace ui {
      * Creates a right panel. The panel will only be displayed when `.open()` is called. 
      * Do not automatically open a panels, wait for user input!
      * 
-     * @example Creating a panel and a button to open it
+     * @example 
+     * //  Creating a panel and a button to open it
      * const panel = new ui.Panel("Test Panel");
      * const label = new ui.Label();
      * 
@@ -374,7 +387,8 @@ declare namespace ui {
      * 
      * Creates a text field used for user input.
      *
-     * @example Create input
+     * @example 
+     * //  Create input
      * const input = new ui.TextField("Test Input", "Hello World");
      * input.onValueChange.subscribe(value => {
      *     console.log(value);
@@ -416,7 +430,8 @@ declare namespace ui {
          * The event is triggered whenever the user is changing the input.
          * Do not do heavy calculations, request or complex ui manipulations in here, as this event is called on every keystroke!
          * 
-         * @example Show a error message when the input is too long
+         * @example 
+         * //  Show a error message when the input is too long
          * // create error message label. content will be set later on
          * const errorMessage = new ui.Label();
          * errorMessage.hide();
@@ -445,7 +460,8 @@ declare namespace ui {
      * 
      * Creates a number field used for user input.
      *
-     * @example Create input
+     * @example 
+     * //  Create input
      * const input = new ui.TextField("Test Input", 100);
      * input.onValueChange.subscribe(value => {
      *     console.log(value);
@@ -487,7 +503,8 @@ declare namespace ui {
          * The event is triggered whenever the user is changing the input.
          * Do not do heavy calculations, request or complex ui manipulations in here, as this event is called on every keystroke!
          * 
-         * @example Calculate a price while the user is typing
+         * @example 
+         * //  Calculate a price while the user is typing
          * const basePrice = 69;
          * 
          * // price labeled value
@@ -509,7 +526,8 @@ declare namespace ui {
      * 
      * Displays multiple choices as bullet points.
      * 
-     * @example Price calculation based on apartment type
+     * @example 
+     * //  Price calculation based on apartment type
      * const types = [
      *     { name: "Basic Apartment", pricePerM2: 100 },
      *     { name: "Standard Apartment", pricePerM2: 150 },
@@ -563,11 +581,13 @@ declare namespace ui {
      * 
      * You can add appropriate data to any area you like.
      * 
-     * @example Adding a custom section to the left panel
+     * @example 
+     * //  Adding a custom section to the left panel
      * const section = new ui.Section("Test Section");
      * ui.areas.panel.add(section);
      * 
-     * @example Add a custom label and butto to the data and usage section
+     * @example 
+     * //  Add a custom label and butto to the data and usage section
      * // create a container to group all of our elements together
      * const container = new ui.Container();
      * ui.areas.dataAndUsage.add(container);
