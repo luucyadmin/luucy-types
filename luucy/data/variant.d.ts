@@ -11,32 +11,32 @@ declare class Variant {
     readonly name: string;
 
     /** 
-     * Contains the total area of all buildings and uses of this project variant 
+     * Contains the floor area of all buildings and uses of this project variant 
      */
-    readonly totalArea: number;
+    readonly floorArea: number;
 
     /** 
-     * Contains the total volume of all buildings and uses of this project variant 
+     * Contains the volume of all buildings and uses of this project variant 
      */
-    readonly totalVolume: number;
+    readonly volume: number;
 
     /** 
-     * Will be called when the variants total volume changes 
+     * Will be called when the variants volume changes 
      * 
      * @example Listen to changes in the volume
-     * variant.onTotalVolumeChange.subscribe(volume => {
+     * variant.onVolumeChange.subscribe(volume => {
      *     console.log("Volume of ", variant.name, " changed to ", volume, "m³")
      * });
      */
-    readonly onTotalVolumeChange: PluginEvent<number | null>;
+    readonly onVolumeChange: PluginEvent<number | null>;
 
     /** 
-     * Will be called when the variants total area changes 
+     * Will be called when the variants floor area changes 
      * 
      * @example Listen to changes in the area
-     * variant.onTotalAreaChange.subscribe(area => {
+     * variant.onFloorAreaChange.subscribe(area => {
      *     console.log("Area of ", variant.name, " changed to ", area, "m²")
      * });
      */
-    readonly onTotalAreaChange: PluginEvent<number | null>;
+    readonly onFloorAreaChange: PluginEvent<number | null>;
 }

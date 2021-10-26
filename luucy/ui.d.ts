@@ -17,7 +17,7 @@ declare namespace ui {
         /** 
          * References the elements parent element or area 
          */
-        readonly parent?: Element | Area;
+        readonly parent?: Element | Area<Element>;
 
         /** 
          * Appends an element as a child 
@@ -45,6 +45,39 @@ declare namespace ui {
          * Removes an element as a child 
          */
         remove(child: Element);
+
+        /**
+         * Indicates if the element is currently visible
+         * 
+         * Hide a element by calling `.hide()`
+         */
+        readonly visible;
+
+        /**
+         * Indicates if the element is currently hidden.
+         * If the element is not visible, make sure that it has been added with `.add()`!
+         * 
+         * Show a element by calling `.show()`
+         */
+        readonly hidden;
+
+        /**
+         * Makes an element visible after beeing hidden with `.hide()`.
+         * If the element is not visible, make sure that it has been added with `.add()`!
+         * 
+         * The element can be hidden again by calling `.hide()`. 
+         * This will change `.visible` and `.hidden`
+         */
+        show();
+
+        /**
+         * Hides an element from the view.
+         * Elements can be removed by calling `.remove(element)` on the parent.
+         * 
+         * The element can be shown again by calling `.show()`. 
+         * This will change `.visible` and `.hidden`
+         */
+        hide();
     }
 
     /** 
@@ -52,7 +85,7 @@ declare namespace ui {
      * 
      * The global areas are exposed in `ui.areas` (eg. `ui.areas.panel`, `ui.areas.dataAndUsage`, ...)
      */
-    interface Area {
+    interface Area<TChildren> {
         /** 
          * Adds an element to a area.
          * 
@@ -64,7 +97,7 @@ declare namespace ui {
          * const section = new ui.Section("Example Section");
          * ui.areas.panel.add(section);
          */
-        add(section: Element);
+        add(section: TChildren);
     }
 
     /** 
@@ -249,75 +282,339 @@ declare namespace ui {
         source: string;
     }
 
-    /** Panel Section */
+    /** 
+     * Section 
+     * 
+     * As used in panels, compareable to "Data & usage", "Compare variants", ...
+     * 
+     * @example Creating a section with a label, adding it to the left panel
+     * const section = new ui.Section("Test Section");
+     * ui.areas.panel.add(section);
+     * 
+     * const label = new ui.Label("Test Label");
+     * section.add(label);
+     */
     class Section extends Element {
+        /** 
+         * Creates a section 
+         * 
+         * @param name - Name of the section. Can't be changed after creating the section.
+         */
         constructor(name: string);
     }
 
-    /** Empty Container */
+    /** 
+     * Empty Container 
+     * 
+     * Can be used to combine multiple elements together to omit multiple "Provided by" labels.
+     * 
+     * @example Creating a label & button inside of the left panel
+     * const container = new ui.Container();
+     * ui.areas.panel.add(container);
+     * 
+     * const label = new ui.Label("Test Label");
+     * container.add(label);
+     * 
+     * const button = new ui.Button("Test Button");
+     * container.add(button);
+     */
     class Container extends Element {
         constructor();
     }
 
-    /** Panel */
-    class Panel implements Area {
+    /** 
+     * Panel 
+     * 
+     * Creates a right panel. The panel will only be displayed when `.open()` is called. 
+     * Do not automatically open a panels, wait for user input!
+     * 
+     * @example Creating a panel and a button to open it
+     * const panel = new ui.Panel("Test Panel");
+     * const label = new ui.Label();
+     * 
+     * panel.add(label);
+     * 
+     * const button = new ui.Button("Open Panel", () => {
+     *     label.content = `Opened at: ${new Date().toString()}`;
+     * 
+     *     panel.open();
+     * });
+     */
+    class Panel implements Area<Element> {
+        /** 
+         * Creates a panel 
+         * 
+         * @param name - The panels name. Can't be changed after the panel has been created.
+         */
         constructor(name: string);
 
+        /**
+         * Opens the panel
+         * 
+         * Do not open the panel automatically! Please wait for user input, eg. a button press!
+         * The panel can be closed programatically by calling `.close()`
+         */
         open();
+
+        /**
+         * Closes the panel
+         * 
+         * The panel can be opened again by calling `.open()`
+         */
         close();
 
-        add(section: Section);
+        /**
+         * Add an element to the panel
+         */
+        add(element: Element);
     }
 
-    /** Text input field */
+    /** 
+     * Text input field 
+     * 
+     * Creates a text field used for user input.
+     *
+     * @example Create input
+     * const input = new ui.TextField("Test Input", "Hello World");
+     * input.onValueChange.subscribe(value => {
+     *     console.log(value);
+     * });
+     * 
+     * section.add(input);
+     */
     class TextField extends Element {
-        constructor(label: string, value?: string);
+        constructor(label: string, value?: string, placeholder?: string);
 
+        /**
+         * Describes the purpose of an input and is displayed next to the field
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
         label: string;
+
+        /**
+         * The gray text visible in the text field when no text has been entered
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
         placeholder: string;
 
+        /**
+         * The fields content as entered by the user.
+         * Setting this programatically will trigger the `onValueChange` event.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` event instead!
+         */
         value: string;
 
+        /**
+         * The event is triggered whenever the user changes the input.
+         */
         onValueChange: PluginEvent<string>;
+
+        /**
+         * The event is triggered whenever the user is changing the input.
+         * Do not do heavy calculations, request or complex ui manipulations in here, as this event is called on every keystroke!
+         * 
+         * @example Show a error message when the input is too long
+         * // create error message label. content will be set later on
+         * const errorMessage = new ui.Label();
+         * errorMessage.hide();
+         * 
+         * section.add(errorMessage);
+         * 
+         * // create input field
+         * const input = new ui.Input("Project Name");
+         *
+         * input.onImmediateValueChange.subscribe(value => {
+         *     if (value.length > 25) {
+         *         errorMessage.content = `Project name is ${value.length - 25} characters too long!`;
+         *         errorMessage.show();
+         *     } else {
+         *         errorMessage.hide();
+         *     }
+         * });
+         * 
+         * section.add(input);
+         */
         onImmediateValueChange: PluginEvent<string>;
     }
 
-    /** Number input field */
+    /** 
+     * Number input field 
+     * 
+     * Creates a number field used for user input.
+     *
+     * @example Create input
+     * const input = new ui.TextField("Test Input", 100);
+     * input.onValueChange.subscribe(value => {
+     *     console.log(value);
+     * });
+     * 
+     * section.add(input);
+     */
     class NumberField extends Element {
-        constructor(label: string, value?: number);
+        constructor(label: string, value?: number, placeholder?: string);
 
+        /**
+         * Describes the purpose of an input and is displayed next to the field
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
         label: string;
+
+        /**
+         * The gray text visible in the text field when no text has been entered
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
         placeholder: string;
 
+        /**
+         * The fields number as entered by the user.
+         * Setting this programatically will trigger the `onValueChange` event.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` event instead!
+         */
         value: number;
 
+        /**
+         * The event is triggered whenever the user changes the input.
+         */
         onValueChange: PluginEvent<number>;
+
+        /**
+         * The event is triggered whenever the user is changing the input.
+         * Do not do heavy calculations, request or complex ui manipulations in here, as this event is called on every keystroke!
+         * 
+         * @example Calculate a price while the user is typing
+         * const basePrice = 69;
+         * 
+         * // price labeled value
+         * const heatingCostLabel = new ui.LabeledValue("Heating Cost");
+         * section.add(heatingCostLabel);
+         * 
+         * // create input field
+         * const areaInput = new ui.Input("Area");
+         *
+         * areaInput.onImmediateValueChange.subscribe(value => {
+         *     heatingCostLabel.value = basePrice * value;
+         * });
+         */
         onImmediateValueChange: PluginEvent<number>;
     }
 
-    /** Number input field */
+    /** 
+     * Radio input field 
+     * 
+     * Displays multiple choices as bullet points.
+     * 
+     * @example Price calculation based on apartment type
+     * const types = [
+     *     { name: "Basic Apartment", pricePerM2: 100 },
+     *     { name: "Standard Apartment", pricePerM2: 150 },
+     *     { name: "Luxury Apartment", pricePerM2: 250 },
+     * ];
+     * 
+     * const area = 69;
+     * 
+     * const priceLabel = new ui.LabeledValue("Price");
+     * section.add(area);
+     * 
+     * const typeSelect = new ui.RadioField("Apartment Type", types, types[1], type => type.name);
+     * typeSelect.onValueChange.subscribe(type => {
+     *     priceLabel = type.pricePerM2 * area;
+     * });
+     */
     class RadioField<T> extends Element {
-        constructor(label: string, values: T[], value?: T, transoform?: (item: T) => string);
+        /**
+         * Create a radio field
+         * 
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param values - The values that can be seletced
+         * @param value - What is currently selected. This can be null
+         * @param transform - How to convert a value into a string for displaying it. 
+         */
+        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string);
 
+        /**
+         * Describes the purpose of an input and is displayed next to the field
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
         label: string;
 
+        /**
+         * The fields selected radio value.
+         * Setting this programatically will trigger the `onValueChange` event.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` event instead!
+         */
         value: T;
 
+        /**
+         * The event is triggered whenever the user selects another radio.
+         */
         onValueChange: PluginEvent<T>;
     }
 
-    /** Global areas */
+    /** 
+     * Global areas 
+     * 
+     * You can add appropriate data to any area you like.
+     * 
+     * @example Adding a custom section to the left panel
+     * const section = new ui.Section("Test Section");
+     * ui.areas.panel.add(section);
+     * 
+     * @example Add a custom label and butto to the data and usage section
+     * // create a container to group all of our elements together
+     * const container = new ui.Container();
+     * ui.areas.dataAndUsage.add(container);
+     * 
+     * // add our label and button to the container
+     * const label = new ui.Label("Example Label");
+     * container.add(label);
+     * 
+     * const button = new ui.Button("Example Button", () => console.log("clicked"));
+     * container.add(button);
+     */
     const areas: {
-        /** Left Project Panel */
-        panel: Area,
+        /** 
+         * Left Panel 
+         * 
+         * Add a custom section if the plugin/elements don't fit in the predefined areas (`buildingAndCosts`, `dataAndUsage`, ...).
+         */
+        panel: Area<Section>,
 
-        /** Building Costs Panel */
-        buildingAndCosts: Area,
+        /** 
+         * Building Costs Panel 
+         * 
+         * Elements and properties regarding a variants building costs can be added to this area.
+         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
+         * 
+         * A 'Provided by' label will automatically be added to every element added to this area.
+         */
+        buildingAndCosts: Area<Exclude<Element, Section>>,
 
-        /** Data and Usage Panel */
-        dataAndUsage: Area,
+        /** 
+         * Data and Usage Panel 
+         * 
+         * Elements and properties regarding a variants general data (like Volume, Area, ...) can be added to this area.
+         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
+         * 
+         * A 'Provided by' label will automatically be added to every element added to this area.
+         */
+        dataAndUsage: Area<Exclude<Element, Section>>,
 
-        /** Compare Variants Panel */
-        compareVariants: Area
+        /** 
+         * Compare Variants Panel
+         * 
+         * Elements and properties comparing variants can be added to this area.
+         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
+         * 
+         * A 'Provided by' label will automatically be added to every element added to this area.
+         */
+        compareVariants: Area<Exclude<Element, Section>>
     }
 }
