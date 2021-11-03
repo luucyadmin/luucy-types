@@ -53,6 +53,56 @@ declare namespace map {
         constructor(position: Position);
 
         /**
+         * Returns the current position of the marker
+         */
+        readonly position: Position;
+
+        /**
+         * Indicates if the element is currently visible
+         * 
+         * Hide a marker by calling `.hide()`
+         */
+        readonly visible: boolean;
+
+        /**
+         * Indicates if the marker is currently hidden.
+         * 
+         * Show a element by calling `.show()`
+         */
+        readonly hidden: boolean;
+
+        /**
+         * Hides the marker temporarely
+         * 
+         * Use `.remove()` to fully remove the marker from the map!
+         * 
+         * The marker can be shown again by calling `.show()`
+         * Will change `.visible` and `.hidden`
+         */
+        hide();
+
+        /**
+         * Shows the marker after beeing hidden by `.hide()`
+         * 
+         * Will change `.visible` and `.hidden`
+         */
+        show();
+
+        /**
+         * Moves the marker to the defined position.
+         * 
+         * To refocus your marker, call `.focus()`
+         */
+        move(position: Position);
+
+        /**
+         * Moves marker by lat, long and height.
+         * 
+         * To refocus your marker, call `.focus()`
+         */
+        moveBy(latitude: number, longitude: number, height: number);
+
+        /**
          * Will move the camera to the marker.
          * 
          * Do not automatically focus a marker without any user interaction!
