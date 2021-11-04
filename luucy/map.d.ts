@@ -41,22 +41,7 @@ declare namespace map {
         height?: number;
     }
 
-    /**
-     * Marker
-     * 
-     * A marker is automatically added to the map when created, indicating a significant location.
-     * 
-     * @example // Show a marker at the lucerne main station
-     * new map.Marker(new map.Position(8.3157369, 47.0469494, 460));
-     */
-    class Marker {
-        constructor(position: Position);
-
-        /**
-         * Returns the current position of the marker
-         */
-        readonly position: Position;
-
+    class MapElement {
         /**
          * Indicates if the element is currently visible
          * 
@@ -65,28 +50,61 @@ declare namespace map {
         readonly visible: boolean;
 
         /**
-         * Indicates if the marker is currently hidden.
+         * Indicates if the element is currently hidden.
          * 
          * Show a element by calling `.show()`
          */
         readonly hidden: boolean;
 
         /**
-         * Hides the marker temporarely
+         * Hides the element temporarely
          * 
-         * Use `.remove()` to fully remove the marker from the map!
+         * Use `.remove()` to fully remove the element from the map!
          * 
-         * The marker can be shown again by calling `.show()`
+         * The element can be shown again by calling `.show()`
          * Will change `.visible` and `.hidden`
          */
         hide();
 
         /**
-         * Shows the marker after beeing hidden by `.hide()`
+         * Shows the element after beeing hidden by `.hide()`
          * 
          * Will change `.visible` and `.hidden`
          */
         show();
+
+        /**
+         * Will move the camera to the element.
+         * 
+         * Do not automatically focus a element without any user interaction!
+         */
+         focus();
+
+         /**
+          * Removes the element from the map.
+          */
+         remove();
+    }
+
+    /**
+     * Marker
+     * 
+     * A marker is automatically added to the map when created, indicating a significant location.
+     * 
+     * @example // Show a marker at the lucerne main station
+     * new map.Marker(new map.Position(8.3157369, 47.0469494, 460));
+     * 
+     * ui.areas.panel.add(
+     *     new ui.Button("I want to see the station!", () => marker.focus())
+     * );
+     */
+    class Marker extends MapElement {
+        constructor(position: Position);
+
+        /**
+         * Returns the current position of the marker
+         */
+        readonly position: Position;
 
         /**
          * Moves the marker to the defined position.
@@ -101,17 +119,27 @@ declare namespace map {
          * To refocus your marker, call `.focus()`
          */
         moveBy(latitude: number, longitude: number, height: number);
+    }
 
-        /**
-         * Will move the camera to the marker.
-         * 
-         * Do not automatically focus a marker without any user interaction!
-         */
-        focus();
-
-        /**
-         * Removes the marker from the map.
-         */
-        remove();
+    /**
+     * Polygon
+     * 
+     * A polygon is a shape built out of multiple points with a flat top and bottom area. 
+     * It is perfect to display bounds or building props.
+     * 
+     * @example // Create a utopian skyliner at lucerne main station
+     * const polygon = new map.Polygon([
+     *     new map.Position(8.310263, 47.050390),
+     *     new map.Position(8.311263, 47.050390),
+     *     new map.Position(8.311263, 47.051390),
+     *     new map.Position(8.310263, 47.051390),
+     * ], 484, 1000);
+     * 
+     * ui.areas.panel.add(
+     *     new ui.Button("Show me the 1000m tower!", () => polygon.focus())
+     * );
+     */
+    class Polygon extends MapElement {
+        constructor(positions: Position[], baseHeight: number, polygonHeight: number);
     }
 }
