@@ -220,6 +220,24 @@ interface Array<T> {
      * length+end.
      */
     fill(value: T, start?: number, end?: number): this;
+
+    /** Iterator */
+    [Symbol.iterator](): IterableIterator<T>;
+
+    /**
+     * Returns an iterable of key, value pairs for every entry in the array
+     */
+    entries(): IterableIterator<[number, T]>;
+
+    /**
+     * Returns an iterable of keys in the array
+     */
+    keys(): IterableIterator<number>;
+
+    /**
+     * Returns an iterable of values in the array
+     */
+    values(): IterableIterator<T>;
 }
 
 interface ConcatArray<T> {

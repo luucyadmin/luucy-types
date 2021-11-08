@@ -1,3 +1,6 @@
+/// <reference path="symbol.d.ts" />
+/// <reference path="iterable.d.ts" />
+
 /// <reference path="array.d.ts" />
 /// <reference path="boolean.d.ts" />
 /// <reference path="date.d.ts" />
