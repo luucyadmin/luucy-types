@@ -14,11 +14,11 @@ declare namespace map {
      * 
      * The latitude and longitude are in the format used by most maps (Google Maps, ...).
      * 
-     * @example const lucerne = new map.Position(8.310263, 47.050390, 460),
-     * @example const zurich = new map.Position(8.5414963, 47.3774162, 460),
-     * @example const paris = new map.Position(2.2942959, 48.8578516, 150),
-     * @example const newYork = new map.Position(-74.045940, 40.689834, 20),
-     * @example const london = new map.Position(-0.123705, 51.500822, 150);
+     * @example const lucerne = new map.Position(8.310263, 47.050390),
+     * @example const zurich = new map.Position(8.5414963, 47.3774162),
+     * @example const paris = new map.Position(2.2942959, 48.8578516),
+     * @example const newYork = new map.Position(-74.045940, 40.689834),
+     * @example const london = new map.Position(-0.123705, 51.500822);
      */
     class Position {
         constructor(latitude: number, longitude: number, height?: number);
@@ -76,7 +76,7 @@ declare namespace map {
         /**
          * Will move the camera to the element.
          * 
-         * Do not automatically focus a element without any user interaction!
+         * Do not focus an element without any user interaction!
          */
          focus();
 
@@ -90,9 +90,10 @@ declare namespace map {
      * Marker
      * 
      * A marker is automatically added to the map when created, indicating a significant location.
+     * Setting a `height` value in the passed position will make the marker float above the ground.
      * 
      * @example // Show a marker at the lucerne main station
-     * new map.Marker(new map.Position(8.3157369, 47.0469494, 460));
+     * new map.Marker(new map.Position(8.3157369, 47.0469494));
      * 
      * ui.areas.panel.add(
      *     new ui.Button("I want to see the station!", () => marker.focus())
@@ -142,4 +143,11 @@ declare namespace map {
     class Polygon extends MapElement {
         constructor(positions: Position[], baseHeight: number, polygonHeight: number);
     }
+
+    /**
+     * Focuses multiple elements at once. The map will zoom out to try to show all elements at once.
+     * 
+     * Do not focus a element without any user interaction!
+     */
+    function focus(elements: MapElement[]);
 }
