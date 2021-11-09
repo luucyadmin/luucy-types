@@ -92,6 +92,9 @@ declare namespace map {
      * A marker is automatically added to the map when created, indicating a significant location.
      * Setting a `height` value in the passed position will make the marker float above the ground.
      * 
+     * The color will default to `Color.luucyBrand`.
+     * A label may be provided, but it should not be longer than 2 characters.
+     * 
      * @example // Show a marker at the lucerne main station
      * new map.Marker(new map.Position(8.3157369, 47.0469494));
      * 
@@ -100,7 +103,7 @@ declare namespace map {
      * );
      */
     class Marker extends MapElement {
-        constructor(position: Position);
+        constructor(position: Position, color?: Color, label?: string);
 
         /**
          * Returns the current position of the marker
@@ -126,7 +129,7 @@ declare namespace map {
      * Polygon
      * 
      * A polygon is a shape built out of multiple points with a flat top and bottom area. 
-     * It is perfect to display bounds or building props.
+     * It is perfect to display simple buildings.
      * 
      * @example // Create a utopian skyliner at lucerne main station
      * const polygon = new map.Polygon([
@@ -134,14 +137,26 @@ declare namespace map {
      *     new map.Position(8.311263, 47.050390),
      *     new map.Position(8.311263, 47.051390),
      *     new map.Position(8.310263, 47.051390),
-     * ], 484, 1000);
+     * ], 1000);
      * 
      * ui.areas.panel.add(
      *     new ui.Button("Show me the 1000m tower!", () => polygon.focus())
      * );
      */
     class Polygon extends MapElement {
-        constructor(positions: Position[], baseHeight: number, polygonHeight: number);
+        constructor(positions: Position[], height: number, color?: Color);
+    }
+
+    /**
+     * Colors the ground and objects on top of it within the area defined by the positions.
+     */
+     class ColoredArea {
+        constructor(points: Position[], color?: Color);
+
+        /**
+          * Removes the colored area from the map.
+          */
+        remove();
     }
 
     /**
