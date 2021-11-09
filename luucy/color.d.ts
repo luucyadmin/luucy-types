@@ -39,6 +39,13 @@ declare class Color {
     static fromHSL(hue: number, saturation: number, lightness: number): Color;
 
     /**
+     * Creates a random color
+     * 
+     * The colors are not fully random, they will range from 30 - 70% saturation and ligthness.
+     */
+    static random(): Color;
+
+    /**
      * Converts the color to a hex string
      * 
      * @example Color.fromRGB(255, 0, 0).toHex() // -> "#ff0000"

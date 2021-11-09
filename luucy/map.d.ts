@@ -2,7 +2,7 @@
  * Interactions with luucys main map.
  * 
  * @example // Creating a marker and a button to focus it
- * const marker = new map.Marker(new map.Position(8.3157369, 47.0469494, 460));
+ * const marker = new map.Marker(new map.Position(47.0469494, 8.3157369));
  * 
  * section.add(new ui.Button("Focus Marker", () => {
  *     marker.focus();
@@ -14,11 +14,11 @@ declare namespace map {
      * 
      * The latitude and longitude are in the format used by most maps (Google Maps, ...).
      * 
-     * @example const lucerne = new map.Position(8.310263, 47.050390),
-     * @example const zurich = new map.Position(8.5414963, 47.3774162),
-     * @example const paris = new map.Position(2.2942959, 48.8578516),
-     * @example const newYork = new map.Position(-74.045940, 40.689834),
-     * @example const london = new map.Position(-0.123705, 51.500822);
+     * @example const lucerne = new map.Position(47.050390, 8.310263),
+     * @example const zurich = new map.Position(47.3774162, 8.5414963),
+     * @example const paris = new map.Position(48.8578516, 2.2942959),
+     * @example const newYork = new map.Position(40.689834, -74.045940),
+     * @example const london = new map.Position(51.500822, -0.123705);
      */
     class Position {
         constructor(latitude: number, longitude: number, height?: number);
@@ -39,6 +39,11 @@ declare namespace map {
          * Height in meters above sealevel.
          */
         height?: number;
+
+        /**
+         * Creates a copy of the position, without the `height` component.
+         */
+        flattenedCopy(): Position;
     }
 
     class MapElement {
@@ -96,7 +101,7 @@ declare namespace map {
      * A label may be provided, but it should not be longer than 2 characters.
      * 
      * @example // Show a marker at the lucerne main station
-     * new map.Marker(new map.Position(8.3157369, 47.0469494));
+     * new map.Marker(new map.Position(47.0469494, 8.3157369));
      * 
      * ui.areas.panel.add(
      *     new ui.Button("I want to see the station!", () => marker.focus())
@@ -133,10 +138,10 @@ declare namespace map {
      * 
      * @example // Create a utopian skyliner at lucerne main station
      * const polygon = new map.Polygon([
-     *     new map.Position(8.310263, 47.050390),
-     *     new map.Position(8.311263, 47.050390),
-     *     new map.Position(8.311263, 47.051390),
-     *     new map.Position(8.310263, 47.051390),
+     *     new map.Position(47.050390, 8.310263),
+     *     new map.Position(47.050390, 8.311263),
+     *     new map.Position(47.051390, 8.311263),
+     *     new map.Position(47.051390, 8.310263),
      * ], 1000);
      * 
      * ui.areas.panel.add(
@@ -165,4 +170,16 @@ declare namespace map {
      * Do not focus a element without any user interaction!
      */
     function focus(elements: MapElement[]);
+
+    /**
+     * On Position Select
+     * 
+     * The event will be emitted when the user clicks somewhere on the map.
+     * 
+     * @example // Add a marker where the user clicked
+     * map.onPositionSelect.subscribe(position => {
+     *     new map.Marker(position.flattenedCopy(), Color.random());
+     * });
+     */
+    const onPositionSelect: Event<Position>;
 }
