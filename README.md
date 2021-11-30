@@ -4,7 +4,7 @@
 Go to [luucy cli repository](https://github.com/luucyadmin/luucy-cli) to get started with plugin development.
 
 # Documentation
-Environnement:
+Environment:
 - [console](modules/console.md)
 - [error](modules/error.md)
 - [event](modules/event.md)
