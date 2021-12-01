@@ -8,43 +8,9 @@
 declare namespace ui {
     class Element {
         /** 
-         * Contains all child elements. 
-         * 
-         * Modify the children by using `add()`, `insertAfter()`, `insertBefore()` and `remove()`
-        */
-        readonly children: Element[];
-
-        /** 
          * References the elements parent element or area 
          */
         readonly parent?: Element | Area<Element>;
-
-        /** 
-         * Appends an element as a child 
-         * 
-         * @example // Creating a section and adding a label to it
-         * const section = new ui.Section("Example Section");
-         * ui.areas.panel.add(section);
-         * 
-         * const label = new ui.Label("Hello World");
-         * section.add(label);
-         */
-        add(element: Element);
-
-        /** 
-         * Appends an element as a child after the reference element 
-         */
-        insertAfter(child: Element, after: Element);
-
-        /** 
-         * Appends an element as a child before the reference element 
-         */
-        insertBefore(child: Element, before: Element);
-
-        /** 
-         * Removes an element as a child 
-         */
-        remove(child: Element);
 
         /**
          * Indicates if the element is currently visible
@@ -78,6 +44,42 @@ declare namespace ui {
          * This will change `.visible` and `.hidden`
          */
         hide();
+    }
+
+    interface ElementContainer {
+        /** 
+         * Contains all child elements. 
+         * 
+         * Modify the children by using `add()`, `insertAfter()`, `insertBefore()` and `remove()`
+         */
+        readonly children: Element[];
+
+        /** 
+         * Appends an element as a child 
+         * 
+         * @example // Creating a section and adding a label to it
+         * const section = new ui.Section("Example Section");
+         * ui.areas.panel.add(section);
+         * 
+         * const label = new ui.Label("Hello World");
+         * section.add(label);
+         */
+        add(element: Element);
+
+        /** 
+         * Appends an element as a child after the reference element 
+         */
+        insertAfter(child: Element, after: Element);
+
+        /** 
+         * Appends an element as a child before the reference element 
+         */
+        insertBefore(child: Element, before: Element);
+
+        /** 
+         * Removes an element as a child 
+         */
+        remove(child: Element);
     }
 
     /** 
@@ -294,13 +296,19 @@ declare namespace ui {
      * const label = new ui.Label("Test Label");
      * section.add(label);
      */
-    class Section extends Element {
+    class Section extends Element implements ElementContainer {
         /** 
          * Creates a section 
          * 
          * @param name - Name of the section. Can't be changed after creating the section.
          */
         constructor(name: string);
+
+        readonly children: Element[];
+        add(element: Element);
+        insertAfter(child: Element, after: Element);
+        insertBefore(child: Element, before: Element);
+        remove(child: Element);
     }
 
     /** 
@@ -318,8 +326,14 @@ declare namespace ui {
      * const button = new ui.Button("Test Button");
      * container.add(button);
      */
-    class Container extends Element {
+    class Container extends Element implements ElementContainer {
         constructor();
+
+        readonly children: Element[];
+        add(element: Element);
+        insertAfter(child: Element, after: Element);
+        insertBefore(child: Element, before: Element);
+        remove(child: Element);
     }
 
     /** 
