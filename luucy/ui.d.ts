@@ -709,4 +709,30 @@ declare namespace ui {
          */
         compareVariants: Area<Exclude<Element, Section>>
     }
+
+    /**
+     * Luucy fullscreen / embedded mode
+     * 
+     * Fullscren mode hides all panels and bars.
+     * 
+     * @example // Enable fullscreen for 5 seconds
+     * const button = new ui.Button("Enable Fullscreen (5s)", () => {
+     *     ui.fullscreen.enable();
+     * 
+     *     Timer.timeout(() => ui.fullscreen.disable(), 5000);
+     * });
+     */
+    const fullscreen: {
+        /**
+         * Enables fullscreen mode
+         * 
+         * Do not enable fullscreen mode without any user interaction!
+         */
+        enable();
+
+        /**
+         * Disables fullscreen mode
+         */
+        disable();
+    }
 }
