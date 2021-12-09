@@ -44,6 +44,11 @@ declare namespace map {
          * Creates a copy of the position, without the `height` component.
          */
         flattenedCopy(): Position;
+
+        /**
+         * Creates a copy of the position, optionally offset by `offsetLatitude` and `offsetLongitude`
+         */
+        copy(offsetLatitude?, offsetLongitude?): Position;
     }
 
     class MapElement {
@@ -128,6 +133,15 @@ declare namespace map {
          * To refocus your marker, call `.focus()`
          */
         moveBy(latitude: number, longitude: number, height: number);
+
+        /**
+         * Called whenever the marker is clicked on
+         * 
+         * @example // Focus a selected marker
+         * const marker = new map.Marker(position);
+         * marker.onSelect.subscribe(() => marker.focus());
+         */
+        onSelect: Event<void>;
     }
 
     /**
