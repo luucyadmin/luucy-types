@@ -55,10 +55,10 @@ declare const Timer: {
  * const timer = Timer.interval(index => console.log("executed ", index, " times!"), 5000);
  * 
  * const fireButton = new ui.Button("Fire interval!", () => timer.fire());
- * ui.areas.panel.add(fireButton);
+ * section.add(fireButton);
  * 
  * const cancelButton = new ui.Button("Cancel interval!", () => timer.cancel());
- * ui.areas.panel.add(cancelButton);
+ * section.add(cancelButton);
  */
 declare class TimerInstance {
     /**

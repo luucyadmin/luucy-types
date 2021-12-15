@@ -2,10 +2,24 @@
  * User interface components
  * 
  * @example // creating a simple label and adding it to the left panel
- * const label = new ui.Label("Hello World!");
- * ui.areas.panel.add(label);
+ * const section = ui.createProjectPanelSection();
+ * section.add(new ui.Label("Hello World!"));
+ * 
+ * section.add(new ui.Button("Click Me!", () => {
+ *     console.log("I was clicked!");
+ * }));
  */
 declare namespace ui {
+    /**
+     * Creates a section for your application in the project panel.
+     * The section will automatically be added to the panel.
+     * 
+     * @example // Create section
+     * const section = ui.createProjectPanelSection();
+     * section.add(new ui.Label("Test application section!"));
+     */
+    function createProjectPanelSection(): Container;
+
     class Element {
         /** 
          * References the elements parent element or area 
@@ -58,8 +72,7 @@ declare namespace ui {
          * Appends an element as a child 
          * 
          * @example // Creating a section and adding a label to it
-         * const section = new ui.Section("Example Section");
-         * ui.areas.panel.add(section);
+         * const section = ui.createProjectPanelSection();
          * 
          * const label = new ui.Label("Hello World");
          * section.add(label);
@@ -80,26 +93,6 @@ declare namespace ui {
          * Removes an element as a child 
          */
         remove(child: Element);
-    }
-
-    /** 
-     * Plugin Area
-     * 
-     * The global areas are exposed in `ui.areas` (eg. `ui.areas.panel`, `ui.areas.dataAndUsage`, ...)
-     */
-    interface Area<TChildren> {
-        /** 
-         * Adds an element to a area.
-         * 
-         * Adding elements (preferably a `Section`) to an area will display them inside of the area.
-         * A little `Provided by {your plugins name}` will be added after each element. 
-         * Wrap your elements in `Container` to group them together and only get one provider label.
-         * 
-         * @example // Adding an empty section to the global panel area (`ui.areas.panel`)
-         * const section = new ui.Section("Example Section");
-         * ui.areas.panel.add(section);
-         */
-        add(section: TChildren);
     }
 
     /** 
@@ -290,8 +283,10 @@ declare namespace ui {
      * As used in panels, compareable to "Data & usage", "Compare variants", ...
      * 
      * @example // Creating a section with a label, adding it to the left panel
+     * const appSection = ui.createProjectPanelSection();
+     * 
      * const section = new ui.Section("Test Section");
-     * ui.areas.panel.add(section);
+     * appSection.add(section);
      * 
      * const label = new ui.Label("Test Label");
      * section.add(label);
@@ -314,11 +309,9 @@ declare namespace ui {
     /** 
      * Empty Container 
      * 
-     * Can be used to combine multiple elements together to omit multiple "Provided by" labels.
-     * 
      * @example // Creating a label & button inside of the left panel
      * const container = new ui.Container();
-     * ui.areas.panel.add(container);
+     * section.add(container);
      * 
      * const label = new ui.Label("Test Label");
      * container.add(label);
@@ -648,66 +641,6 @@ declare namespace ui {
          * Do not do heavy calculations, requests or complex ui manipulations in here, as this event is called on every tiny movement of the mouse!
          */
         onImmediateValueChange: Event<number>;
-    }
-
-    /** 
-     * Global areas 
-     * 
-     * You can add appropriate data to any area you like.
-     * 
-     * @example // Adding a custom section to the left panel
-     * const section = new ui.Section("Test Section");
-     * ui.areas.panel.add(section);
-     * 
-     * @example // Add a custom label and butto to the data and usage section
-     * // create a container to group all of our elements together
-     * const container = new ui.Container();
-     * ui.areas.dataAndUsage.add(container);
-     * 
-     * // add our label and button to the container
-     * const label = new ui.Label("Example Label");
-     * container.add(label);
-     * 
-     * const button = new ui.Button("Example Button", () => console.log("clicked"));
-     * container.add(button);
-     */
-    const areas: {
-        /** 
-         * Left Panel 
-         * 
-         * Add a custom section if the plugin/elements don't fit in the predefined areas (`buildingAndCosts`, `dataAndUsage`, ...).
-         */
-        panel: Area<Section>,
-
-        /** 
-         * Building Costs Panel 
-         * 
-         * Elements and properties regarding a variants building costs can be added to this area.
-         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
-         * 
-         * A 'Provided by' label will automatically be added to every element added to this area.
-         */
-        buildingAndCosts: Area<Exclude<Element, Section>>,
-
-        /** 
-         * Data and Usage Panel 
-         * 
-         * Elements and properties regarding a variants general data (like Volume, Area, ...) can be added to this area.
-         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
-         * 
-         * A 'Provided by' label will automatically be added to every element added to this area.
-         */
-        dataAndUsage: Area<Exclude<Element, Section>>,
-
-        /** 
-         * Compare Variants Panel
-         * 
-         * Elements and properties comparing variants can be added to this area.
-         * If multiple elements are added, make sure to group them in a `new ui.Container()`!
-         * 
-         * A 'Provided by' label will automatically be added to every element added to this area.
-         */
-        compareVariants: Area<Exclude<Element, Section>>
     }
 
     /**

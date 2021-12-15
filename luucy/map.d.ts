@@ -108,7 +108,7 @@ declare namespace map {
      * @example // Show a marker at the lucerne main station
      * new map.Marker(new map.Position(47.0469494, 8.3157369));
      * 
-     * ui.areas.panel.add(
+     * section.add(
      *     new ui.Button("I want to see the station!", () => marker.focus())
      * );
      */
@@ -158,7 +158,7 @@ declare namespace map {
      *     new map.Position(47.051390, 8.310263),
      * ], 1000);
      * 
-     * ui.areas.panel.add(
+     * section.add(
      *     new ui.Button("Show me the 1000m tower!", () => polygon.focus())
      * );
      */
