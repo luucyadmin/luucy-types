@@ -51,7 +51,7 @@ declare namespace ui {
         /** 
          * References the elements parent element or area 
          */
-        readonly parent?: Element | Area<Element>;
+        readonly parent?: Element;
 
         /**
          * Indicates if the element is currently visible

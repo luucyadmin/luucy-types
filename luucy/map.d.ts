@@ -48,7 +48,7 @@ declare namespace map {
         /**
          * Creates a copy of the position, optionally offset by `offsetLatitude` and `offsetLongitude`
          */
-        copy(offsetLatitude?, offsetLongitude?): Position;
+        copy(offsetLatitude?, offsetLongitude?, height?): Position;
     }
 
     class MapElement {
