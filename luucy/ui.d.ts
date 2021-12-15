@@ -1,3 +1,9 @@
+declare enum State {
+    success,
+    warn,
+    danger
+}
+
 /** 
  * User interface components
  * 
@@ -10,6 +16,27 @@
  * }));
  */
 declare namespace ui {
+    /**
+     * Danger State
+     * 
+     * section.add(new ui.Note(ui.danger, "Yeah, this went south!"));
+     */
+    const danger: State;
+
+    /**
+     * Warn State
+     * 
+     * section.add(new ui.Note(ui.warn, "Oh no!"));
+     */
+    const warn: State;
+
+    /**
+     * Success State
+     * 
+     * section.add(new ui.Note(ui.success, "Some Good News"));
+     */
+    const success: State;
+
     /**
      * Creates a section for your application in the project panel.
      * The section will automatically be added to the panel.
@@ -194,7 +221,17 @@ declare namespace ui {
          * 
          * Can be changed after beeing added to an area/element and will automatically update.
          */
-        state: null | "success" | "warn" | "danger";
+        state: State;
+    }
+
+    /** 
+     * Vertical bar chart 
+     * 
+     * @example // Create a note
+     * section.add(new ui.Note(ui.danger, "This did not go well!"));
+     */
+    class Note extends Element {
+        constructor(state: State, message?: string);
     }
 
     /** 
