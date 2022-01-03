@@ -4,7 +4,7 @@
  * @example // Creating a marker and a button to focus it
  * const marker = new map.Marker(new map.Position(47.0469494, 8.3157369));
  * 
- * section.add(new ui.Button("Focus Marker", () => {
+ * section.add(new ui.Button(ui.icons.pointOfInterest, "Focus Marker", () => {
  *     marker.focus();
  * }));
  */
@@ -109,7 +109,7 @@ declare namespace map {
      * new map.Marker(new map.Position(47.0469494, 8.3157369));
      * 
      * section.add(
-     *     new ui.Button("I want to see the station!", () => marker.focus())
+     *     new ui.Button(ui.icons.pointOfInterest, "I want to see the station!", () => marker.focus())
      * );
      */
     class Marker extends MapElement {
@@ -159,7 +159,7 @@ declare namespace map {
      * ], 1000);
      * 
      * section.add(
-     *     new ui.Button("Show me the 1000m tower!", () => polygon.focus())
+     *     new ui.Button(ui.icons.building, "Show me the 1000m tower!", () => polygon.focus())
      * );
      */
     class Polygon extends MapElement {

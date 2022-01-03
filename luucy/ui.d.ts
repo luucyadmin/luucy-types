@@ -11,7 +11,7 @@ declare enum State {
  * const section = ui.createProjectPanelSection();
  * section.add(new ui.Label("Hello World!"));
  * 
- * section.add(new ui.Button("Click Me!", () => {
+ * section.add(new ui.Button(ui.icons.play, "Click Me!", () => {
  *     console.log("I was clicked!");
  * }));
  */
@@ -241,12 +241,12 @@ declare namespace ui {
      * 
      * @example // Creating a button
      * // using handler constructor
-     * const button = new ui.Button("Click me!", () => {
+     * const button = new ui.Button(ui.icons.play, "Click me!", () => {
      *     console.log("Button Clicked!");
      * });
      * 
      * // using event
-     * const button = new ui.Button("Click me!");
+     * const button = new ui.Button(ui.icons.play, "Click me!");
      * button.onClick.subscribe(() => {
      *     console.log("Button Clicked!");
      * });
@@ -256,14 +256,15 @@ declare namespace ui {
      * @example // Toggeling button
      * let state = false;
      * 
-     * const button = new ui.Button("Turn on", () => {
+     * const button = new ui.Button(ui.icons.center, "Turn on", () => {
      *     // toggle the state variable
      *     state = !state;
      * 
      *     console.log("Toggeled to: ", state);
      * 
-     *     // update the buttons text
+     *     // update the buttons text and icon
      *     button.label = state ? "Turn off" : "Turn on";
+     *     button.icon = state ? ui.icons.full : ui.icons.center;
      * });
      * 
      * section.add(button);
@@ -365,7 +366,7 @@ declare namespace ui {
      * const label = new ui.Label("Test Label");
      * container.add(label);
      * 
-     * const button = new ui.Button("Test Button");
+     * const button = new ui.Button(ui.icons.play, "Test Button");
      * container.add(button);
      */
     class Container extends Element implements ElementContainer {
@@ -390,7 +391,7 @@ declare namespace ui {
      * 
      * panel.add(label);
      * 
-     * const button = new ui.Button("Open Panel", () => {
+     * const button = new ui.Button(ui.icons.full, "Open Panel", () => {
      *     label.content = `Opened at: ${new Date().toString()}`;
      * 
      *     panel.open();
@@ -438,7 +439,7 @@ declare namespace ui {
      * 
      * modal.add(label);
      * 
-     * const button = new ui.Button("Open Modal", () => {
+     * const button = new ui.Button(ui.icons.full, "Open Modal", () => {
      *     label.content = `Opened at: ${new Date().toString()}`;
      * 
      *     modal.open();
@@ -747,7 +748,7 @@ declare namespace ui {
      * Fullscren mode hides all panels and bars.
      * 
      * @example // Enable fullscreen for 5 seconds
-     * const button = new ui.Button("Enable Fullscreen (5s)", () => {
+     * const button = new ui.Button(ui.icons.full, "Enable Fullscreen (5s)", () => {
      *     ui.fullscreen.enable();
      * 
      *     Timer.timeout(() => ui.fullscreen.disable(), 5000);
@@ -773,7 +774,7 @@ declare namespace ui {
      * @example // Download a helloworld.txt
      * const file = File.fromString("helloworld.txt", ""Hello World!");
      * 
-     * section.add(new ui.Button("Download helloworld.txt", () => ui.download(file)));
+     * section.add(new ui.Button(ui.icons.export, "Download helloworld.txt", () => ui.download(file)));
      */
     function download(file: File, name?: string);
 

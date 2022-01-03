@@ -31,7 +31,7 @@
      * @example // Create an .obj file and download it
      * const file = File.fromString("test.obj", "v 0 0 0\nv 1 0 0\nv 0.5 0.5 0\nf 1 2 3");
      * 
-     * section.add(new ui.Button("Download OBJ", () => {
+     * section.add(new ui.Button(ui.icons.export, "Download OBJ", () => {
      *     ui.download(file);
      * }));
      */
