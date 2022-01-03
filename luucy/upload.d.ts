@@ -31,31 +31,3 @@ declare class Upload {
      */
     onUpload: Event<File>;
 }
-
-/** 
- * File 
- * 
- * Will be created whenever a file is uploaded with `Upload`. 
- * The `File` object cannot be created by plugins.
- */
-declare interface File {
-    /** 
-     * File name as uploaded.
-     */
-    readonly name: string;
-
-    /** 
-     * Size in bytes as uploaded
-     */
-    readonly size: number;
-
-    /** 
-     * Reads the file as a string 
-     * 
-     * @example // Reading the files content
-     * file.toString().then(content => {
-     *     console.log("Contents of ", file.name, ": ", content);
-     * });
-     */
-    toString(): Promise<string>;
-}
