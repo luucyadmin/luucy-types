@@ -384,7 +384,7 @@ declare namespace ui {
      *     panel.open();
      * });
      */
-    class Panel implements Area<Element> {
+    class Panel implements ElementContainer {
         /** 
          * Creates a panel 
          * 
@@ -407,10 +407,11 @@ declare namespace ui {
          */
         close();
 
-        /**
-         * Add an element to the panel
-         */
+        readonly children: Element[];
         add(element: Element);
+        insertAfter(child: Element, after: Element);
+        insertBefore(child: Element, before: Element);
+        remove(child: Element);
     }
 
     /** 
