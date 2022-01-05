@@ -147,6 +147,7 @@ declare namespace ui {
      * 
      * Displays a text. 
      * Use `LabeledValue` if you want to display a value on the right of a label.
+     * Use `Paragraph` if you want a margin after the text
      * 
      * @example // Creating a "Hello World" label
      * const label = new ui.Label("Hello World!");
@@ -166,6 +167,48 @@ declare namespace ui {
 
         /**
          * Labels content
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        content: string;
+    }
+
+    /** 
+     * Paragraph 
+     * 
+     * Displays a text paragraph with a margin at the end. 
+     * 
+     * @example // Creating a "Lorem Ipsum" paragraph
+     * const paragraph = new ui.Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus enim malesuada, hendrerit ex vel, gravida sem. Curabitur eget pretium leo. Vivamus orci dolor, consectetur non arcu at, elementum pharetra quam.");
+     * section.add(paragraph);
+     */
+     class Paragraph extends Element {
+        constructor(content: string);
+
+        /**
+         * Paragraph content
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        content: string;
+    }
+
+    /** 
+     * Code 
+     * 
+     * Displays a monospaced text paragraph. 
+     * Newllines and double spaces will not be truncated, the text is renderet as is (like <pre>).
+     * Overflow will display scrollbars.
+     * 
+     * @example // Creating a code block containing pi
+     * const code = new ui.Code("3.141592653589793238462643383279502884197169");
+     * section.add(code);
+     */
+     class Code extends Element {
+        constructor(content: string);
+
+        /**
+         * Code content
          * 
          * Can be changed after beeing added to an area/element and will automatically update.
          */
@@ -489,6 +532,43 @@ declare namespace ui {
     }
 
     /** 
+     * Checkbox
+     * 
+     * Creates a checkbox used to toggle between true/false.
+     *
+     * @example // Create input
+     * const checkbox = new ui.Checkbox("Test Input", false);
+     * checkbox.onValueChange.subscribe(value => {
+     *     console.log(value);
+     * });
+     * 
+     * section.add(checkbox);
+     */
+     class Checkbox extends Element {
+        constructor(label: string, value?: boolean);
+
+        /**
+         * Describes the purpose of an input and is displayed next to the checkbox
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        label: string;
+
+        /**
+         * The checkboxes state.
+         * Setting this programatically will trigger the `onValueChange` event.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
+         */
+        value: boolean;
+
+        /**
+         * The event is triggered whenever the user changes the input.
+         */
+        onValueChange: Event<boolean>;
+    }
+
+    /** 
      * Text input field 
      * 
      * Creates a text field used for user input.
@@ -678,7 +758,61 @@ declare namespace ui {
     }
 
     /** 
-     * Radio input field 
+     * Select input field 
+     * 
+     * Displays multiple choices as a select box.
+     * 
+     * @example // Price calculation based on apartment type
+     * const types = [
+     *     { name: "Basic Apartment", pricePerM2: 100 },
+     *     { name: "Standard Apartment", pricePerM2: 150 },
+     *     { name: "Luxury Apartment", pricePerM2: 250 },
+     * ];
+     * 
+     * const area = 69;
+     * 
+     * const priceLabel = new ui.LabeledValue("Price");
+     * section.add(area);
+     * 
+     * const typeSelect = new ui.SelectField("Apartment Type", types, types[1], type => type.name);
+     * typeSelect.onValueChange.subscribe(type => {
+     *     priceLabel = type.pricePerM2 * area;
+     * });
+     */
+     class SelectField<T> extends Element {
+        /**
+         * Create a select field
+         * 
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param values - The values that can be seletced
+         * @param value - What is currently selected. This can be null
+         * @param transform - How to convert a value into a string for displaying it. 
+         */
+        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string);
+
+        /**
+         * Describes the purpose of an input and is displayed next to the field
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        label: string;
+
+        /**
+         * The fields selected option.
+         * Setting this programatically will trigger the `onValueChange` event.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` event instead!
+         */
+        value: T;
+
+        /**
+         * The event is triggered whenever the user changes the option.
+         */
+        onValueChange: Event<T>;
+    }
+
+    /** 
+     * Slider
      * 
      * Displays a slider with a max and min value. 
      * Users can move a knob to adjust the value.
