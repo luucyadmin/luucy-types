@@ -927,7 +927,7 @@ declare namespace ui {
         addAction(icon: IconElement, name: string, onClick: (item: T) => string): this;
     }
 
-    class Table<T> {
+    class Table<T> extends Element {
         constructor(records: T[], columns: ui.Column<T>[]);
 
         /**
