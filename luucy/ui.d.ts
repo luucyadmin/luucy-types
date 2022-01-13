@@ -122,6 +122,14 @@ declare namespace ui {
         remove(child: Element);
     }
 
+    /**
+     * Field Element
+     * 
+     * All fields / inputs implement field element. 
+     * The interface does not container any properties or functions on its own.
+     */
+    interface FieldElement {}
+
     /** 
      * Vertical bar chart 
      * 
@@ -581,7 +589,7 @@ declare namespace ui {
      * 
      * section.add(input);
      */
-    class TextField extends Element {
+    class TextField extends Element implements FieldElement {
         constructor(label: string, value?: string, placeholder?: string);
 
         /**
@@ -652,7 +660,7 @@ declare namespace ui {
      * 
      * section.add(input);
      */
-    class NumberField extends Element {
+    class NumberField extends Element implements FieldElement {
         constructor(label: string, value?: number, placeholder?: string);
 
         /**
@@ -725,7 +733,7 @@ declare namespace ui {
      *     priceLabel = type.pricePerM2 * area;
      * });
      */
-    class RadioField<T> extends Element {
+    class RadioField<T> extends Element implements FieldElement {
         /**
          * Create a radio field
          * 
@@ -779,7 +787,7 @@ declare namespace ui {
      *     priceLabel = type.pricePerM2 * area;
      * });
      */
-     class SelectField<T> extends Element {
+     class SelectField<T> extends Element implements FieldElement {
         /**
          * Create a select field
          * 
@@ -835,7 +843,7 @@ declare namespace ui {
      * 
      * section.add(slider);
      */
-    class Slider extends Element {
+    class Slider extends Element implements FieldElement {
         constructor(label: string, min: number, max: number, value?: number, step?: number);
 
         /**
@@ -887,6 +895,146 @@ declare namespace ui {
          * Do not do heavy calculations, requests or complex ui manipulations in here, as this event is called on every tiny movement of the mouse!
          */
         onImmediateValueChange: Event<number>;
+    }
+
+    /**
+     * Table Column
+     * 
+     * Describes a column within a table.
+     * The transformer will be called for every value in the recods.
+     * 
+     * You can return a string, number, Images, Fields, Icons and Buttons!
+     * 
+     * @example // Create a table with an image, tooltips and actions
+     * new ui.Table(buildings, [
+     *     new ui.Column("Image", building => new ui.Image(building.imageUrl)),
+     *     new ui.Column("Name", building => building.name),
+     *     new ui.Column("Year", building => building.builtAt.getFullYear()).addTooltip(building => building.builtAt.toLocalDateString()),
+     * 
+     *     // add a report column with an action, which, when clicked, will open a modal
+     *     new ui.Column("Report", building.lastReport.name).addAction(ui.icons.file, "View Report", building => {
+     *         const modal = new ui.Modal();
+     *         // add whatever needs to be added to your modal!
+     * 
+     *         modal.show();
+     *     })
+     * ])
+     */
+    class Column<T> {
+        constructor(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button);
+
+        addTooltip(transformer: (item: T, index: number) => string): this;
+        addAction(icon: IconElement, name: string, onClick: (item: T) => string): this;
+    }
+
+    class Table<T> {
+        constructor(records: T[], columns: ui.Column<T>[]);
+
+        /**
+         * This event is triggered whenever records are added, removed or overwritten using `setRecords`
+         */
+        onRecordsChange: Event<void>;
+
+        /**
+         * This event is triggered whenever a new column is added, or an existing column was removed.
+         */
+        onColumnsChange: Event<void>;
+
+        /**
+         * Creates a new column
+         * 
+         * @example // Creating a new column after creating a table
+         * const table = new Table(buildings, [
+         *      new ui.Column("Name", building => building.name)
+         * ]);
+         * 
+         * const column = table.addColumn("Year", building => building.year);
+         */
+        addColumn(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button): Column<T>;
+
+        /**
+         * Removes a column from the table
+         */
+        removeColumn(column: Column<T>);
+
+        /**
+         * Add a record to the table
+         * 
+         * Avoid calling this method in a loop (`for`, `while`, ...) as it will re-render the whole table on each call. 
+         * Batch your changes and use `table.setRecords` instead or use one call (`table.addRecord(stephan, lukas, felix)`)!
+         * 
+         * @example // Adding a record to a table
+         * const buildings = [
+         *     { name: "Zürich Main Station" },
+         *     { name: "Rathausbrücke" }
+         * ];
+         * 
+         * const table = new Table(buildings, [
+         *      new ui.Column("Name", building => building.name)
+         * ]);
+         * 
+         * section.add(table);
+         * 
+         * section.add(new ui.Button("Add Lucerene Main Station", () => {
+         *     const lucerneMainStation = { name: "Lucerne Main Station" };
+         *     
+         *     table.addRecord(lucerneMainStation);
+         * }));
+         */
+        addRecord(...records: T[]);
+
+        /**
+         * Remove a record from a table
+         * 
+         * Avoid calling this method in a loop (`for`, `while`, ...) as it will re-render the whole table on each call. 
+         * Batch your changes and use `table.setRecords` instead or use one call (`table.removeRecord(stephan, lukas, felix)`)!
+         * 
+         * @example // Removing a record from a table
+         * const people = [
+         *     { name: "Stephan" },
+         *     { name: "Lukas" }
+         * ];
+         * 
+         * const table = new ui.Table(people, [
+         *     new ui.Column("Name", person => person.name)
+         * ]);
+         * 
+         * section.add(table);
+         * 
+         * section.add(new ui.Button("Remove Lukas", () => {
+         *     const lukas = people.find(person => person.name == "Lukas");
+         *     
+         *     table.removeRecord(lukas);
+         * }));
+         */
+        removeRecord(...record: T[]);
+
+        /**
+         * Overwrites the records currently displayed in the table
+         * 
+         * @example // Add 100 records at once
+         * const pis = [
+         *     Math.PI / 100,
+         *     Math.PI / 100 * 2
+         * ];
+         * 
+         * const table = new ui.Table(pis, [
+         *     new ui.Column("Value", value => value)
+         * ]);
+         * 
+         * section.add(table);
+         * 
+         * section.add(new ui.Button("Add More PIs", () => {
+         *     const newPiValues = [];
+         * 
+         *     for (let i = 0; i < Math.PI; i += Math.PI / 100) {
+         *         newPiValues.push(i);
+         *     }
+         *     
+         *     table.setRecords(newPiValues);
+         * }));
+         */
+        setRecords(records: T[]);
     }
 
     /**
