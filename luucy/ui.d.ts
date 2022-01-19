@@ -924,7 +924,7 @@ declare namespace ui {
         constructor(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button);
 
         addTooltip(transformer: (item: T, index: number) => string): this;
-        addAction(icon: IconElement, name: string, onClick: (item: T) => string): this;
+        addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
     }
 
     class Table<T> extends Element {
