@@ -17,6 +17,7 @@
 /// <reference path="paragraph.d.ts" />
 /// <reference path="section.d.ts" />
 /// <reference path="separator.d.ts" />
+/// <reference path="upload.d.ts" />
 
 declare enum State {
     success,
