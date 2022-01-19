@@ -3,7 +3,7 @@ declare namespace web {
      * HTTP / HTTPS Requests 
      * 
      * @example // Create get request request
-     * new Request("https://example.com/path").get().then(res => res.json()).then(data => {
+     * new web.Request("https://example.com/path").get().then(res => res.json()).then(data => {
      *     console.log(data);
      * });
      */
@@ -15,7 +15,7 @@ declare namespace web {
          * web.Request.defaultAuthorization = new web.BasicAuthorization('admin', 'epic-password-123');
          * 
          * // this request will automatically send a Authorization header
-         * new Request("https://example.com/path").get().then(res => res.text()).then(data => {
+         * new web.Request("https://example.com/path").get().then(res => res.text()).then(data => {
          *     console.log(data);
          * });
          */
@@ -52,7 +52,7 @@ declare namespace web {
          * When calling `.post`, don't pass any parameters!
          * 
          * @example // Create a request to a form data service
-         * const request = new Request("https://example.com/form-data-api");
+         * const request = new web.Request("https://example.com/form-data-api");
          * 
          * // adding simple fields
          * request.append("firstname", "Alexander");
@@ -78,7 +78,7 @@ declare namespace web {
          * Execute HTTP `GET` request.
          * 
          * @example // Reading some file from a server
-         * new Request("https://example.com/path").get().then(res => res.text()).then(data => {
+         * new web.Request("https://example.com/path").get().then(res => res.text()).then(data => {
          *     console.log(data);
          * });
          */
@@ -93,7 +93,7 @@ declare namespace web {
          * To send Form Data, use `.append(key, value)` and omit the parameter for `.post()`. 
          * 
          * @example // Posting a JSON object to a server, which will return some text
-         * new Request("https://example.com/api/json").post({
+         * new web.Request("https://example.com/api/json").post({
          *     firstname: "Alexander",
          *     lastname: "Muster"
          * }).then(res => res.text()).then(data => {
@@ -101,21 +101,21 @@ declare namespace web {
          * });
          * 
          * @example // Posting a raw string to a server, which will return some text
-         * new Request("https://example.com/api/text").post("Some Raw String, for example XML").then(res => res.text()).then(data => {
+         * new web.Request("https://example.com/api/text").post("Some Raw String, for example XML").then(res => res.text()).then(data => {
          *     console.log(data); 
          * });
          * 
          * @example // Posting a file to a server, which will return some text
          * const file = File.fromString("Hello World!"); // example file, this could come from a `Upload` or some other requests response too
          * 
-         * new Request("https://example.com/api/upload").post(file).then(res => res.text()).then(data => {
+         * new web.Request("https://example.com/api/upload").post(file).then(res => res.text()).then(data => {
          *     console.log(data); 
          * });
          * 
          * @example // Posting form data to a server
          * const attachment = File.fromString("Hello World!"); // example file, this could come from a `Upload` or some other requests response too
          * 
-         * new Request("https://example.com/api/email")
+         * new web.Request("https://example.com/api/email")
          *     .append("subject", "Hey Mark!")
          *     .append("body", "Here is my job application.")
          *     .append("attachment", attachment)
