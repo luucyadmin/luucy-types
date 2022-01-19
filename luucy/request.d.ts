@@ -66,7 +66,7 @@ declare class Request {
      * Execute HTTP `POST` request 
      * - If a `string` is passed as a parameter, the request will send the raw value of the string
      * - If a `File` is passed, the request will send the contents of the file
-     * - If a normal object is passed, the object will be JSON encoded and sent
+     * - If a normal object is passed, the object will be JSON encoded and sent and a `Content-Type: application/json` will be set.
      * 
      * To send Form Data, use `.append(key, value)` and omit the parameter for `.post()`. 
      * 
