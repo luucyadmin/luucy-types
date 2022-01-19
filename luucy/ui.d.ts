@@ -906,7 +906,7 @@ declare namespace ui {
      * You can return a string, number, Images, Fields, Icons and Buttons!
      * 
      * @example // Create a table with an image, tooltips and actions
-     * new ui.Table(buildings, [
+     * new ui.Table<Building>(buildings, [
      *     new ui.Column("Image", building => new ui.Image(building.imageUrl)),
      *     new ui.Column("Name", building => building.name),
      *     new ui.Column("Year", building => building.builtAt.getFullYear()).addTooltip(building => building.builtAt.toLocalDateString()),
@@ -928,7 +928,7 @@ declare namespace ui {
     }
 
     class Table<T> extends Element {
-        constructor(records: T[], columns: ui.Column<T>[]);
+        constructor(records: T[], columns: ui.Column<Exclude<T, null>>[]);
 
         /**
          * This event is triggered whenever records are added, removed or overwritten using `setRecords`
@@ -944,7 +944,7 @@ declare namespace ui {
          * Creates a new column
          * 
          * @example // Creating a new column after creating a table
-         * const table = new Table(buildings, [
+         * const table = new ui.Table<Building>(buildings, [
          *      new ui.Column("Name", building => building.name)
          * ]);
          * 
@@ -964,12 +964,16 @@ declare namespace ui {
          * Batch your changes and use `table.setRecords` instead or use one call (`table.addRecord(stephan, lukas, felix)`)!
          * 
          * @example // Adding a record to a table
-         * const buildings = [
+         * interface Building {
+         *     name: string;
+         * }
+         * 
+         * const buildings: Building[] = [
          *     { name: "Zürich Main Station" },
          *     { name: "Rathausbrücke" }
          * ];
          * 
-         * const table = new Table(buildings, [
+         * const table = new ui.Table<Building>(buildings, [
          *      new ui.Column("Name", building => building.name)
          * ]);
          * 
@@ -990,12 +994,16 @@ declare namespace ui {
          * Batch your changes and use `table.setRecords` instead or use one call (`table.removeRecord(stephan, lukas, felix)`)!
          * 
          * @example // Removing a record from a table
-         * const people = [
+         * interface Person {
+         *     name: string;
+         * }
+         * 
+         * const people: Person[] = [
          *     { name: "Stephan" },
          *     { name: "Lukas" }
          * ];
          * 
-         * const table = new ui.Table(people, [
+         * const table = new ui.Table<Person>(people, [
          *     new ui.Column("Name", person => person.name)
          * ]);
          * 
@@ -1018,7 +1026,7 @@ declare namespace ui {
          *     Math.PI / 100 * 2
          * ];
          * 
-         * const table = new ui.Table(pis, [
+         * const table = new ui.Table<number>(pis, [
          *     new ui.Column("Value", value => value)
          * ]);
          * 
