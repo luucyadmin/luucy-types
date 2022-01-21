@@ -3,11 +3,11 @@
  * 
  * Resolves assets to urls.
  */
- declare const Assets: {
+ declare class Assets {
     /** 
      * Returns the default icon of you application, usually icon.svg 
      */
-    getLogo();
+    static getLogo();
 
     /** 
      * Returns an URL pointing to your ressource from the assets directory
@@ -19,5 +19,5 @@
      * 
      * section.add(image);
      */
-    resolveUrl(path: string);
+    static resolveUrl(path: string);
 }
