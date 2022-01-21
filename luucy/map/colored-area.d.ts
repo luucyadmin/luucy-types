@@ -8,6 +8,6 @@ declare namespace map {
         /**
           * Removes the colored area from the map.
         */
-        remove();
+        remove(): void;
     }
 }
