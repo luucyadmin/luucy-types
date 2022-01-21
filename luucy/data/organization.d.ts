@@ -1,40 +1,42 @@
-/** 
- * Luucy Organization 
- */
-declare class Organization {
+declare namespace data {
     /** 
-     * Organization name 
+     * Luucy Organization 
      */
-    readonly name: string;
-
-    /** 
-     * Contact information of the organizations administrator 
-     * 
-     * Please do not abuse this information.
-     */
-    readonly contact: {
+    class Organization {
         /** 
-         * Administrator name 
+         * Organization name 
          */
         readonly name: string;
 
         /** 
-         * Administrator email 
+         * Contact information of the organizations administrator 
+         * 
+         * Please do not abuse this information.
          */
-        readonly email: string;
-    }
-}
+        readonly contact: {
+            /** 
+             * Administrator name 
+             */
+            readonly name: string;
 
-/** 
- * Is called with all organizations associated to the currently logged in user.
- * 
- * @example // Show organizations
- * onOrganizationsChange.subscribe(organizations => {
- *     console.log("The current user is part of the following organizations:");
- * 
- *     for (let organization of organizations) {
- *         console.log(organization.name);
- *     }
- * });
- */
-declare const onOrganizationsChange: Event<Organization[]>
+            /** 
+             * Administrator email 
+             */
+            readonly email: string;
+        }
+    }
+
+    /** 
+     * Is called with all organizations associated to the currently logged in user.
+     * 
+     * @example // Show organizations
+     * data.onOrganizationsChange.subscribe(organizations => {
+     *     console.log("The current user is part of the following organizations:");
+     * 
+     *     for (let organization of organizations) {
+     *         console.log(organization.name);
+     *     }
+     * });
+     */
+    const onOrganizationsChange: Event<Organization[]>;
+}
