@@ -13,6 +13,9 @@ function scan(base) {
             // remove references
             source = source.split('\n').filter(line => !line.trim().startsWith('/// <reference')).join('\n');
 
+            // remove declare statements
+            source = source.replace(/declare\s+(class|namespace|interface|const|enum)/g, match => match.split(/\s+/)[1]);
+
             // add tabs
             source = source.split('\n').map(line => `\t${line}`).join('\n');
 
@@ -26,7 +29,7 @@ function scan(base) {
 scan('luucy');
 
 fs.writeFileSync('environment.d.ts', `
-namespace luucy {
+declare namespace luucy {
     ${content}
 }
 `);
