@@ -3,6 +3,7 @@
     "version": "3.8.3",
     "types": "index.d.ts",
     "scripts": {
-        "preversion": "tsc"
+        "preversion": "tsc",
+        "install": "node combine.js"
     }
 }

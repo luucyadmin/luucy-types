@@ -1,0 +1,32 @@
+const fs = require('fs');
+const path = require('path');
+
+let content = '';
+
+function scan(base) {
+    for (let file of fs.readdirSync(base)) {
+        const location = path.join(base, file);
+
+        if (file.endsWith('.d.ts')) {
+            let source = fs.readFileSync(location).toString();
+
+            // remove references
+            source = source.split('\n').filter(line => !line.trim().startsWith('/// <reference')).join('\n');
+
+            // add tabs
+            source = source.split('\n').map(line => `\t${line}`).join('\n');
+
+            content += `\t// from '${location}'\n${source}\n\n`;
+        } else if (fs.statSync(location).isDirectory()) {
+            scan(location);
+        }
+    }
+}
+
+scan('luucy');
+
+fs.writeFileSync('environment.d.ts', `
+namespace luucy {
+    ${content}
+}
+`);
