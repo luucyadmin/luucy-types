@@ -25,6 +25,17 @@
      */
     toString(): Promise<string>;
 
+    /** 
+     * Reads the file as a url
+     * This may be very inefficient, in case the file needs to be converted to a base64 based url
+     * 
+     * @example // Reading the files content
+     * file.toUrl().then(url => {
+     *     console.log(file.name, "as an url: ", url);
+     * });
+     */
+    toUrl(): Promise<string>;
+
     /**
      * Creates a file from string contents
      * 
