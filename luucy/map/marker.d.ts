@@ -28,14 +28,14 @@ declare namespace map {
          * 
          * To refocus your marker, call `.focus()`
          */
-        move(position: Position);
+        move(position: Position): void;
 
         /**
          * Moves marker by lat, long and height.
          * 
          * To refocus your marker, call `.focus()`
          */
-        moveBy(latitude: number, longitude: number, height: number);
+        moveBy(latitude: number, longitude: number, height: number): void;
 
         /**
          * Called whenever the marker is clicked on

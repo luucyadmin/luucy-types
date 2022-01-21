@@ -29,7 +29,7 @@ declare namespace ui {
         /**
          * Removes a column from the table
          */
-        removeColumn(column: Column<T>);
+        removeColumn(column: Column<T>): void;
 
         /**
          * Add a record to the table
@@ -59,7 +59,7 @@ declare namespace ui {
          *     table.addRecord(lucerneMainStation);
          * }));
          */
-        addRecord(...records: T[]);
+        addRecord(...records: T[]): void;
 
         /**
          * Remove a record from a table
@@ -89,7 +89,7 @@ declare namespace ui {
          *     table.removeRecord(lukas);
          * }));
          */
-        removeRecord(...record: T[]);
+        removeRecord(...record: T[]): void;
 
         /**
          * Overwrites the records currently displayed in the table
@@ -116,6 +116,6 @@ declare namespace ui {
          *     table.setRecords(newPiValues);
          * }));
          */
-        setRecords(records: T[]);
+        setRecords(records: T[]): void;
     }
 }

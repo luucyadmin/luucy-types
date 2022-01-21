@@ -6,11 +6,11 @@
  */
 declare const console: {
     /** Writes debugging log to the console */
-    log(...arguments);
+    log(...arguments): void;
 
     /** Writes a warning message to the console */
-    warn(...arguments);
+    warn(...arguments): void;
 
     /** Writes a error message to the console */
-    error(...arguments);
+    error(...arguments): void;
 }

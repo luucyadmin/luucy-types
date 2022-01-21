@@ -7,7 +7,7 @@
     /** 
      * Returns the default icon of you application, usually icon.svg 
      */
-    static getLogo();
+    static getLogo(): string;
 
     /** 
      * Returns an URL pointing to your ressource from the assets directory
@@ -19,5 +19,5 @@
      * 
      * section.add(image);
      */
-    static resolveUrl(path: string);
+    static resolveUrl(path: string): string;
 }

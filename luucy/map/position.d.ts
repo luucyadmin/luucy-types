@@ -64,25 +64,25 @@ declare namespace map {
          * The element can be shown again by calling `.show()`
          * Will change `.visible` and `.hidden`
          */
-        hide();
+        hide(): void;
 
         /**
          * Shows the element after beeing hidden by `.hide()`
          * 
          * Will change `.visible` and `.hidden`
          */
-        show();
+        show(): void;
 
         /**
          * Will move the camera to the element.
          * 
          * Do not focus an element without any user interaction!
          */
-        focus();
+        focus(): void;
 
         /**
          * Removes the element from the map.
          */
-        remove();
+        remove(): void;
     }
 }

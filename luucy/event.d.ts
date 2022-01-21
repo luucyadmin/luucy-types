@@ -17,7 +17,7 @@ declare class Event<T> {
      * The handler will be executed whenever a new value is emitted with `.emit(value)` and
      * immediately after you subscribe - if there has been a `.emit(value)` call before. 
      */
-    subscribe(handler: EventHandler<T>);
+    subscribe(handler: EventHandler<T>): EventHandler<T>;
 
     /** 
      * Emits a new value
@@ -25,7 +25,7 @@ declare class Event<T> {
      * Will execute all handlers registered with `.subscribe(handler)`.
      * After calling `.emit(value)`, all new subscribers will automatically be executed after calling `.subscribe(handler)`.
      */
-    emit(value: T);
+    emit(value: T): void;
 
     /**
      * Subscribe to multiple events at once
@@ -42,13 +42,13 @@ declare class Event<T> {
      *     priceLabel.value = area.value * pricePerM2.value;
      * });
      */
-    static subscribe<T>(event1: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>);
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>);
+    static subscribe<T>(event1: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>): EventHandler<T>;
 }

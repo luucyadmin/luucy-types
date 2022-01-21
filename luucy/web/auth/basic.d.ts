@@ -8,6 +8,6 @@ declare namespace web {
     class BasicAuthorization implements AuthorizationProvider {
         constructor(username: string, password: string);
 
-        attach(request: Request);
+        attach(request: Request): void;
     }
 }

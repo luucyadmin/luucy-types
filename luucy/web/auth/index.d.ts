@@ -13,6 +13,6 @@ declare namespace web {
         /**
          * Called by the request when `.authorize` is used
          */
-        attach(request: web.Request);
+        attach(request: web.Request): void;
     }
 }

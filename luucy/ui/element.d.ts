@@ -27,7 +27,7 @@ declare namespace ui {
          * The element can be hidden again by calling `.hide()`. 
          * This will change `.visible` and `.hidden`
          */
-        show();
+        show(): void;
 
         /**
          * Hides an element from the view.
@@ -36,6 +36,6 @@ declare namespace ui {
          * The element can be shown again by calling `.show()`. 
          * This will change `.visible` and `.hidden`
          */
-        hide();
+        hide(): void;
     }
 }

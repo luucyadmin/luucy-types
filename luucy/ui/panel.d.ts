@@ -41,9 +41,9 @@ declare namespace ui {
         close();
 
         readonly children: Element[];
-        add(element: Element);
-        insertAfter(child: Element, after: Element);
-        insertBefore(child: Element, before: Element);
-        remove(child: Element);
+        add(element: Element): void;
+        insertAfter(child: Element, after: Element): void;
+        insertBefore(child: Element, before: Element): void;
+        remove(child: Element): void;
     }
 }

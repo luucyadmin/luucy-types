@@ -64,7 +64,7 @@ declare class TimerInstance {
     /**
      * Stops and cancels the timer.
      */
-    cancel();
+    cancel(): void;
 
     /**
      * Immediately calls the timer. 
@@ -72,7 +72,7 @@ declare class TimerInstance {
      * Timeout timers will still be called when the timeout delay has been reached.
      * This will increment the index.
      */
-    fire();
+    fire(): void;
 
     /** 
      * Index 

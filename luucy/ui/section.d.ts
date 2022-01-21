@@ -29,12 +29,12 @@ declare namespace ui {
          *     console.log("show some calendar!")
          * });
          */
-        createAction(icon: IconElement, name: string, action: () => void);
+        createAction(icon: IconElement, name: string, action: () => void): void;
 
         readonly children: Element[];
-        add(element: Element);
-        insertAfter(child: Element, after: Element);
-        insertBefore(child: Element, before: Element);
-        remove(child: Element);
+        add(element: Element): void;
+        insertAfter(child: Element, after: Element): void;
+        insertBefore(child: Element, before: Element): void;
+        remove(child: Element): void;
     }
 }
