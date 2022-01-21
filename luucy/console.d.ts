@@ -1,10 +1,4 @@
-/** 
- * Console Output 
- * 
- * Comparable to the standard javascript console. 
- * Output will appear in the terminal that runs `luucy serve`.
- */
-declare const console: {
+declare interface Console {
     /** Writes debugging log to the console */
     log(...arguments): void;
 
@@ -14,3 +8,11 @@ declare const console: {
     /** Writes a error message to the console */
     error(...arguments): void;
 }
+
+/** 
+ * Console Output 
+ * 
+ * Comparable to the standard javascript console. 
+ * Output will appear in the terminal that runs `luucy serve`.
+ */
+declare const console: Console;
