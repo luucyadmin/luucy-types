@@ -53,6 +53,13 @@ declare namespace ui {
         label: string;
 
         /**
+         * Buttons icon
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        icon?: IconElement;
+
+        /**
          * Click Event
          * 
          * Will be fired when the user clicks on the button.
