@@ -5,6 +5,11 @@ declare namespace data {
      * A project may contain multiple `Varaint`s.
      */
     class Project {
+        /**
+         * Variant Id
+         */
+        readonly id: string;
+
         /** 
          * Project name 
          */

@@ -6,6 +6,11 @@ declare namespace data {
      * Multiple variants will be compared to eachother by the user to find the optimal way to realize a project.
      */
     class Variant {
+        /**
+         * Variant Id
+         */
+        readonly id: string;
+
         /** 
          * Variant name 
          */
