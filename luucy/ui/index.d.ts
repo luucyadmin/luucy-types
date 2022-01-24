@@ -66,7 +66,7 @@ declare namespace ui {
    * const section = ui.createProjectPanelSection();
    * section.add(new ui.Label("Test application section!"));
    */
-    function createProjectPanelSection(): Container;
+    function createProjectPanelSection(): AppSection;
 
     /**
    * Luucy fullscreen / embedded mode
