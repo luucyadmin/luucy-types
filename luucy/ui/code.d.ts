@@ -19,5 +19,7 @@ declare namespace ui {
          * Can be changed after beeing added to an area/element and will automatically update.
          */
         content: string;
+
+        onContentChange: Event<string>;
     }
 }

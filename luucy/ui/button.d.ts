@@ -59,5 +59,8 @@ declare namespace ui {
          * The `handler` parameter of the `Button` constructor can be used to automatically subscribe to onClick.
          */
         onClick: Event<void>;
+
+        onLabelChange: Event<void>;
+        onIconChange: Event<void>;
     }
 }
