@@ -46,5 +46,8 @@ declare namespace ui {
 
         onContentChange: Event<void>;
         onActionsChange: Event<void>;
+
+        onVisibilityChange: Event<void>;
+        onChildChange: Event<void>;
     }
 }
