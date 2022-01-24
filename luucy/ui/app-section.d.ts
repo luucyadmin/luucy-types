@@ -4,7 +4,7 @@ declare namespace ui {
      * 
      * @example // Create app section with a test label
      * const section = ui.createProjectPanelSection();
-     * section.add(new ui.Label('test));
+     * section.add(new ui.Label('test'));
      */
     class AppSection extends Container {
         readonly name: string;
