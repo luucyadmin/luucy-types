@@ -1,6 +1,7 @@
 /// <reference path="fields/index.d.ts" />
 /// <reference path="table/index.d.ts" />
 
+/// <reference path="app-section.d.ts" />
 /// <reference path="bar-chart.d.ts" />
 /// <reference path="button.d.ts" />
 /// <reference path="code.d.ts" />
