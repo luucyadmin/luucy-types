@@ -31,14 +31,14 @@ declare namespace ui {
          * Do not open the panel automatically! Please wait for user input, eg. a button press!
          * The panel can be closed programatically by calling `.close()`
          */
-        open();
+        open(): void;
 
         /**
          * Closes the panel
          * 
          * The panel can be opened again by calling `.open()`
          */
-        close();
+        close(): void;
 
         readonly children: Element[];
         add(element: Element): void;

@@ -10,7 +10,7 @@ declare namespace ui {
          * 
          * Hide a element by calling `.hide()`
          */
-        readonly visible;
+        readonly visible: boolean;
 
         /**
          * Indicates if the element is currently hidden.
@@ -18,7 +18,7 @@ declare namespace ui {
          * 
          * Show a element by calling `.show()`
          */
-        readonly hidden;
+        readonly hidden: boolean;
 
         /**
          * Makes an element visible after beeing hidden with `.hide()`.

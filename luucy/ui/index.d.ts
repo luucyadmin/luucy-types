@@ -86,12 +86,12 @@ declare namespace ui {
      * 
      * Do not enable fullscreen mode without any user interaction!
      */
-    enable();
+    enable(): void;
 
     /**
      * Disables fullscreen mode
      */
-    disable();
+    disable(): void;
   }
 
   /**
@@ -102,5 +102,5 @@ declare namespace ui {
      * 
      * section.add(new ui.Button(ui.icons.export, "Download helloworld.txt", () => ui.download(file)));
      */
-   function download(file: File, name?: string);
+   function download(file: File, name?: string): void;
 }

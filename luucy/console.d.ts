@@ -1,12 +1,12 @@
 declare interface Console {
     /** Writes debugging log to the console */
-    log(...arguments): void;
+    log(...arguments: any[]): void;
 
     /** Writes a warning message to the console */
-    warn(...arguments): void;
+    warn(...arguments: any[]): void;
 
     /** Writes a error message to the console */
-    error(...arguments): void;
+    error(...arguments: any[]): void;
 }
 
 /** 
