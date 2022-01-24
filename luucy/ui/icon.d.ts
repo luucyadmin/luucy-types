@@ -13,7 +13,9 @@ declare namespace ui {
      * 
      * app.add(section);
      */
-    interface IconElement extends Element {}
+    interface IconElement extends Element {
+        readonly type: string;
+    }
 
     const icons: {
         pause: IconElement;
