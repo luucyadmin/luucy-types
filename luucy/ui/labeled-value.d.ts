@@ -49,5 +49,7 @@ declare namespace ui {
          * Can be changed after beeing added to an area/element and will automatically update.
          */
         state: State;
+
+        onContentChange: Event<void>;
     }
 }

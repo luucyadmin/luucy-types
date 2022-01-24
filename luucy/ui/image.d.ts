@@ -18,5 +18,7 @@ declare namespace ui {
          * Can be changed after beeing added to an area/element and will automatically reload the image.
          */
         source: string;
+
+        onSourceChange: Event<string>;
     }
 }
