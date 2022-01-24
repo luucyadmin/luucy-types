@@ -25,6 +25,8 @@ declare namespace ui {
     class Column<T> {
         constructor(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button);
 
+        readonly name: string;
+
         addTooltip(transformer: (item: T, index: number) => string): this;
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
     }
