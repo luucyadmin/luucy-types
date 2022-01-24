@@ -14,18 +14,18 @@ declare namespace ui {
      *         labeledValue.value = project.name;
      * 
      *         if (project.name.length > 100) {
-     *             labeledValue.state = "danger";
+     *             labeledValue.icon = ui.icons.danger;
      *         } else {
-     *             labeledValue.state = "success";
+     *             labeledValue.icon = ui.icons.success;
      *         }
      *     } else {
      *         labeledValue.value = "No Project Selected";
-     *         labeledValue.state = null;
+     *         labeledValue.icon = null;
      *     }
      * });
      */
     class LabeledValue extends Element {
-        constructor(label: string, value?: string | number);
+        constructor(label: string, value?: string | number, icon?: IconElement);
 
         /**
          * Label
@@ -42,13 +42,13 @@ declare namespace ui {
         value: string | number;
 
         /**
-         * State Indicator
+         * Icon
          * 
-         * Setting state to `null` will not display any indicator.
+         * Setting icon to `null` will not display any indicator.
          * 
          * Can be changed after beeing added to an area/element and will automatically update.
          */
-        state: State;
+        icon: IconElement;
 
         onContentChange: Event<void>;
     }
