@@ -20,6 +20,23 @@ declare class Event<T> {
     subscribe(handler: EventHandler<T>): EventHandler<T>;
 
     /** 
+     * Subscribe once to a event
+     * 
+     * Same as `.subscribe`, but only the first handler with the provided `tag` will be executed. 
+     * 
+     * @example // Subscribe once
+     * const event = new Event<void>();
+     * 
+     * event.subscribe(() => console.log('hit 1'));
+     * event.subscribeOnce('listener1', () => console.log('hit 2'));
+     * event.subscribeOnce('listener1', () => console.log('hit 3'));
+     * event.subscribeOnce('listener2', () => console.log('hit 4'));
+     * 
+     * event.emit(); // hit 1, hit 2, hit 4
+     */
+    subscribeOnce(tag: string, handler: EventHandler<T>): EventHandler<T>;
+
+    /** 
      * Emits a new value
      * 
      * Will execute all handlers registered with `.subscribe(handler)`.
