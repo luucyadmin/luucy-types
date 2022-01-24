@@ -17,9 +17,16 @@ declare namespace ui {
         /** 
          * Creates a section 
          * 
-         * @param name - Name of the section. Can't be changed after creating the section.
+         * @param name - Name of the section. 
          */
         constructor(name: string);
+
+        /**
+         * The sections name
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        name: string;
 
         /**
          * Adds an action button to the title of the section
@@ -36,5 +43,8 @@ declare namespace ui {
         insertAfter(child: Element, after: Element): void;
         insertBefore(child: Element, before: Element): void;
         remove(child: Element): void;
+
+        onContentChange: Element<void>;
+        onActionsChange: Event<void>;
     }
 }
