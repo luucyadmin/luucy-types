@@ -9,7 +9,7 @@ declare namespace data {
         /**
          * Variant Id
          */
-        readonly id: number;
+        readonly id?: number;
 
         /** 
          * Variant name 
