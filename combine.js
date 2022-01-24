@@ -16,6 +16,9 @@ function scan(base) {
             // remove declare statements
             source = source.replace(/declare\s+(class|namespace|interface|const|enum)/g, match => match.split(/\s+/)[1]);
 
+            // remove readonly statements
+            source = source.replace(/readonly\s+[a-z]/g, match => match.split(/\s+/).pop());
+
             // add tabs
             source = source.split('\n').map(line => `\t${line}`).join('\n');
 
