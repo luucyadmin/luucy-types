@@ -17,7 +17,15 @@ declare namespace map {
      *     new ui.Button(ui.icons.building, "Show me the 1000m tower!", () => polygon.focus())
      * );
      */
-    class Polygon extends MapElement {
+    class Polygon implements MapElement {
         constructor(positions: Position[], height: number, color?: Color);
+
+        readonly visible: boolean;
+        readonly hidden: boolean;
+        
+        hide(): void;
+        show(): void;
+        focus(): void;
+        remove(): void;
     }
 }

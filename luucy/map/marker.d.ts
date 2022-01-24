@@ -15,8 +15,16 @@ declare namespace map {
      *     new ui.Button(ui.icons.pointOfInterest, "I want to see the station!", () => marker.focus())
      * );
      */
-     class Marker extends MapElement {
+     class Marker implements MapElement {
         constructor(position: Position, color?: Color, label?: string);
+
+        readonly visible: boolean;
+        readonly hidden: boolean;
+        
+        hide(): void;
+        show(): void;
+        focus(): void;
+        remove(): void;
 
         /**
          * Returns the current position of the marker
