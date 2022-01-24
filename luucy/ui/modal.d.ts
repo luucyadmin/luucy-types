@@ -21,9 +21,11 @@ declare namespace ui {
         /** 
          * Creates a modal
          * 
-         * @param name - The modals name. Can't be changed after the modal has been created.
+         * @param title - The modals name. Can't be changed after the modal has been created.
          */
-        constructor(name: string);
+        constructor(title: string);
+
+        readonly title: string;
 
         /**
          * Opens the modal window
