@@ -44,7 +44,7 @@ declare namespace ui {
         insertBefore(child: Element, before: Element): void;
         remove(child: Element): void;
 
-        onContentChange: Element<void>;
+        onContentChange: Event<void>;
         onActionsChange: Event<void>;
     }
 }
