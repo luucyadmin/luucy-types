@@ -21,7 +21,6 @@ declare namespace ui {
          */
         readonly name: string;
 
-        constructor(name: string, handler: (item: T) => void);
         constructor(icon: IconElement, name: string, handler: (item: T) => void);
 
         /**
