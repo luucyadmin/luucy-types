@@ -117,5 +117,15 @@ declare namespace ui {
          * }));
          */
         setRecords(records: T[]): void;
+
+        /**
+         * Returns a copy of the active records
+         */
+        getRecords(): T[];
+
+        /**
+         * Returns a copy of the columns
+         */
+        getColumns(): Column<T>[];
     }
 }
