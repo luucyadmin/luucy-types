@@ -8,7 +8,7 @@ declare namespace data {
         /**
          * Variant Id
          */
-        readonly id: string;
+        readonly id: number;
 
         /** 
          * Project name 
