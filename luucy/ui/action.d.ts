@@ -12,7 +12,7 @@ declare namespace ui {
          * 
          * This cannot be changed after the action was created
          */
-        readonly icon?: IconElement;
+        readonly icon: IconElement;
 
         /**
          * The actions name
