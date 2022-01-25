@@ -2,7 +2,7 @@ declare namespace ui {
     /**
      * Represents a environment provided area
      */
-    abstract class Area {
+    interface Area {
         /**
          * Add element to area
          */
