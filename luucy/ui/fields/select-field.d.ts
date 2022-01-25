@@ -52,6 +52,7 @@ declare namespace ui {
          */
         onValueChange: Event<T>;
 
+        readonly transformer: (item: T) => string;
         onContentChange: Event<void>;
     }
 }
