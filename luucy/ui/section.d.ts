@@ -38,6 +38,13 @@ declare namespace ui {
          */
         createAction(icon: IconElement, name: string, action: () => void): void;
 
+        /**
+         * Contains all actions
+         * 
+         * Changing this array will not update the visible actions, use `.createAction()` instead!
+         */
+        actions: Action[];
+
         readonly children: Element[];
         add(element: Element): void;
         insertAfter(child: Element, after: Element): void;
