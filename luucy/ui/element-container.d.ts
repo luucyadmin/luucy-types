@@ -32,5 +32,7 @@ declare namespace ui {
          * Removes an element as a child 
          */
         remove(child: Element): void;
+
+        onChildChange: Event<void>;
     }
 }

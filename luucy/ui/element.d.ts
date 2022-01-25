@@ -37,10 +37,7 @@ declare namespace ui {
          * This will change `.visible` and `.hidden`
          */
         hide(): void;
-
-        children: Element[];
         
         onVisibilityChange: Event<void>;
-        onChildChange: Event<void>;
     }
 }
