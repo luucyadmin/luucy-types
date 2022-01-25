@@ -51,9 +51,9 @@ declare namespace ui {
          * The available select options
          * 
          * Can be changed after beeing added to an area/element and will automatically update.
-         * `.push()` and other array operators will NOT work, the `values` property needs to be overwritten to trigger an update!
+         * `.push()` and other array operators will NOT work, the `options` property needs to be overwritten to trigger an update!
          */
-         values: T[];
+        options: T[];
 
         /**
          * The event is triggered whenever the user changes the option.
