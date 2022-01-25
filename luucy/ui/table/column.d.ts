@@ -31,7 +31,7 @@ declare namespace ui {
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
 
         readonly id: string;
-        getActions(): Action[];
+        getActions(): Action<T>[];
         resolve(item: T, index: number): Element;
         resolveTooltip(item: T, index: number): string;
     }
