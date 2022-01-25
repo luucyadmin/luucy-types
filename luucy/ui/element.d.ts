@@ -3,7 +3,7 @@ declare namespace ui {
         /** 
          * References the elements parent element or area 
          */
-        readonly parent?: Element | Area;
+        readonly parent?: ElementContainer | Area;
 
         /**
          * Indicates if the element is currently visible
