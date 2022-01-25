@@ -29,5 +29,9 @@ declare namespace ui {
 
         addTooltip(transformer: (item: T, index: number) => string): this;
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
+
+        getActions(): Action[];
+        resolve(item: T, index: number): Element;
+        resolveTooltip(item: T, index: number): string;
     }
 }
