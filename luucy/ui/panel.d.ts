@@ -25,6 +25,8 @@ declare namespace ui {
          */
         constructor(name: string);
 
+        readonly name: string;
+
         /**
          * Opens the panel
          * 
