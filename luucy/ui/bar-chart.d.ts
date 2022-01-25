@@ -13,9 +13,23 @@ declare namespace ui {
     class BarChart extends Element {
         constructor(name: string, unit?: string);
 
+        readonly name: string;
+        readonly unit: string;
+        readonly max: number;
+
         /**
          * Adds a new segment to the chart
          */
         addSegment(name: string, value: number): void;
+
+        /**
+         * Returns a copy of all segments
+         */
+        getSegments(): [{
+            name: string,
+            value: number
+        }];
+
+        onChange: Event<void>;
     }
 }
