@@ -75,5 +75,7 @@ declare namespace ui {
          * Do not do heavy calculations, requests or complex ui manipulations in here, as this event is called on every tiny movement of the mouse!
          */
         onImmediateValueChange: Event<number>;
+
+        onContentChange: Event<void>;
     }
 }

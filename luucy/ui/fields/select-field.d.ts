@@ -51,5 +51,7 @@ declare namespace ui {
          * The event is triggered whenever the user changes the option.
          */
         onValueChange: Event<T>;
+
+        onContentChange: Event<void>;
     }
 }

@@ -61,5 +61,7 @@ declare namespace ui {
          * });
          */
         onImmediateValueChange: Event<number>;
+
+        onContentChange: Event<void>;
     }
 }

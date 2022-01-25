@@ -51,5 +51,7 @@ declare namespace ui {
          * The event is triggered whenever the user selects another radio.
          */
         onValueChange: Event<T>;
+
+        onContentChange: Event<void>;
     }
 }

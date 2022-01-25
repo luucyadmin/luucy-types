@@ -68,5 +68,7 @@ declare namespace ui {
          * section.add(input);
          */
         onImmediateValueChange: Event<string>;
+
+        onContentChange: Event<void>;
     }
 }
