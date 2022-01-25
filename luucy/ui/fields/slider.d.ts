@@ -58,6 +58,14 @@ declare namespace ui {
         value?: number;
 
         /**
+         * The fields immediate value as entered by the user.
+         * Setting this programatically will not trigger any events.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
+         */
+        immediateValue: number;
+
+        /**
          * The step of the slider. 
          * To have `50` steps on a slider from `0` to `10`, the `step` has to be set to `0.2` (`(10 - 0) / 50`).
          * 

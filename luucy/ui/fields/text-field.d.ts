@@ -38,6 +38,14 @@ declare namespace ui {
         value: string;
 
         /**
+         * The fields immediate value as entered by the user.
+         * Setting this programatically will not trigger any events.
+         * 
+         * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
+         */
+        immediateValue: number;
+
+        /**
          * The event is triggered whenever the user changes the input.
          */
         onValueChange: Event<string>;
