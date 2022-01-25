@@ -48,6 +48,14 @@ declare namespace ui {
         value: T;
 
         /**
+         * The available radio options
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         * `.push()` and other array operators will NOT work, the `values` property needs to be overwritten to trigger an update!
+         */
+        values: T[];
+
+        /**
          * The event is triggered whenever the user selects another radio.
          */
         onValueChange: Event<T>;
