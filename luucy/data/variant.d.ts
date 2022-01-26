@@ -31,6 +31,11 @@ declare namespace data {
          */
         readonly usages: Usage[];
 
+        /**
+         * User-drawn buildings on map
+         */
+        readonly buildings: Building[];
+
         /** 
          * Will be called when the variants volume changes 
          * 
@@ -62,5 +67,17 @@ declare namespace data {
          * });
          */
         readonly onUsagesChange: Event<Usage[]>;
+
+        /**
+         * Will be fired when a user drawn building changes
+         * 
+         * @example // Subscribe to building changes
+         * const buildingsLabel = new ui.LabeledValue('Usages');
+         * 
+         * variant.onBuildingsChange.subscribe(buildings => {
+         *     buildingsLabel.value = buildings.map(building => `${building.height}m`).join(', ');
+         * });
+         */
+        readonly onBuildingsChange: Event<Building[]>;
     }
 }

@@ -1,4 +1,14 @@
 declare namespace data {
+    /**
+     * Usage in a variant
+     * 
+     * Variants can contain multiple usage types.
+     * For example, a variant may have 
+     * - 70% `Standardized, simple standard` (living area)
+     * - 30% `Retail, silent trade` (commercial).
+     * 
+     * Listen for changes by subscribing to `.onUsagesChange` on `data.Variant`
+     */
     class Usage {
         /**
          * Usage Type
