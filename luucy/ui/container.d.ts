@@ -20,6 +20,8 @@ declare namespace ui {
         insertAfter(child: Element, after: Element): void;
         insertBefore(child: Element, before: Element): void;
         remove(child: Element): void;
+        removeAllChildren(): void;
+        
         onVisibilityChange: Event<void>;
         onChildChange: Event<void>;
     }
