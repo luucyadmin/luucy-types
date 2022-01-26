@@ -1,13 +1,14 @@
 /// <reference path="colored-area.d.ts" />
 /// <reference path="marker.d.ts" />
 /// <reference path="polygon.d.ts" />
-/// <reference path="position.d.ts" />
+/// <reference path="global-position.d.ts" />
+/// <reference path="local-position.d.ts" />
 
 /**
  * Interactions with luucys main map.
  * 
  * @example // Creating a marker and a button to focus it
- * const marker = new map.Marker(new map.Position(47.0469494, 8.3157369));
+ * const marker = new map.Marker(new map.GlobalPosition(47.0469494, 8.3157369));
  * 
  * section.add(new ui.Button(ui.icons.pointOfInterest, "Focus Marker", () => {
  *     marker.focus();
@@ -31,5 +32,5 @@ declare namespace map {
      *     new map.Marker(position.flattenedCopy(), Color.random());
      * });
      */
-    const onPositionSelect: Event<Position>;
+    const onPositionSelect: Event<GlobalPosition>;
 }

@@ -4,13 +4,13 @@ declare namespace map {
      * 
      * The latitude and longitude are in the format used by most maps (Google Maps, ...).
      * 
-     * @example const lucerne = new map.Position(47.050390, 8.310263),
-     * @example const zurich = new map.Position(47.3774162, 8.5414963),
-     * @example const paris = new map.Position(48.8578516, 2.2942959),
-     * @example const newYork = new map.Position(40.689834, -74.045940),
-     * @example const london = new map.Position(51.500822, -0.123705);
+     * @example const lucerne = new map.GlobalPosition(47.050390, 8.310263),
+     * @example const zurich = new map.GlobalPosition(47.3774162, 8.5414963),
+     * @example const paris = new map.GlobalPosition(48.8578516, 2.2942959),
+     * @example const newYork = new map.GlobalPosition(40.689834, -74.045940),
+     * @example const london = new map.GlobalPosition(51.500822, -0.123705);
      */
-    class Position {
+    class GlobalPosition {
         constructor(latitude: number, longitude: number, height?: number);
 
         /**
@@ -33,11 +33,11 @@ declare namespace map {
         /**
          * Creates a copy of the position, without the `height` component.
          */
-        flattenedCopy(): Position;
+        flattenedCopy(): GlobalPosition;
 
         /**
          * Creates a copy of the position, optionally offset by `offsetLatitude` and `offsetLongitude`
          */
-        copy(offsetLatitude?: number, offsetLongitude?: number, height?: number): Position;
+        copy(offsetLatitude?: number, offsetLongitude?: number, height?: number): GlobalPosition;
     }
 }

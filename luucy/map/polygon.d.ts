@@ -7,10 +7,10 @@ declare namespace map {
      * 
      * @example // Create a utopian skyliner at lucerne main station
      * const polygon = new map.Polygon([
-     *     new map.Position(47.050390, 8.310263),
-     *     new map.Position(47.050390, 8.311263),
-     *     new map.Position(47.051390, 8.311263),
-     *     new map.Position(47.051390, 8.310263),
+     *     new map.GlobalPosition(47.050390, 8.310263),
+     *     new map.GlobalPosition(47.050390, 8.311263),
+     *     new map.GlobalPosition(47.051390, 8.311263),
+     *     new map.GlobalPosition(47.051390, 8.310263),
      * ], 1000);
      * 
      * section.add(
@@ -18,7 +18,7 @@ declare namespace map {
      * );
      */
     class Polygon implements MapElement {
-        constructor(positions: Position[], height: number, color?: Color);
+        constructor(positions: GlobalPosition[], height: number, color?: Color);
 
         readonly visible: boolean;
         readonly hidden: boolean;

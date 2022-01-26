@@ -9,14 +9,14 @@ declare namespace map {
      * A label may be provided, but it should not be longer than 2 characters.
      * 
      * @example // Show a marker at the lucerne main station
-     * new map.Marker(new map.Position(47.0469494, 8.3157369));
+     * new map.Marker(new map.GlobalPosition(47.0469494, 8.3157369));
      * 
      * section.add(
      *     new ui.Button(ui.icons.pointOfInterest, "I want to see the station!", () => marker.focus())
      * );
      */
      class Marker implements MapElement {
-        constructor(position: Position, color?: Color, label?: string);
+        constructor(position: GlobalPosition, color?: Color, label?: string);
 
         readonly visible: boolean;
         readonly hidden: boolean;
@@ -29,14 +29,14 @@ declare namespace map {
         /**
          * Returns the current position of the marker
          */
-        readonly position: Position;
+        readonly position: GlobalPosition;
 
         /**
          * Moves the marker to the defined position.
          * 
          * To refocus your marker, call `.focus()`
          */
-        move(position: Position): void;
+        move(position: GlobalPosition): void;
 
         /**
          * Moves marker by lat, long and height.
