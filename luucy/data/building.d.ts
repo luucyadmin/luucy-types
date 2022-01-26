@@ -29,6 +29,11 @@ declare namespace data {
         readonly points: map.LocalPosition[];
 
         /**
+         * Points defining the shape, without the angle translation
+         */
+        readonly unrotatedPoints: map.LocalPosition[];
+
+        /**
          * Gets fired whenever the height or points of the building changes
          */
         onGeometryChange: Event<void>;
