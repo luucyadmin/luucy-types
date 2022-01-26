@@ -9,14 +9,24 @@ declare namespace data {
      */
     class Building {
         /**
+         * Center point of the shape
+         */
+        readonly center: map.GlobalPosition;
+
+        /**
+         * Building angle in radians
+         */
+        readonly angle: number;
+
+        /**
          * Height of the shape
          */
-        height: number;
+        readonly height: number;
 
         /**
          * Points defining the shape
          */
-        points: map.LocalPosition[];
+        readonly points: map.LocalPosition[];
 
         /**
          * Gets fired whenever the height or points of the building changes
