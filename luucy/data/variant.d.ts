@@ -26,6 +26,11 @@ declare namespace data {
          */
         readonly volume: number;
 
+        /**
+         * Contains all usages of this variant
+         */
+        readonly usages: Usage[];
+
         /** 
          * Will be called when the variants volume changes 
          * 
@@ -45,5 +50,17 @@ declare namespace data {
          * });
          */
         readonly onFloorAreaChange: Event<number | null>;
+
+        /**
+         * Will be fired when the usages change
+         * 
+         * @example // Listen for usage changes and list them
+         * const usagesLabel = new ui.LabeledValue('Usages');
+         * 
+         * variant.onUsagesChange.subscribe(usages => {
+         *     usagesLabel.value = usages.map(usage => `${usage.type} (${usage.percent}%)`).join(', ');
+         * });
+         */
+        readonly onUsagesChange: Event<Usage[]>;
     }
 }
