@@ -34,6 +34,11 @@ declare namespace data {
         readonly unrotatedPoints: map.LocalPosition[];
 
         /**
+         * Measure wall sizes and angles
+         */
+        measureWalls(): Wall[];
+
+        /**
          * Gets fired whenever the height or points of the building changes
          */
         onGeometryChange: Event<void>;
