@@ -39,5 +39,10 @@ declare namespace map {
          * Creates a copy of the position, optionally offset by `offsetLatitude` and `offsetLongitude`
          */
         copy(offsetLatitude?: number, offsetLongitude?: number, height?: number): GlobalPosition;
+
+        /**
+         * Add the local position to this position, returns a new global position
+         */
+        apply(local: LocalPosition): GlobalPosition;
     }
 }
