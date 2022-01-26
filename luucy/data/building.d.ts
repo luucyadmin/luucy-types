@@ -16,7 +16,7 @@ declare namespace data {
         /**
          * Points defining the shape
          */
-        points: map.GlobalPosition[];
+        points: map.LocalPosition[];
 
         /**
          * Gets fired whenever the height or points of the building changes
