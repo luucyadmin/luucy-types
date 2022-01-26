@@ -9,24 +9,22 @@ declare namespace map {
      * @example const threeMetersFiveMeters = new map.LocalPosition(3, 5);
      */
     class LocalPosition {
-        constructor(latitude: number, longitude: number, height?: number);
+        constructor(x: number, y: number, z?: number);
 
         /**
-         * Latitude describing the east/west-ness of a point.
-         * 
-         * This is the one that is `0` in Greenwich near London.
+         * X position component
          */
-        latitude: number;
+        x: number;
 
         /**
-         * Longitude describing the north/south-ness of a point.
+         * Y position component
          */
-        longitude: number;
+        y: number;
 
         /** 
-         * Height in meters.
+         * z (height) in meters.
          */
-        height?: number;
+        z?: number;
 
         /**
          * Creates a copy of the position, without the `height` component.
@@ -34,8 +32,8 @@ declare namespace map {
         flattenedCopy(): LocalPosition;
 
         /**
-         * Creates a copy of the position, optionally offset by `offsetLatitude` and `offsetLongitude`
+         * Creates a copy of the position, optionally offset by `offsetX`, `offsetY` and `offsetZ`
          */
-        copy(offsetLatitude?: number, offsetLongitude?: number, height?: number): LocalPosition;
+        copy(offsetX?: number, offsetY?: number, offsetZ?: number): LocalPosition;
     }
 }
