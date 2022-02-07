@@ -21,9 +21,9 @@
 /// <reference path="upload.d.ts" />
 
 declare enum State {
-    success,
-    warn,
-    danger
+  success,
+  warn,
+  danger
 }
 
 /** 
