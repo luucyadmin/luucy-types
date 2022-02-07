@@ -23,7 +23,8 @@
 declare enum State {
   success,
   warn,
-  danger
+  danger,
+  info
 }
 
 /** 
@@ -58,6 +59,13 @@ declare namespace ui {
     * section.add(new ui.Note(ui.success, "Some Good News"));
     */
   const success: State;
+
+  /**
+   * Info (Neutral) State
+   * 
+   * section.add(new ui.Note(ui.info, "Some Good News"));
+   */
+  const info: State;
 
   /**
    * Creates a section for your application in the project panel.
