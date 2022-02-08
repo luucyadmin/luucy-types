@@ -44,32 +44,42 @@ declare interface StorageRouter {
  * Global Storage
  * 
  * @example // Stored text field value for user
- * const field = new ui.TextField('Stored Field', Storage.global.read('my-field') || 'initial value');
+ * const field = new ui.TextField('Stored Field');
+ * 
+ * Storage.global.read('my-field').then(value => field.value = value || 'initial value');
+ * 
  * field.onValueChange.subscribe(value => {
  *     console.log('updated value', value);
  * 
  *     Storage.global.write('my-field', value);
  * });
  */
-declare class Storage {
+declare interface GlobalStorage {
     /**
-     * User Storage
+     * General User Storage
      * 
      * Data stored in `user` will only be available for the signed in user.
      */
-    static user: ScopedStorage;
+    user: ScopedStorage;
 
     /**
-     * Organization Storage
+     * General Organization Storage
      * 
      * Data stored in `organization` will only be available for all users in the users organization.
      */
-    static organization: ScopedStorage;
+    organization: ScopedStorage;
 
     /**
-     * Global Storage
+     * General Global Storage
      * 
      * Data stored in `global` will be available for all users of this plugin.
      */
-    static global: ScopedStorage;
+    global: ScopedStorage;
+
+    /**
+     * Create Bound Storage Container
+     */
+    createStorageRouter(type: string, id: string): StorageRouter;
 }
+
+declare const Storage: GlobalStorage;

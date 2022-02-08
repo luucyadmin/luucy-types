@@ -31,6 +31,13 @@ declare namespace data {
          * });
          */
         readonly onVariantSelect: Event<Variant | null>;
+
+        /**
+         * Project storage
+         * 
+         * Any data in this storage area will be bound to this project.
+         */
+        readonly storage: StorageRouter;
     }
 
     /** 

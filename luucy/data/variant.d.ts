@@ -79,5 +79,12 @@ declare namespace data {
          * });
          */
         readonly onBuildingsChange: Event<Building[]>;
+
+        /**
+         * Variant storage
+         * 
+         * Any data in this storage area will be bound to this variant.
+         */
+         readonly storage: StorageRouter;
     }
 }
