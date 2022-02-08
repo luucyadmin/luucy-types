@@ -40,6 +40,14 @@ declare interface StorageRouter {
     global: ScopedStorage;
 }
 
+declare interface StorageEntry {
+    key: string;
+    value: string;
+    plugin: boolean;
+    scope: 'user' | 'organization' | null;
+    binding: { type: string; id: string } | null;
+}
+
 /**
  * Global Storage
  * 
@@ -80,6 +88,8 @@ declare interface GlobalStorage {
      * Create Bound Storage Container
      */
     createStorageRouter(type: string, id: string): StorageRouter;
+
+    onWrite: Event<StorageEntry>;
 }
 
 declare const Storage: GlobalStorage;
