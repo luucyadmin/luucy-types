@@ -15,7 +15,8 @@ declare namespace data {
         /**
          * Area of the whole roof, including angled roofs.
          * 
-         * Example: rectangular house, 5m * 5m, 25m² ground area; 1m tall roof → ~27m² roof area
+         * Example: rectangular house, 5m * 5m, 25m² ground area; 1m tall roof → ~27m² roof area.
+         * Use building.groundArea to access the flat area of the roof.
          */
         readonly area: number;
 
