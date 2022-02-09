@@ -1,0 +1,7 @@
+{
+    "name": "Map Scope",
+    "description": "Provides map interfaces",
+    "dependencies": [
+        "core"
+    ]
+}

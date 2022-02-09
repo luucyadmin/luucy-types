@@ -1,0 +1,7 @@
+{
+    "name": "User Interface Scope",
+    "description": "Provides user interface components",
+    "dependencies": [
+        "core"
+    ]
+}

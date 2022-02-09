@@ -1,0 +1,7 @@
+{
+    "name": "Web Scope",
+    "description": "Provides HTTP and HTTPS interfaces",
+    "dependencies": [
+        "core"
+    ]
+}

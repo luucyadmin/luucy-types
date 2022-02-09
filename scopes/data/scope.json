@@ -1,0 +1,7 @@
+{
+    "name": "Data Scope",
+    "description": "Provides interfaces to projects, variants, buildings, ...",
+    "dependencies": [
+        "core"
+    ]
+}
