@@ -29,7 +29,7 @@ function scan(base) {
     }
 }
 
-scan('luucy');
+scan('scopes');
 
 fs.writeFileSync('environment.d.ts', `
 declare namespace luucy {
