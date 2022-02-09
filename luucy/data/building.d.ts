@@ -34,9 +34,9 @@ declare namespace data {
         readonly unrotatedPoints: map.LocalPosition[];
 
         /**
-         * Measure wall sizes and angles
+         * Wall sizes and angles
          */
-        measureWalls(): Wall[];
+        walls: Wall[];
 
         /**
          * Buildings roof
