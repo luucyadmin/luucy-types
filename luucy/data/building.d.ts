@@ -39,6 +39,11 @@ declare namespace data {
         measureWalls(): Wall[];
 
         /**
+         * Measure roof size and angles
+         */
+        measureRoof(): Roof;
+
+        /**
          * Gets fired whenever the height or points of the building changes
          */
         onGeometryChange: Event<void>;
