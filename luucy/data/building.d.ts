@@ -39,9 +39,9 @@ declare namespace data {
         measureWalls(): Wall[];
 
         /**
-         * Measure roof size and angles
+         * Buildings roof
          */
-        measureRoof(): Roof;
+        roof: Roof;
 
         /**
          * Gets fired whenever the height or points of the building changes
