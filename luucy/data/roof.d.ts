@@ -26,5 +26,10 @@ declare namespace data {
          * True, if the roof is flat
          */
         readonly flat: boolean;
+
+        /**
+         * Volume of the roof
+         */
+         readonly volume: number;
     }
 }
