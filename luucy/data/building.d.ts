@@ -24,6 +24,11 @@ declare namespace data {
         readonly height: number;
 
         /**
+         * Area taken up by the building
+         */
+        readonly groundArea: number;
+
+        /**
          * Points defining the shape
          */
         readonly points: map.LocalPosition[];
