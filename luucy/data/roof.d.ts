@@ -18,6 +18,11 @@ declare namespace data {
         readonly area: number;
 
         /**
+         * Height of the roof (gutter to gable)
+         */
+        readonly height: number;
+
+        /**
          * True, if the roof is flat
          */
         readonly flat: boolean;
