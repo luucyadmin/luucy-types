@@ -13,7 +13,9 @@ declare namespace data {
         readonly rotation: number;
 
         /**
-         * Area of the whole roof (both sides)
+         * Area of the whole roof, including angled roofs.
+         * 
+         * Example: rectangular house, 5m * 5m, 25m² ground area; 1m tall roof → ~27m² roof area
          */
         readonly area: number;
 
