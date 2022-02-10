@@ -1,7 +1,9 @@
 /// <reference path="fields/index.d.ts" />
 /// <reference path="table/index.d.ts" />
 
+/// <reference path="action.d.ts" />
 /// <reference path="app-section.d.ts" />
+/// <reference path="area.d.ts" />
 /// <reference path="bar-chart.d.ts" />
 /// <reference path="button.d.ts" />
 /// <reference path="code.d.ts" />
@@ -14,6 +16,7 @@
 /// <reference path="labeled-value.d.ts" />
 /// <reference path="modal.d.ts" />
 /// <reference path="note.d.ts" />
+/// <reference path="notification.d.ts" />
 /// <reference path="panel.d.ts" />
 /// <reference path="paragraph.d.ts" />
 /// <reference path="section.d.ts" />

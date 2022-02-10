@@ -1,8 +1,9 @@
 /// <reference path="colored-area.d.ts" />
-/// <reference path="marker.d.ts" />
-/// <reference path="polygon.d.ts" />
+/// <reference path="element.d.ts" />
 /// <reference path="global-position.d.ts" />
 /// <reference path="local-position.d.ts" />
+/// <reference path="marker.d.ts" />
+/// <reference path="polygon.d.ts" />
 
 /**
  * Interactions with luucys main map.
