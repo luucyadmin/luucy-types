@@ -2,9 +2,14 @@
 /// <reference lib="DOM" />
 
 declare namespace ui {
-    class Host {
+    interface Host {
         root: ui.html.Element;
 
         addStyles(css: string): void;
+    }
+
+    const embedded: {
+        enable(): Host;
+        disable(): void;
     }
 }
