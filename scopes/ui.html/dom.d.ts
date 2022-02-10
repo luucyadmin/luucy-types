@@ -1,36 +1,23 @@
-interface NodeList {
-    [index: number]: Node;
-    length: number;
-}
+declare namespace ui.html {
+    interface Node {}
 
-interface Node {
-    text: string;
-    children: NodeList;
-    firstChild: Node;
-    lastChild: Node;
+    interface Text extends Node {
+        text: string;
+    }
 
-    appendChild(node: Node): void;
-    removeChild(node: Node): void;
+    interface Element extends Node {
+        readonly tagName: string;
 
-    insertBefore(n1: Node, n2: Node): void;
-    insertAfter(n1: Node, n2: Node): void;
-}
+        readonly children: Node[];
+        appendChild(node: Node): void;
+        removeChild(node: Node): void;
+        insertBefore(node: Node, reference: Node): void;
+        insertAfter(node: Node, reference: Node): void;
+        clearChildren(): void;
 
-interface ClassList {
-    add(...names: string[]): void;
-    remove(...names: string[]): void;
-    toggle(name: string): void;
-}
-
-interface HTMLElement extends Node {
-    textContent: string;
-
-    readonly tagName: string;
-
-    className: string;
-    classList: ClassList;
-
-    setAttribute(name: string, value: string): void;
-    getAttribute(name: string): string;
-    hasAttribute(name: string): boolean;
+        setAttribute(name: string, value: string): void;
+        getAttribute(name: string): string;
+        removeAttribute(name: string): void;
+        hasAttribute(name: string): boolean;
+    }
 }
