@@ -12,3 +12,4 @@
 /// <reference path="object.d.ts" />
 
 /// <reference path="illegals.d.ts" />
+/// <reference path="typescript.d.ts" />
