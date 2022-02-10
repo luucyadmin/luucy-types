@@ -1,11 +1,19 @@
 declare namespace ui.html {
     interface Node {}
 
-    interface Text extends Node {
+    class Text implements Node {
+        constructor(text: string);
+
         text: string;
     }
 
-    interface Element extends Node {
+    class Element implements Node {
+        constructor(
+            tag: string, 
+            attributes?: { [ key: string ]: any }, 
+            ...children: Node[]
+        );
+
         readonly tagName: string;
 
         readonly children: Node[];
@@ -15,7 +23,7 @@ declare namespace ui.html {
         insertAfter(node: Node, reference: Node): void;
         clearChildren(): void;
 
-        setAttribute(name: string, value: string): void;
+        setAttribute(name: string, value: string): this;
         getAttribute(name: string): string;
         removeAttribute(name: string): void;
         hasAttribute(name: string): boolean;
