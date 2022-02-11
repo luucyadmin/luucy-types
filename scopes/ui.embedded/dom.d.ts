@@ -6,8 +6,6 @@ declare namespace ui.embedded {
     class Text implements Node {
         readonly id: string;
 
-        onTextChange: Event<string>;
-
         constructor(text: string);
 
         text: string;
@@ -16,8 +14,6 @@ declare namespace ui.embedded {
     class Element implements Node {
         readonly id: string;
 
-        onChildrenChange: Event<void>;
-        
         constructor(
             tag: string, 
             attributes?: { [ key: string ]: any }, 
