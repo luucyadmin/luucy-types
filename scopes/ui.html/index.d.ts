@@ -3,7 +3,7 @@
 
 declare namespace ui {
     interface Host {
-        root: ui.html.Element;
+        root: ui.HTMLElement;
 
         addStyles(css: string): void;
     }
