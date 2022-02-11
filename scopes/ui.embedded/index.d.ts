@@ -1,5 +1,5 @@
 declare namespace ui.embedded {
-    interface Host {
+    abstract class Host {
         root: ui.embedded.Element;
 
         addStyles(css: string): void;
