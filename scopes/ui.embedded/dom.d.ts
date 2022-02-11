@@ -1,17 +1,21 @@
 declare namespace ui.embedded {
-    interface Node {}
+    interface Node {
+        readonly id: string;
+    }
 
     class Text implements Node {
+        readonly id: string;
+
         onTextChange: Event<string>;
 
         constructor(text: string);
 
-        readonly id: string;
-        
         text: string;
     }
 
     class Element implements Node {
+        readonly id: string;
+
         onChildrenChange: Event<void>;
         
         constructor(
@@ -20,8 +24,7 @@ declare namespace ui.embedded {
             ...children: Node[]
         );
 
-        readonly id: string;
-        readonly tagName: string;
+        readonly tag: string;
 
         readonly children: Node[];
         appendChild(node: Node): void;
