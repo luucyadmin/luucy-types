@@ -1,5 +1,5 @@
 {
-    "name": "User Interface with custom HTML",
+    "name": "User Interface with embedded mode",
     "description": "Provides access to the DOM",
     "permission": "Injecting custom HTML requires special permissions when submitting. You may not be able to publish your plugin.",
     "dependencies": [

@@ -1,26 +1,26 @@
-declare namespace ui {
-    interface HTMLNode {}
+declare namespace ui.embedded {
+    interface Node {}
 
-    class HTMLText implements HTMLNode {
+    class Text implements Node {
         constructor(text: string);
 
         text: string;
     }
 
-    class HTMLElement implements HTMLNode {
+    class Element implements Node {
         constructor(
             tag: string, 
             attributes?: { [ key: string ]: any }, 
-            ...children: HTMLNode[]
+            ...children: Node[]
         );
 
         readonly tagName: string;
 
-        readonly children: HTMLNode[];
-        appendChild(node: HTMLNode): void;
-        removeChild(node: HTMLNode): void;
-        insertBefore(node: HTMLNode, reference: HTMLNode): void;
-        insertAfter(node: HTMLNode, reference: HTMLNode): void;
+        readonly children: Node[];
+        appendChild(node: Node): void;
+        removeChild(node: Node): void;
+        insertBefore(node: Node, reference: Node): void;
+        insertAfter(node: Node, reference: Node): void;
         clearChildren(): void;
 
         setAttribute(name: string, value: string): this;

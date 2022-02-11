@@ -1,15 +1,13 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="DOM" />
 
-declare namespace ui {
+declare namespace ui.embedded {
     interface Host {
-        root: ui.HTMLElement;
+        root: ui.embedded.Element;
 
         addStyles(css: string): void;
     }
 
-    const embedded: {
-        enable(): Host;
-        disable(): void;
-    }
+    function enable(): Host;
+    function disable(): void;
 }
