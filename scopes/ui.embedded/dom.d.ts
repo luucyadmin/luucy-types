@@ -16,10 +16,10 @@ declare namespace ui.embedded {
 
         constructor(
             tag: string, 
-            attributes?: { [ key: string ]: any }, 
-            ...children: Node[]
+            attributes: { [ key: string ]: any }, 
+            ...children: (Node | string | Node[])[]
         );
-
+        
         readonly tag: string;
 
         readonly children: Node[];
