@@ -33,5 +33,9 @@ declare namespace ui.embedded {
         getAttribute(name: string): string | null;
         removeAttribute(name: string): void;
         hasAttribute(name: string): boolean;
+
+        setProperty(name: string, value: string): this;
+        getProperty(name: string): any;
+        hasProperty(name: string): boolean;
     }
 }
