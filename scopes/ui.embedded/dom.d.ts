@@ -19,7 +19,7 @@ declare namespace ui.embedded {
             attributes: { [ key: string ]: any }, 
             ...children: (Node | string | Node[])[]
         );
-        
+
         readonly tag: string;
 
         readonly children: Node[];
@@ -30,7 +30,7 @@ declare namespace ui.embedded {
         clearChildren(): void;
 
         setAttribute(name: string, value: string): this;
-        getAttribute(name: string): string;
+        getAttribute(name: string): string | null;
         removeAttribute(name: string): void;
         hasAttribute(name: string): boolean;
     }
