@@ -15,6 +15,18 @@ declare namespace data {
          */
         readonly name: string;
 
+        /**
+         * Selected Variant.
+         * 
+         * Try to use the `onVariantSelect` event as it will fire when the user switches variants.
+         */
+        readonly selectedVariant: Variant | null;
+
+        /**
+         * Variants in project
+         */
+        readonly variants: Variant[];
+
         /** 
          * Will be called when a variant is selected 
          * The emitted variant may be `null`!
@@ -56,4 +68,11 @@ declare namespace data {
      * });
      */
     const onProjectSelect: Event<Project | null>;
+
+    /**
+     * Contains the currently selected project.
+     * 
+     * Try to use the `onProjectSelect` event as it will fire when the user switches projects.
+     */
+    const selectedProject: Project | null;
 }
