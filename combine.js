@@ -19,6 +19,9 @@ function scan(base) {
             // remove readonly statements
             source = source.replace(/readonly\s+[a-z]/g, match => match.split(/\s+/).pop());
 
+            // convert consts to lets
+            source = source.replace(/const\s+[a-z]/g, match => `let ${match.split(/\s+/).pop()}`);
+
             // add tabs
             source = source.split('\n').map(line => `\t${line}`).join('\n');
 
