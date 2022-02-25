@@ -7,10 +7,10 @@ declare namespace map {
      * 
      * @example // Create a utopian skyliner at lucerne main station
      * const polygon = new map.Polygon([
-     *     new map.GlobalPosition(47.050390, 8.310263),
-     *     new map.GlobalPosition(47.050390, 8.311263),
-     *     new map.GlobalPosition(47.051390, 8.311263),
-     *     new map.GlobalPosition(47.051390, 8.310263),
+     *     new GlobalPosition(47.050390, 8.310263),
+     *     new GlobalPosition(47.050390, 8.311263),
+     *     new GlobalPosition(47.051390, 8.311263),
+     *     new GlobalPosition(47.051390, 8.310263),
      * ], 1000);
      * 
      * section.add(

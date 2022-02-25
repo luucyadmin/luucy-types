@@ -1,7 +1,5 @@
 /// <reference path="colored-area.d.ts" />
 /// <reference path="element.d.ts" />
-/// <reference path="global-position.d.ts" />
-/// <reference path="local-position.d.ts" />
 /// <reference path="marker.d.ts" />
 /// <reference path="polygon.d.ts" />
 
@@ -9,7 +7,7 @@
  * Interactions with luucys main map.
  * 
  * @example // Creating a marker and a button to focus it
- * const marker = new map.Marker(new map.GlobalPosition(47.0469494, 8.3157369));
+ * const marker = new map.Marker(new GlobalPosition(47.0469494, 8.3157369));
  * 
  * section.add(new ui.Button(ui.icons.pointOfInterest, "Focus Marker", () => {
  *     marker.focus();

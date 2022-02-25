@@ -9,7 +9,7 @@ declare namespace map {
      * A label may be provided, but it should not be longer than 2 characters.
      * 
      * @example // Show a marker at the lucerne main station
-     * new map.Marker(new map.GlobalPosition(47.0469494, 8.3157369));
+     * new map.Marker(new GlobalPosition(47.0469494, 8.3157369));
      * 
      * section.add(
      *     new ui.Button(ui.icons.pointOfInterest, "I want to see the station!", () => marker.focus())

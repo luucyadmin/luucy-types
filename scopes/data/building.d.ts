@@ -11,7 +11,7 @@ declare namespace data {
         /**
          * Center point of the shape
          */
-        readonly center: map.GlobalPosition;
+        readonly center: GlobalPosition;
 
         /**
          * Building angle in radians
@@ -31,12 +31,12 @@ declare namespace data {
         /**
          * Points defining the shape
          */
-        readonly points: map.LocalPosition[];
+        readonly points: LocalPosition[];
 
         /**
          * Points defining the shape, without the angle translation
          */
-        readonly unrotatedPoints: map.LocalPosition[];
+        readonly unrotatedPoints: LocalPosition[];
 
         /**
          * Wall sizes and angles
