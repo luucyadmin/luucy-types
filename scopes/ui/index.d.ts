@@ -74,6 +74,8 @@ declare namespace ui {
    * Creates a section for your application in the project panel.
    * The section will automatically be added to the panel.
    * 
+   * A plugin can only create one app section.
+   * 
    * @example // Create section
    * const section = ui.createProjectPanelSection();
    * section.add(new ui.Label("Test application section!"));

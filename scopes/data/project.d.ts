@@ -45,6 +45,11 @@ declare namespace data {
         readonly onVariantSelect: Event<Variant | null>;
 
         /**
+         * Will be fired whenever the `variants` array changes
+         */
+        readonly onVariantsChange: Event<Variant[]>;
+
+        /**
          * Project storage
          * 
          * Any data in this storage area will be bound to this project.
