@@ -10,5 +10,15 @@ declare namespace ui {
         readonly name: string;
         readonly author: string;
         readonly logoUrl: string;
+
+        /**
+         * Will be triggered when the app is opened in the project panel
+         */
+        readonly onOpen: Event<void>;
+
+        /**
+         * Will be triggered when the app is closed in the project panel
+         */
+        readonly onClose: Event<void>;
     }
 }
