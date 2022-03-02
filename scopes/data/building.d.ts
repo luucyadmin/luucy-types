@@ -41,12 +41,12 @@ declare namespace data {
         /**
          * Wall sizes and angles
          */
-        walls: Wall[];
+        readonly walls: Wall[];
 
         /**
          * Buildings roof
          */
-        roof: Roof;
+         readonly roof: Roof;
 
         /**
          * Gets fired whenever the height or points of the building changes
