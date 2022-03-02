@@ -22,11 +22,6 @@ declare namespace data {
          */
         readonly selectedVariant: Variant | null;
 
-        /**
-         * Variants in project
-         */
-        readonly variants: Variant[];
-
         /** 
          * Will be called when a variant is selected 
          * The emitted variant may be `null`!
@@ -55,6 +50,11 @@ declare namespace data {
          * Any data in this storage area will be bound to this project.
          */
         readonly storage: StorageRouter;
+
+        /**
+         * Returns the variants of a project
+         */
+        getVariants(): Promise<Variant[]>;
     }
 
     /** 
