@@ -1,3 +1,5 @@
+/// <reference path="extensions/index.d.ts" />
+
 /// <reference path="assets.d.ts" />
 /// <reference path="color.d.ts" />
 /// <reference path="console.d.ts" />
