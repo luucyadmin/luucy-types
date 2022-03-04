@@ -45,6 +45,13 @@ declare class Event<T> {
     emit(value: T): void;
 
     /**
+     * Will break the event
+     * 
+     * Emits will no longer execute subscribers.
+     */
+    break(): void;
+
+    /**
      * Subscribe to multiple events at once
      * 
      * Will call `handler` whenever any of the events fires
