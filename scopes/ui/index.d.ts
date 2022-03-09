@@ -72,15 +72,23 @@ declare namespace ui {
 
   /**
    * Creates a section for your application in the project panel.
-   * The section will automatically be added to the panel.
+   * The section will automatically be added to the panel
    * 
-   * A plugin can only create one app section.
+   * If your plugin contains multiple 'submodules', create multiple app sections.
+   * You can provide a name or custom icon (url from assets directory)
    * 
    * @example // Create section
    * const section = ui.createProjectPanelSection();
    * section.add(new ui.Label("Test application section!"));
+   * 
+   * @example // Create multiple sections
+   * const heatingSection = ui.createProjectPanelSection('Heating', 'heating.png');
+   * heatingSection.add(new ui.Label('Heating stuff'));
+   * 
+   * const coolingSection = ui.createProjectPanelSection('Cooling', 'cooling.png');
+   * coolingSection.add(new ui.Label('Cooling stuff'));
    */
-  function createProjectPanelSection(): AppSection;
+  function createProjectPanelSection(name?: string, icon?: string): AppSection;
 
     /**
    * Luucy fullscreen / embedded mode

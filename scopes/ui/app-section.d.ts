@@ -7,10 +7,6 @@ declare namespace ui {
      * section.add(new ui.Label('test'));
      */
     class AppSection extends Container {
-        readonly name: string;
-        readonly author: string;
-        readonly logoUrl: string;
-
         /**
          * Will be triggered when the app is opened in the project panel
          */
@@ -20,5 +16,17 @@ declare namespace ui {
          * Will be triggered when the app is closed in the project panel
          */
         readonly onClose: Event<void>;
+
+        /**
+         * Name of the section
+         */
+        readonly name: string;
+
+        /**
+         * icon url from assets
+         */
+        readonly icon: string;
+
+        constructor(name?: string, icon?: string);
     }
 }
