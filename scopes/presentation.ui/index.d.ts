@@ -1,6 +1,3 @@
-/// <reference path="../ui/index.d.ts" />
-/// <reference path="../presentation/index.d.ts" />
-
 declare namespace presentation {
     /**
      * Creates a panel for presentations
