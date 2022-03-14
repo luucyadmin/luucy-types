@@ -4,7 +4,7 @@
  * JSON-serializeable data can be stored in a container.
  */
 declare interface StorageContainer {
-    read(key: string): Promise<any>;
+    read<T = any>(key: string): Promise<T>;
     write(key: string, value: any): Promise<void>;
 }
 
