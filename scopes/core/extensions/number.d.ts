@@ -6,7 +6,7 @@ interface Number {
      * `123 → '123'`
      * `12345.67 → '12345'`
      */
-    toFloatingString(unit: string): string;
+    toFloatingString(unit?: string): string;
 
     /**
      * Converts a number (in degrees) to degrees
