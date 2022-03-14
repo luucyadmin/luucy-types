@@ -1,0 +1,8 @@
+{
+    "name": "Presentations",
+    "description": "Provides presentations and slides access",
+    "dependencies": [
+        "core",
+        "map.camera"
+    ]
+}
