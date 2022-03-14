@@ -1,0 +1,7 @@
+{
+    "name": "Map Camera Scope",
+    "description": "Provides camera access",
+    "dependencies": [
+        "map"
+    ]
+}
