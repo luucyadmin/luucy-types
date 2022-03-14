@@ -1,6 +1,10 @@
 declare namespace presentation {
     class Presentation {
         /**
+         * Id of the presentation */
+        readonly id: number;
+
+        /**
          * Name of the presentation
          */
         readonly name: string;

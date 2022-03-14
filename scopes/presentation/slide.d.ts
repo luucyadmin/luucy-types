@@ -1,6 +1,11 @@
 declare namespace presentation {
     class Slide {
         /**
+         * Id of the slide
+         */
+        readonly id: number;
+
+        /**
          * Contains the slides numerical index
          */
         readonly index: number;
