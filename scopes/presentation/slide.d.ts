@@ -11,9 +11,11 @@ declare namespace presentation {
         readonly index: number;
 
         /**
-         * Contains user defined, attributed free text
+         * Contains user defined, attributed free text.
+         * 
+         * Do not write any data into this variable, use `storage` instead.
          */
-        readonly content: string;
+        readonly content?: string;
 
         /**
          * The slides default camera
