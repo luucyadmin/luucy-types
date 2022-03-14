@@ -19,6 +19,6 @@ declare namespace presentation {
         /**
          * Called when a slide is opened.
          */
-        onSlideOpen: Event<Slide>;
+        onSlideOpen: Event<Slide | null>;
     }
 }
