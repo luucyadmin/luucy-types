@@ -1,9 +1,9 @@
 declare namespace presentation {
     class Presentation {
         /**
-         * Contains all slides within the presentation
+         * Name of the presentation
          */
-        readonly slides: Slide[];
+        readonly name: string;
 
         /**
          * Custom storage bound to the presentation.
