@@ -56,28 +56,4 @@ declare namespace data {
          */
         getVariants(): Promise<Variant[]>;
     }
-
-    /** 
-     * Will be executed when a project is selected.
-     * The emitted project may be `null`!
-     * 
-     * The event will be automatically called if a project is already selected on page load / plugin install.
-     * 
-     * @example // Listen for project select
-     * data.onProjectSelect.subscribe(project => {
-     *     if (project) {
-     *         console.log("Selected project: ", project);
-     *     } else {
-     *         console.log("No project selected!")
-     *     }
-     * });
-     */
-    const onProjectSelect: Event<Project | null>;
-
-    /**
-     * Contains the currently selected project.
-     * 
-     * Try to use the `onProjectSelect` event as it will fire when the user switches projects.
-     */
-    const selectedProject: Project | null;
 }
