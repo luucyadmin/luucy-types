@@ -1,0 +1,8 @@
+{
+    "name": "Presentation UI",
+    "description": "Enables presentation panel create",
+    "dependencies": [
+        "presentation",
+        "ui"
+    ]
+}
