@@ -20,5 +20,12 @@ declare namespace presentation {
          * Called when a slide is opened.
          */
         onSlideOpen: Event<Slide | null>;
+
+        /**
+         * Currently open slide
+         * 
+         * Try to use `onSlideOpen`, as it will update when the user selects another slide
+         */
+        readonly selectedSlide: Slide | null;
     }
 }
