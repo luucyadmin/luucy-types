@@ -50,5 +50,6 @@ declare namespace ui {
         removeAllChildren(): void;
         
         onChildChange: Event<void>;
+        onClose: Event<void>;
     }
 }
