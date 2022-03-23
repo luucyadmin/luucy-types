@@ -1,5 +1,5 @@
 declare namespace ui.toolbar {
-    interface Panel {
+    interface Panel extends ui.ElementContainer {
         onClose: Event<void>;
         close(): void;
 
