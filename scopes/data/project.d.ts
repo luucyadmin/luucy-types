@@ -16,6 +16,11 @@ declare namespace data {
         readonly name: string;
 
         /**
+         * Center point of the project
+         */
+        readonly center?: GlobalPosition;
+
+        /**
          * Selected Variant.
          * 
          * Try to use the `onVariantSelect` event as it will fire when the user switches variants.
