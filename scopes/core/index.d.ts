@@ -11,3 +11,4 @@
 /// <reference path="local-position.d.ts" />
 /// <reference path="storage.d.ts" />
 /// <reference path="timer.d.ts" />
+/// <reference path="debug.d.ts" />
