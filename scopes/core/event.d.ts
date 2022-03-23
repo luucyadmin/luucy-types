@@ -48,8 +48,18 @@ declare class Event<T> {
      * Will break the event
      * 
      * Emits will no longer execute subscribers.
+     * 
+     * Call `unbreak()` to revert the changes.
      */
     break(): void;
+
+    /**
+     * Pauses the event
+     * 
+     * Emits will execute subscribers again.
+     * Values will not be stored while broken and the subscribers will not be executed after unbreaking.
+     */
+    unbreak(): void;
 
     /**
      * Subscribe to multiple events at once
