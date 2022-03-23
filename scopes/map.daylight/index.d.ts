@@ -15,7 +15,7 @@ declare namespace map.daylight {
     /**
      * Play daylight simulation at defined speed
      * 
-     * Omitting speed will use the currently set value
+     * Speed defaults to 1
      */
     function play(speed?: number): void;
 
