@@ -1,0 +1,7 @@
+{
+    "name": "Map Daylight Control",
+    "description": "Provides access to the daylight/sun control of the map",
+    "dependencies": [
+        "map"
+    ]
+}
