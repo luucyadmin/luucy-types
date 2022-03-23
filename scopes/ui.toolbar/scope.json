@@ -1,0 +1,7 @@
+{
+    "name": "User Interface Toolbars",
+    "description": "Provides access to toolbar buttons",
+    "dependencies": [
+        "ui"
+    ]
+}
