@@ -48,6 +48,7 @@ declare class Event<T> {
      * Will break the event
      * 
      * Emits will no longer execute subscribers.
+     * New subscribers will no longer be registered.
      * 
      * Call `unbreak()` to revert the changes.
      */
@@ -58,6 +59,7 @@ declare class Event<T> {
      * 
      * Emits will execute subscribers again.
      * Values will not be stored while broken and the subscribers will not be executed after unbreaking.
+     * Subscribers added after breaking the promise will not be registered.
      */
     unbreak(): void;
 
