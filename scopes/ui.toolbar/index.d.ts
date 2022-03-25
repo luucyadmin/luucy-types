@@ -53,7 +53,7 @@ declare namespace ui.toolbar {
      * Elements can be added to panel.
      * Close the panel by calling `panel.close()`
      * 
-     * @example // Create custom project tool panel
+     * @example // Create custom layer tool panel
      * ui.toolbar.createLayerTool(ui.icons.account, 'Example Tool', panel => {
      *     panel.add(new ui.Label('Layer Tool'));
      * });
@@ -67,25 +67,30 @@ declare namespace ui.toolbar {
      * Elements can be added to panel.
      * Close the panel by calling `panel.close()`
      * 
-     * @example // Create custom project tool panel
+     * @example // Create custom export tool panel
      * ui.toolbar.createExportTool(ui.icons.account, 'Example Tool', panel => {
      *     panel.add(new ui.Label('Export Tool'));
      * });
      */
     function createExportTool(icon: ui.IconElement, name: string, render: (panel: ui.toolbar.Panel) => void): void;
 
+    interface Tool {
+        abort(): void;
+        onAbort: Event<void>;
+
+        complete(): void;
+
+        onMapClick: Event<GlobalPosition>;
+    }
+
     /**
-     * Adds a new modeling tool button
-     * 
-     * Call `panel.close()` when your tool is done.
+     * Adds a new modeling tool 
      * 
      * @example // Create custom project tool panel
-     * ui.toolbar.createProjectTool(ui.icons.account, 'Example Tool', panel => {
-     *     panel.add(new ui.Label('Create markers by clicking on the map'));
-     * 
+     * ui.toolbar.createModelingTool(ui.icons.account, 'Example Tool', tool => {
      *     const markers = [];
      * 
-     *     panel.onMapClick.subscribe(position => {
+     *     tool.onMapClick.subscribe(position => {
      *         markers.push(new map.Maker(position));
      * 
      *         // call complete when 5 markers have been added
@@ -94,13 +99,13 @@ declare namespace ui.toolbar {
      *         }
      *     });
      * 
-     *     // clean up the markers
-     *     panel.onClose.subscribe(() => {
+     *     // clean up the markers if the user aborts
+     *     tool.onAbort.subscribe(() => {
      *         for (let marker of markers) {
      *             marker.remove();
      *         }
      *     });
      * });
      */
-    function createModelingTool(icon: ui.IconElement, name: string, onOpen: (panel: ui.toolbar.Panel) => void): void;
+    function createModelingTool(icon: ui.IconElement, name: string, activate: (tool: ui.toolbar.Tool) => void): void;
 }
