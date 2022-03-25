@@ -4,7 +4,7 @@
  * Colors can be created from rgb (using `.fromRGB()`), from a hex string (using `.fromHex()`) or from HSL (using `.fromHSL()`)
  */
 declare class Color {
-    constructor(red: number, green: number, blue: number);
+    constructor(red: number, green: number, blue: number, alpha?: number);
 
     /**
      * Creates a color from red green and blue.
@@ -13,18 +13,18 @@ declare class Color {
      * 
      * @example const red = Color.fromRGB(255, 0, 0);
      */
-    static fromRGB(red: number, green: number, blue: number): Color;
+    static fromRGB(red: number, green: number, blue: number, alpha?: number): Color;
 
     /**
      * Creates a color from a hex color string
      * 
-     * The function accepts `123`, `#123`, `123456` and `#123456` formats.
+     * The function accepts non-alpha `123`, `#123`, `123456` and `#123456` as well as alpha `1234`, `#1234`, `12345678`, `#12345678` formats.
      * Inputs are not case sensitive
      * 
      * @example const red = Color.fromHex("#F00");
      * @example const green = Color.fromHex("#00ff00");
      * @example const blue = Color.fromHex("00f");
-     * @example const red = Color.fromHex("fF0000");
+     * @example const semiTransparentRed = Color.fromHex("#fF000060");
      */
     static fromHex(hex: string): Color;
 
@@ -36,7 +36,7 @@ declare class Color {
      * 
      * @example const seaGreen = Color.fromHSL(160, 50, 50);
      */
-    static fromHSL(hue: number, saturation: number, lightness: number): Color;
+    static fromHSL(hue: number, saturation: number, lightness: number, alpha?: number): Color;
 
     /**
      * Creates a random color
@@ -55,6 +55,7 @@ declare class Color {
     readonly red: number;
     readonly green: number;
     readonly blue: number;
+    readonly alpha: number;
 
     /**
      * Calculated brightness using Rec 709 weights.
