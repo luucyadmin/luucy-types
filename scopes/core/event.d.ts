@@ -69,8 +69,10 @@ declare class Event<T> {
      * Breaking a copy will not break the source event.
      * emitting a new value in the source event will emit the value in the copy.
      * emitting a new value in the copy will NOT emit the value in the source event. 
+     * 
+     * Set `firePreviousValue` to `false` to prevent immediate fire of the event if a value has been emitted before.
      */
-    copy(): Event<T>;
+    copy(firePreviousValue?: boolean): Event<T>;
 
     /**
      * Subscribe to multiple events at once
