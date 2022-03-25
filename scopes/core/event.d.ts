@@ -64,6 +64,15 @@ declare class Event<T> {
     unbreak(): void;
 
     /**
+     * Copies the event
+     * 
+     * Breaking a copy will not break the source event.
+     * emitting a new value in the source event will emit the value in the copy.
+     * emitting a new value in the copy will NOT emit the value in the source event. 
+     */
+    copy(): Event<T>;
+
+    /**
      * Subscribe to multiple events at once
      * 
      * Will call `handler` whenever any of the events fires
