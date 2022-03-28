@@ -1,5 +1,5 @@
 declare namespace ui.tool { 
-    interface Tool {
+    interface ModelingTool {
         abort(): void;
         onAbort: Event<void>;
 

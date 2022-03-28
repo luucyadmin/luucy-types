@@ -45,4 +45,9 @@ declare class GlobalPosition {
      * Add the local position to this position, returns a new global position
      */
     apply(local: LocalPosition): GlobalPosition;
+
+    /**
+     * Measure distance between two positions
+     */
+    distance(to: GlobalPosition): number;
 }

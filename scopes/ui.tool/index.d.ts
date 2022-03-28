@@ -48,25 +48,28 @@ declare namespace ui.tool {
      * Adds a new modeling tool 
      * 
      * @example // Create custom project tool panel
-     * ui.tool.createModelingTool(ui.icons.account, 'Example Tool', tool => {
+     * ui.tool.createModelingTool(ui.icons.pointOfInterest, 'Draw Markers', tool => {
      *     const markers = [];
-     * 
+     *     const color = Color.random();
+     *     
      *     tool.onMapClick.subscribe(position => {
-     *         markers.push(new map.Maker(position));
-     * 
+     *         markers.push(new map.Marker(position.flattenedCopy(), color, `${markers.length + 1}`));
+     *     
      *         // call complete when 5 markers have been added
      *         if (markers.length == 5) {
-     *             complete();
+     *             tool.complete();
      *         }
      *     });
-     * 
+     *     
      *     // clean up the markers if the user aborts
      *     tool.onAbort.subscribe(() => {
+     *         console.log('abort');
+     * 
      *         for (let marker of markers) {
      *             marker.remove();
      *         }
      *     });
-     * });
+    });
      */
     function createModelingTool(icon: ui.IconElement, name: string, activate: (tool: ui.tool.Tool) => void): void;
 }

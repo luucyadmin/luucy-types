@@ -23,7 +23,7 @@ declare namespace ui.tool {
      *     });
      * });
      */
-    interface Panel extends ui.ElementContainer {
+    interface ToolPanel extends ui.ElementContainer {
         onClose: Event<void>;
         close(): void;
 
