@@ -25,6 +25,14 @@ interface Number {
     toRadianDegrees(percision?: number): string;
 
     /**
+     * Converts a number to a string
+     * 
+     * `0.52 -> '0.51m'`
+     * `12345.67 → '12345m'`
+     */
+    toMetricLengthString(percision?: number): string;
+
+    /**
      * Converts a number to a area string
      * 
      * `0.51 → '0.51m²'`
