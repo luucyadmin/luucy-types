@@ -14,7 +14,7 @@ declare namespace ui.tool {
      *     panel.add(new ui.Label('Project Tool'));
      * });
      */
-    function createProjectTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.Panel) => void): void;
+    function createProjectTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.ToolPanel) => void): void;
 
     /**
      * Adds a button to the layer tools
@@ -28,7 +28,7 @@ declare namespace ui.tool {
      *     panel.add(new ui.Label('Layer Tool'));
      * });
      */
-    function createLayerTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.Panel) => void): void;
+    function createLayerTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.ToolPanel) => void): void;
 
     /**
      * Adds a button to the export tools
@@ -42,7 +42,7 @@ declare namespace ui.tool {
      *     panel.add(new ui.Label('Export Tool'));
      * });
      */
-    function createExportTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.Panel) => void): void;
+    function createExportTool(icon: ui.IconElement, name: string, render: (panel: ui.tool.ToolPanel) => void): void;
 
     /**
      * Adds a new modeling tool 
@@ -71,5 +71,5 @@ declare namespace ui.tool {
      *     });
     });
      */
-    function createModelingTool(icon: ui.IconElement, name: string, activate: (tool: ui.tool.Tool) => void): void;
+    function createModelingTool(icon: ui.IconElement, name: string, activate: (tool: ui.tool.ModelingTool) => void): void;
 }
