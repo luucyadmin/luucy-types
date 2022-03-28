@@ -1,5 +1,6 @@
 /// <reference path="colored-area.d.ts" />
 /// <reference path="element.d.ts" />
+/// <reference path="line.d.ts" />
 /// <reference path="marker.d.ts" />
 /// <reference path="polygon.d.ts" />
 
