@@ -15,7 +15,13 @@ declare namespace ui {
 
         readonly name: string;
         readonly unit: string;
-        readonly max: number;
+
+        /**
+         * Max value displayed in chart
+         * 
+         * This may be set to a higher value than the segments, which will display a gray filler bar at the end of the chart.
+         */
+        max: number;
 
         /**
          * Adds a new segment to the chart
