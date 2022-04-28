@@ -66,5 +66,7 @@ declare namespace ui {
          * Values over 1 will show A+, A++, ...; values under 0 will show G-
          */
         rating: number;
+
+        onRatingChange: Event<number>;
     }
 }
