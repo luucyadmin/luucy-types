@@ -10,6 +10,7 @@
 /// <reference path="container.d.ts" />
 /// <reference path="element-container.d.ts" />
 /// <reference path="element.d.ts" />
+/// <reference path="energy-rating.d.ts" />
 /// <reference path="icon.d.ts" />
 /// <reference path="image.d.ts" />
 /// <reference path="label.d.ts" />
