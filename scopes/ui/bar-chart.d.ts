@@ -24,6 +24,11 @@ declare namespace ui {
         max: number;
 
         /**
+         * Total value of all segments added up
+         */
+        total: number;
+
+        /**
          * Adds a new segment to the chart
          */
         addSegment(name: string, value: number): void;
