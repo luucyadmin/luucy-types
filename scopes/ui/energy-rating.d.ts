@@ -1,5 +1,5 @@
 declare namespace ui {
-    class EnergyRating {
+    class EnergyRating extends Element {
         /**
          * A++ rating
          */
