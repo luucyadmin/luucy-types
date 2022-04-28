@@ -3,15 +3,15 @@ declare namespace ui {
      * Vertical bar chart 
      * 
      * @example // Create a price chart
-     * const chart = new ui.BarChart("Total Cost", "$");
-     * chart.addSegment("Plot", 100);
-     * chart.addSegment("Building", 150);
-     * chart.addSegment("Architect", 20);
+     * const chart = new ui.BarChart("Total Area", value => value.toMetricAreaString());
+     * chart.addSegment("House 1", 100);
+     * chart.addSegment("House 2", 150);
+     * chart.addSegment("Shed", 20);
      * 
      * section.add(chart);
      */
     class BarChart extends Element {
-        constructor(name: string, unit?: string);
+        constructor(name: string, unit?: string | ((value: number) => string));
 
         readonly name: string;
         readonly unit: string;
