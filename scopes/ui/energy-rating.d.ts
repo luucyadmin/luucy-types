@@ -67,6 +67,8 @@ declare namespace ui {
          */
         rating: number;
 
+        readonly title: string;
+
         onRatingChange: Event<number>;
     }
 }
