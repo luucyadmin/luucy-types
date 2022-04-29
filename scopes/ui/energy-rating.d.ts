@@ -52,14 +52,14 @@ declare namespace ui {
          * Values over 1 will show A+, A++, ...; values under 0 will show G-
          * 
          * @example // energy rating for B
-         * section.add(new ui.EnergyRating(ui.EnergyRating.B));
+         * section.add(new ui.EnergyRating('Car Enery Rating', ui.EnergyRating.B));
          * 
          * @example // energy rating based on calculation
          * const rating = 1 / someRatingMax * someRatingValue;
          * 
-         * section.add(new ui.EnergyRating(rating));
+         * section.add(new ui.EnergyRating('Epic Calculated Rating', rating));
          */
-        constructor(rating?: number);
+        constructor(title: string, rating?: number);
 
         /**
          * The rating value can range from 1 (A) to 0 (G). 
