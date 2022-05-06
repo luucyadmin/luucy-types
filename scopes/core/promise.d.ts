@@ -72,5 +72,5 @@ declare class Promise<T> {
      *     console.log(error); // -> Some Error
      * })
      */
-    catch<TRes>(handler: (error: any) => TRes): Promise<TRes>;
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | Promise<TResult>) | undefined | null): Promise<T | TResult>;
 }
