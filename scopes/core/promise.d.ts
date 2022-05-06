@@ -55,8 +55,8 @@ declare class Promise<T> {
      *     console.log(result); // -> 1
      * })
      */
-    then<TRes>(handler: (value: T) => TRes): Promise<TRes>;
-
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | Promise<TResult1>) | undefined | null): Promise<TResult1 | TResult2>;
+     
     /**
      * Subscribe to when the promise fails.
      * This prevents the error from beeing passed on to the next instance, thus preventing the plugin from beeing killed on error
