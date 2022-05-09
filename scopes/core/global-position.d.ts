@@ -50,4 +50,14 @@ declare class GlobalPosition {
      * Measure distance between two positions
      */
     distance(to: GlobalPosition): number;
+
+    /**
+     * Convert location to swiss lv03 format
+     */
+    toLV03(): { east: number, north: number };
+
+    /**
+     * Convert location to swiss lv95 format
+     */
+    toLV95(): { east: number, north: number };
 }
