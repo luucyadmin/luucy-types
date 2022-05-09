@@ -1,7 +1,7 @@
 /**
  * A 3D position / location on the map
  * 
- * The latitude and longitude are in the format used by most maps (Google Maps, ...).
+ * The latitude and longitude are in the WG84 format used by most maps (Google Maps, ...).
  * 
  * @example const lucerne = new GlobalPosition(47.050390, 8.310263),
  * @example const zurich = new GlobalPosition(47.3774162, 8.5414963),
@@ -10,6 +10,16 @@
  * @example const london = new GlobalPosition(51.500822, -0.123705);
  */
 declare class GlobalPosition {
+    /**
+     * Converts lv03 coordinates to a global position
+     */
+    static fromLV03(eath: number, north: number): GlobalPosition;
+
+    /**
+     * Converts lv95 coordinates to a global position
+     */
+    static fromLV95(eath: number, north: number): GlobalPosition;
+
     constructor(latitude: number, longitude: number, height?: number);
 
     /**
