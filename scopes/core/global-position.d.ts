@@ -62,6 +62,11 @@ declare class GlobalPosition {
     distance(to: GlobalPosition): number;
 
     /**
+     * Checks if the point is inside the polygon
+     */
+    inside(polygon: GlobalPosition[]): boolean;
+
+    /**
      * Convert location to swiss lv03 format
      */
     toLV03(): { east: number, north: number, toString(): string };
