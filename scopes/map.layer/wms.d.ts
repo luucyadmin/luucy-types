@@ -4,7 +4,9 @@ declare namespace map.layer {
 
         onPositionSelect: Event<GlobalPosition>;
         opacity: number;
-        
+        hidden: boolean;
+        visible: boolean;
+
         hide(): void;
         show(): void;
         remove(): void;

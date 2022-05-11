@@ -7,8 +7,20 @@ declare namespace map.layer {
 
         /**
          * Controls the layers opacity
+         * 
+         * Value ranges between 0 (not visible) and 1 (fully visible)
          */
         opacity: number;
+
+        /**
+         * Indicates if the layer is visible (true) or has been hidden by `.hide()`
+         */
+        visible: boolean;
+
+        /**
+         * Indicates if the layer is hidden by `.hide()` or is still visible
+         */
+        hidden: boolean;
 
         /**
          * Hides the layer
