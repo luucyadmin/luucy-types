@@ -1,0 +1,7 @@
+{
+    "name": "Map Layers",
+    "description": "Create and manage custom layers",
+    "dependencies": [
+        "map"
+    ]
+}
