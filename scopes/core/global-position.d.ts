@@ -75,4 +75,9 @@ declare class GlobalPosition {
      * Converts the coordinate to a string
      */
     toString(): string;
+
+    /**
+     * Converts the coordinate to a human readable string
+     */
+    toLocaleString(): string;
 }
