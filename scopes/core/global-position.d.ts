@@ -64,10 +64,15 @@ declare class GlobalPosition {
     /**
      * Convert location to swiss lv03 format
      */
-    toLV03(): { east: number, north: number };
+    toLV03(): { east: number, north: number, toString(): string };
 
     /**
      * Convert location to swiss lv95 format
      */
-    toLV95(): { east: number, north: number };
+    toLV95(): { east: number, north: number, toString(): string };
+
+    /**
+     * Converts the coordinate to a string
+     */
+    toString(): string;
 }
