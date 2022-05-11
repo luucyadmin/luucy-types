@@ -1,5 +1,5 @@
 declare namespace map.layer {
-    abstract class Layer {
+    interface Layer {
         /**
          * Emitted when the uer clicks the map and no other tool or layer took action
          */
