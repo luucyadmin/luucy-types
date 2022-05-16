@@ -18,6 +18,14 @@ declare namespace ui {
          */
         label: string;
 
+        /**
+         * Link
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        url: string;
+
         onLabelChange: Event<string>;
+        onUrlChange: Event<string>;
     }
 }
