@@ -52,6 +52,13 @@ declare class Color {
      */
     toHex(): string;
 
+    /**
+     * Creats a copy
+     * 
+     * If alpha is provided, the alpha component of the color is overwritten
+     */
+    copy(alpha?: number): Color;
+
     readonly red: number;
     readonly green: number;
     readonly blue: number;
