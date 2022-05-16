@@ -1,0 +1,8 @@
+{
+    "name": "Data (with Write-Access)",
+    "description": "Allows plugins to add shapes and data to projects and variants",
+    "dependencies": [
+        "map",
+        "data"
+    ]
+}
