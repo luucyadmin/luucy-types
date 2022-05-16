@@ -20,6 +20,11 @@ declare class GlobalPosition {
      */
     static fromLV95(eath: number, north: number): GlobalPosition;
 
+    /**
+     * Calculates the area of the provided points
+     */
+    static area(points: GlobalPosition[]): number;
+
     constructor(latitude: number, longitude: number, height?: number);
 
     /**
