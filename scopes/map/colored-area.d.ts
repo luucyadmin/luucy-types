@@ -5,6 +5,10 @@ declare namespace map {
     class ColoredArea {
         constructor(points: GlobalPosition[], color?: Color, border?: { color: Color, width: number } | Color);
 
+        readonly points: GlobalPosition[];
+        readonly color: Color;
+        readonly border?: { color: Color, width?: number };
+
         /**
           * Removes the colored area from the map.
         */
