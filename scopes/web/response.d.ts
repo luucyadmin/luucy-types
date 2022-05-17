@@ -23,5 +23,10 @@ declare namespace web {
          * Do not convert the data to an object with `JSON.parse()`, use `.json()` instead of `.text()`!
          */
         text(): Promise<string>;
+
+        /**
+         * Read response as a file
+         */
+        file(name: string): Promise<File>;
     }
 }
