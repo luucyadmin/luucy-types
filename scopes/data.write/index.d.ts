@@ -17,3 +17,9 @@ declare namespace map {
          releaseToVariant(): Promise<void>;
     }
 }
+
+declare namespace data {
+    interface Project {
+        createVariant(name: string): Promise<Variant>;
+    }
+}
