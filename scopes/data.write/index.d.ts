@@ -20,6 +20,9 @@ declare namespace map {
 
 declare namespace data {
     interface Project {
-        createVariant(name: string): Promise<Variant>;
+        /**
+         * Creates a new variant in the project and returns it
+         */
+        createVariant(name: string, drawing?: { edges: boolean, sketch: boolean }): Promise<Variant>;
     }
 }
