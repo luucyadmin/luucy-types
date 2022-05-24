@@ -42,13 +42,18 @@ declare namespace ui {
          */
         close(): void;
 
+        /**
+         * Add a header button to the modal
+         */
+        addHeaderAction(icon: ui.IconElement, name: string, handler: () => void): void;
+        
         readonly children: Element[];
         add(element: Element): void;
         insertAfter(child: Element, after: Element): void;
         insertBefore(child: Element, before: Element): void;
         remove(child: Element): void;
         removeAllChildren(): void;
-        
+
         onChildChange: Event<void>;
     }
 }
