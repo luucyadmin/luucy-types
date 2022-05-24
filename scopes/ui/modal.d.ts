@@ -26,7 +26,9 @@ declare namespace ui {
         constructor(title: string);
 
         readonly title: string;
-        readonly actions: ui.Action[];
+
+        readonly leadingActions: ui.Action[];
+        readonly trailingActions: ui.Action[];
 
         /**
          * Opens the modal window
@@ -44,9 +46,14 @@ declare namespace ui {
         close(): void;
 
         /**
-         * Add a header button to the modal
+         * Add a button to the modal on the left (leading) side 
          */
-        addHeaderAction(icon: ui.IconElement, name: string, handler: () => void): void;
+        addLeadingAction(icon: ui.IconElement, name: string, handler: () => void): void;
+
+        /**
+         * Add a button to the modal on the right (trailing) side 
+         */
+        addTrailingAction(icon: ui.IconElement, name: string, handler: () => void): void;
         
         readonly children: Element[];
         add(element: Element): void;
