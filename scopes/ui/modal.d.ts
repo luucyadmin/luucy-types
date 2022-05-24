@@ -17,7 +17,7 @@ declare namespace ui {
      *     modal.open();
      * });
      */
-     class Modal implements ElementContainer {
+    class Modal implements ElementContainer {
         /** 
          * Creates a modal
          * 
@@ -55,5 +55,6 @@ declare namespace ui {
         removeAllChildren(): void;
 
         onChildChange: Event<void>;
+        onActionsChange: Event<void>;
     }
 }
