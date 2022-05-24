@@ -23,6 +23,10 @@ declare namespace data {
         /**
          * Creates a new variant in the project and returns it
          */
-        createVariant(name: string, drawing?: { edges: boolean, sketch: boolean }): Promise<Variant>;
+        createVariant(name: string, drawing?: { 
+            edges: boolean, 
+            sketch: boolean, 
+            usages: boolean 
+        }): Promise<Variant>;
     }
 }
