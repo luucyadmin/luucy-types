@@ -26,6 +26,7 @@ declare namespace ui {
         constructor(title: string);
 
         readonly title: string;
+        readonly actions: ui.Action[];
 
         /**
          * Opens the modal window
