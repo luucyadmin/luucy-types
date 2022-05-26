@@ -3,6 +3,7 @@ declare namespace map.layer {
         constructor(name: string, url: string, layer: string, parameters: { [name: string]: string | boolean | number });
 
         onPositionSelect: Event<GlobalPosition>;
+        canSelectFeatures: boolean;
         opacity: number;
         hidden: boolean;
         visible: boolean;
