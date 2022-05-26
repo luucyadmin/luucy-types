@@ -6,6 +6,13 @@ declare namespace map.layer {
         onPositionSelect: Event<GlobalPosition>;
 
         /**
+         * Some map layer sources (like WMS) may provide custom object info.
+         * Enable this to allow features to be selected.
+         * This might interfere with custom `onPositionSelect` handlers.
+         */
+        canSelectFeatures: boolean;
+
+        /**
          * Controls the layers opacity
          * 
          * Value ranges between 0 (not visible) and 1 (fully visible)
