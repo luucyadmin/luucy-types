@@ -17,6 +17,7 @@ declare namespace map {
      */
      class Marker implements MapElement {
         constructor(position: GlobalPosition, color?: Color, label?: string);
+        constructor(position: GlobalPosition, icon: string, color?: Color);
 
         readonly visible: boolean;
         readonly hidden: boolean;
