@@ -19,13 +19,17 @@ declare namespace map {
         constructor(position: GlobalPosition, color?: Color, label?: string);
         constructor(position: GlobalPosition, icon: string, color?: Color);
 
-        readonly visible: boolean;
-        readonly hidden: boolean;
-        
-        hide(): void;
-        show(): void;
-        focus(): void;
-        remove(): void;
+        /**
+         * Highlights the marker by making it slightly bigger.
+         * 
+         * Multiple markers can be highlighted at the same time
+         */
+        highlight(): void;
+
+        /**
+         * Unhighlights the marker
+         */
+        unhighlight(): void;
 
         /**
          * Returns the current position of the marker
@@ -54,5 +58,13 @@ declare namespace map {
          * marker.onSelect.subscribe(() => marker.focus());
          */
         onSelect: Event<void>;
+
+        readonly visible: boolean;
+        readonly hidden: boolean;
+        
+        hide(): void;
+        show(): void;
+        focus(): void;
+        remove(): void;
     }
 }
