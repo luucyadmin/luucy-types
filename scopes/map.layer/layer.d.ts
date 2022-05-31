@@ -23,6 +23,11 @@ declare namespace map.layer {
         hidden: boolean;
 
         /**
+         * Name of the layer
+         */
+        name: string;
+
+        /**
          * Hides the layer
          */
         hide(): void;
