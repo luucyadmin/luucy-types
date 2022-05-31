@@ -1,0 +1,7 @@
+{
+    "name": "Map Location",
+    "description": "Get notified whenever the map moves around",
+    "dependencies": [
+        "map"
+    ]
+}
