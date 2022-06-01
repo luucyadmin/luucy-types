@@ -14,7 +14,6 @@ interface String {
      */
     readonly translate: {
         german(text: string): string;
-        english(text: string): string;
         czech(text: string): string;
         french(text: string): string;
         italian(text: string): string;
