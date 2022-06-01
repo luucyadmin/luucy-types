@@ -14,7 +14,7 @@ declare namespace map.layer {
         opacity: number;
         hidden: boolean;
         visible: boolean;
-        orderIndex: LayerOrderIndex;
+        orderIndex: 'default' | 'base' | 'tinted-overlay' | 'top';
 
         hide(): void;
         show(): void;
