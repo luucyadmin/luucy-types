@@ -74,6 +74,11 @@ declare class GlobalPosition {
     distance(to: GlobalPosition): number;
 
     /**
+     * Finds the local (meters) distance between two global positions
+     */
+    localDistance(to: GlobalPosition): LocalPosition;
+
+    /**
      * Checks if the point is inside the polygon
      */
     inside(polygon: GlobalPosition[]): boolean;
