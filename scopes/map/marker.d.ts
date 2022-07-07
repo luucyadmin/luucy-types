@@ -59,6 +59,11 @@ declare namespace map {
          */
         onSelect: Event<void>;
 
+        /**
+         * If set to true, the markers will be visible thru buildings
+         */
+        overlayBuildings: boolean;
+
         readonly visible: boolean;
         readonly hidden: boolean;
         
