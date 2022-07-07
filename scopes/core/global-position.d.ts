@@ -25,13 +25,6 @@ declare class GlobalPosition {
      */
     static area(points: GlobalPosition[]): number;
 
-    /**
-     * Calculates a shape with the distance in meters
-     * 
-     * For example, passing a 10x10m square and a distane of 1m will result in a 8x8m square
-     */
-    static calculateBufferedPath(points: GlobalPosition[], distance: number): GlobalPosition[];
-
     constructor(latitude: number, longitude: number, height?: number);
 
     /**
