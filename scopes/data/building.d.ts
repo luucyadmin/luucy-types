@@ -31,7 +31,7 @@ declare namespace data {
         /**
          * Area above ground and under ground
          */
-        readonly area: {
+        readonly floorArea: {
             overground: number,
             underground: number,
 
