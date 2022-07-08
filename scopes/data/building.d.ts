@@ -9,6 +9,11 @@ declare namespace data {
      */
     class Building {
         /**
+         * Name of the building
+         */
+        readonly name: string;
+
+        /**
          * Center point of the shape
          */
         readonly center: GlobalPosition;
