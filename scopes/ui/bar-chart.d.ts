@@ -41,6 +41,11 @@ declare namespace ui {
             value: number
         }];
 
+        /**
+         * Removes all segments from the chart
+         */
+        removeSegements(): void;
+
         onChange: Event<void>;
     }
 }
