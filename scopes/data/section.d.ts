@@ -25,7 +25,12 @@ declare namespace data {
         /**
          * Footprint of the section
          */
-         readonly footprint: number;
+        readonly footprint: number;
+
+        /**
+         * Rotation angle of the section
+         */
+        readonly angle: number;
 
         /**
          * Center point of the slice
