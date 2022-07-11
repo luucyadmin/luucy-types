@@ -55,7 +55,7 @@ declare namespace data {
         /**
          * Returns the section below this section
          */
-        readonly base: BuildingSection;
+        readonly base?: BuildingSection;
 
         /**
          * Emits when the position of the building segment changed
