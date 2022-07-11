@@ -1,5 +1,5 @@
 declare namespace data {
-    interface BuildingSection {
+    class BuildingSection {
         /**
          * Name of the slice
          */
