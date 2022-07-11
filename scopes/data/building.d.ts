@@ -7,7 +7,7 @@ declare namespace data {
      * 
      * Subscribe to `.onBuildingsChange` of `data.Variant` to get notified about building changes
      */
-    class Building {
+    interface Building {
         /**
          * Name of the building
          */
@@ -19,63 +19,47 @@ declare namespace data {
         readonly center: GlobalPosition;
 
         /**
-         * Building angle in radians
-         */
-        readonly angle: number;
-
-        /**
-         * Height of the shape
-         */
-        readonly height: number;
-
-        /**
          * Area taken up by the building
          */
         readonly footprint: number;
 
         /**
-         * Area above ground and under ground
+         * Height of the entire building
+         * 
+         * Will take the talles segment
          */
-        readonly floorArea: {
-            overground: number,
-            underground: number,
-
-            total: number
-        };
+        readonly height: Metric;
 
         /**
-         * Volume above ground and under ground
+         * Area of the entire building
          */
-        readonly volume: {
-            overground: number,
-            underground: number,
-
-            total: number
-        }
+        readonly floorArea: Metric;
 
         /**
-         * Points defining the shape
+         * Volume of the entire building
          */
-        readonly points: LocalPosition[];
+        readonly volume: Metric;
 
         /**
-         * Points defining the shape, without the angle translation
+         * Sections making up the building
          */
-        readonly unrotatedPoints: LocalPosition[];
+        readonly sections: BuildingSection[];
 
         /**
-         * Wall sizes and angles
+         * Emits when the sections of the building change
          */
-        readonly walls: Wall[];
+        onSectionsChange: Event<BuildingSection[]>;
 
         /**
-         * Buildings roof
+         * Emits when the volume, floorArea or footprint of the building change
          */
-         readonly roof: Roof;
+        onMetricsChange: Event<void>;
 
         /**
-         * Gets fired whenever the height or points of the building changes
+         * Emits when the building is moved
+         * 
+         * Passes the new center to the subscribers
          */
-        onGeometryChange: Event<void>;
+        onPositionChange: Event<GlobalPosition>;
     }
 }
