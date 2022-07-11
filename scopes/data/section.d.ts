@@ -1,5 +1,7 @@
 declare namespace data {
     class BuildingSection {
+        readonly id: number;
+
         /**
          * Name of the slice
          */
