@@ -46,6 +46,13 @@ declare namespace data {
          * Vertecies defining the shape on the ground
          */
         readonly groundPoints: LocalPosition[];
+
+        /**
+         * Vertecies defining the shape on the ground, without the angle applied
+         * 
+         * You're probabbly looking for `groundPoints`.
+         */
+         readonly unrotatedGroundPoints: LocalPosition[];
  
         /**
          * Wall sizes and angles
