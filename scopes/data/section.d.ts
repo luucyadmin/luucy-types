@@ -57,12 +57,12 @@ declare namespace data {
         /**
          * Wall sizes and angles
          */
-        readonly walls: Wall[];
+        calculateWalls(): Wall[];
  
         /**
          * Buildings roof
          */
-        readonly roof: Roof;
+        calculateRoof(): Roof;
 
         /**
          * Returns the section below this section
