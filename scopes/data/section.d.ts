@@ -53,16 +53,6 @@ declare namespace data {
          * You're probabbly looking for `groundPoints`.
          */
          readonly unrotatedGroundPoints: LocalPosition[];
- 
-        /**
-         * Wall sizes and angles
-         */
-        calculateWalls(): Wall[];
- 
-        /**
-         * Buildings roof
-         */
-        calculateRoof(): Roof;
 
         /**
          * Returns the section below this section
@@ -79,5 +69,15 @@ declare namespace data {
          * Gets fired whenever the height or points of the building changes
          */
         onGeometryChange: Event<void>;
+
+        /**
+         * Wall sizes and angles
+         */
+        calculateWalls(): Wall[];
+
+        /**
+         * Buildings roof
+         */
+        calculateRoof(): Roof;
     }
 }
