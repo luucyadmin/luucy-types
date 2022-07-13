@@ -1,5 +1,5 @@
 declare namespace data {
-    class Metric {
+    interface Metric {
         overground: number;
         underground: number;
 
