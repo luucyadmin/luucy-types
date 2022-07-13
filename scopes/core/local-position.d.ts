@@ -9,7 +9,7 @@ declare class LocalPosition {
     /**
      * Zero Position, 0/0/0
      */
-    static readonly zero: GlobalPosition;
+    static readonly zero: LocalPosition;
 
     constructor(x: number, y: number, z?: number);
 
