@@ -9,6 +9,11 @@ declare namespace data {
         id: number;
 
         /**
+         * Name of the parcel, defined by the user
+         */
+        name: string;
+
+        /**
          * Metric area of the parcel
          */
         area: number;
