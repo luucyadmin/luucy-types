@@ -1,8 +1,13 @@
 declare namespace data {
-    interface Metric {
+    /**
+     * Metrics contain both under and overground values for building properties.
+     */
+    class Metric {
+        constructor(overground: number, underground: number);
+
         overground: number;
         underground: number;
 
-        total: number;
+        readonly total: number;
     }
 }
