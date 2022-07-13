@@ -9,11 +9,16 @@ declare namespace data {
      */
     class Building {
         readonly id: number;
-        
+
         /**
          * Name of the building
          */
         readonly name: string;
+
+        /**
+         * Rotation angle of the entire building
+         */
+         readonly angle: number;
 
         /**
          * Center point of the shape
