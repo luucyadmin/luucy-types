@@ -33,6 +33,11 @@ declare namespace data {
         readonly angle: number;
 
         /**
+         * Elevation from the bottom of the building
+         */
+        readonly elevation: number;
+
+        /**
          * Center point of the slice
         */
         readonly center: GlobalPosition;
