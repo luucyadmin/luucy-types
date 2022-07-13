@@ -36,6 +36,11 @@ declare namespace data {
          */
         readonly buildings: Building[];
 
+        /**
+         * Parcels
+         */
+        readonly parcels: Parcel[];
+
         /** 
          * Will be called when the variants volume changes 
          * 
@@ -79,6 +84,11 @@ declare namespace data {
          * });
          */
         readonly onBuildingsChange: Event<Building[]>;
+
+        /**
+         * Will be fired when parcels change
+         */
+        readonly onParcelsChange: Event<Parcel[]>;
 
         /**
          * Variant storage
