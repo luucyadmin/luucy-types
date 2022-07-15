@@ -37,6 +37,11 @@ declare namespace data {
         readonly buildings: Building[];
 
         /**
+         * Parcels
+         */
+        readonly parcels: Parcel[];
+
+        /**
          * Parent project
          */
         readonly project: Project;
@@ -84,6 +89,11 @@ declare namespace data {
          * });
          */
         readonly onBuildingsChange: Event<Building[]>;
+
+        /**
+         * Will be fired when parcels change
+         */
+        readonly onParcelsChange: Event<Parcel[]>;
 
         /**
          * Variant storage

@@ -1,6 +1,7 @@
 /// <reference path="building.d.ts" />
 /// <reference path="metric.d.ts" />
 /// <reference path="organization.d.ts" />
+/// <reference path="parcel.d.ts" />
 /// <reference path="project.d.ts" />
 /// <reference path="roof.d.ts" />
 /// <reference path="section.d.ts" />
