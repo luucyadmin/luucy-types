@@ -53,6 +53,11 @@ declare namespace data {
         readonly sections: BuildingSection[];
 
         /**
+         * Parent variant
+         */
+        readonly variant: Variant;
+
+        /**
          * Emits when the sections of the building change
          */
         onSectionsChange: Event<BuildingSection[]>;

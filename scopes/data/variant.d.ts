@@ -36,6 +36,11 @@ declare namespace data {
          */
         readonly buildings: Building[];
 
+        /**
+         * Parent project
+         */
+        readonly project: Project;
+
         /** 
          * Will be called when the variants volume changes 
          * 

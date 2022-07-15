@@ -57,12 +57,17 @@ declare namespace data {
          * 
          * You're probabbly looking for `groundPoints`.
          */
-         readonly unrotatedGroundPoints: LocalPosition[];
+        readonly unrotatedGroundPoints: LocalPosition[];
 
         /**
          * Returns the section below this section
          */
         readonly base?: BuildingSection;
+
+        /**
+         * Parent building
+         */
+        readonly building: Building;
 
         /**
          * Emits when the position of the building segment changed
