@@ -8,49 +8,70 @@ declare namespace data {
      * Subscribe to `.onBuildingsChange` of `data.Variant` to get notified about building changes
      */
     class Building {
+        readonly id: number;
+
+        /**
+         * Name of the building
+         */
+        readonly name: string;
+
+        /**
+         * Rotation angle of the entire building
+         */
+         readonly angle: number;
+
         /**
          * Center point of the shape
          */
         readonly center: GlobalPosition;
 
         /**
-         * Building angle in radians
-         */
-        readonly angle: number;
-
-        /**
-         * Height of the shape
-         */
-        readonly height: number;
-
-        /**
          * Area taken up by the building
          */
-        readonly groundArea: number;
+        readonly footprint: number;
 
         /**
-         * Points defining the shape
+         * Height of the entire building
+         * 
+         * Will take the talles segment
          */
-        readonly points: LocalPosition[];
+        readonly height: Metric;
 
         /**
-         * Points defining the shape, without the angle translation
+         * Area of the entire building
          */
-        readonly unrotatedPoints: LocalPosition[];
+        readonly floorArea: Metric;
 
         /**
-         * Wall sizes and angles
+         * Volume of the entire building
          */
-        readonly walls: Wall[];
+        readonly volume: Metric;
 
         /**
-         * Buildings roof
+         * Sections making up the building
          */
-         readonly roof: Roof;
+        readonly sections: BuildingSection[];
 
         /**
-         * Gets fired whenever the height or points of the building changes
+         * Parent variant
          */
-        onGeometryChange: Event<void>;
+        readonly variant: Variant;
+
+        /**
+         * Emits when the sections of the building change
+         */
+        onSectionsChange: Event<BuildingSection[]>;
+
+        /**
+         * Emits when the volume, floorArea or footprint of the building change
+         */
+        onMetricsChange: Event<void>;
+
+        /**
+         * Emits when the building is moved
+         * 
+         * Passes the new center to the subscribers
+         */
+        onPositionChange: Event<GlobalPosition>;
     }
 }
