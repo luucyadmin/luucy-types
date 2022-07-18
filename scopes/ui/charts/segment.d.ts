@@ -10,7 +10,7 @@ declare namespace ui {
          * 
          * Can be changed and will automatically update.
          */
-        value: string;
+        value: number;
 
         /**
          * Color of the segment
