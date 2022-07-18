@@ -43,6 +43,11 @@ declare namespace ui {
          */
         removeSegements(): void;
 
+        /**
+         * Removes one segment from the chart
+         */
+        removeSegment(segment: ChartSegment): void;
+
         onChange: Event<void>;
     }
 }
