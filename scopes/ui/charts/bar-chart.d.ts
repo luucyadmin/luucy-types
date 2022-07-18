@@ -31,7 +31,7 @@ declare namespace ui {
         /**
          * Adds a new segment to the chart
          */
-        addSegment(name: string, value: number, color: Color): ChartSegment;
+        addSegment(name: string, value: number, color?: Color): ChartSegment;
 
         /**
          * Returns a copy of all segments
