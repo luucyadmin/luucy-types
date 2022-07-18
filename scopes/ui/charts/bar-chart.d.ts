@@ -31,15 +31,12 @@ declare namespace ui {
         /**
          * Adds a new segment to the chart
          */
-        addSegment(name: string, value: number): void;
+        addSegment(name: string, value: number, color: Color): ChartSegment;
 
         /**
          * Returns a copy of all segments
          */
-        getSegments(): [{
-            name: string,
-            value: number
-        }];
+        getSegments(): ChartSegment[];
 
         /**
          * Removes all segments from the chart
