@@ -41,7 +41,7 @@ declare namespace ui {
         /**
          * Removes all segments from the chart
          */
-        removeSegements(): void;
+        removeSegments(): void;
 
         /**
          * Removes one segment from the chart
