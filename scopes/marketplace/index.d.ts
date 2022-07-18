@@ -29,4 +29,6 @@ declare namespace marketplace {
     function purchase(consumableKey: string, restorationKey?: string, count?: number): Promise<boolean>;
 
     function hasPurchased(consumableKey: string, restorationKey: string): Promise<boolean>;
+
+    function restore(consumableKey: string, restorationKey: string): Promise<string>;
 }
