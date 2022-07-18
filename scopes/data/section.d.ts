@@ -8,6 +8,14 @@ declare namespace data {
         readonly name: string;
 
         /**
+         * Color of the section
+         */
+        readonly color: {
+            main: Color;
+            roof: Color
+        };
+
+        /**
          * Height of the slice
          */
         readonly height: Metric;
