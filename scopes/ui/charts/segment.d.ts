@@ -1,6 +1,6 @@
 declare namespace ui {
     class ChartSegment {
-        constructor(chart: BarChart, name: string, value: number, color: Color);
+        constructor(chart: BarChart, name: string, value: number, color?: Color);
 
         /**
          * Name of the segment
