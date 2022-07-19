@@ -23,6 +23,7 @@ declare class Event<T> {
      * Subscribe once to a event
      * 
      * Same as `.subscribe`, but only the first handler with the provided `tag` will be executed. 
+     * If no `tag` is provided, only the first tagless handler will be executed.
      * 
      * @example // Subscribe once
      * const event = new Event<void>();
@@ -35,6 +36,7 @@ declare class Event<T> {
      * event.emit(); // hit 1, hit 2, hit 4
      */
     subscribeOnce(tag: string, handler: EventHandler<T>): EventHandler<T>;
+    subscribeOnce(handler: EventHandler<T>): EventHandler<T>;
 
     /** 
      * Emits a new value
