@@ -129,6 +129,6 @@ declare class Event<T> {
     singleSubscription: Subscription;
 }
 
-declare class Subscription {
+declare interface Subscription {
     unsubscribe(): void;
 }
