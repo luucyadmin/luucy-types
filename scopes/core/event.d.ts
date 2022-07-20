@@ -118,6 +118,7 @@ declare class Event<T> {
 
 declare interface Subscription<T> {
     id: string;
+    tag?: string;
 
     handler: EventHandler<T>;
     unsubscribe(): void;
