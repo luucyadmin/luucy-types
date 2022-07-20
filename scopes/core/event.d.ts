@@ -17,7 +17,7 @@ declare class Event<T> {
      * The handler will be executed whenever a new value is emitted with `.emit(value)` and
      * immediately after you subscribe - if there has been a `.emit(value)` call before. 
      */
-    subscribe(handler: EventHandler<T>): EventHandler<T>;
+    subscribe(handler: EventHandler<T>): EventHandler<T> & Subscription;
 
     /** 
      * Subscribe once to a event
@@ -35,8 +35,8 @@ declare class Event<T> {
      * 
      * event.emit(); // hit 1, hit 2, hit 4
      */
-    subscribeOnce(tag: string, handler: EventHandler<T>): EventHandler<T>;
-    subscribeOnce(handler: EventHandler<T>): EventHandler<T>;
+    subscribeOnce(tag: string, handler: EventHandler<T>): EventHandler<T> & Subscription;
+    subscribeOnce(handler: EventHandler<T>): EventHandler<T> & Subscription;
 
     /** 
      * Emits a new value
@@ -100,4 +100,35 @@ declare class Event<T> {
     static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>): EventHandler<T>;
     static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>): EventHandler<T>;
     static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+
+    /**
+     * Returns all subscriptions
+     * 
+     * This will return untagged (`.subscribe`) and tagged (`.subscribeOnce`) subscriptions
+     */
+    subscriptions: Subscription[];
+
+    /**
+     * Returns all untagged subscriptions
+     * 
+     * A untagged subscription created by calling `.subscribe()`
+     */
+    untaggedSubscriptions: Subscription[];
+
+    /**
+     * Returns all tagged subscriptions
+     * 
+     * A tagged subscription created by calling `.subscribeOnce(name: string, handler)`
+     */
+    taggedSubscription: { [tag: string]: Subscription };
+
+    /**
+     * Return the single untagged subscription
+     * 
+     * The singular untagged subscription created by calling `.subscribeOnce(handler)` */
+    singleSubscription: Subscription;
+}
+
+declare class Subscription {
+    unsubscribe(): void;
 }
