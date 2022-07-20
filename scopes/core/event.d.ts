@@ -117,6 +117,8 @@ declare class Event<T> {
 }
 
 declare interface Subscription<T> {
+    (value: T): void;
+    
     id: string;
     tag?: string;
 
