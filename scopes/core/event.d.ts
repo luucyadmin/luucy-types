@@ -109,24 +109,11 @@ declare class Event<T> {
     subscriptions: Subscription[];
 
     /**
-     * Returns all untagged subscriptions
+     * Finds a tagged subscription (`.subscribeOnce(tag, handler)`)
      * 
-     * A untagged subscription created by calling `.subscribe()`
+     * Don't pass a tag argument to return the hander from `.subscribeOnce(handler)`
      */
-    untaggedSubscriptions: Subscription[];
-
-    /**
-     * Returns all tagged subscriptions
-     * 
-     * A tagged subscription created by calling `.subscribeOnce(name: string, handler)`
-     */
-    taggedSubscription: { [tag: string]: Subscription };
-
-    /**
-     * Return the single untagged subscription
-     * 
-     * The singular untagged subscription created by calling `.subscribeOnce(handler)` */
-    singleSubscription: Subscription;
+    findTaggedSubscription(tag?: string): Subscription;
 }
 
 declare interface Subscription {
