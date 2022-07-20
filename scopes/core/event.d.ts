@@ -113,7 +113,7 @@ declare class Event<T> {
      * 
      * Don't pass a tag argument to return the hander from `.subscribeOnce(handler)`
      */
-    findSubscription(tag?: string): Subscription<T>;
+    findSubscription(tag?: string): Subscription<T> | null;
 }
 
 declare interface Subscription<T> {
