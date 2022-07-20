@@ -17,7 +17,7 @@ declare class Event<T> {
      * The handler will be executed whenever a new value is emitted with `.emit(value)` and
      * immediately after you subscribe - if there has been a `.emit(value)` call before. 
      */
-    subscribe(handler: EventHandler<T>): Subscription<T> | null;
+    subscribe(handler: EventHandler<T>): Subscription<T>;
 
     /** 
      * Subscribe once to a event
@@ -35,8 +35,8 @@ declare class Event<T> {
      * 
      * event.emit(); // hit 1, hit 2, hit 4
      */
-    subscribeOnce(tag: string, handler: EventHandler<T>): Subscription<T> | null;
-    subscribeOnce(handler: EventHandler<T>): Subscription<T> | null;
+    subscribeOnce(tag: string, handler: EventHandler<T>): Subscription<T>;
+    subscribeOnce(handler: EventHandler<T>): Subscription<T>;
 
     /** 
      * Emits a new value
@@ -118,8 +118,8 @@ declare class Event<T> {
 
 declare interface Subscription<T> {
     (value: T): void;
-    
-    id: string;
+
+    id?: string;
     tag?: string;
 
     handler: EventHandler<T>;
