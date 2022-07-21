@@ -26,27 +26,7 @@ declare namespace data {
         /**
          * Area taken up by the building
          */
-        readonly footprint: number;
-
-        /**
-         * Area above ground and under ground
-         */
-        readonly area: {
-            overground: number,
-            underground: number,
-
-            total: number
-        };
-
-        /**
-         * Volume above ground and under ground
-         */
-        readonly volume: {
-            overground: number,
-            underground: number,
-
-            total: number
-        }
+        readonly groundArea: number;
 
         /**
          * Points defining the shape
