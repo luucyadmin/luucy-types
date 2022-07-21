@@ -1,0 +1,7 @@
+{
+    "name": "Embed",
+    "description": "Provides API for embedding luucy in your own service",
+    "dependencies": [
+        "core"
+    ]
+}
