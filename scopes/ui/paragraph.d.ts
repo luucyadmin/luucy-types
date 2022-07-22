@@ -24,6 +24,11 @@ declare namespace ui {
          */
         readonly expanded: boolean;
 
+        /**
+         * Number of visible lines
+         */
+        readonly lineLimit: number;
+
         onContentChange: Event<string>;
         onExpand: Event<void>;
     }
