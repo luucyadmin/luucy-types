@@ -25,6 +25,6 @@ declare namespace ui {
         readonly expanded: boolean;
 
         onContentChange: Event<string>;
-        onExpand: Event<string>;
+        onExpand: Event<void>;
     }
 }
