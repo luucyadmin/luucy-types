@@ -22,6 +22,7 @@ declare namespace map {
 
         readonly visible: boolean;
         readonly hidden: boolean;
+        readonly points: GlobalPosition[];
         
         hide(): void;
         show(): void;
