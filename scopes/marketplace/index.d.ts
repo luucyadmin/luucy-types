@@ -3,7 +3,7 @@ declare namespace marketplace {
      * Requests an in-app purchase from the user.
      * 
      * Will return a token, if the transaction was successful.
-     * `null` is returned, if the user rejected the purchase request.
+     * `false` is returned, if the user rejected the purchase request.
      * 
      * The token can be verifed by calling HTTP://LUUCYENDPOINTMISSING!!!, which will return details about the purchase.
      * An error will be returned if the token expired or was invalid
@@ -52,12 +52,12 @@ declare namespace marketplace {
      * 
      * section.add(buyButton);
      */
-    function purchase(consumableKey: string, restorationKey?: string, count?: number): Promise<string>;
+    function purchase(consumableKey: string, restorationKey?: string, count?: number): Promise<string | false>;
 
     /**
      * Restores a purchase by consumable and key
      * 
-     * Will return `null` if the item was not bought before
+     * Will return `false` if the item was not bought before
      * The orders token (the same returned by `purchase` when buying this item) is returned otherwise.
      * 
      * @example // Show a download button for the report if the user already bought it
@@ -71,5 +71,5 @@ declare namespace marketplace {
      *     });
      * }
      */
-    function restore(consumableKey: string, restorationKey: string): Promise<string>;
+    function restore(consumableKey: string, restorationKey: string): Promise<string | false>;
 }
