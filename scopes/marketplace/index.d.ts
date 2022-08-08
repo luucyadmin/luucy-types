@@ -5,7 +5,7 @@ declare namespace marketplace {
      * Will return a token, if the transaction was successful.
      * `false` is returned, if the user rejected the purchase request.
      * 
-     * The token can be verifed by calling HTTP://LUUCYENDPOINTMISSING!!!, which will return details about the purchase.
+     * The token can be verified by calling HTTP://LUUCYENDPOINTMISSING!!!, which will return details about the purchase.
      * An error will be returned if the token expired or was invalid
      * ```
      * {
@@ -25,9 +25,9 @@ declare namespace marketplace {
      *     "consumables": {
      *         "ecological-report": {
      *             "name": "Ecological Report",
-     *             "description": "Detailed report about the ecologics of a parcel",
+     *             "description": "Detailed report about the environment of a parcel",
      *             "trial": 1, // how many times this consumable can be tried for free
-     *             "expires": 30, // days until this puchase expires and cannot be restored anymore (optional)
+     *             "expires": 30, // days until this purchase expires and cannot be restored anymore (optional)
      *             "cost": [
      *                 { "count": 1, "cost": 50 }, // define packs
      *                 { "count": 3, "cost": 120 },
