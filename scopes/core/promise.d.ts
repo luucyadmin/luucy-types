@@ -1,3 +1,9 @@
+declare type PromiseConstructorLike = new <T>(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) => PromiseLike<T>;
+
+interface PromiseLike<T> {
+    then<TResult1 = T, TResult2 = never>(onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null): Promise<TResult1 | TResult2>;
+}
+
 /**
  * Asynchronous tasks
  * 
@@ -55,7 +61,7 @@ declare class Promise<T> {
      *     console.log(result); // -> 1
      * })
      */
-    then<TResult1 = T, TResult2 = never>(onfulfilled: ((value: T) => TResult1 | Promise<TResult1>) | undefined | null): Promise<TResult1 | TResult2>;
+    then<TResult1 = T, TResult2 = never>(onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null): Promise<TResult1 | TResult2>;
      
     /**
      * Subscribe to when the promise fails.
@@ -72,5 +78,5 @@ declare class Promise<T> {
      *     console.log(error); // -> Some Error
      * })
      */
-    catch<TResult = never>(onrejected: ((reason: any) => TResult | Promise<TResult>) | undefined | null): Promise<T | TResult>;
+    catch<TResult = never>(onrejected: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): Promise<T | TResult>;
 }
