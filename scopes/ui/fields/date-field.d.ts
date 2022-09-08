@@ -65,12 +65,12 @@ declare namespace ui {
          * 
          * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
          */
-        immediateValue: number;
+        immediateValue: Date;
 
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<number>;
+        onValueChange: Event<Date>;
 
         /**
          * The event is triggered whenever the user is changing the input.
@@ -90,7 +90,7 @@ declare namespace ui {
          *     heatingCostLabel.value = basePrice * value;
          * });
          */
-        onImmediateValueChange: Event<number>;
+        onImmediateValueChange: Event<Date>;
 
         onContentChange: Event<void>;
     }
