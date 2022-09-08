@@ -6,6 +6,11 @@
  * @example const threeMetersFiveMeters = new LocalPosition(3, 5);
  */
 declare class LocalPosition {
+    /**
+     * Zero Position, 0/0/0
+     */
+    static readonly zero: LocalPosition;
+
     constructor(x: number, y: number, z?: number);
 
     /**

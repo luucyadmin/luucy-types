@@ -25,6 +25,11 @@ declare class GlobalPosition {
      */
     static area(points: GlobalPosition[]): number;
 
+    /**
+     * Zero Position, 0/0/0
+     */
+    static readonly zero: GlobalPosition;
+
     constructor(latitude: number, longitude: number, height?: number);
 
     /**

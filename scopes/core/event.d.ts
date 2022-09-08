@@ -17,12 +17,13 @@ declare class Event<T> {
      * The handler will be executed whenever a new value is emitted with `.emit(value)` and
      * immediately after you subscribe - if there has been a `.emit(value)` call before. 
      */
-    subscribe(handler: EventHandler<T>): EventHandler<T>;
+    subscribe(handler: EventHandler<T>): Subscription<T>;
 
     /** 
      * Subscribe once to a event
      * 
      * Same as `.subscribe`, but only the first handler with the provided `tag` will be executed. 
+     * If no `tag` is provided, only the first tagless handler will be executed.
      * 
      * @example // Subscribe once
      * const event = new Event<void>();
@@ -34,7 +35,8 @@ declare class Event<T> {
      * 
      * event.emit(); // hit 1, hit 2, hit 4
      */
-    subscribeOnce(tag: string, handler: EventHandler<T>): EventHandler<T>;
+    subscribeOnce(tag: string, handler: EventHandler<T>): Subscription<T>;
+    subscribeOnce(handler: EventHandler<T>): Subscription<T>;
 
     /** 
      * Emits a new value
@@ -89,13 +91,37 @@ declare class Event<T> {
      *     priceLabel.value = area.value * pricePerM2.value;
      * });
      */
-    static subscribe<T>(event1: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>): EventHandler<T>;
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>): EventHandler<T>;
+    static subscribe<T>(event1: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+
+    /**
+     * Returns all subscriptions
+     * 
+     * This will return untagged (`.subscribe`) and tagged (`.subscribeOnce`) subscriptions
+     */
+    subscriptions: Subscription<T>[];
+
+    /**
+     * Finds a tagged subscription (`.subscribeOnce(tag, handler)`)
+     * 
+     * Don't pass a tag argument to return the hander from `.subscribeOnce(handler)`
+     */
+    findSubscription(tag?: string): Subscription<T> | null;
+}
+
+declare interface Subscription<T> {
+    (value: T): void;
+
+    id?: string;
+    tag?: string;
+
+    handler: EventHandler<T>;
+    unsubscribe(): void;
 }

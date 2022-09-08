@@ -26,10 +26,12 @@ declare namespace ui {
 
         /**
          * Shows the notification.
+         * 
+         * Set `keepOpen` to true to keep the notification open until calling `.hide()`
          *
          * Use `.hide()` to close the notification.
          */
-        show(): void;
+        show(keepOpen: boolean): void;
 
         /**
          * Hides the notification

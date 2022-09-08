@@ -1,10 +1,10 @@
 /// <reference path="fields/index.d.ts" />
 /// <reference path="table/index.d.ts" />
+/// <reference path="charts/index.d.ts" />
 
 /// <reference path="action.d.ts" />
 /// <reference path="app-section.d.ts" />
 /// <reference path="area.d.ts" />
-/// <reference path="bar-chart.d.ts" />
 /// <reference path="button.d.ts" />
 /// <reference path="code.d.ts" />
 /// <reference path="container.d.ts" />
