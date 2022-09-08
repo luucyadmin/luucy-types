@@ -6,12 +6,13 @@ declare namespace ui {
      *
      * @example // Create input
      * const label = new ui.Label("Building built");
-     * const dateFromField = new ui.DateField("From", new Date());
+     * const dateFromField = new ui.DateField("From", new Date(), new Date(2022, 9, 1), new Date(2022, 9, 15), 3);
      * const dateToField = new ui.DateField("To", new Date(new Date().setDate(1)));
      * 
      * dateFromField.onValueChange.subscribe(value => {
      *     // Filter buildings
      * });
+     * 
      * dateToField.onValueChange.subscribe(value => {
      *     // Filter buildings
      * });
@@ -21,7 +22,7 @@ declare namespace ui {
      * section.add(dateToField);
      */
     class DateField extends Element implements FieldElement {
-        constructor(label: string, value?: Date, min?: Date, max?: Date, step?: number);
+        constructor(label: string, value?: Date, min?: Date, max?: Date);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
@@ -39,17 +40,6 @@ declare namespace ui {
          * Biggest date possible to limit the user's input.
          */
         max: Date;
-        
-        /**
-         * Span between possible dates to limit the user's input.
-         * The number equals the number of days between possible dates.
-         * 
-         * @example // Only mondays are possible after 5.9.2022
-         * const meetingDate = new ui.DateField("Meeting at", null, new Date(2022, 9, 5), null, 7);
-         * 
-         * section.add(meetingDate);
-         */
-        step: number;
 
         /**
          * The fields date as entered by the user.
