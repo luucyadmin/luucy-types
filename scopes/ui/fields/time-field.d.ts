@@ -1,28 +1,20 @@
 declare namespace ui {
     /** 
-     * Date input field 
+     * Time input field 
      * 
-     * Creates a date field used for user input.
+     * Creates a time field used for user input.
      *
      * @example // Create input
-     * const label = new ui.Label("Building built");
-     * const dateFromField = new ui.DateField("From", new Date(), new Date(2022, 9, 1), new Date(2022, 9, 15), 3);
-     * const dateToField = new ui.DateField("To", new Date(new Date().setDate(1)));
+     * const timeField = new ui.DateField("Show traffic noise at", new Date());
      * 
-     * dateFromField.onValueChange.subscribe(value => {
-     *     // Filter buildings
+     * timeField.onValueChange.subscribe(value => {
+     *     // Show traffic noise at the selected time
      * });
      * 
-     * dateToField.onValueChange.subscribe(value => {
-     *     // Filter buildings
-     * });
-     * 
-     * section.add(label);
-     * section.add(dateFromField);
-     * section.add(dateToField);
+     * section.add(timeField);
      */
-    class DateField extends Element implements FieldElement {
-        constructor(label: string, value?: Date, min?: Date, max?: Date);
+    class TimeField extends Element implements FieldElement {
+        constructor(label: string, value?: Date);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
@@ -30,19 +22,9 @@ declare namespace ui {
          * Can be changed after being added to an area/element and will automatically update.
          */
         label: string;
-        
-        /**
-         * Smallest date possible to limit the user's input.
-         */
-        min: Date;
-        
-        /**
-         * Biggest date possible to limit the user's input.
-         */
-        max: Date;
 
         /**
-         * The fields date as entered by the user.
+         * The fields time as entered by the user.
          * Setting this programmatically will trigger the `onValueChange` event.
          * 
          * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
