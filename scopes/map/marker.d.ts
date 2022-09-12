@@ -27,7 +27,7 @@ declare namespace map {
         highlight(): void;
 
         /**
-         * Unhighlights the marker
+         * Removes highlight of the marker
          */
         unhighlight(): void;
 
@@ -63,6 +63,15 @@ declare namespace map {
          * If set to true, the markers will be visible thru buildings
          */
         overlayBuildings: boolean;
+
+        /**
+         * Maximum distance in meters where the marker is visible
+         * The marker will start to fade out when the distance reached 90% 
+         * 
+         * Set to `Infinity` to always keep the marker visible (check out `overlayBuildings` too)
+         * Set to `null` to use the default distance
+         */
+        maxVisibleDistance: number | null;
 
         readonly visible: boolean;
         readonly hidden: boolean;
