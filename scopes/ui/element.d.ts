@@ -37,6 +37,11 @@ declare namespace ui {
          * This will change `.visible` and `.hidden`
          */
         hide(): void;
+
+        /**
+         * Remove the element from its parent element
+         */
+        removeFromParent(): void;
         
         onVisibilityChange: Event<void>;
     }

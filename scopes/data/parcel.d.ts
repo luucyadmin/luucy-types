@@ -19,6 +19,11 @@ declare namespace data {
         area: number;
 
         /**
+         * Color of the parcel on the map
+         */
+        color: Color;
+
+        /**
          * Center Point of the parcel
          */
         center: GlobalPosition;

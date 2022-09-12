@@ -41,6 +41,11 @@ declare namespace data {
          */
         readonly parcels: Parcel[];
 
+        /**
+         * Parent project
+         */
+        readonly project: Project;
+
         /** 
          * Will be called when the variants volume changes 
          * 
