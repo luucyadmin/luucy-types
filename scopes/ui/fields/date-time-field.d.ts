@@ -26,16 +26,6 @@ declare namespace ui {
         label: string;
 
         /**
-         * Smallest date possible to limit the user's input.
-         */
-        min?: Date;
-        
-        /**
-         * Biggest date possible to limit the user's input.
-         */
-        max?: Date;
-
-        /**
          * The fields date as entered by the user.
          * Setting this programmatically will trigger the `onValueChange` event.
          * 

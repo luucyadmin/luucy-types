@@ -30,16 +30,6 @@ declare namespace ui {
          * Can be changed after being added to an area/element and will automatically update.
          */
         label: string;
-        
-        /**
-         * Smallest date possible to limit the user's input.
-         */
-        min?: Date;
-        
-        /**
-         * Biggest date possible to limit the user's input.
-         */
-        max?: Date;
 
         /**
          * The fields date as entered by the user.

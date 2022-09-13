@@ -5,8 +5,7 @@ declare namespace ui {
      * Creates a time field used for user input.
      *
      * @example // Create input
-     * // Step 3600 equals 1 hour
-     * const timeField = new ui.DateField("Show traffic noise at", null, null, null, 3600);
+     * const timeField = new ui.DateField("Show traffic noise at");
      * 
      * timeField.onValueChange.subscribe(value => {
      *     // Show traffic noise at the selected time
@@ -15,7 +14,7 @@ declare namespace ui {
      * section.add(timeField);
      */
     class TimeField extends Element implements FieldElement {
-        constructor(label: string, value?: Date, min?: Date, max?: Date, step?: number);
+        constructor(label: string, value?: Date, min?: Date, max?: Date);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
@@ -23,22 +22,6 @@ declare namespace ui {
          * Can be changed after being added to an area/element and will automatically update.
          */
         label: string;
-
-        /**
-         * Smallest time possible to limit the user's input.
-         */
-        min?: Date;
-        
-         /**
-          * Biggest time possible to limit the user's input.
-          */
-        max?: Date;
-
-        /**
-         * Step between times in seconds to limit the user's input.
-         * Default is 60 (seconds) for 1 minute.
-         */
-        step: number;
 
         /**
          * The fields time as entered by the user.
