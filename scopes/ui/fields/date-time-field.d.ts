@@ -49,18 +49,18 @@ declare namespace ui {
          * 
          * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
          */
-        immediateValue: Date;
+        immediateValue?: Date;
 
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<Date>;
+        onValueChange: Event<Date | undefined>;
 
         /**
          * The event is triggered whenever the user is changing the input.
          * Do not do heavy calculations, requests or complex ui manipulations in here, as this event is called on every keystroke!
          */
-        onImmediateValueChange: Event<Date>;
+        onImmediateValueChange: Event<Date | undefined>;
 
         onContentChange: Event<void>;
     }
