@@ -6,7 +6,7 @@ declare namespace ui {
      *
      * @example // Create input
      * const label = new ui.Label("Building built");
-     * const dateFromField = new ui.DateField("From", new Date(), new Date(2022, 9, 1), new Date(2022, 9, 15), 3);
+     * const dateFromField = new ui.DateField("From", new Date());
      * const dateToField = new ui.DateField("To", new Date(new Date().setDate(1)));
      * 
      * dateFromField.onValueChange.subscribe(value => {
@@ -34,12 +34,12 @@ declare namespace ui {
         /**
          * Smallest date possible to limit the user's input.
          */
-        min: Date;
+        min?: Date;
         
         /**
          * Biggest date possible to limit the user's input.
          */
-        max: Date;
+        max?: Date;
 
         /**
          * The fields date as entered by the user.
@@ -47,7 +47,7 @@ declare namespace ui {
          * 
          * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
          */
-        value: Date;
+        value?: Date;
 
         /**
          * The fields immediate value as entered by the user.
