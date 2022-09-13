@@ -66,7 +66,7 @@ declare namespace map {
 
         /**
          * Maximum distance in meters where the marker is visible
-         * The marker will start to fade out when the distance reached 90% 
+         * The marker will start to fade out when the distance reached 80% 
          * 
          * Set to `Infinity` to always keep the marker visible (check out `overlayBuildings` too)
          * Set to `null` to use the default distance

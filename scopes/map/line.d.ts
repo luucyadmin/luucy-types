@@ -6,21 +6,6 @@ declare namespace map {
         constructor(points: GlobalPosition[], color?: Color, width?: number);
 
         /**
-         * Gets the points of the line
-         */
-        readonly points: GlobalPosition[];
-
-        /**
-         * Gets the color of the line
-         */
-        readonly color?: Color;
-
-        /**
-         * Gets the width of the line
-         */
-        readonly width?: number;
-
-        /**
          * Append points to the line
          */
         append(...points: GlobalPosition[]): void;
