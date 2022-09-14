@@ -22,18 +22,21 @@ declare namespace ui {
          * Creates a modal
          * 
          * @param title - The modals name. Can't be changed after the modal has been created.
+         * @param printable - Wether the modal's content can be downloaded as a PDF
          */
-        constructor(title: string);
+        constructor(title: string, printable?: boolean);
 
         readonly title: string;
 
         readonly actions: ui.Action[];
 
+        printable: boolean;
+
         /**
          * Opens the modal window
          * 
          * Do not open the modal automatically! Please wait for user input, eg. a button press!
-         * The modal can be closed programatically by calling `.close()`
+         * The modal can be closed programmatically by calling `.close()`
          */
         open(): void;
 
