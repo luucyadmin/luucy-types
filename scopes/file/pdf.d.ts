@@ -1,4 +1,4 @@
-declare namespace ui {
+declare namespace file {
     /**
      * PDF Export 
      * 
@@ -10,18 +10,18 @@ declare namespace ui {
      * 
      * pdf.download();
      */
-    class PDFExport {
+    class PDF {
         /** 
          * Creates a PDF exporter
          * 
          * @param title - The PDFs title. Can't be changed after the PDF exporter has been created.
          * @param element - UI Element (and all their children) that should be exported
          */
-        constructor(title: string, element?: Element | ElementContainer);
+        constructor(title: string, element?: ui.Element | ui.ElementContainer);
 
         readonly title: string;
 
-        element?: Element | ElementContainer;
+        element?: ui.Element | ui.ElementContainer;
 
         download(): void;
     }

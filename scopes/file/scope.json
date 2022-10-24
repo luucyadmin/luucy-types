@@ -1,0 +1,7 @@
+{
+    "name": "File export",
+    "description": "Provides a way to export content to a file",
+    "dependencies": [
+        "ui"
+    ]
+}
