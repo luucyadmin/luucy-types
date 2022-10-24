@@ -1,8 +1,8 @@
-declare namespace file {
+declare namespace document {
     /**
      * PDF Export 
      * 
-     * Allows to export UI elements as a PDF file
+     * Export UI elements to a PDF file
      * 
      * @example // Export statistics
      * const pdf = new ui.PDFExport("Statistics");
