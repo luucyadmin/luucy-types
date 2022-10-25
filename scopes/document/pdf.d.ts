@@ -17,11 +17,11 @@ declare namespace document {
          * @param title - The PDFs title. Can't be changed after the PDF exporter has been created.
          * @param element - UI Element (and all their children) that should be exported
          */
-        constructor(title: string, element?: ui.Element | ui.ElementContainer);
+        constructor(title: string, element?: ui.Element | ui.Container);
 
         readonly title: string;
 
-        element?: ui.Element | ui.ElementContainer;
+        element?: ui.Element | ui.Container;
 
         download(): void;
     }
