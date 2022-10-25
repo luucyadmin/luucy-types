@@ -21,7 +21,7 @@ declare namespace ui {
         readonly hidden: boolean;
 
         /**
-         * Makes an element visible after beeing hidden with `.hide()`.
+         * Makes an element visible after being hidden with `.hide()`.
          * If the element is not visible, make sure that it has been added with `.add()`!
          * 
          * The element can be hidden again by calling `.hide()`. 
