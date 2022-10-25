@@ -5,7 +5,7 @@ declare namespace document {
      * Export UI elements to a PDF file
      * 
      * @example // Export statistics
-     * const pdf = new ui.PDFExport("Statistics", statisticsTable);
+     * const pdf = new document.PDF('Statistics', statisticsTable);
      * pdf.download();
      */
     class PDF {
