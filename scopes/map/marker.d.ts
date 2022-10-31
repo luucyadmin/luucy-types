@@ -5,7 +5,7 @@ declare namespace map {
      * A marker is automatically added to the map when created, indicating a significant location.
      * Setting a `height` value in the passed position will make the marker float above the ground.
      * 
-     * The color will default to `Color.luucyBrand`.
+     * If no color is passed when creating the label it will default to `Color.luucyBrand`.
      * A label may be provided, but it should not be longer than 2 characters.
      * 
      * @example // Show a marker at the lucerne main station

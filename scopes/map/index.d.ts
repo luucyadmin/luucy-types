@@ -3,6 +3,7 @@
 /// <reference path="line.d.ts" />
 /// <reference path="marker.d.ts" />
 /// <reference path="polygon.d.ts" />
+/// <reference path="label.d.ts" />
 
 /**
  * Interactions with luucys main map.
