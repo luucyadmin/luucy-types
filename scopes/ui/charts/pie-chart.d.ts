@@ -34,6 +34,7 @@ declare namespace ui {
         readonly name: string;
         readonly unit: string | ((value: number) => string);
         readonly total: number;
+        readonly showPercentage: boolean;
         max: number;
         addSegment(name: string, value: number, color?: Color): ChartSegment;
         getSegments(): ChartSegment[];
