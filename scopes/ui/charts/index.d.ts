@@ -24,6 +24,11 @@ declare namespace ui {
          * Total value of all segments added up
          */
         readonly total: number;
+
+        /**
+         * Wether the percentage should be included in the label of each segment
+         */
+        readonly showPercentage: boolean;
  
         /**
          * Max value displayed in chart
