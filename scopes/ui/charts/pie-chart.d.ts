@@ -3,7 +3,7 @@ declare namespace ui {
      * Pie chart 
      * 
      * @example // Create a age chart of members
-     * const chart = new ui.PieChart("Age of members", '', true);
+     * const chart = new ui.PieChart("Age of members", '');
      * chart.addSegment("< 18", 100);
      * chart.addSegment("18 - 24", 150);
      * chart.addSegment("25 - 65", 20);
