@@ -26,14 +26,12 @@ declare namespace ui {
          * 
          * @param name Label of the chart
          * @param unit Unit of the segments' values
-         * @param showPercentage Wether the percentage should be included in the label of each segment
          */
-        constructor(name: string, unit?: string | ((value: number) => string), showPercentage?: boolean);
+        constructor(name: string, unit?: string | ((value: number) => string));
 
         readonly name: string;
         readonly unit: string | ((value: number) => string);
         readonly total: number;
-        readonly showPercentage: boolean;
         max: number;
         addSegment(name: string, value: number, color?: Color): ChartSegment;
         getSegments(): ChartSegment[];
