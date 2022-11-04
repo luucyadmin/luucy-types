@@ -1,16 +1,17 @@
 declare namespace ui {
     /** 
-     * Vertical bar chart 
+     * Pie chart 
      * 
-     * @example // Create a price chart
-     * const chart = new ui.BarChart("Total Area", value => value.toMetricAreaString());
-     * chart.addSegment("House 1", 100);
-     * chart.addSegment("House 2", 150);
-     * chart.addSegment("Shed", 20);
+     * @example // Create a age chart of members
+     * const chart = new ui.PieChart("Age of members");
+     * chart.addSegment("< 18", 100);
+     * chart.addSegment("18 - 24", 150);
+     * chart.addSegment("25 - 65", 20);
+     * chart.addSegment("> 65", 20);
      * 
      * section.add(chart);
      */
-    class BarChart extends Element {
+    class PieChart extends Element {
         /**
          * The unit acts as the label of each segment
          * Entering a simple string for the unit will append it to the value of each segment
@@ -18,10 +19,10 @@ declare namespace ui {
          * 
          * ```
          * // Outputs (200km, 150km, 35km)
-         * new ui.BarChart("Total range", "km")
+         * new ui.PieChart("Total range", "km")
          * 
          * // Outputs (750g, 12.5kg, 490g)
-         * new ui.BarChart("Total weight", value => value > 1000 ? `${value / 1000}kg` : `${value}g`);
+         * new ui.PieChart("Total weight", value => value > 1000 ? `${value / 1000}kg` : `${value}g`);
          * ```
          * 
          * @param name Label of the chart
@@ -40,7 +41,7 @@ declare namespace ui {
         /**
          * Max value displayed in chart
          * 
-         * This may be set to a higher value than the segments, which will display a gray filler bar at the end of the chart.
+         * This may be set to a higher value than the segments, which will display a gray filler segment at the end of the chart.
          */
         max: number;
 
