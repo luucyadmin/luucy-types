@@ -37,9 +37,4 @@ declare namespace document {
          */
         download(): void;
     }
-
-    enum PDFElementWidth {
-        Full,
-        Half
-    }
 }
