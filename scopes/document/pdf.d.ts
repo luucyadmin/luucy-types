@@ -8,7 +8,7 @@ declare namespace document {
      * const pdf = new document.PDF('Statistics');
      * 
      * pdf.add(table);
-     * pdf.add(infoParagraph, );
+     * pdf.add(infoParagraph, document.PDFElementWidth.Half);
      * pdf.add(barChart);
      * 
      * pdf.download();
