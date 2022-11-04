@@ -24,20 +24,21 @@ declare namespace document {
         readonly title: string;
 
         /**
+         * Add a ui container to the PDF exporter
+         * 
+         * Each child of the container gets added separately with the given width.
+         * To have more control over the order and width of each element add them one by one without the container.
+         * @param container Contains element children
+         * @param width Defines how much width is occupied by each child element in the PDF
+         */
+        add(container: ui.ElementContainer, width?: PDFElementWidth): void;
+
+        /**
          * Adds a ui element to the PDF exporter
          * @param element UI element
          * @param width Defines how much width is occupied by the element in the PDF
          */
         add(element: ui.Element, width?: PDFElementWidth): void;
-
-        /**
-         * Add a ui container to the PDF exporter
-         * 
-         * Each child of the container gets added separately with full width.
-         * To have more control over the order and width of each element add them one by one without the container.
-         * @param container Contains element children
-         */
-        add(container: ui.ElementContainer): void;
 
         /**
          * Starts the print process in the browser.
