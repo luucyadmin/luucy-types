@@ -7,8 +7,8 @@ declare namespace document {
      * @example // Export statistics
      * const pdf = new document.PDF('Statistics');
      * 
-     * pdf.add(table);
-     * pdf.add(infoParagraph, document.PDFElementWidth.Half);
+     * pdf.add(table, document.half);
+     * pdf.add(infoParagraph, document.half);
      * pdf.add(barChart);
      * 
      * pdf.download();
