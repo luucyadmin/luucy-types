@@ -1,8 +1,8 @@
 /// <reference path="pdf.d.ts" />
 
 declare enum PDFElementWidth {
-    Full = 100,
-    Half = 50
+    full,
+    half
 }
 
 declare namespace document {
