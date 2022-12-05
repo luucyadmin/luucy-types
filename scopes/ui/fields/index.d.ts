@@ -13,7 +13,7 @@ declare namespace ui {
      * Field Element
      * 
      * All fields / inputs implement field element. 
-     * The interface does not container any properties or functions on its own.
+     * The interface does not contain any properties or functions on its own.
      */
     interface FieldElement {}
 }
