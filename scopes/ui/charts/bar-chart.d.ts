@@ -18,10 +18,10 @@ declare namespace ui {
          * 
          * ```
          * // Outputs (200km, 150km, 35km)
-         * new ui.BarChart("Total range", "km")
+         * new ui.PieChart("Total range", "km")
          * 
          * // Outputs (750g, 12.5kg, 490g)
-         * new ui.BarChart("Total weight", value => value > 1000 ? `${value / 1000}kg` : `${value}g`);
+         * new ui.PieChart("Total weight", value => value > 1000 ? `${value / 1000}kg` : `${value}g`);
          * ```
          * 
          * @param name Label of the chart
@@ -31,39 +31,12 @@ declare namespace ui {
 
         readonly name: string;
         readonly unit: string | ((value: number) => string);
-
-        /**
-         * Total value of all segments added up
-         */
         readonly total: number;
-
-        /**
-         * Max value displayed in chart
-         * 
-         * This may be set to a higher value than the segments, which will display a gray filler bar at the end of the chart.
-         */
         max: number;
-
-        /**
-         * Adds a new segment to the chart
-         */
         addSegment(name: string, value: number, color?: Color): ChartSegment;
-
-        /**
-         * Returns a copy of all segments
-         */
         getSegments(): ChartSegment[];
-
-        /**
-         * Removes all segments from the chart
-         */
         removeSegments(): void;
-
-        /**
-         * Removes one segment from the chart
-         */
         removeSegment(segment: ChartSegment): void;
-
         onChange: Event<void>;
     }
 }
