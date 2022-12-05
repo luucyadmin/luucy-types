@@ -33,7 +33,7 @@ declare namespace ui {
          * Opens the modal window
          * 
          * Do not open the modal automatically! Please wait for user input, eg. a button press!
-         * The modal can be closed programatically by calling `.close()`
+         * The modal can be closed programmatically by calling `.close()`
          */
         open(): void;
 
