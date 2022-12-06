@@ -12,7 +12,7 @@ declare namespace marketplace {
      *     "date": "2022-07-13T10:46:29.158Z",
      *     "consumable": "ecological-report",
      *     "item": "8001", // the restoration key passed to `marketplace.purchase`
-     *     "count": 1, // how many items were purchased (parameter `count` of `marketplace.purchase`)
+     *     "count": 1, // how many items were purchased (parameter count of marketplace.purchase)
      *     "trial": true // will be true when the trial was used for this purchase
      * }
      * ```
