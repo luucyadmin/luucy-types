@@ -21,7 +21,7 @@ declare namespace map {
      * 
      * Do not focus a element without any user interaction!
      */
-    function focus(elements: (ColoredArea | Line | Marker | Polygon | GlobalPosition)[]): void;
+    function focus(elements: MapElement[]): void;
 
     /**
      * On Position Select
