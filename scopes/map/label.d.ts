@@ -28,6 +28,15 @@ declare namespace map {
         readonly title: string;
 
         /**
+         * Called whenever the label is clicked on
+         * 
+         * @example // Focus a selected label
+         * const label = new map.Label(position, 'Hello World');
+         * label.onSelect.subscribe(() => label.focus());
+         */
+        onSelect: Event<void>;
+
+        /**
          * Moves the label to the defined position.
          * 
          * To refocus your label, call `.focus()`
