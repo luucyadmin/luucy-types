@@ -51,7 +51,8 @@ declare namespace map {
         moveBy(latitude: number, longitude: number, height: number): void;
 
         /**
-         * If set to true, labels will be visible thru buildings
+         * The label will be hidden behind buildings when disabled.
+         * Enabled by default
          */
         overlayBuildings: boolean;
 
