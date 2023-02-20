@@ -19,12 +19,12 @@ declare namespace data {
         /** 
          * Contains the floor area of all buildings and uses of this project variant 
          */
-        readonly floorArea: number;
+        readonly floorArea: Metric;
 
         /** 
          * Contains the volume of all buildings and uses of this project variant 
          */
-        readonly volume: number;
+        readonly volume: Metric;
 
         /**
          * Contains all usages of this variant
@@ -54,7 +54,7 @@ declare namespace data {
          *     console.log("Volume of ", variant.name, " changed to ", volume, "m³")
          * });
          */
-        readonly onVolumeChange: Event<number | null>;
+        readonly onVolumeChange: Event<Metric | null>;
 
         /** 
          * Will be called when the variants floor area changes 
@@ -64,7 +64,7 @@ declare namespace data {
          *     console.log("Area of ", variant.name, " changed to ", area, "m²")
          * });
          */
-        readonly onFloorAreaChange: Event<number | null>;
+        readonly onFloorAreaChange: Event<Metric | null>;
 
         /**
          * Will be fired when the usages change
