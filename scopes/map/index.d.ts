@@ -3,6 +3,7 @@
 /// <reference path="line.d.ts" />
 /// <reference path="marker.d.ts" />
 /// <reference path="polygon.d.ts" />
+/// <reference path="label.d.ts" />
 
 /**
  * Interactions with luucys main map.
@@ -20,7 +21,7 @@ declare namespace map {
      * 
      * Do not focus a element without any user interaction!
      */
-    function focus(elements: MapElement[]): void;
+    function focus(elements: (ColoredArea | Line | Marker | Polygon | GlobalPosition | Label)[]): void;
 
     /**
      * On Position Select
