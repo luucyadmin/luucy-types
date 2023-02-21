@@ -10,7 +10,7 @@ declare namespace marketplace {
      * ```
      * {
      *     "consumableKey": "ecological-report",
-     *     "restorationKey": "8001", // the restoration key passed to `marketplace.purchase`
+     *     "restorationKey": "8001", // the restoration key passed to 'marketplace.purchase'
      *     "expirationDate": "2023-03-23T16:15:18.438704+01:00",
      *     "orderToken": "ffffffff-ffff-ffff-ffff-ffffffffffff",
      *     "amount": 1.0 // how many items were purchased (parameter count of marketplace.purchase)
