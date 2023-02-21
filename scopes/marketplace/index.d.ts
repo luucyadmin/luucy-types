@@ -5,15 +5,15 @@ declare namespace marketplace {
      * Will return a token, if the transaction was successful.
      * `false` is returned, if the user rejected the purchase request.
      * 
-     * The token can be verified by calling HTTP://LUUCYENDPOINTMISSING!!!, which will return details about the purchase.
+     * The token can be verified by calling `https://app.luucy.ch/api/plugin/consumable/verify/{ order token }`, which will return details about the purchase.
      * An error will be returned if the token expired or was invalid
      * ```
      * {
-     *     "date": "2022-07-13T10:46:29.158Z",
-     *     "consumable": "ecological-report",
-     *     "item": "8001", // the restoration key passed to `marketplace.purchase`
-     *     "count": 1, // how many items were purchased (parameter count of marketplace.purchase)
-     *     "trial": true // will be true when the trial was used for this purchase
+     *     "consumableKey": "ecological-report",
+     *     "restorationKey": "8001", // the restoration key passed to `marketplace.purchase`
+     *     "expirationDate": "2023-03-23T16:15:18.438704+01:00",
+     *     "orderToken": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+     *     "amount": 1.0 // how many items were purchased (parameter count of marketplace.purchase)
      * }
      * ```
      * 
