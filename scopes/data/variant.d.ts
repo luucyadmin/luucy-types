@@ -92,7 +92,7 @@ declare namespace data {
          *     console.log("Area of ", variant.name, " changed to ", area.total.toMetricAreaString());
          * });
          */
-        readonly onTotalAreaChange: Event<Metric | null>;
+        readonly onTotalFloorAreaChange: Event<Metric | null>;
 
         /**
          * Will be fired when the usages change
