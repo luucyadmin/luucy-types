@@ -17,14 +17,28 @@ declare namespace data {
         readonly name: string;
 
         /** 
-         * Contains the floor area of all buildings and uses of this project variant 
+         * Contains the floor area of all buildings of this project variant
+         * 
+         * @deprected Use `totalFloorArea` to get the under and overground values instead. Use `totalFloorArea.total` to get the total floor area
          */
-        readonly floorArea: Metric;
+        readonly floorArea: number;
+
+        /**
+         * Contains the floor area of all buildings of this project variant 
+         */
+        readonly totalFloorArea: Metric;
 
         /** 
-         * Contains the volume of all buildings and uses of this project variant 
+         * Contains the volume of all buildings of this project variant 
+         * 
+         * @deprected Use `totalVolume` to get the under and overground values instead. Use `totalVolume.total` to get the total volume
          */
-        readonly volume: Metric;
+        readonly volume: number;
+
+        /**
+         * Contains the volume of all buildings of this project variant 
+         */
+        readonly totalVolume: Metric;
 
         /**
          * Contains all usages of this variant
