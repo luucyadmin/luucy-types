@@ -32,6 +32,11 @@ declare enum State {
   info
 }
 
+declare enum ModalWidth {
+  small,
+  medium
+}
+
 /** 
  * User interface components
  * 

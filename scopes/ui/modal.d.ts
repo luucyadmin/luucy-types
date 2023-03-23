@@ -22,8 +22,9 @@ declare namespace ui {
          * Creates a modal
          * 
          * @param title - The modals name. Can't be changed after the modal has been created.
+         * @param width - The width of the modal popup window (small/medium). Default is small.
          */
-        constructor(title: string);
+        constructor(title: string, width?: ModalWidth);
 
         readonly title: string;
 
