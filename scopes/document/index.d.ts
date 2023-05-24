@@ -1,4 +1,5 @@
 /// <reference path="pdf.d.ts" />
+/// <reference path="csv.d.ts" />
 
 declare enum PDFElementWidth {
     full,
