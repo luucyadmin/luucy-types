@@ -28,6 +28,8 @@ declare namespace ui {
 
         readonly title: string;
 
+        readonly width: ModalWidth;
+
         readonly actions: ui.Action[];
 
         /**
