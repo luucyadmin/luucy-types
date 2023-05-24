@@ -78,6 +78,20 @@ declare namespace ui {
   const info: State;
 
   /**
+   * Small modal width
+   * 
+   * section.add(new ui.Modal("Some Modal Title", ui.small));
+   */
+  const small: ModalWidth;
+
+  /**
+   * Medium modal width
+   * 
+   * section.add(new ui.Modal("Some Modal Title", ui.smalmediuml));
+   */
+  const medium: ModalWidth;
+
+  /**
    * Creates a section for your application in the project panel.
    * The section will automatically be added to the panel
    * 
