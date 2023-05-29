@@ -38,7 +38,9 @@ declare namespace ui {
          * Resolve record value on given index by trying to convert it to simple string
          * @param item record
          * @param index column index
+         * 
+         * @returns column value converted to string (by given formatter)
          */
-        resolveValue(item: T, index: number): Element;
+        resolveValue(item: T, index: number): String;
     }
 }
