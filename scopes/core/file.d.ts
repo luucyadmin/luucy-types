@@ -36,6 +36,18 @@
      */
     toUrl(): Promise<string>;
 
+    /** 
+     * Invoke download of the file
+     * 
+     * @example // Reading the files content
+     * const file = File.fromString("hello.txt", "hello worlds");
+     * 
+     * section.add(new ui.Button(ui.icons.export, "Download file", () => {
+     *     file.download();
+     * }));
+     */
+    download(): void;
+
     /**
      * Creates a file from string contents
      * 
@@ -47,4 +59,5 @@
      * }));
      */
     static fromString(name: string, content: string): File;
+ 
 }
