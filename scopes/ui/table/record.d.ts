@@ -3,22 +3,21 @@ declare namespace ui {
    * Table Record
    *
    * Describes a record as a row in a table.
-   * Thisis the required type of record if you want to use a CSV export functionality.
+   * This is the required type of table's records if you want to use a CSV export functionality.
    *
-   * The transformer will be called for every value in the recods.
+   * The transformer will be called for every value in the records.
    *
-   * You can return a string, number, Images, Fields, Icons and Buttons!
    *
    * @example // Create a table with an image, tooltips and actions
    *
-   *
-   *   const records: Record[] = [
+   *  const buildings = await data.selectedProject.selectedVariant.buildings;
+   *  const records: ui.Record[] = [
    * { label: "volume", data: buildings.map((b) => b.volume.total), format: (value) => value.toMetricVolumeString() },
    * { label: "area", data: buildings.map((b) => b.floorArea.total), format: (value) => value.toMetricAreaString() }];
    *
    * new ui.Table<Record>(records, [
-   *     new ui.Column<Record>("Name", record => record.label),
-   *     new ui.Column<Record>("Cost", (item) => item.data[index])
+   *     new ui.Column<ui.Record>("Name", record => record.label),
+   *     new ui.Column<ui.Record>("Cost", (record) => record.format(data[1]))
    * ]);
    */
   class Record<T> {
@@ -26,5 +25,6 @@ declare namespace ui {
 
     readonly label: string;
     readonly data: [T];
+    format(item: T): string;
   }
 }
