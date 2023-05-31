@@ -24,7 +24,7 @@ declare namespace ui {
     constructor(label: string, data: [any], format: (item: any) => string);
 
     readonly label: string;
-    readonly data: [];
+    readonly data: [any];
     format(item: any): string;
   }
 }

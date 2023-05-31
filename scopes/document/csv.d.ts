@@ -26,7 +26,7 @@ declare namespace document {
      */
     static generateCSV(
       name: string,
-      data: ui.Table<ui.Record<any>>,
+      data: ui.Table<ui.Record>,
       addHeader?: boolean,
       delimiter?: string
     ): File;
