@@ -14,10 +14,8 @@ declare namespace ui {
    *
    *  const columns = [
    *       new ui.Column<ui.Record>("item", (item) => item.label),
-   *       new ui.Column<ui.Record>("price NZD", (item, index) =>
-   *         item.format(item.data[index])),
-   *       new ui.Column<ui.Record>("price USD", (item, index) =>
-   *         item.format(item.data[index])),
+   *       new ui.Column<ui.Record>("price NZD", (item) =>  item.format(item.data[0])),
+   *       new ui.Column<ui.Record>("price USD", (item) =>  item.format(item.data[1])),
    *     ];
    *
    *  const records: ui.Record[] = [
