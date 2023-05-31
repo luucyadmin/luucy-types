@@ -20,11 +20,11 @@ declare namespace ui {
    *     new ui.Column<ui.Record>("Cost", (record) => record.format(data[1]))
    * ]);
    */
-  class Record<T> {
-    constructor(label: string, data: [T], format: (item: T) => string);
+  class Record {
+    constructor(label: string, data: [any], format: (item: any) => string);
 
     readonly label: string;
-    readonly data: [T];
-    format(item: T): string;
+    readonly data: [];
+    format(item: any): string;
   }
 }
