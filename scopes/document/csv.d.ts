@@ -12,13 +12,25 @@ declare namespace document {
      * @param name filename (if not provided the .csv suffix will be added)
      * @param data table data hodling the values for generate CSV
      * @param addHeader (default false) flag if the header of the table should be added to result CSV file
+     * @param labelAsValue (default true) flag if the label of the record should be added to the first place of the CSV row
      * @param delimiter (default , ) CSV delimiter character
      *
      * @example // Create an .csv file and download it
-     * const tableMulti = new ui.Table([],[new ui.Column("item", item => item.name), new ui.Column("cost", item => item.cost)]);
-     * tableMulti.setRecords([{name: 'tomato', cost: 30},{name: 'apple', cost: 25},{name: 'bun', cost: 5}]);
+     *  const columns = [
+     *       new ui.Column<ui.Record>("item", (item) => item.label),
+     *       new ui.Column<ui.Record>("price NZD", (item, index) =>
+     *         item.format(item.data[index])),
+     *       new ui.Column<ui.Record>("price USD", (item, index) =>
+     *         item.format(item.data[index])),
+     *     ];
      *
-     * const csvFile = document.CSV.generateCSV("test", tableMulti);
+     *  const records: ui.Record[] = [
+     *       new ui.Record("Apple", [10.23, 15.44], (value: number) =>  value.toFixed(1)),
+     *       new ui.Record("Banana", [20.13, 25.67], (value: number) => value.toFixed(1)),
+     *     ];
+     * const table = new ui.Table<ui.Record>(records, columns);
+     *
+     * const csvFile = document.CSV.generateCSV("fruit_prices", table);
      *
      * section.add(new ui.Button(ui.icons.export, "Download CSV", () => {
      *     csvFile.download();
@@ -28,6 +40,7 @@ declare namespace document {
       name: string,
       data: ui.Table<ui.Record>,
       addHeader?: boolean,
+      labelAsValue?: boolean,
       delimiter?: string
     ): File;
   }

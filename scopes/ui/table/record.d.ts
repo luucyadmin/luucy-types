@@ -5,23 +5,29 @@ declare namespace ui {
    * Describes a record as a row in a table.
    * This is the required type of table's records if you want to use a CSV export functionality.
    *
-   * The transformer will be called for every value in the records.
+   * The CSV will use the raw data from the data attribute.
+   * 
+   * The format method can be used to provide resolver for columns -> to enhance UI experience
    *
    *
    * @example // Create a table with an image, tooltips and actions
    *
-   *  const buildings = await data.selectedProject.selectedVariant.buildings;
-   *  const records: ui.Record[] = [
-   * { label: "volume", data: buildings.map((b) => b.volume.total), format: (value) => value.toMetricVolumeString() },
-   * { label: "area", data: buildings.map((b) => b.floorArea.total), format: (value) => value.toMetricAreaString() }];
+   *  const columns = [
+   *       new ui.Column<ui.Record>("item", (item) => item.label),
+   *       new ui.Column<ui.Record>("price NZD", (item, index) =>
+   *         item.format(item.data[index])),
+   *       new ui.Column<ui.Record>("price USD", (item, index) =>
+   *         item.format(item.data[index])),
+   *     ];
    *
-   * new ui.Table<Record>(records, [
-   *     new ui.Column<ui.Record>("Name", record => record.label),
-   *     new ui.Column<ui.Record>("Cost", (record) => record.format(data[1]))
-   * ]);
+   *  const records: ui.Record[] = [
+   *       new ui.Record("Apple", [10.23, 15.44], (value: number) =>  value.toFixed(1)),
+   *       new ui.Record("Banana", [20.13, 25.67], (value: number) => value.toFixed(1)),
+   *     ];
+   * const tableMulti = new ui.Table<ui.Record>(records, columns);
    */
   class Record {
-    constructor(label: string, data: [any], format: (item: any) => string);
+    constructor(label: string, data: any[], format: (item: any) => string);
 
     readonly label: string;
     readonly data: any[];
