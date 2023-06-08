@@ -129,6 +129,11 @@ declare namespace data {
         readonly onParcelsChange: Event<Parcel[]>;
 
         /**
+         * Will be fired when variant footprint area change
+         */
+        readonly onFootprintAreaChange: Event<number>;
+
+        /**
          * Variant storage
          * 
          * Any data in this storage area will be bound to this variant.
