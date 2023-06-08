@@ -41,6 +41,11 @@ declare namespace data {
         readonly totalVolume: Metric;
 
         /**
+         * Contains the footprint area of all buildings of this project variant
+         */
+        readonly footprintArea: number;
+
+        /**
          * Contains all usages of this variant
          */
         readonly usages: Usage[];

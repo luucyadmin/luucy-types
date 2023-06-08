@@ -58,6 +58,12 @@ declare namespace data {
         readonly variant: Variant;
 
         /**
+         * Building usages
+         * Compatible only for Buildings 2.0
+         */
+        readonly usages: string[];
+
+        /**
          * Emits when the sections of the building change
          */
         onSectionsChange: Event<BuildingSection[]>;
