@@ -61,7 +61,7 @@ declare namespace data {
          * Building usages
          * Compatible only for Buildings 2.0
          */
-        readonly usages: string[];
+        readonly buildingUsages: string[];
 
         /**
          * Emits when the sections of the building change
@@ -79,5 +79,11 @@ declare namespace data {
          * Passes the new center to the subscribers
          */
         onPositionChange: Event<GlobalPosition>;
+
+        /**
+         * Emits when building usages change
+         * Compatible only for Buildings 2.0
+         */
+        onBuildingsUsageChange: Event<string[] | null>;
     }
 }

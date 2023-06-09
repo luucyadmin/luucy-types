@@ -90,6 +90,12 @@ declare namespace data {
         readonly onFloorAreaChange: Event<number | null>;
 
         /** 
+         * Will be called when the variants footprint area changes 
+         * 
+         */
+        readonly onFootprintAreaChange: Event<number | null>;
+
+        /** 
          * Will be called when the variants floor area changes 
          * 
          * @example // Listen to changes in the area
