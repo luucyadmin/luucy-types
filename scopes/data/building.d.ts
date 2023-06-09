@@ -84,6 +84,6 @@ declare namespace data {
          * Emits when building usages change
          * Compatible only for Buildings 2.0
          */
-        onBuildingsUsageChange: Event<string[] | null>;
+        onBuildingUsagesChange: Event<string[] | null>;
     }
 }
