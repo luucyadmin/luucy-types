@@ -33,7 +33,7 @@ declare namespace ui {
 
         readonly id: string;
         getActions(): Action<T>[];
-        resolve(item: T, index: number): Element;
+        resolve(item: T, index: number, rowIndex: number): Element;
         resolveTooltip(item: T, index: number): string | null;
     }
 }

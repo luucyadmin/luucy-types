@@ -1,5 +1,4 @@
 /// <reference path="column.d.ts" />
-/// <reference path="record.d.ts" />
 
 declare namespace ui {
     class Table<T> extends Element {
