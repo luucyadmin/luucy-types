@@ -6,13 +6,11 @@ declare namespace document {
    */
   class CSV {
     /**
-     * Creates a CSV file from given table
-     * It uses the raw value from Record's data array
+     * Creates a CSV file from given 2-dimensional array
      *
      * @param name filename (if not provided the .csv suffix will be added)
-     * @param data table data hodling the values for generate CSV
-     * @param addHeader (default false) flag if the header of the table should be added to result CSV file
-     * @param labelAsValue (default true) flag if the label of the record should be added to the first place of the CSV row
+     * @param data data hodling the values for generate CSV
+     * @param addHeader (default false) flag if the first row of the data is a header row (aca column names) and should be skipped in result CSV file
      * @param delimiter (default , ) CSV delimiter character
      *
      * @example // Create an .csv file and download it
@@ -38,9 +36,8 @@ declare namespace document {
      */
     static generateCSV(
       name: string,
-      data: ui.Table<ui.Record>,
+      data: [][],
       addHeader?: boolean,
-      labelAsValue?: boolean,
       delimiter?: string
     ): File;
   }
