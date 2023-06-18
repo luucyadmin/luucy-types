@@ -61,7 +61,7 @@ declare namespace data {
          * Building usages
          * Compatible only for Buildings 2.0
          */
-        readonly buildingUsages: string[];
+        readonly buildingUsages: BuildingUsage[];
 
         /**
          * Emits when the sections of the building change
@@ -84,6 +84,6 @@ declare namespace data {
          * Emits when building usages change
          * Compatible only for Buildings 2.0
          */
-        onBuildingUsagesChange: Event<string[] | null>;
+        onBuildingUsagesChange: Event<BuildingUsage[]>;
     }
 }
