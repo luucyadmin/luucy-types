@@ -18,14 +18,14 @@ declare namespace ui {
      * 
      * section.add(button);
      * 
-     * @example // Toggeling button
+     * @example // Toggling button
      * let state = false;
      * 
      * const button = new ui.Button(ui.icons.center, "Turn on", () => {
      *     // toggle the state variable
      *     state = !state;
      * 
-     *     console.log("Toggeled to: ", state);
+     *     console.log("Toggled to: ", state);
      * 
      *     // update the buttons text and icon
      *     button.label = state ? "Turn off" : "Turn on";
@@ -48,16 +48,38 @@ declare namespace ui {
         /**
          * Buttons Text
          * 
-         * Can be changed after beeing added to an area/element and will automatically update.
+         * Can be changed after being added to an area/element and will automatically update.
          */
         label: string;
 
         /**
          * Buttons icon
          * 
-         * Can be changed after beeing added to an area/element and will automatically update.
+         * Can be changed after being added to an area/element and will automatically update.
          */
         icon?: IconElement;
+
+
+        /**
+         * If the button is disabled, it is grayed out and will not fire the `Click` event when clicked.
+         * 
+         * Can be changed after being added to an area/element and will automatically update.
+         */
+        disabled?: boolean;
+        
+        /**
+         * If the button is primary, it is visually highlighted.
+         * 
+         * There should only be one primary button per area/element.
+         */
+        primary?: boolean;
+
+        /**
+         * If the button is loading, it shows a loading animation and will not fire the `Click` event when clicked.
+         * 
+         * Can be changed after being added to an area/element and will automatically update.
+         */
+        loading?: boolean;
 
         /**
          * Click Event
@@ -69,5 +91,8 @@ declare namespace ui {
 
         onLabelChange: Event<void>;
         onIconChange: Event<void>;
+        onDisabledChange: Event<void>;
+        onPrimaryChange: Event<void>;
+        onLoadingChange: Event<void>;
     }
 }
