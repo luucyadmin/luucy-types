@@ -132,11 +132,23 @@ declare namespace ui {
          */
         getColumns(): Column<T>[];
 
+
+        /**
+         * Return table pivot type
+         */
+        getTablePivot(): PivotType;
+
         /**
          * Define table pivot
          * Default value is the ColumnPivot
          * @param pivot desired pivot type
          */
         setTablePivot(pivot: PivotType): void;
+
+        /**
+         * Convert the table records into two dimensional array
+         * The array orientation is based on pivot type 
+         */
+        convertToPivotArray(): [][];
     }
 }
