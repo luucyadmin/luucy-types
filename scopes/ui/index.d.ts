@@ -139,6 +139,7 @@ declare namespace ui {
 
   /**
      * Downloads a file. If no `name` is passed, the files `name` will be used.
+     * @deprecated Use `file.download()` instead
      * 
      * @example // Download a helloworld.txt
      * const file = File.fromString("helloworld.txt", ""Hello World!");

@@ -4,6 +4,7 @@ declare namespace ui {
      * 
      * Describes a column within a table.
      * The transformer will be called for every value in the recods.
+     * You can use the rowIndex to transform row values within the column.
      * 
      * You can return a string, number, Images, Fields, Icons and Buttons!
      * 
@@ -23,7 +24,7 @@ declare namespace ui {
      * ])
      */
     class Column<T> {
-        constructor(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button);
+        constructor(name: string, transformer: (item: T, index: number, rowIndex: number) => string | number | Image | FieldElement | IconElement | Button);
 
         readonly name: string;
 
@@ -32,7 +33,7 @@ declare namespace ui {
 
         readonly id: string;
         getActions(): Action<T>[];
-        resolve(item: T, index: number): Element;
+        resolve(item: T, index: number, rowIndex: number): Element;
         resolveTooltip(item: T, index: number): string | null;
     }
 }
