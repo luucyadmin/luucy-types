@@ -1,6 +1,10 @@
 /// <reference path="column.d.ts" />
 
-declare namespace ui {
+declare enum PivotType {
+    RowPivot,
+    ColumnPivot
+}
+declare namespace ui {  
     class Table<T> extends Element {
         constructor(records: T[], columns: ui.Column<Exclude<T, null>>[]);
 
@@ -127,5 +131,12 @@ declare namespace ui {
          * Returns a copy of the columns
          */
         getColumns(): Column<T>[];
+
+        /**
+         * Define table pivot
+         * Default value is the ColumnPivot
+         * @param pivot desired pivot type
+         */
+        setTablePivot(pivot: PivotType): void;
     }
 }

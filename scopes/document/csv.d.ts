@@ -14,21 +14,9 @@ declare namespace document {
      * @param delimiter (default , ) CSV delimiter character
      *
      * @example // Create an .csv file and download it
-     *  const columns = [
-     *       new ui.Column<ui.Record>("item", (item) => item.label),
-     *       new ui.Column<ui.Record>("price NZD", (item, index) =>
-     *         item.format(item.data[index])),
-     *       new ui.Column<ui.Record>("price USD", (item, index) =>
-     *         item.format(item.data[index])),
-     *     ];
+     * const data:[][] = [["Fruit", "Price"], ["Banana", 10],["Apple", 20], ["Orange", 35]];
      *
-     *  const records: ui.Record[] = [
-     *       new ui.Record("Apple", [10.23, 15.44], (value: number) =>  value.toFixed(1)),
-     *       new ui.Record("Banana", [20.13, 25.67], (value: number) => value.toFixed(1)),
-     *     ];
-     * const table = new ui.Table<ui.Record>(records, columns);
-     *
-     * const csvFile = document.CSV.generateCSV("fruit_prices", table);
+     * const csvFile = document.CSV.generateCSV("fruit_prices", data, true);
      *
      * section.add(new ui.Button(ui.icons.export, "Download CSV", () => {
      *     csvFile.download();
