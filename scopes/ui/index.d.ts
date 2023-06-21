@@ -37,6 +37,11 @@ declare enum ModalWidth {
   medium
 }
 
+declare enum PivotType {
+  RowPivot,
+  ColumnPivot
+}
+
 /** 
  * User interface components
  * 

@@ -1,9 +1,5 @@
 /// <reference path="column.d.ts" />
 
-declare enum PivotType {
-    RowPivot,
-    ColumnPivot
-}
 declare namespace ui {  
     class Table<T> extends Element {
         constructor(records: T[], columns: ui.Column<Exclude<T, null>>[]);
