@@ -92,6 +92,22 @@ declare namespace ui {
   const medium: ModalWidth;
 
   /**
+   * Column row pivot type
+   * 
+   * const table = new ui.Table(records,columns);
+   * table.setPivotType(ui.columnPivot);
+   */
+  const columnPivot: PivotType;
+  
+  /**
+   * Table row pivot type
+   * 
+   * const table = new ui.Table(records,columns);
+   * table.setPivotType(ui.rowPivot);
+   */
+  const rowPivot: PivotType;
+
+  /**
    * Creates a section for your application in the project panel.
    * The section will automatically be added to the panel
    * 
