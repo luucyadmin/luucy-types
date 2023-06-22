@@ -8,9 +8,13 @@ declare namespace data {
         readonly name: string;
 
         /**
+         * color of the usage
+         */
+        readonly color?: Color;
+
+        /**
          * Id of the project
          */
         readonly projectId: number;
-
     }
 }
