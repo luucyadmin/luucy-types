@@ -14,6 +14,7 @@
 /// <reference path="icon.d.ts" />
 /// <reference path="image.d.ts" />
 /// <reference path="label.d.ts" />
+/// <reference path="labeled-color.d.ts" />
 /// <reference path="labeled-value.d.ts" />
 /// <reference path="link-button.d.ts" />
 /// <reference path="modal.d.ts" />
