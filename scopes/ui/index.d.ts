@@ -38,11 +38,6 @@ declare enum ModalWidth {
   medium
 }
 
-declare enum PivotType {
-  RowPivot,
-  ColumnPivot
-}
-
 /** 
  * User interface components
  * 
@@ -96,22 +91,6 @@ declare namespace ui {
    * section.add(new ui.Modal("Some Modal Title", ui.smalmediuml));
    */
   const medium: ModalWidth;
-
-  /**
-   * Column row pivot type
-   * 
-   * const table = new ui.Table(records,columns);
-   * table.setPivotType(ui.columnPivot);
-   */
-  const columnPivot: PivotType;
-  
-  /**
-   * Table row pivot type
-   * 
-   * const table = new ui.Table(records,columns);
-   * table.setPivotType(ui.rowPivot);
-   */
-  const rowPivot: PivotType;
 
   /**
    * Creates a section for your application in the project panel.

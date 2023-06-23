@@ -130,21 +130,23 @@ declare namespace ui {
 
 
         /**
-         * Return table pivot type
+         * Returns whether the table is inverted.
+         * Inverted table renders columns as rows and rows as columns.
          */
-        getTablePivot(): PivotType;
+        isInverted(): boolean;
 
         /**
-         * Define table pivot
-         * Default value is the ColumnPivot
-         * @param pivot desired pivot type
+         * Sets whether the table is inverted.
+         * Inverted table renders columns as rows and rows as columns.
+         * 
          */
-        setTablePivot(pivot: PivotType): void;
+        setInverted(inverted: boolean): void;
 
         /**
-         * Convert the table records into two dimensional array
-         * The array orientation is based on pivot type 
+         * Converts the table records into two dimensional array.
+         * 
+         * The array orientation respects table inversion (see `isInverted`) 
          */
-        convertToPivotArray(): [][];
+        toArray(): [][];
     }
 }
