@@ -15,6 +15,6 @@ declare namespace data {
         /**
          * Id of the project
          */
-        readonly projectId: number;
+        readonly projectId?: number;
     }
 }
