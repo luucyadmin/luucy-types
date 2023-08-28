@@ -24,7 +24,7 @@ declare namespace ui {
          * 
          * const column = table.addColumn("Year", building => building.year);
          */
-        addColumn(name: string, transformer: ColumnTransformer<T>): Column<T>;
+        addColumn(name: string, transformer: ColumnTransformer<T>, options?: ColumnOptions<T>): Column<T>;
 
         /**
          * Removes a column from the table

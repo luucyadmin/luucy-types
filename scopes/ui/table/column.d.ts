@@ -8,11 +8,41 @@ declare namespace ui {
         (item: T, columnIndex?: number, rowIndex?: number): string | null;
     }
 
+    interface ColumnAction<T> {
+        icon: IconElement;
+        name: string;
+        onClick: (item: T) => void;
+    }
+
+    /**
+     * Table Column Options
+     * 
+     * Describes the options for a table column.
+     */
+    interface ColumnOptions<T> {
+        /** The tooltip transformer generates a tooltip to be displayed when hovering over a cell. */ 
+        tooltip?: ColumnTooltipTransformer<T>;
+        /** The action is displayed as a button in the column. */
+        actions?: ColumnAction<T>[];
+        /** The width of the column. */
+        width?: number | string;
+        /** The minimum width of the column. */
+        minWidth?: number | string;
+        /** The maximum width of the column. */
+        maxWidth?: number | string;
+        /** The alignment of the column contents. */
+        align?: "left" | "center" | "right";
+        /** Whether the column should be sticky - i.e. stay displayed when scrolling vertically */
+        sticky?: boolean;
+        /** Whether the column should be sticky to end - i.e. stay displayed on the end of the row when scrolling vertically  */
+        stickyEnd?: boolean;
+    }
+
     /**
      * Table Column
      * 
      * Describes a column within a table.
-     * The transformer will be called for every value in the recods.
+     * The transformer will be called for every value in the records.
      * You can use the rowIndex to transform row values within the column.
      * 
      * You can return a string, number, Images, Fields, Icons and Buttons!
@@ -33,9 +63,11 @@ declare namespace ui {
      * ])
      */
     class Column<T> {
-        constructor(name: string, transformer: ColumnTransformer<T>);
+        constructor(name: string, transformer: ColumnTransformer<T>, options?: ColumnOptions<T>);
 
         readonly name: string;
+
+        readonly options: ColumnOptions<T>;
 
         addTooltip(transformer: ColumnTooltipTransformer<T>): this;
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
