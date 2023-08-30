@@ -1,9 +1,19 @@
 declare namespace ui {
+
+    interface ColumnTransformer<T> {
+        (item: T, columnIndex?: number, rowIndex?: number): string | number | Image | FieldElement | IconElement | Button;
+    }
+
+    interface ColumnTooltipTransformer<T> {
+        (item: T, columnIndex?: number, rowIndex?: number): string | null;
+    }
+
     /**
      * Table Column
      * 
      * Describes a column within a table.
      * The transformer will be called for every value in the recods.
+     * You can use the rowIndex to transform row values within the column.
      * 
      * You can return a string, number, Images, Fields, Icons and Buttons!
      * 
@@ -23,16 +33,16 @@ declare namespace ui {
      * ])
      */
     class Column<T> {
-        constructor(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button);
+        constructor(name: string, transformer: ColumnTransformer<T>);
 
         readonly name: string;
 
-        addTooltip(transformer: (item: T, index: number) => string): this;
+        addTooltip(transformer: ColumnTooltipTransformer<T>): this;
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
 
         readonly id: string;
         getActions(): Action<T>[];
-        resolve(item: T, index: number): Element;
-        resolveTooltip(item: T, index: number): string | null;
+        resolve(item: T, columnIndex: number, rowIndex: number): Element;
+        resolveTooltip(item: T, columnIndex: number, rowIndex: number): string | null;
     }
 }

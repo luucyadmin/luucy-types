@@ -14,6 +14,7 @@
 /// <reference path="icon.d.ts" />
 /// <reference path="image.d.ts" />
 /// <reference path="label.d.ts" />
+/// <reference path="labeled-color.d.ts" />
 /// <reference path="labeled-value.d.ts" />
 /// <reference path="link-button.d.ts" />
 /// <reference path="modal.d.ts" />
@@ -139,6 +140,7 @@ declare namespace ui {
 
   /**
      * Downloads a file. If no `name` is passed, the files `name` will be used.
+     * @deprecated Use `file.download()` instead
      * 
      * @example // Download a helloworld.txt
      * const file = File.fromString("helloworld.txt", ""Hello World!");

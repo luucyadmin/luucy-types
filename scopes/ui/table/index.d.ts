@@ -1,6 +1,6 @@
 /// <reference path="column.d.ts" />
 
-declare namespace ui {
+declare namespace ui {  
     class Table<T> extends Element {
         constructor(records: T[], columns: ui.Column<Exclude<T, null>>[]);
 
@@ -24,7 +24,7 @@ declare namespace ui {
          * 
          * const column = table.addColumn("Year", building => building.year);
          */
-        addColumn(name: string, transformer: (item: T, index: number) => string | number | Image | FieldElement | IconElement | Button): Column<T>;
+        addColumn(name: string, transformer: ColumnTransformer<T>): Column<T>;
 
         /**
          * Removes a column from the table
@@ -127,5 +127,26 @@ declare namespace ui {
          * Returns a copy of the columns
          */
         getColumns(): Column<T>[];
+
+
+        /**
+         * Returns whether the table is inverted.
+         * Inverted table renders columns as rows and rows as columns.
+         */
+        isInverted(): boolean;
+
+        /**
+         * Sets whether the table is inverted.
+         * Inverted table renders columns as rows and rows as columns.
+         * 
+         */
+        setInverted(inverted: boolean): void;
+
+        /**
+         * Converts the table records into two dimensional array.
+         * 
+         * The array orientation respects table inversion (see `isInverted`) 
+         */
+        toArray(): [][];
     }
 }

@@ -58,6 +58,12 @@ declare namespace data {
         readonly variant: Variant;
 
         /**
+         * Building usages
+         * Compatible only for Buildings 2.0
+         */
+        readonly buildingUsages: BuildingUsage[];
+
+        /**
          * Emits when the sections of the building change
          */
         onSectionsChange: Event<BuildingSection[]>;
@@ -73,5 +79,11 @@ declare namespace data {
          * Passes the new center to the subscribers
          */
         onPositionChange: Event<GlobalPosition>;
+
+        /**
+         * Emits when building usages change
+         * Compatible only for Buildings 2.0
+         */
+        onBuildingUsagesChange: Event<BuildingUsage[]>;
     }
 }

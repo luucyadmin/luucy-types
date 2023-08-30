@@ -1,3 +1,4 @@
+/// <reference path="building-usage.d.ts" />
 /// <reference path="building.d.ts" />
 /// <reference path="metric.d.ts" />
 /// <reference path="organization.d.ts" />

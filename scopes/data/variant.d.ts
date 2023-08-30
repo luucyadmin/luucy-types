@@ -41,6 +41,11 @@ declare namespace data {
         readonly totalVolume: Metric;
 
         /**
+         * Contains the footprint area of all buildings of this project variant
+         */
+        readonly footprintArea: number;
+
+        /**
          * Contains all usages of this variant
          */
         readonly usages: Usage[];
@@ -83,6 +88,12 @@ declare namespace data {
          * @deprecated Use `onTotalAreaChange` instead, which is a metric containing over and underground values
          */
         readonly onFloorAreaChange: Event<number | null>;
+
+        /** 
+         * Will be called when the variants footprint area changes 
+         * 
+         */
+        readonly onFootprintAreaChange: Event<number | null>;
 
         /** 
          * Will be called when the variants floor area changes 
