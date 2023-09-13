@@ -1,6 +1,6 @@
 declare namespace data {
     /**
-     * @deprecated Use FloorSection instead
+     * @deprecated Use RoofSection instead
      */
     class Roof {
         /**
