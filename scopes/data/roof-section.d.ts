@@ -1,7 +1,7 @@
 declare enum RoofType {
-    FLAT,
-    DOUBLEPITCH,
-    MONOPITCH,
+    flat,
+    doublepitch,
+    monopitch,
 }
 
 declare namespace data {
