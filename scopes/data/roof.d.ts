@@ -1,4 +1,7 @@
 declare namespace data {
+    /**
+     * @deprecated Use FloorSection instead
+     */
     class Roof {
         /**
          * Steepness of the roof

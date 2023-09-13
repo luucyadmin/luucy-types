@@ -1,10 +1,10 @@
 declare namespace data {
     /**
      * User-drawn building prop
-     * 
+     *
      * Users can create multiple building props within the map.
      * The shapes are exposed in this class.
-     * 
+     *
      * Subscribe to `.onBuildingsChange` of `data.Variant` to get notified about building changes
      */
     class Building {
@@ -18,7 +18,7 @@ declare namespace data {
         /**
          * Rotation angle of the entire building
          */
-         readonly angle: number;
+        readonly angle: number;
 
         /**
          * Center point of the shape
@@ -32,7 +32,7 @@ declare namespace data {
 
         /**
          * Height of the entire building
-         * 
+         *
          * Will take the talles segment
          */
         readonly height: Metric;
@@ -64,6 +64,26 @@ declare namespace data {
         readonly buildingUsages: BuildingUsage[];
 
         /**
+         * Building floors
+         */
+        readonly floors: BuildingFloor[];
+
+        /**
+         * Roof building section
+         */
+        readonly roofSection: RoofSection;
+
+        /**
+         * Emits when the floors of the building change
+         */
+        onFloorsChange: Event<BuildingFloor[]>;
+
+        /**
+         * Emits when the roof section of the building change
+         */
+        onRoofChange: Event<RoofSection>;
+
+        /**
          * Emits when the sections of the building change
          */
         onSectionsChange: Event<BuildingSection[]>;
@@ -75,7 +95,7 @@ declare namespace data {
 
         /**
          * Emits when the building is moved
-         * 
+         *
          * Passes the new center to the subscribers
          */
         onPositionChange: Event<GlobalPosition>;

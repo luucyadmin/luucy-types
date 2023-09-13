@@ -9,11 +9,14 @@ declare namespace data {
 
         /**
          * Color of the section
+         * @deprecated use mainColor instead
          */
         readonly color: {
             main: Color;
             roof: Color
         };
+
+        readonly mainColor: Color;
 
         /**
          * Height of the slice
@@ -95,6 +98,7 @@ declare namespace data {
 
         /**
          * Buildings roof
+         * @deprecated use roof section
          */
         calculateRoof(): Roof;
     }
