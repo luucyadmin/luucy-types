@@ -6,6 +6,10 @@ declare enum FloorType {
 
 declare namespace data {
     class BuildingFloor {
+
+        /**
+         * Floor index
+         */
         readonly id: number;
 
         /**
