@@ -1,8 +1,4 @@
-declare enum RoofType {
-    flat,
-    doublepitch,
-    monopitch,
-}
+
 
 declare namespace data {
     class RoofSection extends BuildingSection {

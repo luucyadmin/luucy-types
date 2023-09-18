@@ -10,6 +10,18 @@
 /// <reference path="variant.d.ts" />
 /// <reference path="wall.d.ts" />
 
+declare enum FloorType {
+    overground,
+    underground,
+    ground,
+}
+
+declare enum RoofType {
+    flat,
+    doublepitch,
+    monopitch,
+}
+
 /**
  * Contains all the data-related classes that luucy exposes 
  */

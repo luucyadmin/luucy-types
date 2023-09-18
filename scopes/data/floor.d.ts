@@ -1,8 +1,4 @@
-declare enum FloorType {
-    overground,
-    underground,
-    ground,
-}
+
 
 declare namespace data {
     class BuildingFloor {
