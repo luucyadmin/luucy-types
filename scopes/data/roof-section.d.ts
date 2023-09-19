@@ -10,6 +10,14 @@ declare namespace data {
         readonly color?: Color;
         
         /**
+         * Roof volume
+         */
+        readonly volume?: number;
+        /**
+         * Roof area
+         */
+        readonly area?: number;
+        /**
          * Roof floor height
          */
         readonly floorHeight?: number;
