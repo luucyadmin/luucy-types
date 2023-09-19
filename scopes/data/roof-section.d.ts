@@ -42,9 +42,5 @@ declare namespace data {
          */
         readonly roofType?: RoofType;
 
-        /**
-         * Roof pitch
-         */
-        readonly roofPitch?: number;
     }
 }
