@@ -51,4 +51,34 @@ declare namespace data {
      * Try to use the `onProjectSelect` event as it will fire when the user switches projects.
      */
     const selectedProject: Project | null;
+
+
+    /**
+     * Flat roof type
+     */
+    const flat: RoofType;
+    /**
+     * Double pitch roof type
+     */
+    const doublepitch: RoofType;
+
+    /**
+     * Mono pitch roof type
+     */
+    const monopitch: RoofType;
+
+    /**
+     * Overground floor type
+     */
+    const overground: FloorType; 
+
+    /**
+     * Underground floor type
+     */
+    const underground: FloorType; 
+
+    /**
+     * Ground floor type
+     */
+    const ground: FloorType; 
 }
