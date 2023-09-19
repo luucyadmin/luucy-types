@@ -4,9 +4,14 @@ declare namespace data {
     class BuildingFloor {
 
         /**
+         * Floor identifier
+         */
+        readonly id: string;
+
+        /**
          * Floor index
          */
-        readonly id: number;
+        readonly index: number;
 
         /**
          * Name of the floor
