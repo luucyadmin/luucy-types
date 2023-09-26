@@ -24,6 +24,7 @@ declare namespace map {
         readonly hidden: boolean;
         readonly points: GlobalPosition[];
         readonly height: number;
+        readonly border?: { color: Color, width?: number };
         
         hide(): void;
         show(): void;
