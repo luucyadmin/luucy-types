@@ -18,7 +18,7 @@ declare namespace map {
      * );
      */
     class Polygon implements MapElement {
-        constructor(positions: GlobalPosition[], height: number, color?: Color);
+        constructor(positions: GlobalPosition[], height: number, color?: Color, border?: { color: Color, width?: number } | Color);
 
         readonly visible: boolean;
         readonly hidden: boolean;
