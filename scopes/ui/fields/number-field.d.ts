@@ -3,6 +3,8 @@ declare namespace ui {
      * Number input field
      *
      * Creates a number field used for user input.
+     * 
+     * When defining min or max value it enables validation that check input and don't allow pass value when invalid.
      *
      * @example // Create input
      * const input = new ui.TextField("Test Input", 100);
@@ -13,7 +15,7 @@ declare namespace ui {
      * section.add(input);
      */
     class NumberField extends Element implements FieldElement {
-        constructor(label: string, value?: number, placeholder?: string);
+        constructor(label: string, value?: number, placeholder?: string, min?: number, max?: number, step?: number);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
