@@ -30,5 +30,14 @@ declare namespace map {
         show(): void;
         focus(): void;
         remove(): void;
+
+        /**
+         * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)
+         */
+        bufferPolygon(
+            points: GlobalPosition[],
+            bufferDistance: number,
+            areaScaleFactor: number,
+            ) : GlobalPosition[] | undefined;
     }
 }
