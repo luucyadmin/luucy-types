@@ -64,5 +64,5 @@ declare namespace map {
         points: GlobalPosition[],
         bufferDistance: number,
         areaScaleFactor: number
-    ): [GlobalPosition[]];
+    ): GlobalPosition[][] | undefined;
 }
