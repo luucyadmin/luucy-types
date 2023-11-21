@@ -1,0 +1,12 @@
+############################################
+#   THIS SCRIPT IS USED TO BUILD THE UI    #
+#        DO NOT MODIFY THIS SCRIPT         #
+# MODIFYING THIS SCRIPT MAY BE DISASTEROUS #
+############################################
+
+############################################
+# Definitions of jobs to be inherited from #
+#   This is needed for OR logic between    #
+#   commit message and merge request...    #
+############################################
+
