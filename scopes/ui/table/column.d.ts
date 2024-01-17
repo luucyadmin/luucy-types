@@ -1,11 +1,11 @@
 declare namespace ui {
 
     interface ColumnTransformer<T> {
-        (item: T, columnIndex?: number, rowIndex?: number): string | number | Image | FieldElement | IconElement | Button;
+        (item: T, rowIndex?: number, columnIndex?: number): string | number | Image | FieldElement | IconElement | Button;
     }
 
     interface ColumnTooltipTransformer<T> {
-        (item: T, columnIndex?: number, rowIndex?: number): string | null;
+        (item: T, rowIndex?: number, columnIndex?: number): string | null;
     }
 
     interface ColumnAction<T> {
@@ -74,7 +74,7 @@ declare namespace ui {
 
         readonly id: string;
         getActions(): Action<T>[];
-        resolve(item: T, columnIndex: number, rowIndex: number): Element;
-        resolveTooltip(item: T, columnIndex: number, rowIndex: number): string | null;
+        resolve(item: T, rowIndex: number, columnIndex: number): Element;
+        resolveTooltip(item: T, rowIndex: number, columnIndex: number): string | null;
     }
 }
