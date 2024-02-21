@@ -9,6 +9,7 @@
 /// <reference path="section.d.ts" />
 /// <reference path="roof-section.d.ts" />
 /// <reference path="usage.d.ts" />
+/// <reference path="user-settings.d.ts" />
 /// <reference path="variant.d.ts" />
 /// <reference path="wall.d.ts" />
 
@@ -45,6 +46,16 @@ declare namespace data {
      */
     const onProjectSelect: Event<Project | null>;
 
+    /** 
+     * Will be executed when a user setting is changed.
+     * 
+     * @example // Listen for user settings change
+     * data.onUserSettingsChange.subscribe(settings => {
+     *     console.log("User locale changed to: " + settings.locale)
+     * });
+     */
+    const onUserSettingsChange: Event<UserSettings>;
+    
     /**
      * Contains the currently selected project.
      * 
