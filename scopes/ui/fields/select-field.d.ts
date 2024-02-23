@@ -1,4 +1,9 @@
 declare namespace ui {
+
+
+    interface SelectGroup<T> {
+        [groupName: string]: T[];
+    }
     /** 
      * Select input field 
      * 
@@ -60,10 +65,8 @@ declare namespace ui {
         /**
          * The available select groups (options groupped by the groupTransformer)
          * 
-         * Can be changed after beeing added to an area/element and will automatically update.
-         * `.push()` and other array operators will NOT work, the `options` property needs to be overwritten to trigger an update!
          */
-        groups: MapArray<T>;
+        groups: SelectGroup<T>[];
 
         /**
          * The event is triggered whenever the user changes the option.
