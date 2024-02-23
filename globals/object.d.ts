@@ -5,10 +5,6 @@ interface ThisType<T> { }
 
 declare type PropertyKey = string | number | symbol;
 
-interface MapArray<T> {
-    [key: string]: T[];
-}
-
 interface PropertyDescriptor {
     configurable?: boolean;
     enumerable?: boolean;
