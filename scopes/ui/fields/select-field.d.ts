@@ -58,11 +58,22 @@ declare namespace ui {
         options: T[];
 
         /**
+         * The available select groups (options groupped by the groupTransformer)
+         * 
+         * Can be changed after beeing added to an area/element and will automatically update.
+         * `.push()` and other array operators will NOT work, the `options` property needs to be overwritten to trigger an update!
+         */
+        groups: MapArray<T>;
+
+        /**
          * The event is triggered whenever the user changes the option.
          */
         onValueChange: Event<T>;
 
         readonly transformer: (item: T) => string;
+
+        readonly groupTransformer: (item: T) => string;
+
         onContentChange: Event<void>;
     }
 }
