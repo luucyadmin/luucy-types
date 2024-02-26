@@ -2,7 +2,8 @@ declare namespace ui {
 
 
     interface SelectGroup<T> {
-        [groupName: string]: T[];
+        groupName: string;
+        values: T[];
     }
     /** 
      * Select input field 
