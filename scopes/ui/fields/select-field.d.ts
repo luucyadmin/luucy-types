@@ -12,20 +12,22 @@ declare namespace ui {
      * 
      * @example // Price calculation based on apartment type
      * const types = [
-     *     { name: "Basic Apartment", pricePerM2: 100, category: "A" },
-     *     { name: "Standard Apartment", pricePerM2: 150, category: "A" },
-     *     { name: "Luxury Apartment", pricePerM2: 250, category: "B" },
+     * { name: "Basic Apartment", pricePerM2: 100, category: "A" },
+     * { name: "Standard Apartment", pricePerM2: 150, category: "A" },
+     * { name: "Luxury Apartment", pricePerM2: 250, category: "B" },
      * ];
      * 
      * const area = 69;
      * 
-     * const priceLabel = new ui.LabeledValue("Price");
-     * section.add(area);
+     * let priceLabel = new ui.LabeledValue("Price");
+     * section.add(priceLabel);
      * 
      * const typeSelect = new ui.SelectField("Apartment Type", types, types[1], type => type.name, type => type.category);
      * typeSelect.onValueChange.subscribe(type => {
-     *     priceLabel = type.pricePerM2 * area;
+     * priceLabel.value = type.pricePerM2 * area;
      * });
+     *     
+     * section.add(typeSelect);  
      * 
      */
      class SelectField<T> extends Element implements FieldElement {
