@@ -8,18 +8,6 @@ declare namespace data {
      */
     class UserSettings {
         /**
-         * User id
-         * 
-         * The current user id
-         */
-        readonly id: number;
-
-        /**
-         * Percent of usage in variant
-         */
-        readonly email: string;
-
-        /**
          * User configured locale
          */
         readonly locale: string;
