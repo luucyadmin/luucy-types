@@ -21,6 +21,11 @@ declare namespace ui {
         readonly hidden: boolean;
 
         /**
+         * Defines the element help displayed as a tooltip
+         */
+        readonly help?: string;
+
+        /**
          * Makes an element visible after being hidden with `.hide()`.
          * If the element is not visible, make sure that it has been added with `.add()`!
          * 

@@ -24,7 +24,7 @@ declare namespace ui {
      * section.add(slider);
      */
     class Slider extends Element implements FieldElement {
-        constructor(label: string, min: number, max: number, value?: number, step?: number);
+        constructor(label: string, min: number, max: number, value?: number, step?: number, help?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field

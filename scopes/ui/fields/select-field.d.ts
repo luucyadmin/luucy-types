@@ -39,8 +39,9 @@ declare namespace ui {
          * @param value - What is currently selected. This can be null
          * @param transform - How to convert a value into a string for displaying it. 
          * @param transformGroup - How to convert a value into a string for grouping values. 
+         * @param help - Will provide tooltip help on mouseover
          */
-        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string, transformGroup?: (item: T) => string);
+        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string, transformGroup?: (item: T) => string, help?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
