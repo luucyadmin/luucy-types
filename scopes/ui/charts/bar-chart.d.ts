@@ -28,7 +28,7 @@ declare namespace ui {
          * @param unit Unit of the segments' values
          * @param help - Will provide tooltip help on mouseover
          */
-        constructor(name: string, unit?: string | ((value: number) => string));
+        constructor(name: string, unit?: string | ((value: number) => string), help?: string);
 
         readonly name: string;
         readonly unit: string | ((value: number) => string);
