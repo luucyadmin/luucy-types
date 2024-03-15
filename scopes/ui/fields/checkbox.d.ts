@@ -13,7 +13,7 @@ declare namespace ui {
      * section.add(checkbox);
      */
      class Checkbox extends Element {
-        constructor(label: string, value?: boolean, help?: string);
+        constructor(label: string, value?: boolean);
 
         /**
          * Describes the purpose of an input and is displayed next to the checkbox
