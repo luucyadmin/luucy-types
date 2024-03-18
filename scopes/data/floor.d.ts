@@ -3,7 +3,7 @@
 declare namespace data {
     class BuildingFloor {
 
-        constructor(positions: GlobalPosition[], floorType?: FloorType, height?: number, color?: Color, usage?: BuildingUsage)
+        constructor(positions: GlobalPosition[], floorType: FloorType, height?: number, color?: Color, usage?: BuildingUsage)
 
         /**
          * Floor identifier
@@ -18,12 +18,12 @@ declare namespace data {
         /**
          * Color of the floor
          */
-        readonly color: Color;
+        color: Color;
 
         /**
          * Height of the floor
          */
-        readonly height: Metric;
+        height: Metric;
 
         /**
          * Type of the floor
@@ -33,7 +33,7 @@ declare namespace data {
         /**
          * Floor usage
          */
-        usage: BuildingUsage;
+        usage?: BuildingUsage;
 
         /**
          * Floor points
