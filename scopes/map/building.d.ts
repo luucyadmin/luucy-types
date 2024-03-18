@@ -17,12 +17,12 @@ declare namespace map {
      * );
      */
     class Building implements MapElement {
-        constructor(floors: [], floorsCount?: number, roof?: data.RoofSection);
+        constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
 
         readonly visible: boolean;
         readonly hidden: boolean;
         readonly floors: data.BuildingFloor[];
-        readonly roof: data.RoofSection;
+        readonly roof: data.BuildingFloor[];
         
         hide(): void;
         show(): void;
