@@ -22,7 +22,7 @@ declare namespace map {
         readonly visible: boolean;
         readonly hidden: boolean;
         readonly floors: data.BuildingFloor[];
-        readonly roof: data.BuildingFloor[];
+        readonly roof: data.RoofSection;
         
         hide(): void;
         show(): void;
