@@ -28,16 +28,16 @@ declare namespace data {
         /**
          * Type of the floor
          */
-        floorType: FloorType;
+        floorType?: FloorType;
 
         /**
          * Floor usage
          */
-        usage: BuildingUsage;
+        usage?: BuildingUsage;
 
         /**
          * Floor points
          */
-        positions: GlobalPosition[];
+        positions?: GlobalPosition[];
     }
 }
