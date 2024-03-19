@@ -6,8 +6,8 @@ declare namespace map {
      * 
      * @example // Create a simple building with 15 equal floors
      * const floor = new data.BuildingFloor([
-     *     new GlobalPosition(47.050390, 8.310263)], FloorType.overground, 2.85, Color.red);
-     * const roof = new data.RoofSection(RoofType.flat, 5.2);     
+     *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
+     * const roof = new data.RoofSection(data.flat, 5.2);     
      * 
      * 
      * const building = new map.Building(floor, 15, roof);

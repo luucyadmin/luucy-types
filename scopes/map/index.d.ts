@@ -30,6 +30,7 @@ declare namespace map {
             | Polygon
             | GlobalPosition
             | Label
+            | Building
         )[]
     ): void;
 
