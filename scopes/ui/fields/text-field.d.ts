@@ -13,7 +13,7 @@ declare namespace ui {
      * section.add(input);
      */
     class TextField extends Element implements FieldElement {
-        constructor(label: string, value?: string, placeholder?: string, help?: string);
+        constructor(label: string, value?: string, placeholder?: string, tooltip?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field

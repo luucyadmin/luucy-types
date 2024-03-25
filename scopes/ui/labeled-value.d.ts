@@ -25,7 +25,7 @@ declare namespace ui {
      * });
      */
     class LabeledValue extends Element {
-        constructor(label: string, value?: string | number, icon?: IconElement, help?: string);
+        constructor(label: string, value?: string | number, icon?: IconElement, tooltip?: string);
 
         /**
          * Label

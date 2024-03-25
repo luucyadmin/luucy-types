@@ -14,7 +14,7 @@ declare namespace ui {
      * section.add(timeField);
      */
     class TimeField extends Element implements FieldElement {
-        constructor(label: string, value?: Date, help?: string);
+        constructor(label: string, value?: Date, tooltip?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
