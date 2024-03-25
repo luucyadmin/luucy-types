@@ -17,7 +17,7 @@ declare namespace map {
      * );
      */
     class Building implements MapElement {
-        constructor(floors: [], floorsCount?: number, roof?: data.RoofSection);
+        constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
 
         readonly visible: boolean;
         readonly hidden: boolean;
