@@ -9,11 +9,13 @@ declare namespace map {
      *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
      * const roof = new data.RoofSection(data.flat, 5.2);     
      * 
-     * 
-     * const building = new map.Building(floor, 15, roof);
+     * let building; 
      * 
      * section.add(
-     *     new ui.Button(ui.icons.building, "Generate me a building!!", () => building.focus())
+     *     new ui.Button(ui.icons.building, "Generate me a building!!", () => {
+     *             building = new map.Building([floor], 15, roof);
+     *             building.focus();
+     *  })
      * );
      */
     class Building implements MapElement {
@@ -23,6 +25,16 @@ declare namespace map {
         readonly hidden: boolean;
         readonly floors: data.BuildingFloor[];
         roof?: data.RoofSection;
+        /**
+         * Define fill color for the building
+         */
+        color?: Color;
+
+        /**
+         * Enabled displaying floors in the building
+         * @param show
+         */
+        showFloors(show: boolean): void;
         
         hide(): void;
         show(): void;

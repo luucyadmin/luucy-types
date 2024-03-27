@@ -12,13 +12,14 @@ declare namespace data {
         /**
          * Roof volume
          */
-        volume?: number;
+        readonly volume?: number;
         /**
          * Roof area
          */
-        area?: number;
+        readonly area?: number;
         /**
          * Roof floor height
+         * @deprecated - use BuildingFloor.floorHeight instead
          */
         floorHeight?: number;
         
