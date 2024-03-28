@@ -3,11 +3,11 @@
 declare namespace data {
     class RoofSection {
 
-        
+        constructor(roofType?: RoofType, floorHeight?: number, color?: Color, overhang?: number, roofRotation?: number, angle?: number)
         /**
          * Roof color
          */
-        readonly color?: Color;
+        color?: Color;
         
         /**
          * Roof volume
@@ -19,28 +19,29 @@ declare namespace data {
         readonly area?: number;
         /**
          * Roof floor height
+         * @deprecated - use BuildingFloor.floorHeight instead
          */
-        readonly floorHeight?: number;
+        floorHeight?: number;
         
         /**
          * Roof overhang value
          */
-        readonly overhang?: number;
+        overhang?: number;
         
         /**
          * Roof rotation
          */
-        readonly roofRotation?: number;
+        roofRotation?: number;
         
         /**
          * Roof angle
          */
-        readonly angle?: number;
+        angle?: number;
 
         /**
          * Type of the roof
          */
-        readonly roofType?: RoofType;
+        roofType?: RoofType;
 
     }
 }
