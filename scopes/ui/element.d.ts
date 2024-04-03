@@ -21,9 +21,9 @@ declare namespace ui {
         readonly hidden: boolean;
 
         /**
-         * Defines the element help displayed as a tooltip
+         * Defines the element help text displayed as a tooltip
          */
-        readonly help?: string;
+        tooltip?: string;
 
         /**
          * Makes an element visible after being hidden with `.hide()`.
