@@ -41,12 +41,20 @@ declare namespace map {
         opacity?: number;
 
         /**
-         * Define floor height
-         * Default is 2.85
+         * Define overground floor height
+         * Default is 3.2
          * 
-         * Does not override floorHeight in the defined floors (via constructor or addFloor)
+         * Does override floorHeight for the overground floors
          */
         floorHeight?: number;
+
+        /**
+         * Define underground floor height
+         * Default is 3.2
+         * 
+         * Does override floorHeight for the underground floors
+         */
+        undergroundFloorHeight?: number;
         
         /**
          * Define building area reduction
@@ -61,9 +69,9 @@ declare namespace map {
         volumeReduction?: number;
 
         /**
-         * Define building usages
+         * Define building usage
          */
-        buildingUsages?: data.BuildingUsage[];
+        buildingUsage?: data.BuildingUsage;
 
 
         /**
@@ -82,7 +90,7 @@ declare namespace map {
          * Adds a underground floor 
          * @param floor to be added - if not defined the first underground floor will be used as a reference
          */
-        addUndegroundFloor(floor?: data.BuildingFloor): void;
+        addUndergroundFloor(floor?: data.BuildingFloor): void;
 
         /**
          * Remove defined floor
