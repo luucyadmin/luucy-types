@@ -7,7 +7,7 @@ declare namespace ui {
      * When defining min or max value it enables validation that check input and don't allow pass value when invalid.
      *
      * @example // Create input
-     * const input = new ui.TextField("Test Input", 100);
+     * const input = new ui.NumberField("Test Input", 100);
      * input.onValueChange.subscribe(value => {
      *     console.log(value);
      * });
