@@ -22,13 +22,13 @@ declare namespace map {
         constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
 
         /**
-         * 
-         * @param point Generate a rectangular buuilding with given dimension and starting point
+         * Generate a rectangular buuilding with given dimension and starting point
+         * @param point the starting point (aca corner)
          * @param x the X axis of the building dimension in meters
          * @param y the Y axis of the building dimension in meters
          * @param floorsCount if not defined, defaults 10
          */
-        constructor(point: GlobalPosition, x: number, y: number, floorsCount?: number);
+        fromDimensions(point: GlobalPosition, x: number, y: number, floorsCount?: number): Building;
 
         readonly visible: boolean;
         readonly hidden: boolean;
