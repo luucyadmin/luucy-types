@@ -70,11 +70,11 @@ declare namespace map {
 
     /**
      * Generate a rectangular buuilding with given dimension and starting point
-     * @param point the starting point (aca corner)
+     * @param centerPoint the center of the first floor point (aca corner)
      * @param x the X axis of the building dimension in meters
      * @param y the Y axis of the building dimension in meters
      * @param floorsCount if not defined, defaults 10
     */
-    function fromDimensions(point: LocalPosition, x: number, y: number, floorsCount?: number): Building;
+    function buildingFromDimensions(centerPoint: GlobalPosition, x: number, y: number, floorsCount?: number): Building;
     
 }
