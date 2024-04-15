@@ -75,6 +75,6 @@ declare namespace map {
      * @param y the Y axis of the building dimension in meters
      * @param floorsCount if not defined, defaults 10
     */
-    function fromDimensions(point: GlobalPosition,x: number,y: number,floorsCount?: number): Building;
+    function fromDimensions(point: LocalPosition, x: number, y: number, floorsCount?: number): Building;
     
 }
