@@ -1,16 +1,16 @@
 declare namespace map {
     /**
      * Building
-     * 
-     * A building is a shape built out of multiple floors. 
-     * 
+     *
+     * A building is a shape built out of multiple floors.
+     *
      * @example // Create a simple building with 15 equal floors
      * const floor = new data.BuildingFloor([
      *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
-     * const roof = new data.RoofSection(data.flat, 5.2);     
-     * 
-     * let building; 
-     * 
+     * const roof = new data.RoofSection(data.flat, 5.2);
+     *
+     * let building;
+     *
      * section.add(
      *     new ui.Button(ui.icons.building, "Generate me a building!!", () => {
      *             building = new map.Building([floor], 15, roof);
@@ -19,8 +19,6 @@ declare namespace map {
      * );
      */
     class Building implements MapElement {
-        constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
-
         /**
          * Generate a rectangular buuilding with given dimension and starting point
          * @param point the starting point (aca corner)
@@ -28,7 +26,21 @@ declare namespace map {
          * @param y the Y axis of the building dimension in meters
          * @param floorsCount if not defined, defaults 10
          */
-        static fromDimensions(point: GlobalPosition, x: number, y: number, floorsCount?: number): Building;
+        static fromDimensions(
+            point: GlobalPosition,
+            x: number,
+            y: number,
+            floorsCount?: number
+        ): Building;
+
+
+        static testMethod(count: number): void;
+
+        constructor(
+            floors: data.BuildingFloor[],
+            floorsCount?: number,
+            roof?: data.RoofSection
+        );
 
         readonly visible: boolean;
         readonly hidden: boolean;
@@ -52,7 +64,7 @@ declare namespace map {
         /**
          * Define overground floor height
          * Default is 3.2
-         * 
+         *
          * Does override floorHeight for the overground floors
          */
         floorHeight?: number;
@@ -60,11 +72,11 @@ declare namespace map {
         /**
          * Define underground floor height
          * Default is 3.2
-         * 
+         *
          * Does override floorHeight for the underground floors
          */
         undergroundFloorHeight?: number;
-        
+
         /**
          * Define building area reduction
          * Default is 0
@@ -82,7 +94,6 @@ declare namespace map {
          */
         buildingUsage?: data.BuildingUsage;
 
-
         /**
          * Enabled displaying floors in the building
          * @param show
@@ -96,7 +107,7 @@ declare namespace map {
         addFloor(count?: number): void;
 
         /**
-         * Adds a underground floor 
+         * Adds a underground floor
          * @param count number of udnerground floors to be added  (default 1)
          */
         addUndergroundFloor(count?: number): void;
@@ -113,18 +124,14 @@ declare namespace map {
          */
         setHeightAboveTerrain(height: number): void;
 
-         /**
+        /**
          * The event is triggered whenever the user changes the building.
          */
-         onBuildingChange: Event<Building>;
+        onBuildingChange: Event<Building>;
 
-
-        
         hide(): void;
         show(): void;
         focus(): void;
         remove(): void;
-
-
     }
 }
