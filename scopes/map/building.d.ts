@@ -21,6 +21,15 @@ declare namespace map {
     class Building implements MapElement {
         constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
 
+        /**
+         * 
+         * @param point Generate a rectangular buuilding with given dimension and starting point
+         * @param x the X axis of the building dimension in meters
+         * @param y the Y axis of the building dimension in meters
+         * @param floorsCount if not defined, defaults 10
+         */
+        constructor(point: GlobalPosition, x: number, y: number, floorsCount?: number);
+
         readonly visible: boolean;
         readonly hidden: boolean;
         readonly floors: data.BuildingFloor[];
@@ -82,21 +91,27 @@ declare namespace map {
 
         /**
          * Adds a overground floor
-         * @param floor to be added - if not defined the first overground floor will be used as a reference
+         * @param count number of overground floors to be added (default 1)
          */
-        addFloor(floor?: data.BuildingFloor): void;
+        addFloor(count?: number): void;
 
         /**
          * Adds a underground floor 
-         * @param floor to be added - if not defined the first underground floor will be used as a reference
+         * @param count number of udnerground floors to be added  (default 1)
          */
-        addUndergroundFloor(floor?: data.BuildingFloor): void;
+        addUndergroundFloor(count?: number): void;
 
         /**
          * Remove defined floor
-         * @param index floor index from the building floors array
+         * @param floor from the building floors array
          */
-        removeFloor(index: number): void;
+        removeFloor(floor: data.Building): void;
+
+        /**
+         * Set height above terrain
+         * @param height in meters above the terrain (default 0)
+         */
+        setHeightAboveTerrain(height: number): void;
 
 
         
