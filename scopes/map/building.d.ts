@@ -28,7 +28,7 @@ declare namespace map {
          * @param y the Y axis of the building dimension in meters
          * @param floorsCount if not defined, defaults 10
          */
-        fromDimensions(point: GlobalPosition, x: number, y: number, floorsCount?: number): Building;
+        static fromDimensions(point: GlobalPosition, x: number, y: number, floorsCount?: number): Building;
 
         readonly visible: boolean;
         readonly hidden: boolean;
@@ -112,6 +112,11 @@ declare namespace map {
          * @param height in meters above the terrain (default 0)
          */
         setHeightAboveTerrain(height: number): void;
+
+         /**
+         * The event is triggered whenever the user changes the building.
+         */
+         onBuildingChange: Event<Building>;
 
 
         
