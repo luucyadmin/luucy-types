@@ -105,7 +105,7 @@ declare namespace map {
          * Remove defined floor
          * @param floor from the building floors array
          */
-        removeFloor(floor: data.Building): void;
+        removeFloor(floor: data.BuildingFloor): void;
 
         /**
          * Set height above terrain
