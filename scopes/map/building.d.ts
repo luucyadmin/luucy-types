@@ -79,6 +79,12 @@ declare namespace map {
         buildingUsage?: data.BuildingUsage;
 
         /**
+         * Define height above terrain
+         * Default is 0
+         */
+        heightAboveTerrain?: number;
+
+        /**
          * Enabled displaying floors in the building
          * @param show
          */
@@ -102,11 +108,7 @@ declare namespace map {
          */
         removeFloor(floor: data.BuildingFloor): void;
 
-        /**
-         * Set height above terrain
-         * @param height in meters above the terrain (default 0)
-         */
-        setHeightAboveTerrain(height: number): void;
+
 
         /**
          * The event is triggered whenever the user changes the building.
