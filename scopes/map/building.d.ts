@@ -19,7 +19,25 @@ declare namespace map {
      * );
      */
     class Building implements MapElement {
-
+        /**
+         * Generate a rectangular buuilding with given dimension and starting point
+         * @param centerPoint the center of the first floor point (aca corner)
+         * @param x the X axis of the building dimension in meters
+         * @param y the Y axis of the building dimension in meters
+         * @param floorsCount if not defined, defaults 10
+         */
+        constructor(
+            centerPoint: GlobalPosition,
+            x: number,
+            y: number,
+            floorsCount?: number
+        );
+        /**
+         * Generate a bulding by defined floors and roof
+         * @param floors at least one floor needs to be defined
+         * @param floorsCount if `floors` length is less then the `floorsCount` than it remaining floors are generated based on the first item from `floors` array
+         * @param roof roof definition
+         */
         constructor(
             floors: data.BuildingFloor[],
             floorsCount?: number,
@@ -107,8 +125,6 @@ declare namespace map {
          * @param floor from the building floors array
          */
         removeFloor(floor: data.BuildingFloor): void;
-
-
 
         /**
          * The event is triggered whenever the user changes the building.
