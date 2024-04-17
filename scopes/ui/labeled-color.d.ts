@@ -24,7 +24,7 @@ declare namespace ui {
      * });
      */
     class LabeledColor extends Element {
-        constructor(label: string, color: Color);
+        constructor(label: string, color: Color, tooltip?: string);
 
         /**
          * Label describing meaning of the color

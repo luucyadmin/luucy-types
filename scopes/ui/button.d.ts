@@ -41,9 +41,10 @@ declare namespace ui {
          * @param icon Icon for the button (`ui.icons.`)
          * @param label Will be displayed as the buttons text
          * @param handler Will automatically subscribe to the `onClick` event.
+         * @param tooltip Will provide a tooltip on mouseover.
          */
         constructor(label: string, handler?: () => void);
-        constructor(icon: IconElement, label: string, handler?: () => void);
+        constructor(icon: IconElement, label: string, handler?: () => void, tooltip?: string);
 
         /**
          * Buttons Text

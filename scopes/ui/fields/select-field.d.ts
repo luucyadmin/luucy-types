@@ -1,4 +1,10 @@
 declare namespace ui {
+
+
+    interface SelectGroup<T> {
+        groupName: string;
+        values: T[];
+    }
     /** 
      * Select input field 
      * 
@@ -6,20 +12,23 @@ declare namespace ui {
      * 
      * @example // Price calculation based on apartment type
      * const types = [
-     *     { name: "Basic Apartment", pricePerM2: 100 },
-     *     { name: "Standard Apartment", pricePerM2: 150 },
-     *     { name: "Luxury Apartment", pricePerM2: 250 },
+     * { name: "Basic Apartment", pricePerM2: 100, category: "A" },
+     * { name: "Standard Apartment", pricePerM2: 150, category: "A" },
+     * { name: "Luxury Apartment", pricePerM2: 250, category: "B" },
      * ];
      * 
      * const area = 69;
      * 
-     * const priceLabel = new ui.LabeledValue("Price");
-     * section.add(area);
+     * let priceLabel = new ui.LabeledValue("Price");
+     * section.add(priceLabel);
      * 
-     * const typeSelect = new ui.SelectField("Apartment Type", types, types[1], type => type.name);
+     * const typeSelect = new ui.SelectField("Apartment Type", types, types[1], type => type.name, type => type.category);
      * typeSelect.onValueChange.subscribe(type => {
-     *     priceLabel = type.pricePerM2 * area;
+     * priceLabel.value = type.pricePerM2 * area;
      * });
+     *     
+     * section.add(typeSelect);  
+     * 
      */
      class SelectField<T> extends Element implements FieldElement {
         /**
@@ -29,8 +38,10 @@ declare namespace ui {
          * @param values - The values that can be seletced
          * @param value - What is currently selected. This can be null
          * @param transform - How to convert a value into a string for displaying it. 
+         * @param transformGroup - How to convert a value into a string for grouping values. 
+         * @param tooltip - Will provide tooltip on mouseover
          */
-        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string);
+        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string, transformGroup?: (item: T) => string, tooltip?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
@@ -56,11 +67,20 @@ declare namespace ui {
         options: T[];
 
         /**
+         * The available select groups (options groupped by the groupTransformer)
+         * 
+         */
+        groups: SelectGroup<T>[];
+
+        /**
          * The event is triggered whenever the user changes the option.
          */
         onValueChange: Event<T>;
 
         readonly transformer: (item: T) => string;
+
+        readonly groupTransformer: (item: T) => string;
+
         onContentChange: Event<void>;
     }
 }

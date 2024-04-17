@@ -29,8 +29,9 @@ declare namespace ui {
          * @param values - The values that can be seletced
          * @param value - What is currently selected. This can be null
          * @param transform - How to convert a value into a string for displaying it. 
+         * @param tooltip - Will provide tooltip on mouseover
          */
-        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string);
+        constructor(label: string, values: T[], value?: T, transform?: (item: T) => string, tooltip?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field

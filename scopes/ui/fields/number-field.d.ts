@@ -7,7 +7,7 @@ declare namespace ui {
      * When defining min or max value it enables validation that check input and don't allow pass value when invalid.
      *
      * @example // Create input
-     * const input = new ui.TextField("Test Input", 100);
+     * const input = new ui.NumberField("Test Input", 100);
      * input.onValueChange.subscribe(value => {
      *     console.log(value);
      * });
@@ -15,7 +15,7 @@ declare namespace ui {
      * section.add(input);
      */
     class NumberField extends Element implements FieldElement {
-        constructor(label: string, value?: number, placeholder?: string, min?: number, max?: number, step?: number);
+        constructor(label: string, value?: number, placeholder?: string, min?: number, max?: number, step?: number, tooltip?: string);
 
         /**
          * Describes the purpose of an input and is displayed next to the field
