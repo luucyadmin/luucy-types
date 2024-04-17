@@ -131,6 +131,12 @@ declare namespace map {
          */
         onBuildingChange: Event<Building>;
 
+
+        /**
+         * The event is triggered whenever the user changes the building.
+         */
+        onBuildingChange: Event<Building>;
+
         hide(): void;
         show(): void;
         focus(): void;
