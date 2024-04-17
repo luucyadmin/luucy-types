@@ -20,7 +20,7 @@ declare namespace ui {
      * }, 1000);
      */
     class Label extends Element {
-        constructor(content: string);
+        constructor(content: string, tooltip?: string);
 
         /**
          * Labels content

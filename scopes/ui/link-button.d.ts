@@ -9,7 +9,7 @@ declare namespace ui {
          * @example // Show a link button
          * section.add(new ui.LinkButton('Open Luucy Homepage', 'https://luucy.ch/'));
          */
-        constructor(label: string, url: string);
+        constructor(label: string, url: string, tooltip?: string);
 
         /**
          * Link Buttons Text

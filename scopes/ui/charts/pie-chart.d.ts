@@ -27,8 +27,9 @@ declare namespace ui {
          * 
          * @param name Title of the chart
          * @param unit Unit of the segments' values
+         * @param tooltip - Will provide tooltip on mouseover
          */
-        constructor(name: string, unit?: string | ((value: number) => string));
+        constructor(name: string, unit?: string | ((value: number) => string), tooltip?: string);
 
         readonly name: string;
         readonly unit: string | ((value: number) => string);

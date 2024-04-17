@@ -10,7 +10,7 @@ declare namespace ui {
      * section.add(image);
      */
     class Image extends Element {
-        constructor(source?: string);
+        constructor(source?: string, tooltip?: string);
 
         /**
          * Images source URL
