@@ -44,7 +44,7 @@ declare namespace data {
         /**
          * Height of the floor
          */
-        readonly height: Metric;
+        readonly height: number;
 
         /**
          * Type of the floor
