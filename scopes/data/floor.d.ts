@@ -12,14 +12,14 @@ declare namespace data {
      *    new LocalPosition(-50, 50)
      * ];
      * const floor = new data.BuildingFloor(
-     *      new LocalPosition(0,0,0),points, data.overground, 2.85, Color.red);
+     *      points,new LocalPosition(0,0,0), data.overground, 2.85, Color.red);
      *
      * @see map.Building for how to use BuildingFloor for Building creating
      */
     class BuildingFloor {
         constructor(
-            centerPoint: LocalPosition,
             points: LocalPosition[],
+            centerPoint?: LocalPosition,
             floorType?: FloorType,
             height?: number,
             color?: Color,
