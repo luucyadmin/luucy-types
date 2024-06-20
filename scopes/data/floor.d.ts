@@ -1,9 +1,30 @@
-
-
 declare namespace data {
+    /**
+     * BuildingFloor
+     *
+     * A building floor is a part of the building
+     *
+     * @example // Create a simple building floor with 4 points (100x100 meters) at specific location defined by center point
+     * const points = [
+     *    new LocalPosition(50, 50),
+     *    new LocalPosition(50, -50),
+     *    new LocalPosition(-50, -50),
+     *    new LocalPosition(-50, 50)
+     * ];
+     * const floor = new data.BuildingFloor(
+     *      points,new LocalPosition(0,0,0), data.overground, 2.85, Color.red);
+     *
+     * @see map.Building for how to use BuildingFloor for Building creating
+     */
     class BuildingFloor {
-
-        constructor(positions: GlobalPosition[], floorType?: FloorType, height?: number, color?: Color, usage?: BuildingUsage)
+        constructor(
+            points: LocalPosition[],
+            centerPoint?: LocalPosition,
+            floorType?: FloorType,
+            height?: number,
+            color?: Color,
+            usage?: BuildingUsage
+        );
 
         /**
          * Floor identifier
@@ -23,7 +44,7 @@ declare namespace data {
         /**
          * Height of the floor
          */
-        readonly height: Metric;
+        readonly height: number;
 
         /**
          * Type of the floor
@@ -36,8 +57,13 @@ declare namespace data {
         usage?: BuildingUsage;
 
         /**
+         * The center location of the floor
+         */
+        centerPoint: LocalPosition;
+
+        /**
          * Floor points
          */
-        positions?: GlobalPosition[];
+        points?: LocalPosition[];
     }
 }

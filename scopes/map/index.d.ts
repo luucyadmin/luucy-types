@@ -67,4 +67,5 @@ declare namespace map {
         bufferDistance: number,
         areaScaleFactor: number
     ): GlobalPosition[][] | undefined;
+    
 }

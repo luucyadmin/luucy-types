@@ -1,16 +1,16 @@
 declare namespace map {
     /**
      * Building
-     * 
-     * A building is a shape built out of multiple floors. 
-     * 
+     *
+     * A building is a shape built out of multiple floors.
+     *
      * @example // Create a simple building with 15 equal floors
      * const floor = new data.BuildingFloor([
      *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
-     * const roof = new data.RoofSection(data.flat, 5.2);     
-     * 
-     * let building; 
-     * 
+     * const roof = new data.RoofSection(data.flat, 5.2);
+     *
+     * let building;
+     *
      * section.add(
      *     new ui.Button(ui.icons.building, "Generate me a building!!", () => {
      *             building = new map.Building([floor], 15, roof);
@@ -19,7 +19,32 @@ declare namespace map {
      * );
      */
     class Building implements MapElement {
-        constructor(floors: data.BuildingFloor[], floorsCount?: number, roof?: data.RoofSection);
+        /**
+         * Generate a rectangular buuilding with given dimension and starting point
+         * @param centerPoint the center of the building
+         * @param x the X axis of the building dimension in meters
+         * @param y the Y axis of the building dimension in meters
+         * @param floorsCount if not defined, defaults 10
+         */
+        constructor(
+            centerPoint: GlobalPosition,
+            x: number,
+            y: number,
+            floorsCount?: number
+        );
+        /**
+         * Generate a bulding by defined floors and roof
+         * @param centerPoint the center of the building
+         * @param floors at least one floor needs to be defined
+         * @param floorsCount if `floors` length is less then the `floorsCount` than it remaining floors are generated based on the first item from `floors` array
+         * @param roof roof definition
+         */
+        constructor(
+            centerPoint: GlobalPosition,
+            floors: data.BuildingFloor[],
+            floorsCount?: number,
+            roof?: data.RoofSection
+        );
 
         readonly visible: boolean;
         readonly hidden: boolean;
@@ -43,7 +68,7 @@ declare namespace map {
         /**
          * Define overground floor height
          * Default is 3.2
-         * 
+         *
          * Does override floorHeight for the overground floors
          */
         floorHeight?: number;
@@ -51,11 +76,11 @@ declare namespace map {
         /**
          * Define underground floor height
          * Default is 3.2
-         * 
+         *
          * Does override floorHeight for the underground floors
          */
         undergroundFloorHeight?: number;
-        
+
         /**
          * Define building area reduction
          * Default is 0
@@ -73,6 +98,11 @@ declare namespace map {
          */
         buildingUsage?: data.BuildingUsage;
 
+        /**
+         * Define height above terrain
+         * Default is 0
+         */
+        heightAboveTerrain?: number;
 
         /**
          * Enabled displaying floors in the building
@@ -82,29 +112,30 @@ declare namespace map {
 
         /**
          * Adds a overground floor
-         * @param floor to be added - if not defined the first overground floor will be used as a reference
+         * @param count number of overground floors to be added (default 1)
          */
-        addFloor(floor?: data.BuildingFloor): void;
+        addFloor(count?: number): void;
 
         /**
-         * Adds a underground floor 
-         * @param floor to be added - if not defined the first underground floor will be used as a reference
+         * Adds a underground floor
+         * @param count number of udnerground floors to be added  (default 1)
          */
-        addUndergroundFloor(floor?: data.BuildingFloor): void;
+        addUndergroundFloor(count?: number): void;
 
         /**
          * Remove defined floor
-         * @param index floor index from the building floors array
+         * @param floor from the building floors array
          */
-        removeFloor(index: number): void;
+        removeFloor(floor: data.BuildingFloor): void;
 
+        /**
+         * The event is triggered whenever the user changes the building.
+         */
+        onBuildingChange: Event<Building>;
 
-        
         hide(): void;
         show(): void;
         focus(): void;
         remove(): void;
-
-
     }
 }
