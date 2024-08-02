@@ -1,3 +1,6 @@
+/** 
+ * Extends the String prototype with a translate property
+ */
 interface String {
     /**
      * Translates a string into another locale

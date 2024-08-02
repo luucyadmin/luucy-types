@@ -81,6 +81,7 @@ declare class Color {
 
     /**
      * Default luucy color
+     * @deprecated this color is no longer used as a brand color for LUUCY
      */
     static readonly luucyBrand: Color;
 
