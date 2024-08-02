@@ -43,7 +43,7 @@ declare namespace ui {
          * @param handler Will automatically subscribe to the `onClick` event.
          * @param tooltip Will provide a tooltip on mouseover.
          */
-        constructor(label: string, handler?: () => void);
+        constructor(label: string, handler?: () => void, tooltip?: string);
         constructor(icon: IconElement, label: string, handler?: () => void, tooltip?: string);
 
         /**
