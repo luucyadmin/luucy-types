@@ -149,6 +149,26 @@ declare namespace data {
          */
         readonly onParcelsChange: Event<Parcel[]>;
 
+        /** 
+         * Will be called when the variants maximum bulding height changes 
+         * 
+         * @example // Listen to changes in the maximum height
+         * variant.onMaxBuildingHeightChange.subscribe(maxHeight => {
+         *     console.log("Maximum height of ", variant.name, " changed to ", maxHeight.total.toMetricAreaString());
+         * });
+         */
+        readonly onMaxBuildingHeightChange: Event<Metric | null>;
+
+        /** 
+         * Will be called when the variants minimum bulding height changes 
+         * 
+         * @example // Listen to changes in the minimum height
+         * variant.onMaxBuildingHeightChange.subscribe(minHeight => {
+         *     console.log("Minimum height of ", variant.name, " changed to ", minHeight.total.toMetricAreaString());
+         * });
+         */
+        readonly onMinBuildingHeightChange: Event<Metric | null>;
+
         /**
          * Variant storage
          * 
