@@ -65,6 +65,21 @@ declare namespace data {
          */
         readonly project: Project;
 
+        /**
+         * Maximum height of all building in the variant
+         * total - sum of all maximums of all heights
+         * overground - maximum of all overground heights
+         * underground - maximum of all underground heights
+         */
+        readonly maxBuildingHeight: Metric;
+        /**
+         * Mininum height of all building in the variant
+         * total - sum of all minimums of all heights
+         * overground - minimum of all overground heights
+         * underground - minimum of all underground heights
+         */
+        readonly minBuildingHeight: Metric;
+
         /** 
          * Will be called when the variants volume changes 
          * 
