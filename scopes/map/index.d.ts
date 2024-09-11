@@ -47,18 +47,6 @@ declare namespace map {
     const onPositionSelect: Event<GlobalPosition>;
 
     /**
-     * On Parcel Select
-     *
-     * The event will be emitted when the user clicks on the parcel layer (PPR) and provide parcel detail in the response.
-     *
-     * @example // Add a lable with parcel info where the user clicked
-     * map.onParcelSelect.subscribe(parcel => {
-     *     new ui.Label("Selected parcel: "+ parcel.id);
-     * });
-     */
-    const onParcelSelect: Event<data.ParcelInfo>;
-
-    /**
      * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)
      *
      * @returns array of global position for each polygon (in case of intersection the provided points may be transformed to two separated polygons hence the array response).
