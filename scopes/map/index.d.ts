@@ -56,7 +56,7 @@ declare namespace map {
      *     new ui.Label("Selected parcel: "+ parcel.id);
      * });
      */
-    const onParcelSelect: Event<Parcel>;
+    const onParcelSelect: Event<data.ParcelInfo>;
 
     /**
      * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)

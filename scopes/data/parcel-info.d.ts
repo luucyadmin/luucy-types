@@ -1,17 +1,30 @@
-declare namespace map {
+declare namespace data {
     /**
-     * Parcel
+     * ParcelInfo
      *
-     * A parcel detail information.
+     * A parcel detailed information.
      *
-     *
+     * Note: This detail info is provided only for PPR layer
+     * 
      * @example // Add a lable with parcel info where the user clicked
      * map.onParcelSelect.subscribe(parcel => {
      *     new ui.Label("Selected parcel: "+ parcel.id);
      * });
      * );
      */
-    class Parcel {
+    class ParcelInfo {
+        /**
+         * Parcel name
+         */
+        name: string;
+        /**
+         * Parcel type
+         */
+        type: string;
+        /**
+         * Parcel identifier
+         */
+        id: number;
         /**
          * Parcel geometry JSON (geojson.Geometry)
          * @example
@@ -31,19 +44,7 @@ declare namespace map {
          * }
          *
          */
-        readonly geometry: string;
-        /**
-         * Parcel name
-         */
-        readonly name: string;
-        /**
-         * Parcel type
-         */
-        readonly type: string;
-        /**
-         * Parcel identifier
-         */
-        readonly id: number;
+        geometry: string;
         /**
          * Properties JSON with detail from the OEREB layer
          *
@@ -73,6 +74,6 @@ declare namespace map {
          *   firmenname: "Lisag AG"
          * };
          */
-        readonly properties: string;
+        properties: string;
     }
 }
