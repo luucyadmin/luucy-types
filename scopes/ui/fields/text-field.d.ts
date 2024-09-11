@@ -38,6 +38,24 @@ declare namespace ui {
         value: string;
 
         /**
+         * The minimal length of the text field value.
+         * When defined it turns on the field validation - the onValueChange event will be fired but not processed when invalid 
+         * Negative values are not possible.
+         *
+         * Can be changed after beeing added to an area/element and will automatically update.
+         */
+        minLength?: number;
+
+        /**
+        * The maximal length of the text field value.
+        * When defined it turns on the field validation  - the onValueChange event will be fired but not processed when invalid 
+        * Negative values are not possible.
+        *
+        * Can be changed after beeing added to an area/element and will automatically update.
+        */
+        maxLength?: number;
+
+        /**
          * The fields immediate value as entered by the user.
          * Setting this programatically will not trigger any events.
          * 
