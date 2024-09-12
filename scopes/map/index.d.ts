@@ -49,14 +49,16 @@ declare namespace map {
     /**
      * On Parcel Select
      *
-     * The event will be emitted when the user clicks on the parcel layer (PPR) and provide parcel detail in the response.
+     * The event will be emitted when the user clicks on the parcel layer (PPR) and provide parcels detail in the response.
+     * In the future the user will be able to select multiple parcels at the time.
+     * For now the list will contain only one record -> it has to be selected on the default index.
      *
      * @example // Add a lable with parcel info where the user clicked
-     * map.onParcelSelect.subscribe(parcel => {
-     *     new ui.Label("Selected parcel: "+ parcel.id);
+     * map.onParcelSelect.subscribe(parcels => {
+     *     new ui.Label("Selected parcel: "+ parcel[0].id);
      * });
      */
-    const onParcelSelect: Event<ParcelInfo>;
+    const onParcelSelect: Event<ParcelInfo[]>;
 
     /**
      * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)
