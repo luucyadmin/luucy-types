@@ -47,25 +47,11 @@ declare namespace map {
     const onPositionSelect: Event<GlobalPosition>;
 
     /**
-     * On Parcel Select
-     *
-     * The event will be emitted when the user clicks on the parcel layer (PPR) and provide parcels detail in the response.
-     * In the future the user will be able to select multiple parcels at the time.
-     * For now the list will contain only one record -> it has to be selected on the default index.
-     *
-     * @example // Add a lable with parcel info where the user clicked
-     * map.onParcelSelect.subscribe(parcels => {
-     *     new ui.Label("Selected parcel: "+ parcel[0].id);
-     * });
-     */
-    const onParcelSelect: Event<ParcelInfo[]>;
-
-    /**
      * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)
      *
      * @returns array of global position for each polygon (in case of intersection the provided points may be transformed to two separated polygons hence the array response).
      * For most of the cases the response will be array having the length of 1
-     *
+     * 
      * @example
      * const buffer = map.bufferPolygon([
      *     new GlobalPosition(47.050390, 8.310263),
@@ -73,7 +59,7 @@ declare namespace map {
      *     new GlobalPosition(47.051390, 8.311263),
      *     new GlobalPosition(47.051390, 8.310263),
      * ], 5, 10);
-     *
+     * 
      * const polyfon = buffer[0];
      */
     function bufferPolygon(
@@ -81,69 +67,5 @@ declare namespace map {
         bufferDistance: number,
         areaScaleFactor: number
     ): GlobalPosition[][] | undefined;
-
-    class ParcelInfo {
-        /**
-         * Parcel name
-         */
-        name: string;
-        /**
-         * Parcel type
-         */
-        type: string;
-        /**
-         * Parcel identifier
-         */
-        id: number;
-        /**
-         * Parcel geometry JSON (geojson.Geometry)
-         * @example
-         *   geometry: {
-         *     type: "Polygon",
-         *     coordinates: [
-         *       [
-         *         [2666167.8, 1211369.6],
-         *         [2666167.8, 1211370.2],
-         *         [2666167.8, 1211370.9],
-         *         [2666167.8, 1211371.6],
-         *         [2666167.8, 1211372.2],
-         *         [2666167.8, 1211372.9],
-         *         [2666167.8, 1211373.6]
-         *       ]
-         *      ]
-         * }
-         *
-         */
-        geometry: string;
-        /**
-         * Properties JSON with detail from the OEREB layer
-         *
-         * @example
-         * properties = {
-         *   bfs_nr: 1216,
-         *   number: "128",
-         *   telefon: "041 500 60 60",
-         *   egris_egrid: "CH427948074677",
-         *   oereb_status_en: "ÖREB-Kataster eingeführt",
-         *   bgdi_status: 0,
-         *   oereb_status_it: "Catasto RDPP introdotto",
-         *   label: "Silenen",
-         *   adresszeile: "Neuland 11",
-         *   fid: "1216",
-         *   kanton: "Uri",
-         *   url_oereb: "http://www.oereb.ur.ch",
-         *   email: "mail@lisag.ch",
-         *   oereb_status_fr: "Cadastre RDPPF introduit",
-         *   ort: "Altdorf UR",
-         *   gemeindename: "Silenen",
-         *   plz: 6460,
-         *   oereb_status_de: "ÖREB-Kataster eingeführt",
-         *   oereb_status_rm: "ÖREB-Kataster eingeführt",
-         *   oereb_extract_pdf: "https://prozessor-oereb.ur.ch/oereb/extract/reduced/pdf/CH427948074677",
-         *   oereb_webservice: "https://prozessor-oereb.ur.ch/oereb",
-         *   firmenname: "Lisag AG"
-         * };
-         */
-        properties: string;
-    }
+    
 }
