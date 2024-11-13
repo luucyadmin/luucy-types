@@ -26,11 +26,6 @@ declare enum RoofType {
     monopitch,
 }
 
-declare enum BlockType {
-    overground,
-    underground,
-    ground,
-}
 
 /**
  * Contains all the data-related classes that luucy exposes 
