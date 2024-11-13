@@ -64,12 +64,6 @@ declare namespace data {
         readonly buildingUsages: BuildingUsage[];
 
         /**
-         * Building floors
-         * @deprecated use buildingBlock instead
-         */
-        readonly floors: BuildingFloor[];
-
-        /**
          * Building blocks
          */
         readonly buildingBlocks: BuildingBlock[];
@@ -78,12 +72,6 @@ declare namespace data {
          * Roof building section
          */
         readonly roofSection: RoofSection;
-
-        /**
-         * Emits when the floors of the building change
-         * @deprecated use onBuildingBlocksChange
-         */
-        onFloorsChange: Event<BuildingFloor[]>;
 
         /**
          * Emits when the blocks of the building change

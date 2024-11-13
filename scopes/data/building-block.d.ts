@@ -36,11 +36,6 @@ declare namespace data {
         blockUsages?: BuildingUsage[];
 
         /**
-         * Parent building
-         */
-        readonly building: Building;
-
-        /**
          * Emits when the block is selected
          */
         onTypeChange: Event<FloorType>;
