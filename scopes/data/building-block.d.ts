@@ -1,13 +1,9 @@
 declare namespace data {
     class BuildingBlock {
-
-        constructor(
-            centerPoint: LocalPosition,
-        );
+        constructor(centerPoint: LocalPosition);
 
         readonly id: string;
 
-        
         /**
          * Block index within the building
          */
@@ -16,40 +12,31 @@ declare namespace data {
         color?: Color;
 
         /**
-         * Height of the block
+         * Height above terrain of the block
          */
-        height: number;
+        heightAboveTerrain: number;
 
         /**
          * The center location of the block
          */
         centerPoint: LocalPosition;
 
-        /**
-         * Type of the block
-         */
-        type: FloorType;
+        floors: BuildingFloor[];
 
         /**
-         * Block usages
+         * Roof details
          */
-        blockUsages?: BuildingUsage[];
+        roof?: RoofSection;
 
         /**
-         * Emits when the block is selected
+         * Emits when the roof section of the building change
          */
-        onTypeChange: Event<FloorType>;
+        onRoofChange: Event<RoofSection>;
 
         /**
-         * Emits when the block height is changed
+         * Emits when the floors are changed
          */
-        onHeightChange: Event<number>;
+        onFloorsChange: Event<BuildingFloor[]>;
 
-
-        /**
-         * Emits when block usages change
-         * Compatible only for Buildings 2.0
-         */
-        onBlockUsagesChange: Event<BuildingUsage[]>;
     }
 }

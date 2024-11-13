@@ -48,18 +48,12 @@ declare namespace data {
         readonly volume: Metric;
 
         /**
-         * Sections making up the building
-         */
-        readonly sections: BuildingSection[];
-
-        /**
          * Parent variant
          */
         readonly variant: Variant;
 
         /**
-         * Building usages
-         * Compatible only for Buildings 2.0
+         * Cumulated building usages from every building block
          */
         readonly buildingUsages: BuildingUsage[];
 
@@ -69,24 +63,10 @@ declare namespace data {
         readonly buildingBlocks: BuildingBlock[];
 
         /**
-         * Roof building section
-         */
-        readonly roofSection: RoofSection;
-
-        /**
          * Emits when the blocks of the building change
          */
         onBuildingBlocksChange: Event<BuildingBlock[]>;
 
-        /**
-         * Emits when the roof section of the building change
-         */
-        onRoofChange: Event<RoofSection>;
-
-        /**
-         * Emits when the sections of the building change
-         */
-        onSectionsChange: Event<BuildingSection[]>;
 
         /**
          * Emits when the volume, floorArea or footprint of the building change
@@ -101,8 +81,7 @@ declare namespace data {
         onPositionChange: Event<GlobalPosition>;
 
         /**
-         * Emits when building usages change
-         * Compatible only for Buildings 2.0
+         * Emits when usages in any block change
          */
         onBuildingUsagesChange: Event<BuildingUsage[]>;
     }

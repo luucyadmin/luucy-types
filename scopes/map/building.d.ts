@@ -5,15 +5,16 @@ declare namespace map {
      * A building is a shape built out of multiple floors.
      *
      * @example // Create a simple building with 15 equal floors
-     * const floor = new data.BuildingFloor([
-     *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
-     * const roof = new data.RoofSection(data.flat, 5.2);
+     * const floor = new data.BuildingFloor( data.overground, 2.85);
+     * const block = new data.BuildingBlock(new LocalPosition(0,0,0));
+     * block.addFloors(10, floor);
+     * block.roof = new data.RoofSection(data.flat, 5.2);
      *
      * let building;
      *
      * section.add(
      *     new ui.Button(ui.icons.building, "Generate me a building!!", () => {
-     *             building = new map.Building([floor], 15, roof);
+     *             building = new map.Building(new GlobalPosition(47.050390, 8.310263), [block], 15);
      *             building.focus();
      *  })
      * );
@@ -37,27 +38,16 @@ declare namespace map {
          * @param centerPoint the center of the building
          * @param buildingBlocks at least one block needs to be defined
          * @param blocksCount if `buildingBlocks` length is less then the `blocksCount` than it remaining blocks are generated based on the first item from `buildingBlocks` array
-         * @param roof roof definition
          */
         constructor(
             centerPoint: GlobalPosition,
             buildingBlocks: data.BuildingBlock[],
             blocksCount?: number,
-            roof?: data.RoofSection
         );
 
         readonly visible: boolean;
         readonly hidden: boolean;
         readonly buildingBlocks: data.BuildingBlock[];
-        /**
-         * Define the roof section of the building
-         * Overrides values defined in constructor
-         */
-        roof?: data.RoofSection;
-        /**
-         * Define fill color for the building
-         */
-        color?: Color;
 
         /**
          * Define building opacity in %
@@ -69,7 +59,7 @@ declare namespace map {
          * Define overground floor height
          * Default is 3.2
          *
-         * Does override floorHeight for the overground floors
+         * Does override floorHeight for the overground blocks
          */
         floorHeight?: number;
 
@@ -77,7 +67,7 @@ declare namespace map {
          * Define underground floor height
          * Default is 3.2
          *
-         * Does override floorHeight for the underground floors
+         * Does override floorHeight for the underground block
          */
         undergroundFloorHeight?: number;
 
@@ -94,7 +84,7 @@ declare namespace map {
         volumeReduction?: number;
 
         /**
-         * Define building usage
+         * Define building usage - will apply on every building block
          */
         buildingUsage?: data.BuildingUsage;
 
@@ -105,28 +95,31 @@ declare namespace map {
         heightAboveTerrain?: number;
 
         /**
-         * Enabled displaying blocks in the building
+         * Enabled displaying floors in the building
          * @param show
          */
-        showBlocks(show: boolean): void;
+        showFloors(show: boolean): void;
 
         /**
-         * Adds a overground block
-         * @param count number of overground blocks to be added (default 1)
+         * Adds a overground floor to given block
+         * @param blockIndex index of the block (default 0)
+         * @param count number of overground floors to be added (default 1)
          */
-        addBlock(count?: number): void;
+        addFloor(blockIndex?: number, count?: number): void;
 
         /**
-         * Adds a underground block
-         * @param count number of underground blocks to be added  (default 1)
+         * Adds a underground floor
+         * @param blockIndex index of the block (default 0)
+         * @param count number of underground floors to be added  (default 1)
          */
-        addUndergroundBlock(count?: number): void;
+        addUndergroundFloor(blockIndex?: number, count?: number): void;
 
         /**
          * Remove defined block
+         * @param blockIndex index of the block (default 0)
          * @param block from the building floors array
          */
-        removeBlock(block: data.BuildingBlock): void;
+        removeFloor(floor: data.BuildingFloor, blockIndex?: number): void;
 
         /**
          * The event is triggered whenever the user changes the building.
