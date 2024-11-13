@@ -1,5 +1,11 @@
 declare namespace data {
     class BuildingBlock {
+
+        constructor(
+            points: LocalPosition[],
+            centerPoint?: LocalPosition,
+        );
+
         readonly id: number;
 
         color?: Color;
@@ -17,7 +23,7 @@ declare namespace data {
         /**
          * Type of the block
          */
-        readonly type: BlockType;
+        type: BlockType;
 
         /**
          * Block usages
