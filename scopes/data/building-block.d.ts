@@ -7,6 +7,12 @@ declare namespace data {
 
         readonly id: string;
 
+        
+        /**
+         * Block index within the building
+         */
+        index: number;
+
         color?: Color;
 
         /**
