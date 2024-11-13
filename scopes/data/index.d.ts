@@ -1,5 +1,6 @@
 /// <reference path="building-usage.d.ts" />
 /// <reference path="building.d.ts" />
+/// <reference path="building-block.d.ts" />
 /// <reference path="floor.d.ts" />
 /// <reference path="metric.d.ts" />
 /// <reference path="organization.d.ts" />
@@ -23,6 +24,12 @@ declare enum RoofType {
     flat,
     doublepitch,
     monopitch,
+}
+
+declare enum BlockType {
+    overground,
+    underground,
+    ground,
 }
 
 /**
