@@ -24,31 +24,31 @@ declare namespace map {
          * @param centerPoint the center of the building
          * @param x the X axis of the building dimension in meters
          * @param y the Y axis of the building dimension in meters
-         * @param floorsCount if not defined, defaults 10
+         * @param blocksCount if not defined, defaults 10
          */
         constructor(
             centerPoint: GlobalPosition,
             x: number,
             y: number,
-            floorsCount?: number
+            blocksCount?: number
         );
         /**
          * Generate a bulding by defined floors and roof
          * @param centerPoint the center of the building
-         * @param floors at least one floor needs to be defined
-         * @param floorsCount if `floors` length is less then the `floorsCount` than it remaining floors are generated based on the first item from `floors` array
+         * @param buildingBlocks at least one block needs to be defined
+         * @param blocksCount if `buildingBlocks` length is less then the `blocksCount` than it remaining blocks are generated based on the first item from `buildingBlocks` array
          * @param roof roof definition
          */
         constructor(
             centerPoint: GlobalPosition,
-            floors: data.BuildingFloor[],
-            floorsCount?: number,
+            buildingBlocks: data.BuildingBlock[],
+            blocksCount?: number,
             roof?: data.RoofSection
         );
 
         readonly visible: boolean;
         readonly hidden: boolean;
-        readonly floors: data.BuildingFloor[];
+        readonly buildingBlocks: data.BuildingBlock[];
         /**
          * Define the roof section of the building
          * Overrides values defined in constructor
@@ -105,28 +105,28 @@ declare namespace map {
         heightAboveTerrain?: number;
 
         /**
-         * Enabled displaying floors in the building
+         * Enabled displaying blocks in the building
          * @param show
          */
-        showFloors(show: boolean): void;
+        showBlocks(show: boolean): void;
 
         /**
-         * Adds a overground floor
-         * @param count number of overground floors to be added (default 1)
+         * Adds a overground block
+         * @param count number of overground blocks to be added (default 1)
          */
-        addFloor(count?: number): void;
+        addBlock(count?: number): void;
 
         /**
-         * Adds a underground floor
-         * @param count number of udnerground floors to be added  (default 1)
+         * Adds a underground block
+         * @param count number of underground blocks to be added  (default 1)
          */
-        addUndergroundFloor(count?: number): void;
+        addUndergroundBlock(count?: number): void;
 
         /**
-         * Remove defined floor
-         * @param floor from the building floors array
+         * Remove defined block
+         * @param block from the building floors array
          */
-        removeFloor(floor: data.BuildingFloor): void;
+        removeBlock(block: data.BuildingBlock): void;
 
         /**
          * The event is triggered whenever the user changes the building.
