@@ -6,7 +6,7 @@ declare namespace data {
          * Block index within the building
          */
         index: number;
-        
+
         /**
          * Block index of the block which this one is positioned on top
          */
@@ -22,7 +22,7 @@ declare namespace data {
         /**
          * Vertecies defining the shape on the ground
          */
-        readonly groundPoints: LocalPosition[];
+        groundPoints: LocalPosition[];
 
         /**
          * The center location of the block
