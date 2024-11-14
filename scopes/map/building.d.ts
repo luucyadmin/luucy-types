@@ -6,8 +6,8 @@ declare namespace map {
      *
      * @example // Create a simple building with 15 equal floors
      * const floor = new data.BuildingFloor( data.overground, 2.85);
-     * const block = new data.BuildingBlock(new LocalPosition(0,0,0));
-     * block.addFloors(10, floor);
+     * const block = new data.BuildingBlock();
+     * block.floors = [floor];
      * block.roof = new data.RoofSection(data.flat, 5.2);
      *
      * let building;
@@ -25,24 +25,24 @@ declare namespace map {
          * @param centerPoint the center of the building
          * @param x the X axis of the building dimension in meters
          * @param y the Y axis of the building dimension in meters
-         * @param blocksCount if not defined, defaults 10
+         * @param floorsCount if not defined, defaults 10
          */
         constructor(
             centerPoint: GlobalPosition,
             x: number,
             y: number,
-            blocksCount?: number
+            floorsCount?: number
         );
         /**
          * Generate a bulding by defined floors and roof
          * @param centerPoint the center of the building
          * @param buildingBlocks at least one block needs to be defined
-         * @param blocksCount if `buildingBlocks` length is less then the `blocksCount` than it remaining blocks are generated based on the first item from `buildingBlocks` array
+         * @param floorsCount if `buildingBlocks` length is less then the `blocksCount` than it remaining blocks are generated based on the first item from `buildingBlocks` array
          */
         constructor(
             centerPoint: GlobalPosition,
             buildingBlocks: data.BuildingBlock[],
-            blocksCount?: number,
+            floorsCount?: number,
         );
 
         readonly visible: boolean;

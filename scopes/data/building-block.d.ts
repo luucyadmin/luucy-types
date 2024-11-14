@@ -1,7 +1,7 @@
 declare namespace data {
     class BuildingBlock {
 
-        readonly id: number;
+        readonly id: string;
 
         /**
          * Block index within the building
