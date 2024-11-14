@@ -1,8 +1,7 @@
 declare namespace data {
     class BuildingBlock {
-        constructor(centerPoint: LocalPosition);
 
-        readonly id: string;
+        readonly id: number;
 
         /**
          * Block index within the building
@@ -19,7 +18,7 @@ declare namespace data {
         /**
          * The center location of the block
          */
-        centerPoint: LocalPosition;
+        center: GlobalPosition;
 
         floors: BuildingFloor[];
 
