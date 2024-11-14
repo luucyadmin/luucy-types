@@ -1,12 +1,16 @@
 declare namespace data {
     class BuildingBlock {
-
         readonly id: string;
 
         /**
          * Block index within the building
          */
         index: number;
+        
+        /**
+         * Block index of the block which this one is positioned on top
+         */
+        anchorBlockindex: number;
 
         color?: Color;
 
@@ -14,6 +18,11 @@ declare namespace data {
          * Height above terrain of the block
          */
         heightAboveTerrain: number;
+
+        /**
+         * Vertecies defining the shape on the ground
+         */
+        readonly groundPoints: LocalPosition[];
 
         /**
          * The center location of the block
@@ -36,6 +45,5 @@ declare namespace data {
          * Emits when the floors are changed
          */
         onFloorsChange: Event<BuildingFloor[]>;
-
     }
 }
