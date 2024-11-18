@@ -10,9 +10,7 @@ declare namespace data {
         /**
          * Block index of the block which this one is positioned on top
          */
-        anchorBlockindex: number;
-
-        color?: Color;
+        anchorBlockindex?: number;
 
         /**
          * Height above terrain of the block
