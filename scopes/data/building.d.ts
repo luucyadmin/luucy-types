@@ -16,9 +16,9 @@ declare namespace data {
         readonly name: string;
 
         /**
-         * Rotation angle of the entire building
+         * The rotation of the base block of the building
          */
-        readonly angle: number;
+        readonly headingPitchRoll: HeadingPitchRoll;
 
         /**
          * Center point of the shape
