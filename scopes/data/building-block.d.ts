@@ -10,7 +10,12 @@ declare namespace data {
         /**
          * Block index of the block which this one is positioned on top
          */
-        anchorBlockindex?: number;
+        anchorBlockindex: number | null;
+
+        /**
+         * Block rotation
+         */
+        headingPitchRoll?: HeadingPitchRoll;
 
         /**
          * Height above terrain of the block

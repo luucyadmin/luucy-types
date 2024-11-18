@@ -3,6 +3,7 @@
 /// <reference path="building-block.d.ts" />
 /// <reference path="building-floor.d.ts" />
 /// <reference path="metric.d.ts" />
+/// <reference path="headingpitchroll.d.ts" />
 /// <reference path="organization.d.ts" />
 /// <reference path="parcel.d.ts" />
 /// <reference path="project.d.ts" />
