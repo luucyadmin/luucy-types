@@ -109,11 +109,11 @@ declare namespace map {
         addFloor(tpye: FloorType, blockIndex?: number, count?: number): void;
 
         /**
-         * Remove defined block
+         * Remove defined floor type (it's first occurance) from a given building block
          * @param blockIndex index of the block (default 0)
-         * @param block from the building floors array
+         * @param floorType  type of the floor that will be removed
          */
-        removeFloor(floor: data.BuildingFloor, blockIndex?: number): void;
+        removeFloor(floorType: FloorType, blockIndex?: number): void;
 
         /**
          * The event is triggered whenever the user changes the building.
