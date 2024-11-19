@@ -17,11 +17,6 @@ declare namespace data {
         );
 
         /**
-         * Floor identifier
-         */
-        readonly id: string;
-
-        /**
          * Color of the floor
          */
         color?: Color;

@@ -5,7 +5,6 @@ declare namespace data {
      * the positive x axis.
      */
     class HeadingPitchRoll {
-        readonly id: number;
 
         constructor(heading?: number, pitch?: number, roll?: number);
         /**
