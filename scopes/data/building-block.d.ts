@@ -28,9 +28,9 @@ declare namespace data {
         groundPoints: LocalPosition[];
 
         /**
-         * The center location of the block
+         * The center location of the block in local coordinate
          */
-        center: GlobalPosition;
+        center: LocalPosition;
 
         floors: BuildingFloor[];
 
