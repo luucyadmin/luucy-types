@@ -1,6 +1,7 @@
 declare namespace data {
     class BuildingBlock {
-        readonly id: string;
+
+        constructor(groundPoints: LocalPosition[]);
 
         /**
          * Block index within the building
@@ -13,9 +14,9 @@ declare namespace data {
         anchorBlockindex: number | null;
 
         /**
-         * Block rotation
+         * The heading component in radian
          */
-        headingPitchRoll?: HeadingPitchRoll;
+        heading?: number;
 
         /**
          * Height above terrain of the block

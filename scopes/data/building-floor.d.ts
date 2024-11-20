@@ -6,7 +6,7 @@ declare namespace data {
      *
      * @example // Create a simple building floor
      * const floor = new data.BuildingFloor(data.overground, 2.85);
-     * buildingBlock.addFloor(floor)l
+     * block.floors.push(floor)
      *
      * @see data.BuildingBlock for how to use BuildingFloor for Building creating
      */

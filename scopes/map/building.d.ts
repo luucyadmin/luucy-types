@@ -103,14 +103,14 @@ declare namespace map {
         /**
          * Adds a overground floor to given block
          * @param type floor type to be added
-         * @param blockIndex index of the block (default 0)
+         * @param blockIndex index of the block - BuildingBlock.index (default 0)
          * @param count number of overground floors to be added (default 1)
          */
         addFloor(tpye: FloorType, blockIndex?: number, count?: number): void;
 
         /**
          * Remove defined floor type (it's first occurance) from a given building block
-         * @param blockIndex index of the block (default 0)
+         * @param blockIndex index of the block - BuildingBlock.index 
          * @param floorType  type of the floor that will be removed
          */
         removeFloor(floorType: FloorType, blockIndex?: number): void;
