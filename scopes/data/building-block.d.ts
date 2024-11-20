@@ -1,12 +1,25 @@
 declare namespace data {
     class BuildingBlock {
 
+        /**
+         * Create a new building block
+         * @param groundPoints ground points of the block by local position. The lenght has to be > 3
+         * 
+         * @example Block with 50x50 dimensions:
+         *  const points = [
+            new wrapper.plugin.environment.LocalPosition(dimensionX / 2, dimensionY / 2, 0),
+            new wrapper.plugin.environment.LocalPosition(dimensionX / 2, -dimensionY / 2, 0),
+            new wrapper.plugin.environment.LocalPosition(-dimensionX / 2, -dimensionY / 2, 0),
+            new wrapper.plugin.environment.LocalPosition(-dimensionX / 2, dimensionY / 2, 0)
+          ];
+          const block = new wrapper.plugin.environment.data.BuildingBlock(points);
+         */
         constructor(groundPoints: LocalPosition[]);
 
         /**
          * Block index within the building
          */
-        index: number;
+        blockIndex: number;
 
         /**
          * Block index of the block which this one is positioned on top
