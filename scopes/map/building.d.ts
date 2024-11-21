@@ -56,22 +56,6 @@ declare namespace map {
         opacity?: number;
 
         /**
-         * Define overground floor height
-         * Default is 3.2
-         *
-         * Does override floorHeight for the overground blocks
-         */
-        floorHeight?: number;
-
-        /**
-         * Define underground floor height
-         * Default is 3.2
-         *
-         * Does override floorHeight for the underground block
-         */
-        undergroundFloorHeight?: number;
-
-        /**
          * Define building area reduction
          * Default is 0
          */
@@ -82,17 +66,6 @@ declare namespace map {
          * Default is 0
          */
         volumeReduction?: number;
-
-        /**
-         * Define building usage - will apply on every building block
-         */
-        buildingUsage?: data.BuildingUsage;
-
-        /**
-         * Define height above terrain
-         * Default is 0
-         */
-        heightAboveTerrain?: number;
 
         /**
          * Enabled displaying floors in the building
