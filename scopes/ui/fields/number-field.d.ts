@@ -49,7 +49,7 @@ declare namespace ui {
 
         /**
          * The minimal value on the number.
-         * When defined it turns on the field vaidation - the onValueChange event will be fired but not processed when invalid 
+         * When defined it turns on the field validation - the onValueChange event will be fired but not processed when invalid 
          * Negative values are possible.
          *
          * Can be changed after beeing added to an area/element and will automatically update.

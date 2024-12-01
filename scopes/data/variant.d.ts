@@ -65,6 +65,21 @@ declare namespace data {
          */
         readonly project: Project;
 
+        /**
+         * Maximum height of all building in the variant
+         * total - sum of all maximums of all heights
+         * overground - maximum of all overground heights
+         * underground - maximum of all underground heights
+         */
+        readonly maxBuildingHeight: Metric;
+        /**
+         * Mininum height of all building in the variant
+         * total - sum of all minimums of all heights
+         * overground - minimum of all overground heights
+         * underground - minimum of all underground heights
+         */
+        readonly minBuildingHeight: Metric;
+
         /** 
          * Will be called when the variants volume changes 
          * 
@@ -133,6 +148,26 @@ declare namespace data {
          * Will be fired when parcels change
          */
         readonly onParcelsChange: Event<Parcel[]>;
+
+        /** 
+         * Will be called when the variants maximum bulding height changes 
+         * 
+         * @example // Listen to changes in the maximum height
+         * variant.onMaxBuildingHeightChange.subscribe(maxHeight => {
+         *     console.log("Maximum height of ", variant.name, " changed to ", maxHeight.total.toMetricAreaString());
+         * });
+         */
+        readonly onMaxBuildingHeightChange: Event<Metric | null>;
+
+        /** 
+         * Will be called when the variants minimum bulding height changes 
+         * 
+         * @example // Listen to changes in the minimum height
+         * variant.onMaxBuildingHeightChange.subscribe(minHeight => {
+         *     console.log("Minimum height of ", variant.name, " changed to ", minHeight.total.toMetricAreaString());
+         * });
+         */
+        readonly onMinBuildingHeightChange: Event<Metric | null>;
 
         /**
          * Variant storage
