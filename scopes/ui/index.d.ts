@@ -137,15 +137,4 @@ declare namespace ui {
      */
     disable(): void;
   }
-
-  /**
-     * Downloads a file. If no `name` is passed, the files `name` will be used.
-     * @deprecated Use `file.download()` instead
-     * 
-     * @example // Download a helloworld.txt
-     * const file = File.fromString("helloworld.txt", ""Hello World!");
-     * 
-     * section.add(new ui.Button(ui.icons.export, "Download helloworld.txt", () => ui.download(file)));
-     */
-   function download(file: File, name?: string): void;
 }
