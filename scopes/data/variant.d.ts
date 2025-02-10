@@ -16,12 +16,24 @@ declare namespace data {
          */
         readonly name: string;
 
+        /** 
+         * Contains the floor area of all buildings of this project variant
+         * 
+         * @deprecated Use `totalFloorArea` to get the under and overground values instead. Use `totalFloorArea.total` to get the total floor area
+         */
+        readonly floorArea: number;
 
         /**
          * Contains the floor area of all buildings of this project variant 
          */
         readonly totalFloorArea: Metric;
 
+        /** 
+         * Contains the volume of all buildings of this project variant 
+         * 
+         * @deprecated Use `totalVolume` to get the under and overground values instead. Use `totalVolume.total` to get the total volume
+         */
+        readonly volume: number;
 
         /**
          * Contains the volume of all buildings of this project variant 
@@ -71,12 +83,26 @@ declare namespace data {
         /** 
          * Will be called when the variants volume changes 
          * 
+         * @deprecated Use `onTotalVolumeChange` instead, which is a metric containing over and underground values
+         */
+        readonly onVolumeChange: Event<number | null>;
+
+        /** 
+         * Will be called when the variants volume changes 
+         * 
          * @example // Listen to changes in the volume
          * variant.onTotalVolumeChange.subscribe(volume => {
          *     console.log("Volume of ", variant.name, " changed to ", volume.total.toMetricVolumeString());
          * });
          */
         readonly onTotalVolumeChange: Event<Metric | null>;
+
+        /** 
+         * Will be called when the variants floor area changes 
+         * 
+         * @deprecated Use `onTotalAreaChange` instead, which is a metric containing over and underground values
+         */
+        readonly onFloorAreaChange: Event<number | null>;
 
         /** 
          * Will be called when the variants footprint area changes 
