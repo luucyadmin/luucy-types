@@ -1,6 +1,6 @@
 {
     "name": "luucy-types",
-    "version": "10.24.17",
+    "version": "10.24.18",
     "types": "index.d.ts",
     "scripts": {
         "preversion": "tsc",
