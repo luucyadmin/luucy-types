@@ -5,7 +5,7 @@
  */
  declare class Assets {
     /** 
-     * Returns the default icon of you application, usually icon.svg 
+     * Returns the path to your application icon
      */
     static getLogo(): string;
 
