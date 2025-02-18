@@ -40,7 +40,7 @@ declare class TimerInstance {
  * 
  * Luucy masks global timers to cancel them automatically whenever a plugin in disabled, uninstalled or upgraded.
  */
-declare const Timer: {
+declare class Timer {
 
     /** 
      * Interval gets called repedeately until canceled with `.cancel()`.
