@@ -79,12 +79,6 @@ declare class Color {
      */
     readonly contrastTextColor: Color;
 
-    /**
-     * Default luucy color
-     * @deprecated this color is no longer used as a brand color for LUUCY
-     */
-    static readonly luucyBrand: Color;
-
     static readonly black: Color;
     static readonly silver: Color;
     static readonly gray: Color;
