@@ -16,9 +16,9 @@ declare namespace data {
         readonly name: string;
 
         /**
-         * Rotation angle of the entire building
+         * The heading component in radian
          */
-        readonly angle: number;
+        heading?: number;
 
         /**
          * Center point of the shape
@@ -48,45 +48,25 @@ declare namespace data {
         readonly volume: Metric;
 
         /**
-         * Sections making up the building
-         */
-        readonly sections: BuildingSection[];
-
-        /**
          * Parent variant
          */
         readonly variant: Variant;
 
         /**
-         * Building usages
-         * Compatible only for Buildings 2.0
+         * Cumulated building usages from every building block
          */
         readonly buildingUsages: BuildingUsage[];
 
         /**
-         * Building floors
+         * Building blocks
          */
-        readonly floors: BuildingFloor[];
+        readonly buildingBlocks: BuildingBlock[];
 
         /**
-         * Roof building section
+         * Emits when the blocks of the building change
          */
-        readonly roofSection: RoofSection;
+        onBuildingBlocksChange: Event<BuildingBlock[]>;
 
-        /**
-         * Emits when the floors of the building change
-         */
-        onFloorsChange: Event<BuildingFloor[]>;
-
-        /**
-         * Emits when the roof section of the building change
-         */
-        onRoofChange: Event<RoofSection>;
-
-        /**
-         * Emits when the sections of the building change
-         */
-        onSectionsChange: Event<BuildingSection[]>;
 
         /**
          * Emits when the volume, floorArea or footprint of the building change
@@ -101,8 +81,7 @@ declare namespace data {
         onPositionChange: Event<GlobalPosition>;
 
         /**
-         * Emits when building usages change
-         * Compatible only for Buildings 2.0
+         * Emits when usages in any block change
          */
         onBuildingUsagesChange: Event<BuildingUsage[]>;
     }
