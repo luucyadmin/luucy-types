@@ -1,12 +1,12 @@
 /// <reference path="building-usage.d.ts" />
 /// <reference path="building.d.ts" />
-/// <reference path="floor.d.ts" />
+/// <reference path="building-block.d.ts" />
+/// <reference path="building-floor.d.ts" />
 /// <reference path="metric.d.ts" />
+/// <reference path="headingpitchroll.d.ts" />
 /// <reference path="organization.d.ts" />
 /// <reference path="parcel.d.ts" />
 /// <reference path="project.d.ts" />
-/// <reference path="roof.d.ts" />
-/// <reference path="section.d.ts" />
 /// <reference path="roof-section.d.ts" />
 /// <reference path="usage.d.ts" />
 /// <reference path="user-settings.d.ts" />
@@ -24,6 +24,7 @@ declare enum RoofType {
     doublepitch,
     monopitch,
 }
+
 
 /**
  * Contains all the data-related classes that luucy exposes 

@@ -5,15 +5,16 @@ declare namespace map {
      * A building is a shape built out of multiple floors.
      *
      * @example // Create a simple building with 15 equal floors
-     * const floor = new data.BuildingFloor([
-     *     new GlobalPosition(47.050390, 8.310263)], data.overground, 2.85, Color.red);
-     * const roof = new data.RoofSection(data.flat, 5.2);
+     * const floor = new data.BuildingFloor( data.overground, 2.85);
+     * const block = new data.BuildingBlock();
+     * block.floors = [floor];
+     * block.roof = new data.RoofSection(data.flat, 5.2);
      *
      * let building;
      *
      * section.add(
      *     new ui.Button(ui.icons.building, "Generate me a building!!", () => {
-     *             building = new map.Building([floor], 15, roof);
+     *             building = new map.Building(new GlobalPosition(47.050390, 8.310263), [block], 15);
      *             building.focus();
      *  })
      * );
@@ -35,51 +36,24 @@ declare namespace map {
         /**
          * Generate a bulding by defined floors and roof
          * @param centerPoint the center of the building
-         * @param floors at least one floor needs to be defined
-         * @param floorsCount if `floors` length is less then the `floorsCount` than it remaining floors are generated based on the first item from `floors` array
-         * @param roof roof definition
+         * @param buildingBlocks at least one block needs to be defined
+         * @param floorsCount if `buildingBlocks` length is less then the `blocksCount` than it remaining blocks are generated based on the first item from `buildingBlocks` array
          */
         constructor(
             centerPoint: GlobalPosition,
-            floors: data.BuildingFloor[],
+            buildingBlocks: data.BuildingBlock[],
             floorsCount?: number,
-            roof?: data.RoofSection
         );
 
         readonly visible: boolean;
         readonly hidden: boolean;
-        readonly floors: data.BuildingFloor[];
-        /**
-         * Define the roof section of the building
-         * Overrides values defined in constructor
-         */
-        roof?: data.RoofSection;
-        /**
-         * Define fill color for the building
-         */
-        color?: Color;
+        readonly buildingBlocks: data.BuildingBlock[];
 
         /**
          * Define building opacity in %
          * Default is 100
          */
         opacity?: number;
-
-        /**
-         * Define overground floor height
-         * Default is 3.2
-         *
-         * Does override floorHeight for the overground floors
-         */
-        floorHeight?: number;
-
-        /**
-         * Define underground floor height
-         * Default is 3.2
-         *
-         * Does override floorHeight for the underground floors
-         */
-        undergroundFloorHeight?: number;
 
         /**
          * Define building area reduction
@@ -94,39 +68,25 @@ declare namespace map {
         volumeReduction?: number;
 
         /**
-         * Define building usage
-         */
-        buildingUsage?: data.BuildingUsage;
-
-        /**
-         * Define height above terrain
-         * Default is 0
-         */
-        heightAboveTerrain?: number;
-
-        /**
          * Enabled displaying floors in the building
          * @param show
          */
         showFloors(show: boolean): void;
 
         /**
-         * Adds a overground floor
+         * Adds a overground floor to given block
+         * @param type floor type to be added
+         * @param blockIndex index of the block - BuildingBlock.index (default 0)
          * @param count number of overground floors to be added (default 1)
          */
-        addFloor(count?: number): void;
+        addFloor(tpye: FloorType, blockIndex?: number, count?: number): void;
 
         /**
-         * Adds a underground floor
-         * @param count number of udnerground floors to be added  (default 1)
+         * Remove defined floor type (it's first occurance) from a given building block
+         * @param blockIndex index of the block - BuildingBlock.index 
+         * @param floorType  type of the floor that will be removed
          */
-        addUndergroundFloor(count?: number): void;
-
-        /**
-         * Remove defined floor
-         * @param floor from the building floors array
-         */
-        removeFloor(floor: data.BuildingFloor): void;
+        removeFloor(floorType: FloorType, blockIndex?: number): void;
 
         /**
          * The event is triggered whenever the user changes the building.

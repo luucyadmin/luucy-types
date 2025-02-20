@@ -13,7 +13,7 @@ declare namespace ui {
      * 
      * app.add(section);
      */
-    interface IconElement extends Element {
+    class IconElement extends Element {
         readonly type: string;
     }
 
