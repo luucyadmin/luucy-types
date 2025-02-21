@@ -62,7 +62,7 @@ declare class Timer {
      * 
      * console.log("created interval!");
      */
-    interval(handler: (index: number) => unknown, delay: number, executeImmediately?: boolean): TimerInstance;
+    static interval(handler: (index: number) => unknown, delay: number, executeImmediately?: boolean): TimerInstance;
 
     /** 
      * Timeout gets called after the delay. It can be canceled with `.cancel()`.
@@ -81,6 +81,6 @@ declare class Timer {
      * 
      * console.log("created timer!");
      */
-    timeout(handler: (index: number) => unknown, delay: number): TimerInstance;
+    static timeout(handler: (index: number) => unknown, delay: number): TimerInstance;
 }
 
