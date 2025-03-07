@@ -37,22 +37,22 @@ declare namespace data {
         /**
          * Area of the floor
          */
-        readonly floorArea: Metric;
+        readonly floorArea: number;
 
         /**
          * Volume of floor
          */
-        readonly volume: Metric;
+        readonly volume: number;
 
         /**
          * Reduced area of the floor
          */
-        readonly reducedFloorArea: Metric;
+        readonly reducedFloorArea: number;
 
         /**
          * Reduced volume of floor
          */
-        readonly reducedVolume: Metric;
+        readonly reducedVolume: number;
 
         /**
          * Define building floor area reduction
