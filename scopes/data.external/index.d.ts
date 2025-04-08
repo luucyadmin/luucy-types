@@ -64,5 +64,5 @@ declare namespace data {
             latitude: number,
             longtitude: number,
             radius: number
-        ): Promise<String>;
+        ): Promise<string>;
 }
