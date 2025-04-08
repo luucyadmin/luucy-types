@@ -1,5 +1,5 @@
 declare namespace data {
-    interface Smartconext {
+    class Smartconext {
         /**
          * Creates a new variant in the project and returns it as a JSON
          *
