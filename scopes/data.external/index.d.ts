@@ -60,9 +60,9 @@ declare namespace data {
          *
          */
         function getSmartconextData(
-            projectId: number,
+              projectId: number,
             latitude: number,
             longtitude: number,
             radius: number
-        ): Promise<string>;
+        ): string;
 }
