@@ -1,5 +1,4 @@
 declare namespace data {
-    class Smartconext {
         /**
          * Creates a new variant in the project and returns it as a JSON
          *
@@ -60,11 +59,10 @@ declare namespace data {
          * ]
          *
          */
-        getSmartconextData(
+        function getSmartconextData(
             projectId: number,
             latitude: number,
             longtitude: number,
             radius: number
         ): Promise<String>;
-    }
 }
