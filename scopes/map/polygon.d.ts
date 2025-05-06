@@ -26,6 +26,13 @@ declare namespace map {
         readonly height: number;
         readonly border?: { color: Color, width?: number };
         
+        generatedFrom?: {
+            borderDistance: number;
+            areaReduction: number;
+            coverageRatio: number;
+            maxTotalHeight: number;
+        }
+
         hide(): void;
         show(): void;
         focus(): void;
