@@ -83,8 +83,7 @@ declare namespace map {
     ): GlobalPosition[][] | undefined;
 
     /**
-     * Generates a polygon based on the provided form data
-     *
+     * Generates polygon/s based on the provided form data
      *
      * @example
      * const polygon = map.generatePolygon([
@@ -104,7 +103,7 @@ declare namespace map {
      *
      * @returns list of polygon based on the points
      */
-    function fromGeneratePolygons(
+    function generatePolygons(
         points: GlobalPosition[],
         borderDistance: number,
         areaReduction: number,
@@ -112,7 +111,7 @@ declare namespace map {
         maxTotalHeight: number,
         color?: Color,
         border?: { color: Color; width?: number } | Color
-    ): Polygon[] | undefined;
+    ): Polygon[];
 
     class ParcelInfo {
         /**
