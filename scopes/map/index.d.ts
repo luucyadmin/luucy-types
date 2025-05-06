@@ -100,6 +100,8 @@ declare namespace map {
      * @param maxTotalHeight maximum polygon height (m)
      * @param color polygon color
      * @param border polygon border color
+     * @param parcelId parcel identifier
+     * @param parcelType parcel type
      *
      * @returns list of polygon based on the points
      */
@@ -110,7 +112,9 @@ declare namespace map {
         coverageRation: number,
         maxTotalHeight: number,
         color?: Color,
-        border?: { color: Color; width?: number } | Color
+        border?: { color: Color; width?: number } | Color,
+        parcelId?: number,
+        parcelType?: string,
     ): Polygon[];
 
     class ParcelInfo {
