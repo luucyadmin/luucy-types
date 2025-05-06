@@ -84,8 +84,8 @@ declare namespace map {
 
     /**
      * Generates a polygon based on the provided data
-     * 
-     * 
+     *
+     *
      * @example
      * const polygon = map.generatePolygon([
      *      new GlobalPosition(47.050390, 8.310263),
@@ -93,7 +93,7 @@ declare namespace map {
      *     new GlobalPosition(47.051390, 8.311263),
      *     new GlobalPosition(47.051390, 8.310263)],
      *    10,0.9,1,40, Color.red, Color.blue);
-     * 
+     *
      * @param points original parcel/area points
      * @param borderDistance distance from parcel/area border (m)
      * @param areaReduction reduction of the original area (%)
@@ -101,6 +101,8 @@ declare namespace map {
      * @param maxTotalHeight maximum polygon height (m)
      * @param color polygon color
      * @param border polygon border color
+     *
+     * @returns list of polygon based on the points
      */
     function generatePolygon(
         points: GlobalPosition[],
@@ -108,9 +110,9 @@ declare namespace map {
         areaReduction: number,
         coverageRation: number,
         maxTotalHeight: number,
-        color?: Color, 
-        border?: { color: Color, width?: number } | Color
-    ): Polygon | undefined;
+        color?: Color,
+        border?: { color: Color; width?: number } | Color
+    ): Polygon[] | undefined;
 
     class ParcelInfo {
         /**
