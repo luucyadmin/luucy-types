@@ -31,8 +31,8 @@ declare namespace map {
             areaReduction: number;
             coverageRatio: number;
             maxTotalHeight: number;
-            parcelId: number,
-            parcelType: string,
+            parcelId?: number,
+            parcelType?: string,
         }
 
         hide(): void;

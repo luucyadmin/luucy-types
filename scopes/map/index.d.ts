@@ -101,7 +101,6 @@ declare namespace map {
      * @param color polygon color
      * @param border polygon border color
      * @param parcelId parcel identifier
-     * @param parcelType parcel type
      *
      * @returns list of polygon based on the points
      */
