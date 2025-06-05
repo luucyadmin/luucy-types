@@ -94,9 +94,8 @@ declare namespace map {
      *    10,0.9,1,40, Color.red, Color.blue);
      *
      * @param points original parcel/area points
-     * @param borderDistance distance from parcel/area border (m)
-     * @param areaReduction reduction of the original area (%)
-     * @param coverageRatio percentage of how much area should be covered by polygon (%)
+     * @param bufferDistance distance from parcel/area border (m)
+     * @param areaCoverageRatio percentage of how much area should be covered by polygon (%)
      * @param maxTotalHeight maximum polygon height (m)
      * @param color polygon color
      * @param border polygon border color
@@ -106,9 +105,8 @@ declare namespace map {
      */
     function generatePolygons(
         points: GlobalPosition[],
-        borderDistance: number,
-        areaReduction: number,
-        coverageRation: number,
+        bufferDistance: number,
+        areaCoverageRatio: number,
         maxTotalHeight: number,
         color?: Color,
         border?: { color: Color; width?: number } | Color,
