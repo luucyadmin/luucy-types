@@ -58,12 +58,14 @@ declare namespace map {
         /**
          * Define building area reduction
          * Default is 0
+         * @deprecated used BuildingFloor.areaReduction instead
          */
         areaReduction?: number;
 
         /**
          * Define building volume reduction
          * Default is 0
+         * @deprecated used BuildingFloor.volumeReduction instead
          */
         volumeReduction?: number;
 

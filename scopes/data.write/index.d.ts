@@ -31,6 +31,7 @@ declare namespace map {
          * The shape will now be user editable and the plugin looses control over the object.
          */
         releaseToVariant(name: string): Promise<void>;
+
     }
 }
 

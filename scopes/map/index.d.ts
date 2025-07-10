@@ -82,6 +82,38 @@ declare namespace map {
         areaScaleFactor: number
     ): GlobalPosition[][] | undefined;
 
+    /**
+     * Generates polygon/s based on the provided form data
+     *
+     * @example
+     * const polygon = map.generatePolygon([
+     *      new GlobalPosition(47.050390, 8.310263),
+     *     new GlobalPosition(47.050390, 8.311263),
+     *     new GlobalPosition(47.051390, 8.311263),
+     *     new GlobalPosition(47.051390, 8.310263)],
+     *    10,0.9,1,40, Color.red, Color.blue);
+     *
+     * @param points original parcel/area points
+     * @param bufferDistance distance from parcel/area border (m)
+     * @param areaCoverageRatio percentage of how much area should be covered by polygon (%)
+     * @param maxTotalHeight maximum polygon height (m)
+     * @param color polygon color
+     * @param border polygon border color
+     * @param parcelId parcel identifier
+     *
+     * @returns list of polygon based on the points
+     */
+    function generatePolygons(
+        points: GlobalPosition[],
+        bufferDistance: number,
+        areaCoverageRatio: number,
+        maxTotalHeight: number,
+        color?: Color,
+        border?: { color: Color; width?: number } | Color,
+        parcelId?: number,
+        parcelType?: string,
+    ): Polygon[];
+
     class ParcelInfo {
         /**
          * Parcel name
