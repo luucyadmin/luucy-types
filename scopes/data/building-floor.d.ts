@@ -11,10 +11,7 @@ declare namespace data {
      * @see data.BuildingBlock for how to use BuildingFloor for Building creating
      */
     class BuildingFloor {
-        constructor(
-            floorType: FloorType,
-            height: number,
-        );
+        constructor(floorType: FloorType, height: number);
 
         /**
          * Color of the floor
@@ -36,5 +33,37 @@ declare namespace data {
          */
         usage?: BuildingUsage;
 
+        
+        /**
+         * Area of the floor
+         */
+        readonly floorArea: number;
+
+        /**
+         * Volume of floor
+         */
+        readonly volume: number;
+
+        /**
+         * Reduced area of the floor
+         */
+        readonly reducedFloorArea: number;
+
+        /**
+         * Reduced volume of floor
+         */
+        readonly reducedVolume: number;
+
+        /**
+         * Define building floor area reduction
+         * Default is 0
+         */
+        areaReduction?: number;
+
+        /**
+         * Define building floor volume reduction
+         * Default is 0
+         */
+        volumeReduction?: number;
     }
 }

@@ -1,0 +1,5 @@
+{
+    "name": "External Data",
+    "description": "Allows plugins to work with data from external services",
+    "dependencies": []
+}

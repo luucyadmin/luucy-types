@@ -26,6 +26,14 @@ declare namespace map {
         readonly height: number;
         readonly border?: { color: Color, width?: number };
         
+        generatedFrom?: {
+            bufferDistance: number;
+            areaCoverageRatio: number;
+            maxTotalHeight: number;
+            parcelId?: number,
+            parcelType?: string,
+        }
+
         hide(): void;
         show(): void;
         focus(): void;
