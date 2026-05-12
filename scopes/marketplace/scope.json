@@ -1,7 +1,0 @@
-{
-    "name": "Marketplace",
-    "description": "Provides consumeables",
-    "dependencies": [
-        "core"
-    ]
-}
