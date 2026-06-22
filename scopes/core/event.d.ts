@@ -1,4 +1,4 @@
-type EventHandler<T> = (argument: T) => any | void;
+type EventHandler<T, TPrevious> = (argument: T, previousArgument: TPrevious | null) => any | void;
 
 /** 
  * Events 
@@ -6,18 +6,19 @@ type EventHandler<T> = (argument: T) => any | void;
  * Luucy pushes various events to plugins to inform them about changes in the applications state.
  * 
  * @example // Get notified when the user changes the project
- * onProjectSelect.subscribe(project => {
+ * onProjectSelect.subscribe(project, previousProject => {
  *     console.log("project selected: ", project);
+ *     console.log("previous project: ", previousProject);
  * });
  */
-declare class Event<T> {
+declare class Event<T, TPrevious = T> {
     /** 
      * Subscribe to event
      * 
      * The handler will be executed whenever a new value is emitted with `.emit(value)` and
      * immediately after you subscribe - if there has been a `.emit(value)` call before. 
      */
-    subscribe(handler: EventHandler<T>): Subscription<T>;
+    subscribe(handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>;
 
     /** 
      * Subscribe once to a event
@@ -35,8 +36,8 @@ declare class Event<T> {
      * 
      * event.emit(); // hit 1, hit 2, hit 4
      */
-    subscribeOnce(tag: string, handler: EventHandler<T>): Subscription<T>;
-    subscribeOnce(handler: EventHandler<T>): Subscription<T>;
+    subscribeOnce(tag: string, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>;
+    subscribeOnce(handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>;
 
     /** 
      * Emits a new value
@@ -74,7 +75,7 @@ declare class Event<T> {
      * 
      * Set `firePreviousValue` to `false` to prevent immediate fire of the event if a value has been emitted before.
      */
-    copy(firePreviousValue?: boolean): Event<T>;
+    copy(firePreviousValue?: boolean): Event<T, TPrevious>;
 
     /**
      * Subscribe to multiple events at once
@@ -91,37 +92,38 @@ declare class Event<T> {
      *     priceLabel.value = area.value * pricePerM2.value;
      * });
      */
-    static subscribe<T>(event1: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, handler: EventHandler<T>): Subscription<T>[];
-    static subscribe<T>(event1: Event<T>, event2: Event<T>, event3: Event<T>, event4: Event<T>, event5: Event<T>, event6: Event<T>, event7: Event<T>, event8: Event<T>, event9: Event<T>, handler: EventHandler<T>): Subscription<T>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, event6: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, event6: Event<T, TPrevious>, event7: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, event6: Event<T, TPrevious>, event7: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, event6: Event<T, TPrevious>, event7: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
+    static subscribe<T, TPrevious>(event1: Event<T, TPrevious>, event2: Event<T, TPrevious>, event3: Event<T, TPrevious>, event4: Event<T, TPrevious>, event5: Event<T, TPrevious>, event6: Event<T, TPrevious>, event7: Event<T, TPrevious>, handler: EventHandler<T, TPrevious>): Subscription<T, TPrevious>[];
 
     /**
      * Returns all subscriptions
      * 
      * This will return untagged (`.subscribe`) and tagged (`.subscribeOnce`) subscriptions
      */
-    subscriptions: Subscription<T>[];
+    subscriptions: Subscription<T, TPrevious | null>[];
 
     /**
      * Finds a tagged subscription (`.subscribeOnce(tag, handler)`)
      * 
      * Don't pass a tag argument to return the hander from `.subscribeOnce(handler)`
      */
-    findSubscription(tag?: string): Subscription<T> | null;
+    findSubscription(tag?: string): Subscription<T,TPrevious | null> | null;
 }
 
-declare interface Subscription<T> {
-    (value: T): void;
+declare interface Subscription<T, TPrevious = T | null> {
+    (value: T, previousValue: TPrevious | null): void;
 
     id?: string;
     tag?: string;
 
-    handler: EventHandler<T>;
+    handler: EventHandler<T, TPrevious | null>;
     unsubscribe(): void;
 }

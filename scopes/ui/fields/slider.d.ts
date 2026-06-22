@@ -76,13 +76,13 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<number>;
+        onValueChange: Event<number, number | undefined>;
 
         /**
          * The event is triggered whenever the user is changing the input.
          * Do not do heavy calculations, requests or complex ui manipulations in here, as this event is called on every tiny movement of the mouse!
          */
-        onImmediateValueChange: Event<number>;
+        onImmediateValueChange: Event<number, number | undefined>;
 
         onContentChange: Event<void>;
     }

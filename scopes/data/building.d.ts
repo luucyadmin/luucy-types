@@ -65,7 +65,7 @@ declare namespace data {
         /**
          * Emits when the blocks of the building change
          */
-        onBuildingBlocksChange: Event<BuildingBlock[]>;
+        onBuildingBlocksChange: Event<BuildingBlock[], BuildingBlock[] | undefined>;
 
 
         /**
@@ -78,11 +78,11 @@ declare namespace data {
          *
          * Passes the new center to the subscribers
          */
-        onPositionChange: Event<GlobalPosition>;
+        onPositionChange: Event<GlobalPosition, GlobalPosition | undefined>;
 
         /**
          * Emits when usages in any block change
          */
-        onBuildingUsagesChange: Event<BuildingUsage[]>;
+        onBuildingUsagesChange: Event<BuildingUsage[], BuildingUsage[] | undefined>;
     }
 }

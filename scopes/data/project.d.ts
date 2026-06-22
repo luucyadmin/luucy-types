@@ -42,12 +42,12 @@ declare namespace data {
          *     }
          * });
          */
-        readonly onVariantSelect: Event<Variant | null>;
+        readonly onVariantSelect: Event<Variant | null, Variant | undefined>;
 
         /**
          * Will be fired whenever the `variants` array changes
          */
-        readonly onVariantsChange: Event<Variant[]>;
+        readonly onVariantsChange: Event<Variant[], Variant[] | undefined>;
 
         /**
          * Project storage

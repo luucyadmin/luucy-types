@@ -29,6 +29,6 @@ declare namespace ui {
          */
         content: string;
 
-        onContentChange: Event<string>;
+        onContentChange: Event<string, string | undefined>;
     }
 }

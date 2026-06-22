@@ -37,6 +37,6 @@ declare namespace data {
          * Fires when the boundaries of the parcel change.
          * A change of the location (center) or the area will emit this event.
          */
-        onBoundaryChange: Event<GlobalPosition[]>;
+        onBoundaryChange: Event<GlobalPosition[], GlobalPosition[] | undefined>;
     }
 }

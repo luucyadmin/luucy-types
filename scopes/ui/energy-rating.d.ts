@@ -69,6 +69,6 @@ declare namespace ui {
 
         readonly title: string;
 
-        onRatingChange: Event<number>;
+        onRatingChange: Event<number, number | undefined>;
     }
 }

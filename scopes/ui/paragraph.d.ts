@@ -29,7 +29,7 @@ declare namespace ui {
          */
         readonly lineLimit: number;
 
-        onContentChange: Event<string>;
+        onContentChange: Event<string, string | undefined>;
         onExpand: Event<void>;
     }
 }

@@ -59,7 +59,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user selects another radio.
          */
-        onValueChange: Event<T>;
+        onValueChange: Event<T, T | undefined>;
 
         readonly transformer: (item: T) => string;
         onContentChange: Event<void>;

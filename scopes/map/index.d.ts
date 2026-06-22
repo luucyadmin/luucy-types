@@ -44,7 +44,7 @@ declare namespace map {
      *     new map.Marker(position.flattenedCopy(), Color.random());
      * });
      */
-    const onPositionSelect: Event<GlobalPosition>;
+    const onPositionSelect: Event<GlobalPosition, GlobalPosition | undefined>;
 
     /**
      * On Parcel Select
@@ -58,7 +58,7 @@ declare namespace map {
      *     new ui.Label("Selected parcel: "+ parcel[0].id);
      * });
      */
-    const onParcelSelect: Event<ParcelInfo[]>;
+    const onParcelSelect: Event<ParcelInfo[], ParcelInfo[] | undefined>;
 
     /**
      * Returns buffered polygon points if succeeded, undefined if failed (can occur when buffer distance < 0 -> buffering inside so that the new polygon intersects with itself)

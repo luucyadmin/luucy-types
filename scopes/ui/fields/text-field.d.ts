@@ -66,7 +66,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<string>;
+        onValueChange: Event<string, string | undefined>;
 
         /**
          * The event is triggered whenever the user is changing the input.
@@ -93,7 +93,7 @@ declare namespace ui {
          * 
          * section.add(input);
          */
-        onImmediateValueChange: Event<string>;
+        onImmediateValueChange: Event<string, string | undefined>;
 
         onContentChange: Event<void>;
     }

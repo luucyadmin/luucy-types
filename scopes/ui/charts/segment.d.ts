@@ -26,6 +26,6 @@ declare namespace ui {
          */
         remove(): void;
 
-        onChange: Event<number>;
+        onChange: Event<number, number | undefined>;
     }
 }

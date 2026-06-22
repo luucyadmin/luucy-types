@@ -30,6 +30,6 @@ declare namespace ui {
          */
         message: string;
 
-        onContentChange: Event<string>;
+        onContentChange: Event<string, string | undefined>;
     }
 }

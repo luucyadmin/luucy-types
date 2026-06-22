@@ -1,7 +1,10 @@
 {
     "name": "luucy-types",
-    "version": "10.24.20",
+    "version": "10.24.21",
     "types": "index.d.ts",
+    "publishConfig": {
+        "registry": "https://gitlab.com/api/v4/projects/<PROJECT_ID>/packages/npm/"
+    },
     "scripts": {
         "preversion": "tsc",
         "install": "node combine.js"

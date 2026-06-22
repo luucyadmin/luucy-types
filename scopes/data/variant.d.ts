@@ -74,13 +74,13 @@ declare namespace data {
          *     console.log("Volume of ", variant.name, " changed to ", volume.total.toMetricVolumeString());
          * });
          */
-        readonly onTotalVolumeChange: Event<Metric | null>;
+        readonly onTotalVolumeChange: Event<Metric | null, Metric | undefined>;
 
         /** 
          * Will be called when the variants footprint area changes 
          * 
          */
-        readonly onFootprintAreaChange: Event<number | null>;
+        readonly onFootprintAreaChange: Event<number | null, number | undefined>;
 
         /** 
          * Will be called when the variants floor area changes 
@@ -90,7 +90,7 @@ declare namespace data {
          *     console.log("Area of ", variant.name, " changed to ", area.total.toMetricAreaString());
          * });
          */
-        readonly onTotalFloorAreaChange: Event<Metric | null>;
+        readonly onTotalFloorAreaChange: Event<Metric | null, Metric | undefined>;
 
         /**
          * Will be fired when the usages change
@@ -102,7 +102,7 @@ declare namespace data {
          *     usagesLabel.value = usages.map(usage => `${usage.type} (${usage.percent}%)`).join(', ');
          * });
          */
-        readonly onUsagesChange: Event<Usage[]>;
+        readonly onUsagesChange: Event<Usage[], Usage[] | undefined>;
 
         /**
          * Will be fired when a user drawn building changes
@@ -114,12 +114,12 @@ declare namespace data {
          *     buildingsLabel.value = buildings.map(building => `${building.height}m`).join(', ');
          * });
          */
-        readonly onBuildingsChange: Event<Building[]>;
+        readonly onBuildingsChange: Event<Building[], Building[] | undefined>;
 
         /**
          * Will be fired when parcels change
          */
-        readonly onParcelsChange: Event<Parcel[]>;
+        readonly onParcelsChange: Event<Parcel[], Parcel[] | undefined>;
 
         /** 
          * Will be called when the variants maximum bulding height changes 
@@ -129,17 +129,17 @@ declare namespace data {
          *     console.log("Maximum height of ", variant.name, " changed to ", maxHeight.total.toMetricAreaString());
          * });
          */
-        readonly onMaxBuildingHeightChange: Event<Metric | null>;
+        readonly onMaxBuildingHeightChange: Event<Metric | null, Metric | undefined>;
 
         /** 
          * Will be called when the variants minimum bulding height changes 
          * 
          * @example // Listen to changes in the minimum height
-         * variant.onMaxBuildingHeightChange.subscribe(minHeight => {
+         * variant.onMinBuildingHeightChange.subscribe(minHeight => {
          *     console.log("Minimum height of ", variant.name, " changed to ", minHeight.total.toMetricAreaString());
          * });
          */
-        readonly onMinBuildingHeightChange: Event<Metric | null>;
+        readonly onMinBuildingHeightChange: Event<Metric | null, Metric | undefined>;
 
         /**
          * Variant storage

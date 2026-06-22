@@ -19,7 +19,7 @@ declare namespace presentation {
         /**
          * Called when a slide is opened.
          */
-        onSlideOpen: Event<Slide | null>;
+        onSlideOpen: Event<Slide | null, Slide | undefined>;
 
         /**
          * Currently open slide

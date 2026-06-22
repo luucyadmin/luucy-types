@@ -33,7 +33,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<boolean>;
+        onValueChange: Event<boolean, boolean | undefined>;
 
         onContentChange: Event<void>;
     }

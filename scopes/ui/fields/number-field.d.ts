@@ -76,7 +76,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the input.
          */
-        onValueChange: Event<number>;
+        onValueChange: Event<number, number | undefined>;
 
         /**
          * The event is triggered whenever the user is changing the input.
@@ -96,7 +96,7 @@ declare namespace ui {
          *     heatingCostLabel.value = basePrice * value;
          * });
          */
-        onImmediateValueChange: Event<number>;
+        onImmediateValueChange: Event<number, number | undefined>;
 
         onContentChange: Event<void>;
     }

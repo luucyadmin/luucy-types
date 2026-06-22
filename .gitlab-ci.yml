@@ -1,5 +1,20 @@
-publish:docs:
-  stage: deploy
-  trigger:
-    project: luucy/sdk/luucy-types-autodoc
-    branch: main
+# publish:docs:
+#   stage: deploy
+#   trigger:
+#     project: luucy/sdk/luucy-types-autodoc
+#     branch: main
+
+
+stages:
+  - build
+  - publish
+
+publish:npm:
+  stage: publish
+  image: node:20
+  script:
+    - npm ci
+    - echo "//gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/npm/:_authToken=$CI_JOB_TOKEN" > .npmrc
+    - npm publish --registry "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/packages/npm/"
+  only:
+    - tags

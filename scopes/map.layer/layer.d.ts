@@ -3,7 +3,7 @@ declare namespace map.layer {
         /**
          * Emitted when the uer clicks the map and no other tool or layer took action
          */
-        onPositionSelect: Event<GlobalPosition>;
+        onPositionSelect: Event<GlobalPosition, GlobalPosition | undefined>;
 
         /**
          * Sets the order index of the map

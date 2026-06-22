@@ -75,7 +75,7 @@ declare namespace ui {
         /**
          * The event is triggered whenever the user changes the option.
          */
-        onValueChange: Event<T>;
+        onValueChange: Event<T, T | undefined>;
 
         readonly transformer: (item: T) => string;
 

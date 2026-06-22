@@ -56,11 +56,11 @@ declare namespace data {
         /**
          * Emits when the roof section of the building change
          */
-        onRoofChange: Event<RoofSection>;
+        onRoofChange: Event<RoofSection, RoofSection | undefined>;
 
         /**
          * Emits when the floors are changed
          */
-        onFloorsChange: Event<BuildingFloor[]>;
+        onFloorsChange: Event<BuildingFloor[], BuildingFloor[] | undefined>;
     }
 }

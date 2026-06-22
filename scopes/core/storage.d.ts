@@ -89,7 +89,7 @@ declare interface GlobalStorage {
      */
     createStorageRouter(type: string, id: string): StorageRouter;
 
-    onWrite: Event<StorageEntry>;
+    onWrite: Event<StorageEntry, StorageEntry | undefined>;
 }
 
 declare const Storage: GlobalStorage;

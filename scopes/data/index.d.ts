@@ -45,7 +45,7 @@ declare namespace data {
      *     }
      * });
      */
-    const onProjectSelect: Event<Project | null>;
+    const onProjectSelect: Event<Project | null, Project | undefined>;
 
     /** 
      * Will be executed when a user setting is changed.

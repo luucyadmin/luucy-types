@@ -3,9 +3,9 @@
 
 declare namespace presentation {
     /**
-     * Called when a presentation is openend
+     * Called when a presentation is opened
      */
-    const onPresentationOpen: Event<Presentation | null>;
+    const onPresentationOpen: Event<Presentation | null, Presentation | undefined>;
 
     /**
      * Currently selected presentation

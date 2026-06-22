@@ -7,10 +7,10 @@ declare namespace map.location {
     /**
      * Emits new center whenever the map moves around
      */
-    const onCenterChange: Event<GlobalPosition>;
+    const onCenterChange: Event<GlobalPosition, GlobalPosition | undefined>;
 
     /**
      * Emits a new bounding box whenever the map moves
      */
-    const onBoundingBoxChange: Event<{ topLeft: GlobalPosition, bottomRight: GlobalPosition }>;
+    const onBoundingBoxChange: Event<{ topLeft: GlobalPosition, bottomRight: GlobalPosition }, { topLeft: GlobalPosition, bottomRight: GlobalPosition } | undefined>;
 }

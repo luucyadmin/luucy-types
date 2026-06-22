@@ -27,7 +27,7 @@ declare namespace ui.tool {
         onClose: Event<void>;
         close(): void;
 
-        onMapClick: Event<GlobalPosition>;
+        onMapClick: Event<GlobalPosition, GlobalPosition | undefined>;
 
         addAction(icon: IconElement, name: string, handler: () => void): void;
     }
