@@ -45,7 +45,7 @@ declare class Event<T, TPrevious = T> {
      * Will execute all handlers registered with `.subscribe(handler)`.
      * After calling `.emit(value)`, all new subscribers will automatically be executed after calling `.subscribe(handler)`.
      */
-    emit(value: T): void;
+    emit(value: T, previousValue: TPrevious | undefined): void;
 
     /**
      * Will break the event
