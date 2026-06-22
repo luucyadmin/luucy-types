@@ -1,16 +1,5 @@
-# publish:docs:
-#   stage: deploy
-#   trigger:
-#     project: luucy/sdk/luucy-types-autodoc
-#     branch: main
-
-
-stages:
-  - build
-  - publish
-
 publish:npm:
-  stage: publish
+  stage: deploy
   image: node:20
   script:
     - npm ci
