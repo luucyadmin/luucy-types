@@ -61,7 +61,7 @@ declare namespace ui {
          * 
          * Don't use `Timer`s to check for changes, use the `onValueChange` or `onImmediateValueChange` event instead!
          */
-        immediateValue: number;
+        immediateValue: string;
 
         /**
          * The event is triggered whenever the user changes the input.

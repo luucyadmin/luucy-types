@@ -5,6 +5,6 @@ declare namespace ui.tool {
 
         complete(): void;
 
-        onMapClick: Event<GlobalPosition>;
+        onMapClick: Event<GlobalPosition, GlobalPosition | undefined>;
     }
 }

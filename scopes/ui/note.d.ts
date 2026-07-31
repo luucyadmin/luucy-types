@@ -31,5 +31,6 @@ declare namespace ui {
         message: string;
 
         onContentChange: Event<string, string | undefined>;
+        onStateChange: Event<State, State | undefined>;
     }
 }

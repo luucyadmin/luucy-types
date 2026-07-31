@@ -76,5 +76,5 @@ declare namespace data {
          * ]
          * 
          */
-        const onSmartconextDataChanged: Event<string, string | undefined>;
+        const onSmartconextDataChanged: Event<string>;
 }

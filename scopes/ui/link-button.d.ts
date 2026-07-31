@@ -77,7 +77,7 @@ declare namespace ui {
         /**
          * Event triggered when the link button's URL changes.
          */
-        onUrlChange: Event<string, string | undefined>;
+        onUrlChange: Event<void>;
 
         /**
          * Event triggered when the link button's icon changes.
