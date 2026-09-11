@@ -1,0 +1,8 @@
+{
+    "name": "Map Live Camera Scope",
+    "description": "Provides notifications about live camera changes applied from another connected session",
+    "dependencies": [
+        "map",
+        "map.camera"
+    ]
+}
