@@ -119,7 +119,7 @@ declare class Event<T, TPrevious = T> {
 }
 
 declare interface Subscription<T, TPrevious = T | null> {
-    (value: T, previousValue: TPrevious | null): void;
+    (value: T, previousValue?: TPrevious | null): void;
 
     id?: string;
     tag?: string;

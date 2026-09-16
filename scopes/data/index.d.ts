@@ -55,7 +55,7 @@ declare namespace data {
      *     console.log("User locale changed to: " + settings.locale)
      * });
      */
-    const onUserSettingsChange: Event<UserSettings>;
+    const onUserSettingsChange: Event<UserSettings, UserSettings | undefined>;
     
     /**
      * Contains the currently selected project.

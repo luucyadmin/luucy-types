@@ -1,6 +1,6 @@
 {
     "name": "luucy-types",
-    "version": "10.24.21",
+    "version": "10.24.22",
     "types": "index.d.ts",
     "publishConfig": {
         "registry": "https://gitlab.com/api/v4/projects/<PROJECT_ID>/packages/npm/"

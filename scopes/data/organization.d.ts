@@ -38,5 +38,5 @@ declare namespace data {
      *     }
      * });
      */
-    const onOrganizationsChange: Event<Organization[]>;
+    const onOrganizationsChange: Event<Organization[], Organization[] | undefined>;
 }
