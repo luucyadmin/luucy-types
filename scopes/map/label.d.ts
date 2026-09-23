@@ -15,6 +15,9 @@ declare namespace map {
      * );
      */
      class Label implements MapElement {
+        /**
+         * Creates a label at the given position
+         */
         constructor(position: GlobalPosition, title: string, color?: Color);
 
         /**
@@ -56,12 +59,34 @@ declare namespace map {
          */
         overlayBuildings: boolean;
 
+        /**
+         * Indicates if the label is currently visible
+         */
         readonly visible: boolean;
+
+        /**
+         * Indicates if the label is currently hidden
+         */
         readonly hidden: boolean;
-        
+
+        /**
+         * Hides the label
+         */
         hide(): void;
+
+        /**
+         * Shows the label after beeing hidden
+         */
         show(): void;
+
+        /**
+         * Moves the camera to the label
+         */
         focus(): void;
+
+        /**
+         * Removes the label from the map
+         */
         remove(): void;
     }
 }

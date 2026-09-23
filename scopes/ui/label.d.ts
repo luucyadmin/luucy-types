@@ -20,6 +20,12 @@ declare namespace ui {
      * }, 1000);
      */
     class Label extends Element {
+        /**
+         * Creates a label
+         *
+         * @param content Text to display
+         * @param tooltip Will provide a tooltip on mouseover
+         */
         constructor(content: string, tooltip?: string);
 
         /**

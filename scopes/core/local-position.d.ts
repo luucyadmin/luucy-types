@@ -11,6 +11,9 @@ declare class LocalPosition {
      */
     static readonly zero: LocalPosition;
 
+    /**
+     * Creates a local position from x, y and an optional z component.
+     */
     constructor(x: number, y: number, z?: number);
 
     /**

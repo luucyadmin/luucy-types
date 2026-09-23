@@ -13,10 +13,28 @@ declare namespace ui {
      * notification.show();
      */
     class Notification {
+        /**
+         * Creates a notification
+         *
+         * @param state State of the notification (e.g. `ui.danger`, `ui.success`)
+         * @param title Title displayed in the notification
+         * @param content Optional content text displayed below the title
+         */
         constructor(state: State, title: string, content?: string);
 
+        /**
+         * State of the notification
+         */
         readonly state: State;
+
+        /**
+         * Title of the notification
+         */
         readonly title: string;
+
+        /**
+         * Content text of the notification
+         */
         readonly content: string;
 
         /**

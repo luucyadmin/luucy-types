@@ -1,3 +1,4 @@
+/** Handler function invoked when an event fires, receiving the new value and the previous value. */
 type EventHandler<T, TPrevious> = (argument: T, previousArgument: TPrevious | null) => any | void;
 
 /** 
@@ -118,12 +119,22 @@ declare class Event<T, TPrevious = T> {
     findSubscription(tag?: string): Subscription<T,TPrevious | null> | null;
 }
 
+/**
+ * Represents a subscription to an `Event`, as returned by `.subscribe()` or `.subscribeOnce()`.
+ *
+ * Can be called directly to invoke the underlying handler.
+ */
 declare interface Subscription<T, TPrevious = T | null> {
+    /** Invokes the subscription's handler with the given value and previous value. */
     (value: T, previousValue?: TPrevious | null): void;
 
+    /** Unique identifier of the subscription. */
     id?: string;
+    /** Tag the subscription was registered with, if any (see `.subscribeOnce(tag, handler)`). */
     tag?: string;
 
+    /** The handler function registered for this subscription. */
     handler: EventHandler<T, TPrevious | null>;
+    /** Removes the subscription so its handler will no longer be executed. */
     unsubscribe(): void;
 }

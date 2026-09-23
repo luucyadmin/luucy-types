@@ -24,11 +24,24 @@ declare namespace ui.tool {
      * });
      */
     interface ToolPanel extends ui.ElementContainer {
+        /**
+         * Emits when the panel is closed
+         */
         onClose: Event<void>;
+
+        /**
+         * Closes the panel
+         */
         close(): void;
 
+        /**
+         * Emits when the user clicks on the map while the panel is open
+         */
         onMapClick: Event<GlobalPosition, GlobalPosition | undefined>;
 
+        /**
+         * Adds an action button to the panel
+         */
         addAction(icon: IconElement, name: string, handler: () => void): void;
     }
 }

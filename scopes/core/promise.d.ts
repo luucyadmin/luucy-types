@@ -1,6 +1,9 @@
+/** Constructor signature for a promise-like object, accepting an executor with `resolve` and `reject` callbacks. */
 type PromiseConstructorLike = new <T>(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) => PromiseLike<T>;
 
+/** Describes any object that has a callable `then` method, following the standard promise contract. */
 declare interface PromiseLike<T> {
+    /** Subscribe to when the underlying promise resolves. */
     then<TResult1 = T, TResult2 = never>(onfulfilled: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null): Promise<TResult1 | TResult2>;
 }
 
@@ -10,6 +13,11 @@ declare interface PromiseLike<T> {
  * Promises are used to prevent blocking of the main thread when loading data from the internet or performing any other asynchronous tasks.
  */
 declare class Promise<T> {
+    /**
+     * Creates a new promise.
+     *
+     * `resolver` is called immediately with `done` and `reject` callbacks used to settle the promise.
+     */
     constructor(resolver: (done: (result: T) => void, reject: (error: any) => void) => void);
 
     /**
@@ -49,6 +57,7 @@ declare class Promise<T> {
     static all<T1, T2, T3, T4, T5, T6, T7>(promise1: Promise<T1>, promise2: Promise<T2>, promise3: Promise<T3>, promise4: Promise<T4>, promise5: Promise<T5>, promise6: Promise<T6>, promise7: Promise<T7>): Promise<[T1, T2, T3, T4, T5, T6, T7]>;
     static all<T1, T2, T3, T4, T5, T6, T7, T8>(promise1: Promise<T1>, promise2: Promise<T2>, promise3: Promise<T3>, promise4: Promise<T4>, promise5: Promise<T5>, promise6: Promise<T6>, promise7: Promise<T7>, promise8: Promise<T8>): Promise<[T1, T2, T3, T4, T5, T6, T7, T8]>;
     static all<T1, T2, T3, T4, T5, T6, T7, T8, T9>(promise1: Promise<T1>, promise2: Promise<T2>, promise3: Promise<T3>, promise4: Promise<T4>, promise5: Promise<T5>, promise6: Promise<T6>, promise7: Promise<T7>, promise8: Promise<T8>, promise9: Promise<T9>): Promise<[T1, T2, T3, T4, T5, T6, T7, T8, T9]>;
+    /** Resolves an arbitrary array of promises and returns an array with all the results. */
     static all(...promises: Promise<any>[]): Promise<any[]>;
     
     /**

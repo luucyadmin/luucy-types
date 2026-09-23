@@ -24,6 +24,16 @@ declare namespace ui {
      * section.add(slider);
      */
     class Slider extends Element implements FieldElement {
+        /**
+         * Creates a slider
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param min - The minimal value on the slider
+         * @param max - The maximal value on the slider
+         * @param value - The initial value
+         * @param step - The step size between allowed values
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, min: number, max: number, value?: number, step?: number, tooltip?: string);
 
         /**

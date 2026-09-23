@@ -52,6 +52,9 @@ declare namespace ui {
         */
         removeSegment(segment: ChartSegment): void;
 
+        /**
+         * Emits when a segment is added, removed or changed
+         */
         onChange: Event<void>;
     }
 }

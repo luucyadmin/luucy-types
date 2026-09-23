@@ -1,3 +1,6 @@
+/**
+ * Interface describing the shape of the global `console` object.
+ */
 declare interface Console {
     /** Writes debugging log to the console */
     log(...arguments: any[]): void;

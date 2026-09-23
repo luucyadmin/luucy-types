@@ -1,4 +1,9 @@
 declare namespace ui {
+    /**
+     * Energy rating chart
+     *
+     * Displays an energy rating on a scale from G (worst) to A++ (best).
+     */
     class EnergyRating extends Element {
         /**
          * A++ rating
@@ -67,8 +72,14 @@ declare namespace ui {
          */
         rating: number;
 
+        /**
+         * Title of the energy rating chart
+         */
         readonly title: string;
 
+        /**
+         * Emits when the rating value changes
+         */
         onRatingChange: Event<number, number | undefined>;
     }
 }

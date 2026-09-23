@@ -1,4 +1,7 @@
 declare namespace data {
+    /**
+     * A block of a user-drawn building, made up of floors on top of a ground shape.
+     */
     class BuildingBlock {
 
         /**
@@ -46,6 +49,9 @@ declare namespace data {
          */
         center: LocalPosition;
 
+        /**
+         * Floors of the block
+         */
         floors: BuildingFloor[];
 
         /**

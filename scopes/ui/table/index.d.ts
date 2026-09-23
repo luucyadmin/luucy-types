@@ -1,7 +1,18 @@
 /// <reference path="column.d.ts" />
 
-declare namespace ui {  
+declare namespace ui {
+    /**
+     * Table
+     *
+     * Displays records in a tabular layout, described by a set of columns.
+     */
     class Table<T> extends Element {
+        /**
+         * Creates a table
+         *
+         * @param records - The records to display
+         * @param columns - The columns describing how to display the records
+         */
         constructor(records: T[], columns: ui.Column<Exclude<T, null>>[]);
 
         /**

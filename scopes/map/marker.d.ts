@@ -16,7 +16,14 @@ declare namespace map {
      * );
      */
      class Marker implements MapElement {
+        /**
+         * Creates a marker with an optional text label at the given position
+         */
         constructor(position: GlobalPosition, color?: Color, label?: string);
+
+        /**
+         * Creates a marker with an icon at the given position
+         */
         constructor(position: GlobalPosition, icon: string, color?: Color);
 
         /**
@@ -73,12 +80,34 @@ declare namespace map {
          */
         maxVisibleDistance: number | null;
 
+        /**
+         * Indicates if the marker is currently visible
+         */
         readonly visible: boolean;
+
+        /**
+         * Indicates if the marker is currently hidden
+         */
         readonly hidden: boolean;
-        
+
+        /**
+         * Hides the marker
+         */
         hide(): void;
+
+        /**
+         * Shows the marker after beeing hidden
+         */
         show(): void;
+
+        /**
+         * Moves the camera to the marker
+         */
         focus(): void;
+
+        /**
+         * Removes the marker from the map
+         */
         remove(): void;
     }
 }

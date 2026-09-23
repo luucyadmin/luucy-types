@@ -6,6 +6,9 @@ declare namespace data {
      */
     class HeadingPitchRoll {
 
+        /**
+         * Creates a heading, pitch and roll rotation from the given components in radians.
+         */
         constructor(heading?: number, pitch?: number, roll?: number);
         /**
          * The heading component in radian

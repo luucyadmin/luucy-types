@@ -30,6 +30,9 @@ declare class GlobalPosition {
      */
     static readonly zero: GlobalPosition;
 
+    /**
+     * Creates a global position from latitude, longitude and an optional height.
+     */
     constructor(latitude: number, longitude: number, height?: number);
 
     /**

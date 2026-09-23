@@ -21,6 +21,13 @@ declare namespace ui {
          */
         readonly name: string;
 
+        /**
+         * Creates an action
+         *
+         * @param icon Icon for the action
+         * @param name Will be displayed as the actions label
+         * @param handler Called with the item when the action is dispatched
+         */
         constructor(icon: IconElement, name: string, handler: (item: T) => void);
 
         /**

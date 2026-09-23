@@ -3,6 +3,9 @@ declare namespace map {
      * Colors the ground and objects on top of it within the area defined by the positions.
     */
     class Line {
+        /**
+         * Creates a line connecting the given points
+         */
         constructor(points: GlobalPosition[], color?: Color, width?: number);
 
         /**

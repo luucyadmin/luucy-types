@@ -6,6 +6,9 @@ declare namespace data {
      * or a plugin can create a parcel by using `ColoredArea.releaseAsParcelToVariant()`
      */
     class Parcel {
+        /**
+         * Unique id of the parcel
+         */
         id: number;
 
         /**

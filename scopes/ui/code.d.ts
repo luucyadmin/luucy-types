@@ -11,6 +11,11 @@ declare namespace ui {
      * section.add(code);
      */
      class Code extends Element {
+        /**
+         * Creates a code block
+         *
+         * @param content Code content to display
+         */
         constructor(content: string);
 
         /**

@@ -8,6 +8,9 @@ declare namespace data {
      * Subscribe to `.onBuildingsChange` of `data.Variant` to get notified about building changes
      */
     class Building {
+        /**
+         * Unique id of the building
+         */
         readonly id: number;
 
         /**

@@ -1,16 +1,34 @@
 declare namespace ui {
 
+    /**
+     * Column Transformer
+     *
+     * Converts a record into the value to display within a column cell.
+     */
     interface ColumnTransformer<T> {
         (item: T, rowIndex?: number, columnIndex?: number): string | number | Image | FieldElement | IconElement | Button;
     }
 
+    /**
+     * Column Tooltip Transformer
+     *
+     * Converts a record into the tooltip to display when hovering over a column cell.
+     */
     interface ColumnTooltipTransformer<T> {
         (item: T, rowIndex?: number, columnIndex?: number): string | null;
     }
 
+    /**
+     * Column Action
+     *
+     * Describes an action button displayed within a column.
+     */
     interface ColumnAction<T> {
+        /** The icon displayed on the action button */
         icon: IconElement;
+        /** The name of the action */
         name: string;
+        /** Called whenever the action button is clicked */
         onClick: (item: T) => void;
     }
 
@@ -63,18 +81,53 @@ declare namespace ui {
      * ])
      */
     class Column<T> {
+        /**
+         * Creates a column
+         *
+         * @param name - The name of the column, displayed in the header
+         * @param transformer - Converts a record into the value to display in the column
+         * @param options - Additional column options
+         */
         constructor(name: string, transformer: ColumnTransformer<T>, options?: ColumnOptions<T>);
 
+        /**
+         * The name of the column
+         */
         readonly name: string;
 
+        /**
+         * The options passed to the column
+         */
         readonly options: ColumnOptions<T>;
 
+        /**
+         * Adds a tooltip transformer to the column
+         */
         addTooltip(transformer: ColumnTooltipTransformer<T>): this;
+
+        /**
+         * Adds an action button to the column
+         */
         addAction(icon: IconElement, name: string, onClick: (item: T) => void): this;
 
+        /**
+         * The unique id of the column
+         */
         readonly id: string;
+
+        /**
+         * Returns the actions registered on the column
+         */
         getActions(): Action<T>[];
+
+        /**
+         * Resolves the element to display for a given record within the column
+         */
         resolve(item: T, rowIndex: number, columnIndex: number): Element;
+
+        /**
+         * Resolves the tooltip to display for a given record within the column
+         */
         resolveTooltip(item: T, rowIndex: number, columnIndex: number): string | null;
     }
 }

@@ -25,6 +25,9 @@ declare namespace ui {
          */
         constructor(name: string);
 
+        /**
+         * The panels name
+         */
         readonly name: string;
 
         /**
@@ -42,14 +45,44 @@ declare namespace ui {
          */
         close(): void;
 
+        /**
+         * The panels children
+         */
         readonly children: Element[];
+
+        /**
+         * Adds an element to the panel
+         */
         add(element: Element): void;
+
+        /**
+         * Inserts an element into the panel right after another element
+         */
         insertAfter(child: Element, after: Element): void;
+
+        /**
+         * Inserts an element into the panel right before another element
+         */
         insertBefore(child: Element, before: Element): void;
+
+        /**
+         * Removes an element from the panel
+         */
         remove(child: Element): void;
+
+        /**
+         * Removes all elements from the panel
+         */
         removeAllChildren(): void;
-        
+
+        /**
+         * The event is triggered whenever a child element is added, removed or changed
+         */
         onChildChange: Event<void>;
+
+        /**
+         * The event is triggered whenever the panel is closed
+         */
         onClose: Event<void>;
     }
 }

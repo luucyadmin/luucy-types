@@ -45,8 +45,19 @@ declare namespace map {
             floorsCount?: number,
         );
 
+        /**
+         * Indicates if the building is currently visible
+         */
         readonly visible: boolean;
+
+        /**
+         * Indicates if the building is currently hidden
+         */
         readonly hidden: boolean;
+
+        /**
+         * Blocks the building is made of
+         */
         readonly buildingBlocks: data.BuildingBlock[];
 
         /**
@@ -54,20 +65,6 @@ declare namespace map {
          * Default is 100
          */
         opacity?: number;
-
-        /**
-         * Define building area reduction
-         * Default is 0
-         * @deprecated used BuildingFloor.areaReduction instead
-         */
-        areaReduction?: number;
-
-        /**
-         * Define building volume reduction
-         * Default is 0
-         * @deprecated used BuildingFloor.volumeReduction instead
-         */
-        volumeReduction?: number;
 
         /**
          * Enabled displaying floors in the building
@@ -95,9 +92,24 @@ declare namespace map {
          */
         onBuildingChange: Event<Building, Building | undefined>;
 
+        /**
+         * Hides the building
+         */
         hide(): void;
+
+        /**
+         * Shows the building after beeing hidden
+         */
         show(): void;
+
+        /**
+         * Moves the camera to the building
+         */
         focus(): void;
+
+        /**
+         * Removes the building from the map
+         */
         remove(): void;
     }
 }

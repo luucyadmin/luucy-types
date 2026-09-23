@@ -1,4 +1,7 @@
 declare namespace ui {
+    /**
+     * Represents an element which can contain child elements
+     */
     interface ElementContainer {
         /** 
          * Contains all child elements. 
@@ -38,6 +41,9 @@ declare namespace ui {
          */
         removeAllChildren(): void;
 
+        /**
+         * Emits when a child is added, removed or changed
+         */
         onChildChange: Event<void>;
     }
 }

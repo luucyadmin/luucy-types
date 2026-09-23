@@ -10,6 +10,12 @@ declare namespace ui {
      * section.add(paragraph);
      */
      class Paragraph extends Element {
+        /**
+         * Creates a paragraph
+         *
+         * @param content - The text to display
+         * @param lines - Number of lines to display before showing a "more" button
+         */
         constructor(content: string, lines?: number);
 
         /**
@@ -29,7 +35,14 @@ declare namespace ui {
          */
         readonly lineLimit: number;
 
+        /**
+         * The event is triggered whenever the content changes
+         */
         onContentChange: Event<string, string | undefined>;
+
+        /**
+         * The event is triggered whenever the user clicks 'more' to expand the paragraph
+         */
         onExpand: Event<void>;
     }
 }

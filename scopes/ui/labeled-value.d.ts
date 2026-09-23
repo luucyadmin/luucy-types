@@ -25,6 +25,14 @@ declare namespace ui {
      * });
      */
     class LabeledValue extends Element {
+        /**
+         * Creates a labeled value
+         *
+         * @param label Label shown on the left
+         * @param value Value shown on the right
+         * @param icon Optional icon indicating a state
+         * @param tooltip Will provide a tooltip on mouseover
+         */
         constructor(label: string, value?: string | number, icon?: IconElement, tooltip?: string);
 
         /**
@@ -50,6 +58,9 @@ declare namespace ui {
          */
         icon: IconElement;
 
+        /**
+         * Emits when the label, value or icon changes
+         */
         onContentChange: Event<void>;
     }
 }

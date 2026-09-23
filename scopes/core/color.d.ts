@@ -4,6 +4,11 @@
  * Colors can be created from rgb (using `.fromRGB()`), from a hex string (using `.fromHex()`) or from HSL (using `.fromHSL()`)
  */
 declare class Color {
+    /**
+     * Creates a color from red, green, blue and an optional alpha value.
+     *
+     * Input values range from 0 - 255.
+     */
     constructor(red: number, green: number, blue: number, alpha?: number);
 
     /**
@@ -59,9 +64,13 @@ declare class Color {
      */
     copy(alpha?: number): Color;
 
+    /** The red component of the color, ranging from 0 - 255. */
     readonly red: number;
+    /** The green component of the color, ranging from 0 - 255. */
     readonly green: number;
+    /** The blue component of the color, ranging from 0 - 255. */
     readonly blue: number;
+    /** The alpha (opacity) component of the color, ranging from 0 - 255. */
     readonly alpha: number;
 
     /**

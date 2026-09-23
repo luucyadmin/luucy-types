@@ -13,6 +13,13 @@ declare namespace ui {
      * section.add(checkbox);
      */
      class Checkbox extends Element {
+        /**
+         * Creates a checkbox
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the checkbox
+         * @param value - The initial checkbox state
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, value?: boolean, tooltip?: string);
 
         /**
@@ -35,6 +42,9 @@ declare namespace ui {
          */
         onValueChange: Event<boolean, boolean | undefined>;
 
+        /**
+         * The event is triggered whenever the checkboxes content changes
+         */
         onContentChange: Event<void>;
     }
 }

@@ -6,6 +6,12 @@ declare namespace ui {
      * section.add(new ui.Note(ui.danger, "This did not go well!"));
      */
     class Note extends Element {
+        /**
+         * Creates a note
+         *
+         * @param state State of the note (e.g. `ui.danger`, `ui.success`)
+         * @param message Message displayed in the note
+         */
         constructor(state: State, message: string);
 
         /**
@@ -30,7 +36,14 @@ declare namespace ui {
          */
         message: string;
 
+        /**
+         * Emits when the message changes
+         */
         onContentChange: Event<string, string | undefined>;
+
+        /**
+         * Emits when the state changes
+         */
         onStateChange: Event<State, State | undefined>;
     }
 }

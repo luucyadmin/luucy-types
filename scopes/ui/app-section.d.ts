@@ -27,6 +27,12 @@ declare namespace ui {
          */
         readonly icon: string;
 
+        /**
+         * Creates an app section
+         *
+         * @param name Name of the section
+         * @param icon Icon url from assets
+         */
         constructor(name?: string, icon?: string);
     }
 }

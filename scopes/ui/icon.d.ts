@@ -14,9 +14,15 @@ declare namespace ui {
      * app.add(section);
      */
     class IconElement extends Element {
+        /**
+         * Type identifier of the icon
+         */
         readonly type: string;
     }
 
+    /**
+     * All available system icons, usable as `ui.icons.<name>`
+     */
     const icons: {
         pause: IconElement;
         play: IconElement;

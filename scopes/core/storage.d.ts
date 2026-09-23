@@ -4,10 +4,15 @@
  * JSON-serializeable data can be stored in a container.
  */
 declare interface StorageContainer {
+    /** Reads the stored value for `key`, or `undefined` if nothing has been stored yet. */
     read<T = any>(key: string): Promise<T>;
+    /** Stores `value` under `key`. */
     write(key: string, value: any): Promise<void>;
 }
 
+/**
+ * A storage container that also exposes a `shared` container visible to other plugins.
+ */
 declare interface ScopedStorage extends StorageContainer {
     /**
      * Shared storage container
@@ -17,6 +22,9 @@ declare interface ScopedStorage extends StorageContainer {
     shared: StorageContainer;
 }
 
+/**
+ * Groups the `user`, `organization` and `global` scoped storage containers bound to a specific object.
+ */
 declare interface StorageRouter {
     /**
      * User Bound Storage
@@ -40,11 +48,19 @@ declare interface StorageRouter {
     global: ScopedStorage;
 }
 
+/**
+ * Describes a single write to a storage container, as emitted by `GlobalStorage.onWrite`.
+ */
 declare interface StorageEntry {
+    /** The key that was written to. */
     key: string;
+    /** The value that was written. */
     value: string;
+    /** Whether the write originated from this plugin. */
     plugin: boolean;
+    /** The scope the entry was written to, or `null` for the unbound global storage. */
     scope: 'user' | 'organization' | null;
+    /** The bound storage router the entry belongs to, if any (see `createStorageRouter`). */
     binding: { type: string; id: string } | null;
 }
 
@@ -89,6 +105,7 @@ declare interface GlobalStorage {
      */
     createStorageRouter(type: string, id: string): StorageRouter;
 
+    /** Fired whenever a value is written to any storage container. */
     onWrite: Event<StorageEntry, StorageEntry | undefined>;
 }
 

@@ -1,8 +1,15 @@
 declare namespace ui {
 
 
+    /**
+     * Select Group
+     *
+     * Describes a group of values within a select field.
+     */
     interface SelectGroup<T> {
+        /** The name of the group */
         groupName: string;
+        /** The values belonging to the group */
         values: T[];
     }
     /** 
@@ -77,10 +84,19 @@ declare namespace ui {
          */
         onValueChange: Event<T, T | undefined>;
 
+        /**
+         * The function used to convert a value into a string for displaying it
+         */
         readonly transformer: (item: T) => string;
 
+        /**
+         * The function used to convert a value into a string for grouping values
+         */
         readonly groupTransformer: (item: T) => string;
 
+        /**
+         * The event is triggered whenever the fields content changes
+         */
         onContentChange: Event<void>;
     }
 }

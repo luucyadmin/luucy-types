@@ -45,17 +45,54 @@ declare namespace ui {
          */
         actions: Action[];
 
+        /**
+         * The sections children
+         */
         readonly children: Element[];
+
+        /**
+         * Adds an element to the section
+         */
         add(element: Element): void;
+
+        /**
+         * Inserts an element into the section right after another element
+         */
         insertAfter(child: Element, after: Element): void;
+
+        /**
+         * Inserts an element into the section right before another element
+         */
         insertBefore(child: Element, before: Element): void;
+
+        /**
+         * Removes an element from the section
+         */
         remove(child: Element): void;
+
+        /**
+         * Removes all elements from the section
+         */
         removeAllChildren(): void;
 
+        /**
+         * The event is triggered whenever the sections content changes
+         */
         onContentChange: Event<void>;
+
+        /**
+         * The event is triggered whenever the sections actions change
+         */
         onActionsChange: Event<void>;
 
+        /**
+         * The event is triggered whenever the sections visibility changes
+         */
         onVisibilityChange: Event<void>;
+
+        /**
+         * The event is triggered whenever a child element is added, removed or changed
+         */
         onChildChange: Event<void>;
     }
 }

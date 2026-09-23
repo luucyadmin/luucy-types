@@ -16,10 +16,15 @@ interface String {
      * )
      */
     readonly translate: {
+        /** Provides the German translation of the string. */
         german(text: string): string;
+        /** Provides the Czech translation of the string. */
         czech(text: string): string;
+        /** Provides the French translation of the string. */
         french(text: string): string;
+        /** Provides the Italian translation of the string. */
         italian(text: string): string;
+        /** Provides the Spanish translation of the string. */
         spanish(text: string): string;
     }
 }

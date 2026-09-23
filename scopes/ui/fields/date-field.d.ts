@@ -22,6 +22,13 @@ declare namespace ui {
      * section.add(dateToField);
      */
     class DateField extends Element implements FieldElement {
+        /**
+         * Creates a date field
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param value - The initial date value
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, value?: Date, tooltip?: string);
 
         /**

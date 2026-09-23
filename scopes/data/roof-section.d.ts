@@ -1,8 +1,14 @@
 
 
 declare namespace data {
+    /**
+     * Describes the roof of a `BuildingBlock`.
+     */
     class RoofSection {
 
+        /**
+         * Creates a new roof section of the given type, rotation and angle.
+         */
         constructor(roofType: RoofType, roofRotation?: number, angle?: number)
         /**
          * Roof color

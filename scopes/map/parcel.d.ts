@@ -106,6 +106,9 @@ declare namespace map {
         parcelType?: string,
     ): Polygon[];
 
+    /**
+     * Information about a parcel selected via `map.onParcelSelect`
+     */
     class ParcelInfo {
         /**
          * Parcel name

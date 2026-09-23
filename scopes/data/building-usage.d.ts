@@ -1,5 +1,11 @@
 declare namespace data {
+    /**
+     * A usage type assigned to a building floor, such as living or commercial area.
+     */
     class BuildingUsage {
+        /**
+         * Unique id of the usage
+         */
         readonly id: number;
 
         /**

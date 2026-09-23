@@ -13,6 +13,14 @@ declare namespace ui {
      * section.add(input);
      */
     class TextField extends Element implements FieldElement {
+        /**
+         * Creates a text field
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param value - The initial text value
+         * @param placeholder - The gray text visible when no value has been entered
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, value?: string, placeholder?: string, tooltip?: string);
 
         /**

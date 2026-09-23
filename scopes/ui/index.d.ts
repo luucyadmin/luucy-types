@@ -26,15 +26,43 @@
 /// <reference path="separator.d.ts" />
 /// <reference path="upload.d.ts" />
 
+/**
+ * State used to visually mark elements such as `ui.Note` and `ui.Notification`
+ */
 declare enum State {
+  /**
+   * Success state
+   */
   success,
+
+  /**
+   * Warning state
+   */
   warn,
+
+  /**
+   * Danger state
+   */
   danger,
+
+  /**
+   * Neutral/info state
+   */
   info
 }
 
+/**
+ * Width options for `ui.Modal`
+ */
 declare enum ModalWidth {
+  /**
+   * Small modal width
+   */
   small,
+
+  /**
+   * Medium modal width
+   */
   medium
 }
 

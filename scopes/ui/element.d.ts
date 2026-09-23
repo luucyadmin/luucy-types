@@ -1,4 +1,9 @@
 declare namespace ui {
+    /**
+     * Base class for all UI elements
+     *
+     * Provides common properties and methods shared by every element, such as visibility and tooltip handling.
+     */
     class Element {
         /** 
          * References the elements parent element or area 

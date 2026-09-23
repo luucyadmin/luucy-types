@@ -24,6 +24,13 @@ declare namespace ui {
      * });
      */
     class LabeledColor extends Element {
+        /**
+         * Creates a labeled color
+         *
+         * @param label Label describing meaning of the color
+         * @param color Color shown next to the label
+         * @param tooltip Will provide a tooltip on mouseover
+         */
         constructor(label: string, color: Color, tooltip?: string);
 
         /**
@@ -40,6 +47,9 @@ declare namespace ui {
          */
         color: Color;
 
+        /**
+         * Emits when the label or color changes
+         */
         onContentChange: Event<void>;
     }
 }

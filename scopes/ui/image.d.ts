@@ -10,6 +10,12 @@ declare namespace ui {
      * section.add(image);
      */
     class Image extends Element {
+        /**
+         * Creates a remote image
+         *
+         * @param source URL of the image to load
+         * @param tooltip Will provide a tooltip on mouseover
+         */
         constructor(source?: string, tooltip?: string);
 
         /**

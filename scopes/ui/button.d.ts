@@ -90,10 +90,29 @@ declare namespace ui {
          */
         onClick: Event<void>;
 
+        /**
+         * Emits when the buttons label changes
+         */
         onLabelChange: Event<void>;
+
+        /**
+         * Emits when the buttons icon changes
+         */
         onIconChange: Event<void>;
+
+        /**
+         * Emits when the buttons disabled state changes
+         */
         onDisabledChange: Event<void>;
+
+        /**
+         * Emits when the buttons primary state changes
+         */
         onPrimaryChange: Event<void>;
+
+        /**
+         * Emits when the buttons loading state changes
+         */
         onLoadingChange: Event<void>;
     }
 }

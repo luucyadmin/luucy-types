@@ -14,6 +14,13 @@ declare namespace ui {
      * section.add(timeField);
      */
     class TimeField extends Element implements FieldElement {
+        /**
+         * Creates a time field
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param value - The initial time value
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, value?: Date, tooltip?: string);
 
         /**

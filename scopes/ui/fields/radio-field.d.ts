@@ -61,7 +61,14 @@ declare namespace ui {
          */
         onValueChange: Event<T, T | undefined>;
 
+        /**
+         * The function used to convert a value into a string for displaying it
+         */
         readonly transformer: (item: T) => string;
+
+        /**
+         * The event is triggered whenever the fields content changes
+         */
         onContentChange: Event<void>;
     }
 }

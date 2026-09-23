@@ -26,10 +26,19 @@ declare namespace ui {
          */
         constructor(title: string, width?: ModalWidth);
 
+        /**
+         * Title of the modal
+         */
         readonly title: string;
 
+        /**
+         * Width of the modal popup window
+         */
         readonly width: ModalWidth;
 
+        /**
+         * Actions added to the modal via `addAction()`
+         */
         readonly actions: ui.Action[];
 
         /**
@@ -52,14 +61,46 @@ declare namespace ui {
          */
         addAction(icon: ui.IconElement, name: string, handler: () => void): void;
         
+        /**
+         * Contains all child elements.
+         *
+         * Modify the children by using `add()`, `insertAfter()`, `insertBefore()` and `remove()`
+         */
         readonly children: Element[];
+
+        /**
+         * Appends an element as a child
+         */
         add(element: Element): void;
+
+        /**
+         * Appends an element as a child after the reference element
+         */
         insertAfter(child: Element, after: Element): void;
+
+        /**
+         * Appends an element as a child before the reference element
+         */
         insertBefore(child: Element, before: Element): void;
+
+        /**
+         * Removes an element as a child
+         */
         remove(child: Element): void;
+
+        /**
+         * Removes all children
+         */
         removeAllChildren(): void;
 
+        /**
+         * Emits when a child is added, removed or changed
+         */
         onChildChange: Event<void>;
+
+        /**
+         * Emits when the actions of the modal change
+         */
         onActionsChange: Event<void>;
     }
 }

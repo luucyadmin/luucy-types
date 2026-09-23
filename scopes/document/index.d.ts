@@ -1,6 +1,9 @@
 /// <reference path="pdf.d.ts" />
 /// <reference path="csv.d.ts" />
 
+/**
+ * Width an element occupies when added to a PDF file
+ */
 declare enum PDFElementWidth {
     full,
     half

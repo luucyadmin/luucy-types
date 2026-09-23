@@ -13,15 +13,27 @@
 /// <reference path="variant.d.ts" />
 /// <reference path="wall.d.ts" />
 
+/**
+ * The type of a `data.BuildingFloor`
+ */
 declare enum FloorType {
+    /** Floor located above ground */
     overground,
+    /** Floor located below ground */
     underground,
+    /** Floor at ground level */
     ground,
 }
 
+/**
+ * The type of a `data.RoofSection`
+ */
 declare enum RoofType {
+    /** Flat roof */
     flat,
+    /** Double pitch (gabled) roof */
     doublepitch,
+    /** Mono pitch (single sloped) roof */
     monopitch,
 }
 

@@ -15,6 +15,17 @@ declare namespace ui {
      * section.add(input);
      */
     class NumberField extends Element implements FieldElement {
+        /**
+         * Creates a number field
+         *
+         * @param label - Describes the purpose of an input and is displayed next to the field
+         * @param value - The initial number value
+         * @param placeholder - The gray text visible when no value has been entered
+         * @param min - The minimal allowed value
+         * @param max - The maximal allowed value
+         * @param step - The step size between allowed values
+         * @param tooltip - Will provide tooltip on mouseover
+         */
         constructor(label: string, value?: number, placeholder?: string, min?: number, max?: number, step?: number, tooltip?: string);
 
         /**
