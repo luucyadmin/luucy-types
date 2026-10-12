@@ -29,6 +29,11 @@ declare namespace map {
         append(...points: GlobalPosition[]): void;
 
         /**
+         * Moves the camera to the line
+         */
+        focus(): void;
+
+        /**
           * Removes the colored area from the map.
         */
         remove(): void;

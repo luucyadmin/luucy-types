@@ -24,6 +24,11 @@ declare namespace map {
         readonly border?: { color: Color, width?: number };
 
         /**
+         * Moves the camera to the colored area
+         */
+        focus(): void;
+
+        /**
           * Removes the colored area from the map.
         */
         remove(): void;
