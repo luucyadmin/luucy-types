@@ -31,6 +31,23 @@ declare namespace ui {
         readonly name: string;
 
         /**
+         * Whether the panel stays open when a shape gets selected (e.g. a newly created one) or the map is clicked.
+         *
+         * - `true` (default): the panel stays open.
+         * - `false`: the panel behaves like the built-in side panels: it is replaced by the shape properties panel when a shape is selected, and closed when an empty spot on the map is clicked.
+         *
+         * Can be changed while the panel is open; the change applies immediately.
+         *
+         * @default true
+         *
+         * @example
+         * const panel = new ui.Panel("My Panel");
+         * panel.permanent = false;
+         * panel.open();
+         */
+        permanent: boolean;
+
+        /**
          * Opens the panel
          * 
          * Do not open the panel automatically! Please wait for user input, eg. a button press!
